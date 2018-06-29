@@ -1,6 +1,6 @@
 # IoT API 授权映射表 {#concept_sqt_mw4_tdb .concept}
 
-IoT API 名称即创建 IoT 授权策略时，可定义为Action的值。
+下表中IoT API名称，即您在创建IoT相关授权策略时，参数Action的可选值。
 
 |IoT API|RAM 授权操作（Action\)|资源 （Resource）|接 口 说 明|
 |:------|:----------------|:------------|:------|
@@ -35,7 +35,7 @@ IoT API 名称即创建 IoT 授权策略时，可定义为Action的值。
 |EnableThing|iot:EnableThing|\*|设备的解禁|
 |GetThingTopo|iot:GetThingTopo|\*|查询设备拓扑关系|
 |RemoveThingTopo|iot:RemoveThingTopo|\*|移除设备拓扑关系|
-|NotifyAddThingTopo|iot:NotifyAddThingTopo|\*|通知设备增加拓扑关系|
+|NotifyAddThingTopo|iot:NotifyAddThingTopo|\*|通知云端增加设备拓扑关系|
 |QueryDevicePropertyData|iot:QueryDevicePropertyData|\*|获取设备的属性历史数据|
 |QueryTopic|iot:QueryTopic|\*|查询Topic|
 |StartRule|iot:StartRule|\*|启动规则|
@@ -53,9 +53,6 @@ IoT API 名称即创建 IoT 授权策略时，可定义为Action的值。
 |Pub|iot:Pub|\*|发布消息|
 |Sub|iot:Sub|\*|订阅消息|
 |Unsub|iot:Unsub|\*|取消订阅|
-|ServerOnline|iot:ServerOnline|\*|服务端订阅者上线|
-|DeviceGrant|iot:DeviceGrant|\*|设备授权|
-|DeviceRevokeByTopic|iot:DeviceRevokeByTopic|\*|通过Topic名撤销设备权限|
 |DeviceRevokeById|iot:DeviceRevokeById|\*|通过ID撤销设备权限|
 |DevicePermitModify|iot:DevicePermitModify|\*|修改设备权限|
 |ListPermits|iot:ListPermits|\*|列出设备的权限|

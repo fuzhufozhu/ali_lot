@@ -2,7 +2,7 @@
 
 [Gateways and sub-devices](intl.en-US/User Guide/Create products and devices/Gateways and sub-devices.md#)Each device, either a gateway or a sub-device, works as a unique device on IoT Platform. Devices can use unique certificates for authentication when communicating with the cloud. You need to install the unique certificates to each device, including ProductKey, DeviceName, and DeviceSecret. Some sub-devices, such as Bluetooth devices and Zigbee devices, have high requirements for installing these unique certificates. You can select dynamic registration for authentication. In this way, you only need to register sub-devices in the cloud by providing ProductKey and DeviceName.
 
-The gateway has connected to the cloud by using [Unique-certificate-per-device authentication](intl.en-US//Unique-certificate-per-device authentication.md#).
+The gateway has connected to the cloud by using [Unique-certificate-per-device authentication](intl.en-US/User Guide/Develop devices/Authenticate devices /Unique-certificate-per-device authentication.md#).
 
 The ProductKey and DeviceName of the sub-device must be provided on IoT Platform before dynamic registration. When a gateway registers its sub-device, IoT Platform verifies DeviceName of this sub-device. After the DeviceName is verified, IoT Platform issues the DeviceSecret.
 

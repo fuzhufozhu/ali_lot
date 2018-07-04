@@ -39,7 +39,7 @@ In the RAM console, assign permissions to a RAM user on the User Management page
 
     **Note:** To assign custom permissions to the RAM user, you need to create an authorization policy first. For more information about customizing an authorization policy, see [Custom permissions](intl.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/Custom permissions.md#).
 
-    ![](images/4853_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/4853_en-US.jpg)
 
 
 The authorized RAM user can access the resources defined in the authorization policy, and perform the specified operations.

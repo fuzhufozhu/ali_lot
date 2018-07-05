@@ -24,12 +24,12 @@ The following table compares the features supported the by Basic Edition and the
 |Remote device control|√|√|
 |Remote device disabling|√|√|
 |Device topological relationship maintenance|√|√|
-|Device shadow|√|√|
+|Device shadow|√|-|
 |Device model definition|-|√|
 |Data parsing scripts|-|√|
 |Device data storage|-|√|
-|Query of real-time device status|-|√|
-|Query of historical device data |-|√|
+|Query of real-time device status|√|√|
+|Query of historical device data|-|√|
 |Device service call|-|√|
 |Reporting of device events|-|√|
 |Online device debugging|-|√|

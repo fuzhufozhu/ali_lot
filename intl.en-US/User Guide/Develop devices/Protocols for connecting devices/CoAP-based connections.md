@@ -4,7 +4,7 @@
 
 Constrained Application Protocol \(CoAP\) is applicable to low-power devices that have limited resources, such as Narrowband IoT \(NB-IoT\) devices. The process for connecting NB-IoT devices to IoT Platform based on CoAP is described in [Figure 1](#fig_irr_4r5_wdb). ￼
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/3114_en-US.png "CoAP-based connections")
+![](images/3114_en-US.png "CoAP-based connections")
 
 The CoAP-based connection follows this process:
 
@@ -16,7 +16,7 @@ The CoAP-based connection follows this process:
 
 ## Use the SDK to connect an NB-IoT device to IoT Platform {#section_uxd_vr5_wdb .section}
 
-Follow these instructions to connect the device to IoT Platform using the C SDK. For more information, see [Download device SDKs](https://help.aliyun.com/document_detail/42648.html).
+Follow these instructions to connect the device to IoT Platform using the C SDK. For more information, see [Download device SDKs](https://partners-intl.aliyun.com/help/doc-detail/42648.htm).
 
 ## CoAP-based connection {#section_owj_wr5_wdb .section}
 

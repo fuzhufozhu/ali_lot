@@ -1,0 +1,59 @@
+# DeleteDeviceProp {#reference_sv2_rrz_wdb .reference}
+
+调用该接口删除设备下的指定标签。
+
+## 请求参数 {#section_hzp_clt_xdb .section}
+
+|名称|类型|是否必需|描述|
+|:-|:-|:---|:-|
+|Action|String|是|要执行的操作，取值：DeleteDeviceProp。|
+|ProductKey|String|是|要操作的设备所隶属的产品Key。|
+|DeviceName|String|是|要操作的设备的名称。|
+|PropKey|String|是| 要删除的设备属性键值（Key）。
+
+ **说明：** IoT在目标设备的标签中检索您提供的Key值，并删除与之对应的标签。如果目标设备的标签中没有与您提供的Key值对应的记录，则不执行任何操作。
+
+ |
+
+## 返回参数 {#section_f1k_nlt_xdb .section}
+
+|名称|类型|描述|
+|:-|:-|:-|
+|RequestId|String|阿里云为该请求生成的唯一标识符。|
+|Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
+|ErrorMessage|String|调用失败时，返回的出错信息。|
+
+## 示例 {#section_ypv_tlt_xdb .section}
+
+**请求示例**
+
+```
+https://iot.cn-shanghai.aliyuncs.com/?Action=DeleteDeviceProp
+&ProductKey=al*********
+&DeviceName=device1
+&PropKey=temperature
+&公共请求参数
+```
+
+**返回示例**
+
+-   JSON格式
+
+    ```
+    {
+        "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
+        "Success": true
+    }
+    ```
+
+-   XML格式
+
+    ```
+    <?xml version='1.0' encoding='utf-8'?>
+    <DeleteDevicePropResponse>
+        <RequestId>57b144cf-09fc-4916-a272-a62902d5b207</RequestId>
+        <Success>true</Success>
+    </DeleteDevicePropResponse>
+    ```
+
+

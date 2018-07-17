@@ -228,7 +228,7 @@ The implementation of each layer is as follows: 
     -   In the compiling system of SDK version 2.0 and later, the functions of the core implementation layer are compiled into output/release/lib/libiot\_sdk.a.
 -   SDK interface declaration layer and routines
 
-    For more information, see the [Integrate the SDK](https://help.aliyun.com/document_detail/30530.html) page and [Alibaba Cloud GitHub page](https://github.com/aliyun/iotkit-embedded).
+    For more information, see the [Alibaba Cloud GitHub page](https://github.com/aliyun/iotkit-embedded).
 
 
 ## Port the C SDK v1.0.1 to a hardware platform {#section_ost_3nm_b2b .section}
@@ -237,7 +237,7 @@ This topic describes how to port the C SDK v1.0.1 to a hardware platform.
 
 The SDK architecture is shown in the following figure:
 
-![](images/3137_en-US.jpg "SDK architecture")
+![](images/6641_en-US.png "SDK architecture")
 
 -   The architecture has been divided into three layers: the hardware abstraction layer, the SDK kernel code, and the application APIs.
 -   When you port the SDK to a hardware platform, you need to implement a hardware abstraction interface accordingly.

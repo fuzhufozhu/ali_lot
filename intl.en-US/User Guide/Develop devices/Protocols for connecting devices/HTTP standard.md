@@ -12,5 +12,5 @@ Uses Hypertext Transfer Protocol Secure \(HTTPS\) to guarantee channel security.
 -   Does not support passing parameters with question marks \(?\).
 -   Resource discovery is currently not supported.
 -   Only HTTPS is supported.
--   The URI standard, the HTTP URI resources, and the MQTT topic must be consistent. See [MQTT standard](https://help.aliyun.com/document_detail/30540.html?spm=5176.doc57699.2.4.fVbU8T).
+-   The URI standard, the HTTP URI resources, and the MQTT topic must be consistent. See [MQTT standard](https://partners-intl.aliyun.com/help/doc-detail/42648.htm).
 

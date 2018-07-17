@@ -19,5 +19,5 @@ For more information, see [http://coap.technology/impls.html](http://coap.techno
 -   Do not use a question mark \(?\) to set a parameter.
 -   Resource discovery is not supported.
 -   Only the User Datagram Protocol \(UDP\) is supported, and DTLS must be used.
--   Follow the Uniform Resource Identifier \(URI\) standard, and keep CoAP URI resources consistent with Message Queuing Telemetry Transport \(MQTT\)-based topics. For more information, see [MQTT standard](https://help.aliyun.com/document_detail/30540.html).
+-   Follow the Uniform Resource Identifier \(URI\) standard, and keep CoAP URI resources consistent with Message Queuing Telemetry Transport \(MQTT\)-based topics. For more information, see [MQTT standard](https://partners-intl.aliyun.com/help/doc-detail/30540.htm).
 

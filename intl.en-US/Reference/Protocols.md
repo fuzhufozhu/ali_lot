@@ -102,8 +102,8 @@ Error messages
 
 Directly connected devices send HTTP requests to perform dynamic register. Make sure that you have enabled dynamic registration based on unique certificate per product in the console.
 
--   URL TMPLATE: [https://iot-auth.cn-shanghai.aliyuncs.com/auth/register/device](https://iot-auth.cn-shanghai.aliyuncs.com/auth/register/device)
--   HTTP METHOD： POST
+-   URL template: https://iot-auth.cn-shanghai.aliyuncs.com/auth/register/device
+-   HTTP method: POST
 
 Request message
 
@@ -1286,7 +1286,7 @@ Error code
 
 ## Update firmware {#section_ivm_fbh_12b .section}
 
-For information about the firmware update, see [Develop OTA features](../../../../intl.en-US/User Guide/Develop devices/Develop OTA features.md#) and [Firmware update](../../../../intl.en-US/User Guide/Extended services/Firmware update.md#).
+For information about the firmware update, see [Develop OTA features](../../../../intl.en-US//Develop OTA features.md#) and [Firmware update](../../../../intl.en-US/User Guide/Extended services/Firmware update.md#).
 
 **Report the firmware version**
 
@@ -1412,8 +1412,6 @@ Parameter description
 |version|String|Version information of the firmware.|
 
 ## Remote configuration {#section_xg4_fbh_12b .section}
-
-For more information, see [Remote configuration](https://help.aliyun.com/document_detail/68703.html?spm=a2c4g.11186623.6.697.Uu5IRH).
 
 **Request configuration information from IoT Platform**
 

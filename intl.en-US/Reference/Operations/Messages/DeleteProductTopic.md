@@ -7,7 +7,7 @@ You can call this operation to delete a specified topic category.
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
 |Action|String|Yes|The operation that you want to perform. Set the value to DeleteProductTopic.|
-|TopicId|Long|Yes|The identifer of the topic category that you want to delete.|
+|TopicId|Long|Yes|The identifier of the topic category that you want to delete.|
 
 ## Response parameters {#section_jbl_yg5_xdb .section}
 

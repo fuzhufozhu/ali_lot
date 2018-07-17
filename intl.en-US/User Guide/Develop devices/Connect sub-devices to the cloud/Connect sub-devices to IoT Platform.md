@@ -1,19 +1,19 @@
 # Connect sub-devices to IoT Platform {#task_r4s_yh5_vdb .task}
 
-[Gateways and sub-devices](intl.en-US/User Guide/Create products and devices/Gateways and sub-devices.md#)Each device, either a gateway or a sub-device, works as a unique device on IoT Platform. Devices can use unique certificates for authentication when communicating with the cloud. You need to install the unique certificates to each device, including ProductKey, DeviceName, and DeviceSecret. Some sub-devices, such as Bluetooth devices and Zigbee devices, have high requirements for installing these unique certificates. You can select dynamic registration for authentication. In this way, you only need to register sub-devices in the cloud by providing ProductKey and DeviceName.
+[Gateways and sub-devices](reseller.en-US/User Guide/Create products and devices/Gateways and sub-devices.md#)Each device, either a gateway or a sub-device, works as a unique device on IoT Platform. Devices can use unique certificates for authentication when communicating with the cloud. You need to install the unique certificates to each device, including ProductKey, DeviceName, and DeviceSecret. Some sub-devices, such as Bluetooth devices and Zigbee devices, have high requirements for installing these unique certificates. You can select dynamic registration for authentication. In this way, you only need to register sub-devices in the cloud by providing ProductKey and DeviceName.
 
-The gateway has connected to the cloud by using [Unique-certificate-per-device authentication](intl.en-US/User Guide/Develop devices/Authenticate devices /Unique-certificate-per-device authentication.md#).
+The gateway has connected to the cloud by using [Unique-certificate-per-device authentication](reseller.en-US/User Guide/Develop devices/Authenticate devices /Unique-certificate-per-device authentication.md#).
 
 The ProductKey and DeviceName of the sub-device must be provided on IoT Platform before dynamic registration. When a gateway registers its sub-device, IoT Platform verifies DeviceName of this sub-device. After the DeviceName is verified, IoT Platform issues the DeviceSecret.
 
 Follow these steps:
 
-1.   Log on to the [IoT Platform console](http://iot.console.aliyun.com/) by using the Alibaba Cloud account. 
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot) . 
 2.   Configure the gateway SDK. 
 
     **Note:** A gateway can register its sub-devices, bring its sub-devices online or offline, maintain the topological relationship between the gateway and its sub-devices, and relay the communication between the sub-devices and IoT Platform. The manufacturer of the gateway device develops application features based on this SDK, such as connecting sub-devices to IoT Platform, receiving messages from sub-devices, publishing messages to sub-device topics to report status, subscribing to sub-device topics to obtain commands from IoT Platform, and routing messages to sub-devices.
 
-    1.   Download the SDK. For more information, see [Download SDKs](https://help.aliyun.com/document_detail/42648.html). This section takes a C SDK for example. 
+    1.  Download the SDK. For more information, see [Download device SDKs](https://partners-intl.aliyun.com/help/doc-detail/42648.htm). This section takes a C SDK for example. 
     2.   Log on to the Linux virtual machine \(VM\) and configure unique certificates of the gateway. 
     3.   Enable the feature of the gateway and sub-devices in this SDK. 
 

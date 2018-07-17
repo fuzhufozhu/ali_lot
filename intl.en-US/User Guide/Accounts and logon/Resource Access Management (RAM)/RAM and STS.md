@@ -1,6 +1,6 @@
 # RAM and STS {#concept_gsv_kw4_tdb .concept}
 
-Resource Access Management \(RAM\) and Security Token Service \(STS\) are access control systems provided by Alibaba Cloud. For more information about RAM and STS, see .
+Resource Access Management \(RAM\) and Security Token Service \(STS\) are access control systems provided by Alibaba Cloud. For more information about RAM and STS, see [RAM help documentation](https://www.alibabacloud.com/help/product/28625.htm).
 
 RAM is used to control the permissions of accounts. By using RAM, you can create and manage RAM users. You can control what resources RAM users can access by granting different permissions to them.
 
@@ -43,5 +43,5 @@ RAM users and roles are separated in order to keep the entity that performs oper
 
 STS allows more flexible access control. For example, you can configure the validity period for credentials. However, if long-term credentials are required, you can only use RAM to manage RAM users.
 
-The following sections provide guidelines for using RAM and STS and examples for using them. For more information about APIs provided by RAM and STS, see [API Reference - RAM](https://www.alibabacloud.com/help/zh/doc-detail/28672.htm) and [API Reference - STS](https://www.alibabacloud.com/help/zh/doc-detail/28756.htm).
+The following sections provide guidelines for using RAM and STS and examples for using them. For more information about APIs provided by RAM and STS, see [API Reference - RAM](https://www.alibabacloud.com/help/doc-detail/28672.htm) and [API Reference - STS](https://www.alibabacloud.com/help/doc-detail/28756.htm).
 

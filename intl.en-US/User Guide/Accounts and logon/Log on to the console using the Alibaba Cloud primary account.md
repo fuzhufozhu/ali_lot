@@ -6,7 +6,7 @@ The Alibaba Cloud primary account has full operation permissions on all resource
 
 You have full operation permissions on IoT Platform when logging on to the console using the primary account.
 
-1.  Visit the [Alibaba Cloud official website](https://www.aliyun.com/).
+1.  Visit the [Alibaba Cloud](https://www.alibabacloud.com)official website.
 2.  Click **Console**.
 3.  Log on to the console using your Alibaba Cloud account and password.
 

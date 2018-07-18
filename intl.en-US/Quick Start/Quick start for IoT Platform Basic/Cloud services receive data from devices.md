@@ -54,7 +54,7 @@ In this step,  your devices can report data to the cloud, and cloud application
         ```
 
     4.   Start to monitor the MNS queues. 
-    **Note:** For more information about how to monitor the MNS queues, see [MNS](https://help.aliyun.com/product/27412.html).
+    **Note:** For more information about how to monitor the MNS queues, see [MNS](https://partners-intl.aliyun.com/help/product/27412.htm).
 
 3.   Upload test messages and run sample programs to verify that the cloud services can receive messages by monitoring the MNS queues. 
     1.   Upload a test message from a simulated device to the topic  `/a1wmrZPO8o9/cbgiotkJ4O4WW59ivysa/data`. For example, send a `hello world!` message. You need to edit the message to be uploaded using the path:  `iotkit-embedded/sample/mqtt/mqtt-example.c`  with the C SDK on a Linux device. The code example is as follows: 

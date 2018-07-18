@@ -74,7 +74,7 @@ In this step, the cloud application uses the PUB API to send messages to the top
 
     **Note:** 
 
-    -   For a detailed description of how to issue commands from the cloud, see [Platform API](https://help.aliyun.com/document_detail/69893.html).
+    -   For a detailed description of how to issue commands from the cloud, see [Platform API](https://partners-intl.aliyun.com/help/doc-detail/30559.htm).
     -   The device has already subscribed to the topic information. Therefore, the platform automatically sends the corresponding message to the device when the cloud application issues this command.
 3.   Once the device receives the message from the cloud, the log shows the following: 
 

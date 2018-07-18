@@ -36,7 +36,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
         -   The MQTT Connect packets include the following parameters:
 
             ```
-            
             mqttClientId: clientId+"|securemode=3,signmethod=hmacsha1,timestamp=132323232|"
             mqttUsername: deviceName+"&"+productKey
             mqttPassword: sign_hmac(deviceSecret,content)
@@ -54,7 +53,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
         Example: If `clientId = 12345，deviceName = device， productKey = pk， timestamp = 789，signmethod=hmacsha1，deviceSecret=secret`, submit the MQTT parameters over TCP: 
 
         ```
-        
         mqttclientId=12345|securemode=3,signmethod=hmacsha1,timestamp=789|
         username=device&pk
         password=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString(); // The last parameter is a binary-to-hexadecimal string. Its case is insensitive.
@@ -72,7 +70,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     1.  An MQTT connection over TCP is supported only when you directly connect to a domain. Set the values of FEATURE\_MQTT\_DIRECT, FEATURE\_MQTT\_DIRECT, and FEATURE\_MQTT\_DIRECT\_NOTLS in make.settings to y.
 
         ```
-        
         FEATURE_MQTT_DIRECT = y
         FEATURE_MQTT_DIRECT = y
         FEATURE_MQTT_DIRECT_NOTLS = y
@@ -81,7 +78,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     2.  In the SDK, call IOT\_MQTT\_Construct to connect to the cloud.
 
         ```
-        
         pclient = IOT_MQTT_Construct(&mqtt_params);
         if (NULL == pclient) {
         EXAMPLE_TRACE("MQTT construct failed");
@@ -93,7 +89,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
         Function declaration:
 
         ```
-        
         /**
         * @brief Construct the MQTT client
         * This function initializes the data structures, and establishes an MQTT connection.
@@ -112,7 +107,7 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
 
 1.  Authenticate devices
 
-    Use HTTPS for device authentication. The authentication URL is [https://iot-auth.cn-shanghai.aliyuncs.com/auth/devicename](https://iot-auth.cn-shanghai.aliyuncs.com/auth/devicename).
+    Use HTTPS for device authentication. The authentication URL is https://iot-auth.cn-shanghai.aliyuncs.com/auth/devicename.
 
     -   The authentication request parameters are as follows:
 
@@ -137,7 +132,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     -   Request example using x-www-form-urlencoded:
 
         ```
-        
         POST /auth/devicename HTTP/1.1
         Host: iot-auth.cn-shanghai.aliyuncs.com
         Content-Type: application/x-www-form-urlencoded
@@ -149,7 +143,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     -   Request response:
 
         ```
-        
         HTTP/1.1 200 OK
         Server: Tengine
         Date: Wed, 29 Mar 2017 13:08:36 GMT
@@ -205,7 +198,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     The code is as follows:
 
     ```
-    
     while(1)
     {
     IOT_MQTT_Yield(pclient, 200); 
@@ -213,10 +205,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     }
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Construct the MQTT client
     * This function initializes the data structures, and establishes an MQTT connection.
@@ -237,7 +228,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     The code is as follows:
 
     ```
-    
     /* Subscribe to a specific topic */
     rc = IOT_MQTT_Subscribe(pclient, TOPIC_DATA, IOTX_MQTT_QOS1, _demo_message_arrive, NULL);
     if (rc < 0) {
@@ -248,10 +238,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     }
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Subscribe MQTT topic.
     *
@@ -279,7 +268,6 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     The code is as follows:
 
     ```
-    
     /* Initialize topic information */
     memset(&topic_msg, 0x0, sizeof(iotx_mqtt_topic_info_t));
     strcpy(msg_pub, "message: hello! start!") ;
@@ -292,10 +280,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     EXAMPLE_TRACE("rc = IOT_MQTT_Publish() = %d", rc);
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Publish message to specific topic.
     *
@@ -321,10 +308,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     IOT_MQTT_Unsubscribe(pclient, TOPIC_DATA);
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Unsubscribe MQTT topic.
     *
@@ -344,18 +330,16 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
 
     Call this function to receive data. You can run the function in a separate thread if the system permits this operation.
 
-    The code is as follows:
+    The code is as follows
 
     ```
-    
     /* Handles the MQTT packets received from TCP or SSL connection */
     IOT_MQTT_Yield(pclient, 200);
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Handles MQTT packets from remote servers and processes timeout requests
     * which include the MQTT subscribe, unsubscribe, publish(QOS >= 1), reconnect, etc..
@@ -377,10 +361,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
     IOT_MQTT_Destroy(&pclient);
     ```
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Deconstructs the MQTT client
     * This function disconnects the MQTT connection and releases the related resources.
@@ -398,10 +381,9 @@ For more information about how to set the MQTT connection, see \\sample\\mqtt\\m
 
     You can call this function to view the connection status of MQTT. However, this function cannot detect whether a device is offline. A disconnection can only be detected when data is sent or kept alive.
 
-    The response is as follows:
+    The response parameter declaration is as follows:
 
     ```
-    
     /**
     * @brief Checks whether the MQTT connection is established.
     *

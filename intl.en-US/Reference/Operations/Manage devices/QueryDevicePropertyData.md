@@ -60,9 +60,9 @@ Use this operation to query the property records of a specified device.
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDevicePropertyData
-&IotId=...
-&ProductKey=...
-&PeviceName=...
+&IotId=abcdef1234567************
+&ProductKey=al*********
+&PeviceName=device1
 &Identifier=lightLevel
 &StartTime=1516538300303L
 &EndTime=1516541900303L
@@ -136,22 +136,6 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDevicePropertyData
                 <PropertyInfo>
                     <Value>69</Value>
                     <Time>1516541870871</Time>
-                </PropertyInfo>
-                <PropertyInfo>
-                    <Value>96</Value>
-                    <Time>1516541860620</Time>
-                </PropertyInfo>
-                <PropertyInfo>
-                    <Value>34</Value>
-                    <Time>1516541854877</Time>
-                </PropertyInfo>
-                <PropertyInfo>
-                    <Value>96</Value>
-                    <Time>1516541847856</Time>
-                </PropertyInfo>
-                <PropertyInfo>
-                    <Value>96</Value>
-                    <Time>1516541840613</Time>
                 </PropertyInfo>
                 <PropertyInfo>
                     <Value>14</Value>

@@ -35,9 +35,9 @@ If you want to register a device individually under a product, you can call the 
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=BatchRegisterDeviceWithApplyId
-&ProductKey... S
-&ApplyI... 1L
-& <common request parameters>
+&ProductKey=al*********
+&ApplyId=4416
+&<common request parameters>
 ```
 
 **Response example**

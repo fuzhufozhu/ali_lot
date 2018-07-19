@@ -42,10 +42,10 @@ You can call this operation to query the list of all devices under a specified p
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDevice
-          &ProductKey=al*********
-          &PageSize=10
-          &CurrentPage=1
-          &CommonParameters
+&ProductKey=al*********
+&PageSize=10
+&CurrentPage=1
+&<Common request parameters>
 ```
 
 **Response example**

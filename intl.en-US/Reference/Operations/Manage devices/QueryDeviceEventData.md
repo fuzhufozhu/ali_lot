@@ -77,9 +77,9 @@ Use this operation to query the event records of a specified device.
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceEventData
-&IotId=...
-&ProductKey=...
-&DeviceName=...
+&IotId=abcdef1234567************
+&ProductKey=AL**********
+&DeviceName=device1
 &EventType=info
 &Identifier=lightLevel
 &StartTime=1516538300303L

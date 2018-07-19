@@ -37,8 +37,8 @@ You can call this operation to enable a device that has been disabled.
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=EnableThing
-          &IotId=SR8FiTu1R9tlUR2V1bmi0010a5****
-          &Common Request Parameters
+&IotId=SR8FiTu1R9tlUR2V1bmi0010a5****
+&<Common request parameters>
 ```
 
 **Response example**

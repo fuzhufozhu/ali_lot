@@ -32,10 +32,10 @@ You can call this operation to broadcast messages to all topics of a specified p
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?&Action=PubBroadcast
-          &ProductKey=...
-          &TopicFullName=%252Fbroadcast%252FUPqSxj2vXXX%252Fxxx
-          &MessageContent=aGVsbG93b3JsZA==
-          &common_parameters
+&ProductKey=al*********
+&TopicFullName=%252Fbroadcast%252FUPqSxj2vXXX%252Fxxx
+&MessageContent=aGVsbG93b3JsZA==
+&<common request parameters>
 ```
 
 **Response example**

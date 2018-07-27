@@ -13,9 +13,11 @@ http://Endpoint/?Action=xx&Parameters
 Specifically:
 
 -   Endpoint: address where you can access IoT Platform. The following addresses are available:
-    -   China East 2 \(Shanghai\): `iot.cn-shanghai.aliyuncs.com`
-    -   Asia Pacific SE 1 \(Singapore\): `iot.ap-southeast-1.aliyuncs.com`
-    -   US West 1 \(Silicon Valley\): `iot.us-west-1.aliyuncs.com`
+    -   China \(Shanghai\): `iot.cn-shanghai.aliyuncs.com`
+    -   Singapore: `iot.ap-southeast-1.aliyuncs.com`
+    -   US \(Silicon Valley\): `iot.us-west-1.aliyuncs.com`
+    -   Japan \(Tokyo\): `iot.ap-northeast-1.aliyuncs.com`
+    -   Germany \(Frankfurt\): `iot.eu-central-1.aliyuncs.com`
 -   Action: operation to be performed. For example, when you can call CreateProduct, the operation creates a product.
 -   Parameters: request parameters. Separate each parameter with an ampersand \(&\).
 
@@ -44,11 +46,9 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=CreateProduct
 
 To ensure the security of your Alibaba Cloud account, we recommend that you call the API as a RAM user. Before calling the API as a RAM user, you need to create and attach specific authorization policies to the RAM user to allow access to the API.
 
-For more information about API permissions that can be granted to RAM users, see [API permissions](../../../../intl.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/API permissions.md#).
+For more information about API permissions that can be granted to RAM users, see [API permissions](../../../../reseller.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/API permissions.md#).
 
 ## Signature {#section_rny_mz5_ydb .section}
-
-IoT Platform authenticates each request. You need to sign your request regardless of whether you send an HTTP or HTTPS request. For more information, see [Sign RPC APIs](https://www.alibabacloud.com/help/zh/doc-detail/66384.htm).
 
 IoT Platform authenticates the symmetric-key encrypted identity of request senders using their AccessKey ID and AccessKey Secret . Alibaba Cloud issues AccessKeys to Alibaba Cloud accounts and RAM users. An AccessKey is a credential similar to a logon password. An AccessKey ID is used to identify the user. An AccessKey Secret is used to encrypt the signature string and is the key that the server uses to authenticate the signature string. AccessKey Secrets must be kept confidential.
 

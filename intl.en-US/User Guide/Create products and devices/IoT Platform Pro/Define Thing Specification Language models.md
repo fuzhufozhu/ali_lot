@@ -29,7 +29,7 @@ After defining the product features, you can click **View TSL** on the Define Fe
 
 On the Add Feature page, select **Property** as the feature type.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/2462_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/15329408562462_en-US.png)
 
 -   Feature Name: Property name, such as power consumption. A product cannot have duplicate feature names. If you have chosen a feature template during product creation, the system displays standard properties from the standard feature library for you to choose when you enter a feature name.
 -   Identifier: Identifies a property that is unique under a product. The identifier takes the value of identifier in the Alink JSON format. The device uses this identifier as the key to report property data. The cloud verifies the identifier and determines whether to accept the data or not. An identifier may contain English letters, numbers, and underscores \(\_\), for example, PowerConsumption.
@@ -48,7 +48,7 @@ On the Add Feature page, select **Property** as the feature type.
 
 On the Add Feature page,  select **Service** as the feature type.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/2473_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/15329408572473_en-US.png)
 
 -   Feature Name: Service name. If you have chosen a feature template during product creation, the system displays standard services from the standard feature library for you to choose when you enter a feature name.
 -   Identifier: Identifies a service that is unique under a product. An identifier takes the value of identifier in the Alink JSON format. The device uses this identifier as the key to report service data. The identifier may contain English letters, numbers, and underscores \(\_\).
@@ -67,7 +67,7 @@ On the Add Feature page,  select **Service** as the feature type.
 
 On the Add Feature page, select **Event** as the feature type.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/2481_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12829/15329408572481_en-US.png)
 
 -   Feature Name: Event name.
 -   Identifier: Identifies an event that is unique under a product. The identifier takes the value of identifier in the Alink JSON format. The device uses this identifier as the key to report event data, such as ErrorCode.

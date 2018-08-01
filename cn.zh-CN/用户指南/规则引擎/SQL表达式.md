@@ -1,12 +1,12 @@
 # SQL表达式 {#concept_vc2_d4n_vdb .concept}
 
-使用规则引擎时，若您的数据为JSON格式，可以编写SQL来解析和处理数据。本文主要讲解SQL表达式。
+使用规则引擎时，若您的数据为JSON格式，可以编写SQL来解析和处理数据。规则引擎对二进制格式的数据不做解析，直接透传。本文主要讲解SQL表达式。
 
 ## SQL表达式 {#section_ehn_l1x_wdb .section}
 
 JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应列值，这样就可以使用SQL处理。为便于理解，我们将规则引擎的一条规则抽象为一条SQL表达（类试MySQL语法）：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/3123_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15331162173123_zh-CN.png)
 
 ```
 
@@ -26,7 +26,7 @@ JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应�
 FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当有符合Topic规则的消息到达时，消息的payload数据以json格式解析，并根据SQL语句进行处理（如果消息格式不合法，将忽略此消息）。您可以使用`topic()`函数引用具体的Topic值。
 
 ```
-上文例子中，"FROM /ProductA/+/update"语句表示该SQL仅处理符合/ProductA/+/update格式的消息，具体匹配参考 [Topic](cn.zh-CN/用户指南/创建产品与设备/Topic/Topic列表.md#)。
+上文例子中，"FROM /ProductA/+/update"语句表示该SQL仅处理符合/ProductA/+/update格式的消息，具体匹配参考 [Topic](intl.zh-CN/用户指南/创建产品与设备/Topic/Topic列表.md#)。
 
 ```
 
@@ -38,7 +38,7 @@ FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当�
 
     上报的json数据格式，可以是数组或者嵌套的json，SQL语句支持使用json path获取其中的属性值，如对于`{a:{key1:v1, key2:v2}}`，可以通过`a.key2` 获取到值`v2`。使用变量时需要注意单双引号区别：单引号表示常量，双引号或不加引号表示变量。如使用单引号`'a.key2'`，值为`a.key2`。
 
-    内置的SQL函数可以参考[函数列表](cn.zh-CN/用户指南/规则引擎/函数列表.md#)。
+    内置的SQL函数可以参考[函数列表](intl.zh-CN/用户指南/规则引擎/函数列表.md#)。
 
     ```
     例如上文，"SELECT temperature as t, deviceName() as deviceName, location"语句，其中temperature和loaction来自于上报数据中的字段，deviceName()则使用了内置的SQL函数。
@@ -76,7 +76,7 @@ SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发�
 
 ## 数组使用说明 {#section_z3t_rbx_wdb .section}
 
-数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2}]｝`，那么select中引用`a[0]`的写法为：`select ".a[0]" data1,".a[1].v" data2`，则`data1=［{v:1}］`，`data2=2`
+数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2},{v:3}]｝`，那么SQL语句中的select写法为：`select "$.a[0]" data1,".a[1].v" data2,".a[2]" data3`，则`data1={v:1}`，`data2=2`，`data3=[`{v:3}`]`。
 
 ## 条件表达式支持列表 {#section_fgb_5bx_wdb .section}
 
@@ -95,7 +95,7 @@ SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发�
 |<=|小于或等于|5 <= 6|
 |\>|大于|6 \> 5|
 |\>=|大于或等于|6 \>= 5|
-|函数调用|支持函数，详细列表请参考[函数列表](cn.zh-CN/用户指南/规则引擎/函数列表.md#)。|deviceId\(\)|
+|函数调用|支持函数，详细列表请参考[函数列表](intl.zh-CN/用户指南/规则引擎/函数列表.md#)。|deviceId\(\)|
 |JSON属性表达式|可以从消息payload以json表达式提取属性。|state.desired.color,a.b.c\[0\].d|
 |CASE … WHEN … THEN … ELSE …END|Case 表达式|CASE col WHEN 1 THEN ‘Y’ WHEN 0 THEN ‘N’ ELSE ‘’ END as flag|
 |IN|仅支持枚举，不支持子查询。|比如 where a in\(1,2,3\)。不支持以下形式： where a in\(select xxx\)|

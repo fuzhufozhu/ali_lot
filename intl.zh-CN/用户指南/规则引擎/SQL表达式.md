@@ -1,12 +1,12 @@
 # SQL表达式 {#concept_vc2_d4n_vdb .concept}
 
-使用规则引擎时，若您的数据为JSON格式，可以编写SQL来解析和处理数据。本文主要讲解SQL表达式。
+使用规则引擎时，若您的数据为JSON格式，可以编写SQL来解析和处理数据。规则引擎对二进制格式的数据不做解析，直接透传。本文主要讲解SQL表达式。
 
 ## SQL表达式 {#section_ehn_l1x_wdb .section}
 
 JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应列值，这样就可以使用SQL处理。为便于理解，我们将规则引擎的一条规则抽象为一条SQL表达（类试MySQL语法）：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/3123_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15331162173123_zh-CN.png)
 
 ```
 
@@ -76,7 +76,7 @@ SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发�
 
 ## 数组使用说明 {#section_z3t_rbx_wdb .section}
 
-数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2}]｝`，那么select中引用`a[0]`的写法为：`select ".a[0]" data1,".a[1].v" data2`，则`data1=［{v:1}］`，`data2=2`
+数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2},{v:3}]｝`，那么SQL语句中的select写法为：`select "$.a[0]" data1,".a[1].v" data2,".a[2]" data3`，则`data1={v:1}`，`data2=2`，`data3=[`{v:3}`]`。
 
 ## 条件表达式支持列表 {#section_fgb_5bx_wdb .section}
 

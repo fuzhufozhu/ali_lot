@@ -67,7 +67,7 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
 |TableName|表格存储中用来接收信息的数据表名称。|
 |RegionName| 目标实例所在地域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的表格存储。授权角色信息如下：
@@ -136,7 +136,7 @@ OTS类型Configuration示例：
 |ThemeName|消息服务中用来接收信息的目标主题名称。|
 |RegionName| 目标消息服务所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的消息服务。授权角色信息如下：
@@ -176,7 +176,7 @@ MNS类型​Configuration​​示例：
 |ServiceName|函数服务中用来接收信息的目标服务名称。|
 |RegionName| 目标函数服务实例所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的函数计算服务。授权角色信息如下：
@@ -217,7 +217,7 @@ FC类型Configuration示例
 |Topic|消息队列中用来接收信息的目标Topic。|
 |RegionName| 目标消息队列实例所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
 
  **说明：** 公网和同区流转，使用普通版消息队列实例即可；如果您需要跨区流转，则消息队列实例必需是铂金版实例。
 

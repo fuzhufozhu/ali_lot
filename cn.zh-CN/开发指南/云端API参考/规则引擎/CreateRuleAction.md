@@ -4,13 +4,13 @@
 
 ## 限制说明 {#section_uzf_3fz_xdb .section}
 
-规则引擎支持的地域及目的地云产品，从[这里](../../../../intl.zh-CN/用户指南/规则引擎/地域和可用区.md#)查询。
+规则引擎支持的地域及目的地云产品，从[这里](../../../../cn.zh-CN/用户指南/规则引擎/地域和可用区.md#)查询。
 
 在调用CreateRule接口创建规则后，您可以调用本接口，在规则下创建具体的规则动作，定义将处理后的Topic数据转发至支持的其他阿里云服务。
 
 一个规则下面最多可创建10个规则动作。
 
-支持Topic数据转发的阿里云服务包括：消息服务、函数计算、表格存储、和消息队列。
+支持Topic数据转发的阿里云服务包括：DataHub 、消息服务、函数计算、表格存储、和消息队列。
 
 **说明：** 如果您想对接高性能时序数据库（HiTSDB）和云数据库RDS版，建议您通过控制台操作。
 
@@ -21,6 +21,8 @@
 |Action|String|是|要执行的操作，取值：CreateRuleAction。|
 |RuleId|Long|是|要为其创建动作的规则ID。|
 |Type|String|是| 规则动作类型，取值：
+
+ DATAHUB：将根据规则处理后的Topic数据转发至阿里云DataHub，进行流式数据处理。
 
  ONS：将根据规则处理后的Topic数据转发至阿里云消息队列，进行消息分发。
 
@@ -59,6 +61,79 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
 自定义类型：{"topic":"/a1TXXXXXWSN/xxx_cache001/user/update","topicType":1}
 ```
 
+## DATAHUB类型Configuration定义 {#section_h3c_r5z_xdb .section}
+
+|名称|描述|
+|:-|:-|
+|ProjectName|目标DataHub中用来接收信息的具体Project。|
+|TopicName|目标DataHub中用来接收信息的具体Topic。|
+|RegionName| 目标DataHub所在地域。
+
+ 具体RegionName写法请参考[地域和可用区](https://help.aliyun.com/document_detail/40654.html)文档。
+
+ |
+|Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的DataHub。授权角色信息格式如下：
+
+ ```
+{
+"roleArn":"acs:ram::6541***:role/aliyuniotaccessingdatahubrole",
+"roleName": "AliyunIOTAccessingDataHubRole"
+}
+```
+
+ 请将`6541***`替换成您的阿里云账号ID。您可以登录控制台，在 [账号安全设置](https://account.console.aliyun.com/#/secure) 页面查看您的账号ID。
+
+ `AliyunIOTAccessingDataHubRole`是访问控制中定义的服务角色。用于授予IoT访问DataHub。关于该角色的更多信息，请在[访问控制控制台](https://ram.console.aliyun.com)的角色管理页面查看。
+
+ |
+|SchemaVals|目标DataHub中的Schema列表，详情参见[SchemaVal](#table_pvb_qzz_xdb)。|
+
+|名称|描述|
+|:-|:-|
+|Name|列名。|
+|Value|列值。|
+|Type| 列类型，取值：
+
+ BIGINT：大整数型
+
+ DOUBLE：双精度浮点型
+
+ BOOLEAN：布尔型
+
+ TIMESTAMP：时间戳型
+
+ STRING：字符串型
+
+ DECIMAL：小数型
+
+ |
+
+DATAHUB类型Configuration示例：
+
+```
+{
+    "schemaVals": [
+        {
+            "name": "devicename",
+            "value": "${deviceName}",
+            "type": "STRING"
+        },
+        {
+            "name": "msgtime",
+            "value": "${msgTime}",
+            "type": "TIMESTAMP"
+        }
+    ],
+    "role": {
+        "roleArn": "acs:ram::6541***:role/aliyuniotaccessingdatahubrole",
+        "roleName": "AliyunIOTAccessingDataHubRole"
+    },
+    "projectName": "iot_datahub_stream",
+    "topicName": "device_message",
+    "regionName": "cn-shanghai"
+}
+```
+
 ## OTS类型Configuration定义 {#section_clk_3b1_ydb .section}
 
 |名称|描述|
@@ -67,7 +142,7 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
 |TableName|表格存储中用来接收信息的数据表名称。|
 |RegionName| 目标实例所在地域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://help.aliyun.com/document_detail/40654.html)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的表格存储。授权角色信息如下：
@@ -136,7 +211,7 @@ OTS类型Configuration示例：
 |ThemeName|消息服务中用来接收信息的目标主题名称。|
 |RegionName| 目标消息服务所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://help.aliyun.com/document_detail/40654.html)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的消息服务。授权角色信息如下：
@@ -176,7 +251,7 @@ MNS类型​Configuration​​示例：
 |ServiceName|函数服务中用来接收信息的目标服务名称。|
 |RegionName| 目标函数服务实例所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://help.aliyun.com/document_detail/40654.html)文档。
 
  |
 |Role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的函数计算服务。授权角色信息如下：
@@ -217,7 +292,7 @@ FC类型Configuration示例
 |Topic|消息队列中用来接收信息的目标Topic。|
 |RegionName| 目标消息队列实例所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://help.aliyun.com/document_detail/40654.html)文档。
 
  **说明：** 公网和同区流转，使用普通版消息队列实例即可；如果您需要跨区流转，则消息队列实例必需是铂金版实例。
 

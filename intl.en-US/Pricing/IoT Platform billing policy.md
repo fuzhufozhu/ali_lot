@@ -21,6 +21,7 @@ Billable items for IoT Platform Basic and IoT Platform Pro are listed in the fol
 |Responses that the server sends to devices.|√|√|
 |Messages sent from the server by calling the Revert-RPC interface.|√|√|
 |Messages sent from the server by calling sub-device related interfaces.|√|√|
+|Messages sent from the server by calling device shadow related interfaces.|√|-|
 |Messages sent from the server by calling TSL model related interfaces.|-|√|
 |Device management fee| Fees are charged for your device management
 
@@ -137,6 +138,7 @@ Billing cycles
 |NotifyAddThingTopoWhen you notify a gateway to add a topological relationship, a message of /sys/\{productKey\}/\{deviceName\}/thing/topo/add/notify is triggered.
 
 |√|√|
+|UpdateDeviceShadow|√|-|
 |InvokeThingServiceWhen you run a specified service on a device, a message like /sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identitier\} is sent. 
 
 |-|√|

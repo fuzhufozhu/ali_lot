@@ -45,11 +45,11 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
-|Data|[PropertyDataInfo](#table_sdc_7592_xdb)|调用成功时，返回的设备属性记录。详情参见下表。|
+|Data|[Data](#table_sdc_7592_xdb)|调用成功时，返回的设备属性记录。详情参见下表。|
 
 |名称|类型|描述|
 |:-|:-|:-|
-|List|List|属性集合。每个元素代表一个属性。元素的结构参见[PropertyInfo](#table_z2b_7593_xdb)。|
+|List|List<PropertyList\>|属性集合。每个元素代表一个属性。元素的结构参见[PropertyInfo](#table_z2b_7593_xdb)。|
 |NextValid|Boolean|表示下一页面是否可用。true表示可用，false表示不可用。|
 |NextTime|Long|下一页面中的属性记录的起始时间。|
 

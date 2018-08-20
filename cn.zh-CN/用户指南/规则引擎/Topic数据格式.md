@@ -12,24 +12,24 @@ Topic：`/sys/{productKey}/{deviceName}/thing/event/property/post`
 
 ```
 {
-"iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
-"productKey":"1234556554",
-"deviceName":"deviceName1234",
-"gmtCreate":1510799670074,
-"deviceType":"Ammeter",
-"items"：{
-"Power":{
-"value":"on",
-"time": 1510799670074
-},
-"Position":{
-"time":1510292697470,
-"value":{
-"latitude":39.90,
-"longitude":116.38
-}
-}
-}
+    "iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
+    "productKey":"1234556554",
+    "deviceName":"deviceName1234",
+    "gmtCreate":1510799670074,
+    "deviceType":"Ammeter",
+    "items":{
+        "Power":{
+            "value":"on",
+            "time":1510799670074
+        },
+        "Position":{
+            "time":1510292697470,
+            "value":{
+                "latitude":39.9,
+                "longitude":116.38
+            }
+        }
+    }
 }
 ```
 
@@ -58,21 +58,21 @@ Topic：`/sys/{productKey}/{deviceName}/thing/event/{tsl.event.identifier}/post`
 
 ```
 {
-"identifier":"BrokenInfo",
-"name":"损坏率上报",
-"type":"info",
-"iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
-"productKey":"X5eCzh6fEH7",
-"deviceName":"5gJtxDVeGAkaEztpisjX",
-"gmtCreate":1510799670074,
-"value":{
-"Power":"on",
-"Position":{
-"latitude":39.90,
-"longitude":116.38
-}
-},
-"time":1510799670074
+    "identifier":"BrokenInfo",
+    "name":"损坏率上报",
+    "type":"info",
+    "iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
+    "productKey":"X5eCzh6fEH7",
+    "deviceName":"5gJtxDVeGAkaEztpisjX",
+    "gmtCreate":1510799670074,
+    "value":{
+        "Power":"on",
+        "Position":{
+            "latitude":39.9,
+            "longitude":116.38
+        }
+    },
+    "time":1510799670074
 }
 ```
 
@@ -99,16 +99,17 @@ Topic：`/sys/{productKey}/{deviceName}/thing/list/found`
 数据格式：
 
 ```
-
 {
-"gwIotId":"4z819VQHk6VSLmmBJfrf00107ee200",
-"gwProductKey":"1234556554",
-"gwDeviceName":"deviceName1234", 
-"devices":[{
-"productKey":"12345565569",
-"deviceName":"deviceName1234",
-"iotId":"4z819VQHk6VSLmmBJfrf00107ee201"
-}]
+    "gwIotId":"4z819VQHk6VSLmmBJfrf00107ee200",
+    "gwProductKey":"1234556554",
+    "gwDeviceName":"deviceName1234",
+    "devices":[
+        {
+            "productKey":"12345565569",
+            "deviceName":"deviceName1234",
+            "iotId":"4z819VQHk6VSLmmBJfrf00107ee201"
+        }
+    ]
 }
 ```
 
@@ -132,17 +133,18 @@ Topic：`/sys/{productKey}/{deviceName}/thing/downlink/reply/message`
 数据格式：
 
 ```
-
 {
-"gmtCreate": 1510292739881,
-"iotId": "4z819VQHk6VSLmmBJfrf00107ee200",
-"productKey": "1234556554",
-"deviceName": "deviceName1234",
-"requestId": 1234,
-"code": 200,
-"message": "success",
-"topic": "/sys/1234556554/deviceName1234/thing/service/property/set",
-"data": {}
+    "gmtCreate":1510292739881,
+    "iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
+    "productKey":"1234556554",
+    "deviceName":"deviceName1234",
+    "requestId":1234,
+    "code":200,
+    "message":"success",
+    "topic":"/sys/1234556554/deviceName1234/thing/service/property/set",
+    "data":{
+
+    }
 }
 ```
 
@@ -180,18 +182,17 @@ Topic：`/sys/{productKey}/{deviceName}/thing/downlink/reply/message`
 数据格式：
 
 ```
-
 {
-"productKey":"1234556554",
-"deviceName":"deviceName1234",
-"gmtCreate":1510799670074,
-"deviceType":"Ammeter",
-"iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
-"action":"online",
-"status"{
-"value":"1",
-"time":1510292697471
-}
+    "productKey":"1234556554",
+    "deviceName":"deviceName1234",
+    "gmtCreate":1510799670074,
+    "deviceType":"Ammeter",
+    "iotId":"4z819VQHk6VSLmmBJfrf00107ee200",
+    "action":"online",
+    "status":{
+        "value":"1",
+        "time":1510292697471
+    }
 }
 ```
 

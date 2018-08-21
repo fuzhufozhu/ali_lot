@@ -6,7 +6,7 @@
 
 JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应列值，这样就可以使用SQL处理。为便于理解，我们将规则引擎的一条规则抽象为一条SQL表达（类试MySQL语法）：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15331162173123_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15348344213123_zh-CN.png)
 
 ```
 
@@ -23,7 +23,7 @@ JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应�
 
 ## FROM {#section_r34_k1x_wdb .section}
 
-FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当有符合Topic规则的消息到达时，消息的payload数据以json格式解析，并根据SQL语句进行处理（如果消息格式不合法，将忽略此消息）。您可以使用`topic()`函数引用具体的Topic值。
+FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当有符合Topic规则的消息到达时，消息的payload数据以JSON格式解析，并根据SQL语句进行处理（如果消息格式不合法，将忽略此消息）。您可以使用`topic()`函数引用具体的Topic值。
 
 ```
 上文例子中，"FROM /ProductA/+/update"语句表示该SQL仅处理符合/ProductA/+/update格式的消息，具体匹配参考 [Topic](intl.zh-CN/用户指南/创建产品与设备/Topic/Topic列表.md#)。
@@ -34,9 +34,9 @@ FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当�
 
 -   JSON数据格式
 
-    select语句中的字段，可以使用上报消息的payload解析结果，即json中的键值，也可以使用SQL内置的函数，比如`deviceName()`。不支持子SQL查询。
+    SELECT语句中的字段，可以使用上报消息的payload解析结果，即JSON中的键值，也可以使用SQL内置的函数，比如`deviceName()`。不支持子SQL查询。
 
-    上报的json数据格式，可以是数组或者嵌套的json，SQL语句支持使用json path获取其中的属性值，如对于`{a:{key1:v1, key2:v2}}`，可以通过`a.key2` 获取到值`v2`。使用变量时需要注意单双引号区别：单引号表示常量，双引号或不加引号表示变量。如使用单引号`'a.key2'`，值为`a.key2`。
+    上报的JSON数据格式，可以是数组或者嵌套的JSON，SQL语句支持使用JSONPath获取其中的属性值，如对于`{a:{key1:v1, key2:v2}}`，可以通过`a.key2` 获取到值`v2`。使用变量时，需要注意单双引号区别：单引号表示常量，双引号或不加引号表示变量。如使用单引号`'a.key2'`，值为`a.key2`。
 
     内置的SQL函数可以参考[函数列表](intl.zh-CN/用户指南/规则引擎/函数列表.md#)。
 
@@ -54,7 +54,7 @@ FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当�
 
 -   JSON数据格式
 
-    规则触发条件，条件表达式。不支持子SQL查询。WHERE中可以使用的字段和SELECT语句一致，当接收到对应topic的消息时，WHERE语句的结果会作为规则是否触发的判断条件。具体条件表达式列表见下方表格。
+    规则触发条件，条件表达式。不支持子SQL查询。WHERE中可以使用的字段和SELECT语句一致，当接收到对应Topic的消息时，WHERE语句的结果会作为是否触发规则的判断条件。具体条件表达式列表见下方表格。
 
     ```
     上文例子中， "WHERE temperature > 38 and humidity < 40" 表示温度大于38且湿度小于40时，才会触发该规则，执行配置。
@@ -67,7 +67,7 @@ FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当�
 
 ## SQL结果 {#section_y3t_rbx_wdb .section}
 
-SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发处理。如果payload数据解析过程中出错会导致规则运行失败。 转发数据动作中的表达式需要使用 $\{表达式\} 引用对应的值。
+SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发处理。如果payload数据解析过程中出错会导致规则运行失败。 转发数据动作中的表达式需要使用 `${表达式}` 引用对应的值。
 
 ```
 对于上文例子，配置转发动作时，可以${t}、${deviceName}和${loaction}获取SQL解析结果，如果要将数据存储到TableStore，配置中可以使用${t}、${deviceName}和${loaction}。
@@ -76,7 +76,7 @@ SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发�
 
 ## 数组使用说明 {#section_z3t_rbx_wdb .section}
 
-数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2},{v:3}]｝`，那么SQL语句中的select写法为：`select "$.a[0]" data1,".a[1].v" data2,".a[2]" data3`，则`data1={v:1}`，`data2=2`，`data3=[`{v:3}`]`。
+数组表达式需要使用双引号，比如设备消息为：`｛a:[{v:1},{v:2},{v:3}]｝`，那么SQL语句中的SELECT写法为：`select "$.a[0]" data1,".a[1].v" data2,".a[2]" data3`，则`data1={v:1}`，`data2=2`，`data3=[`{v:3}`]`。
 
 ## 条件表达式支持列表 {#section_fgb_5bx_wdb .section}
 
@@ -89,15 +89,15 @@ SQL语句执行完成后，会得到对应的SQL结果，用于下一步转发�
 |+|算术加法|4 + 5|
 |-|算术减|5 - 4|
 |/|除|20 / 4|
-|`*`|乘|5 `*` 4|
+|\*|乘|5 \* 4|
 |%|取余数|20 % 6|
 |<|小于|5 < 6|
 |<=|小于或等于|5 <= 6|
 |\>|大于|6 \> 5|
 |\>=|大于或等于|6 \>= 5|
 |函数调用|支持函数，详细列表请参考[函数列表](intl.zh-CN/用户指南/规则引擎/函数列表.md#)。|deviceId\(\)|
-|JSON属性表达式|可以从消息payload以json表达式提取属性。|state.desired.color,a.b.c\[0\].d|
+|JSON属性表达式|可以从消息payload以JSON表达式提取属性。|state.desired.color,a.b.c\[0\].d|
 |CASE … WHEN … THEN … ELSE …END|Case 表达式|CASE col WHEN 1 THEN ‘Y’ WHEN 0 THEN ‘N’ ELSE ‘’ END as flag|
-|IN|仅支持枚举，不支持子查询。|比如 where a in\(1,2,3\)。不支持以下形式： where a in\(select xxx\)|
-|like|匹配某个字符， 仅支持%号通配符，代表匹配任意字符串。|比如 where c1 like ‘%abc’, where c1 not like ‘%def%’|
+|IN|仅支持枚举，不支持子查询。|比如， where a in\(1,2,3\)。不支持以下形式： where a in\(select xxx\)|
+|like|匹配某个字符， 仅支持`%`通配符，代表匹配任意字符串。|比如， where c1 like ‘%abc’, where c1 not like ‘%def%’|
 

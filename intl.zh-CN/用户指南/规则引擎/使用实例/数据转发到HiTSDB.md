@@ -17,7 +17,7 @@
 
 1.  单击**数据转发**一栏的**添加操作**，出现添加操作页面。选择**存储到高性能时间序列数据库\(HiTSDB\)中**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15331170463031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15349065133031_zh-CN.png)
 
 2.  按照界面提示，设置参数。
     -   选择操作：此处选择高性能时间序列数据库\(HiTSDB\)
@@ -80,6 +80,6 @@ tag:device=myDevice,product=bikes,cityName=beijing
 
     HiTSDB控制台白名单示例如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15331170463032_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15349065133032_zh-CN.png)
 
 

@@ -23,7 +23,7 @@ You can call this operation to run specified services on a device.
 
  |
 |Identifier|String | Yes|The event identifier that you want to query. You can view the event identifier of a Pro Edition device on the Define Feature page of the Pro Edition product that the device belongs to in the console.|
-|Args|Map| Yes|The arguments that you want to use to run the service. For more information, see [Arg](#table_gzl_z1t_xdb).|
+|Args|Map| Yes|The arguments that you want to use to run the service. For more information, see [Args](#table_gzl_z1t_xdb).|
 
 |Name |Type|Description|
 |:----|:---|:----------|

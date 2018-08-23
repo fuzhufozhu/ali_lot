@@ -22,6 +22,7 @@ Use this operation to view the list of all IoT products under the current accoun
  **Note:** The system returns a list of all products if you have not specified this parameter.
 
  |
+|Common Request Parameters|Common Request Parameters|Yes|See [Common parameters](https://www.alibabacloud.com/help/doc-detail/30561.htm).|
 
 ## Response parameters {#section_omg_vqf_xdb .section}
 
@@ -61,7 +62,7 @@ Use this operation to view the list of all IoT products under the current accoun
  |
 |ProductName|String|The product name.|
 |DeviceCount|Integer|The number of devices under the product.|
-|GmtCreate|String|The time when the product was created.|
+|GmtCreate|Long|The time when the product was created.|
 |Description|String|The product description.|
 
 ## Examples {#section_p5y_rsf_xdb .section}

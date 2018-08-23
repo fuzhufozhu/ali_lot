@@ -22,6 +22,7 @@
  **说明：** 如果不传入该参数，则返回所有产品的列表。
 
  |
+|公共请求参数|公共请求参数|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_omg_vqf_xdb .section}
 
@@ -61,7 +62,7 @@
  |
 |ProductName|String|产品名称。|
 |DeviceCount|Integer|产品下的设备数量。|
-|GmtCreate|String|产品的创建时间。|
+|GmtCreate|Long|产品的创建时间。|
 |Description|String|产品的描述信息。|
 
 ## 示例 {#section_p5y_rsf_xdb .section}

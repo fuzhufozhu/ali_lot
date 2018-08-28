@@ -11,7 +11,7 @@
 
 ## 设备认证\($\{endpoint\}/auth\) {#section_akb_155_wdb .section}
 
-此接口用于传输数据前获取token，只需要请求一次：
+传输数据前，使用此接口获取token，只需要请求一次。
 
 ```
 
@@ -38,6 +38,10 @@ JSON数据格式，具体属性值如下：
 |sign|必选|签名，格式为hmacmd5\(DeviceSecret,content\), content = 将所有提交给服务器的参数（version、sign和signmethod除外）, 按照字母顺序排序, 然后将参数值依次拼接，无拼接符号。|
 |signmethod|可选|算法类型，hmacmd5或hmacsha1，不填默认hmacmd5。|
 |version|可选|版本，不填默认default。|
+
+签名示例：
+
+如果`clientId = 12345`，`deviceName = device`，`productKey = pk`，`timestamp = 789`，`signmethod=hmacsha1`，`deviceSecret=secret`，那么`sign=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString();`，最后二进制转十六进制字符串，大小写不敏感。
 
 返回如下：
 

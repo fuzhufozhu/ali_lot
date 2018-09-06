@@ -16,7 +16,7 @@
 -   使用[一机一密](../../../../intl.zh-CN/设备端开发指南/设备安全认证/一机一密.md#)提前烧录三元组，子设备上报三元组给网关，网关添加拓扑关系，复用网关的通道上报数据。
 -   使用动态注册方式提前烧录ProductKey，子设备上报ProductKey和DeviceName给网关，云端校验DeviceName成功后，下发DeviceSecret。子设备将获得的三元组信息上报网关，网关添加拓扑关系，通过网关的通道上报数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/15348470445802_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/15362133955802_zh-CN.png)
 
 ## 一、设备身份注册 {#section_gm3_svg_12b .section}
 
@@ -80,7 +80,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|设备动态注册的参数|
 |deviceName|String|子设备的名称|
@@ -147,7 +147,7 @@ Alink响应数据格式
 
 ## 二、添加拓扑关系 {#section_w33_vyg_12b .section}
 
-子设备身份注册后，下一步需由网关向云端上报[网关与子设备](../../../../intl.zh-CN/用户指南/创建产品与设备/网关与子设备.md#)的拓扑关系，然后进行上线。上线过程中，云端会校验子设备的身份和与拓扑关系。验证合法，才会建立并绑定子设备逻辑通道至网关物理通道上。子设备与云端的数据上下行与直连设备协议可以完全保持一致，协议上不需要露出网关信息。
+子设备身份注册后，下一步需由网关向云端上报[网关与子设备](../../../../intl.zh-CN/用户指南/产品与设备/网关与子设备.md#)的拓扑关系，然后进行上线。上线过程中，云端会校验子设备的身份和与拓扑关系。验证合法，才会建立并绑定子设备逻辑通道至网关物理通道上。子设备与云端的数据上下行与直连设备协议可以完全保持一致，协议上不需要露出网关信息。
 
 删除拓扑关系后，子设备利用该网关再次上线时，系统将提示拓扑关系不存在，认证不通过。
 
@@ -192,7 +192,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|请求入参|
 |deviceName|String|设备的名称，在request取子设备名称|
@@ -258,7 +258,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|请求参数|
 |deviceName|String|设备名称， 在request中为子设备的名称|
@@ -312,7 +312,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数，可为空|
 |method|String|请求方法|
@@ -363,7 +363,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数，可为空|
 |method|String|请求方法|
@@ -418,7 +418,7 @@ Alink响应数据格式
 
 |参数|类型|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数，可为空|
 |method|String|请求方法|
@@ -476,7 +476,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |params|List|请求入参|
 |deviceName|String|子设备的设备名称|
 |productKey|String|子设备所属的产品Key|
@@ -538,7 +538,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |params|List|请求入参|
 |deviceName|String|子设备的设备名称|
 |productKey|String|子设备所属的产品Key|
@@ -610,7 +610,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数|
 |method|String|请求方法|
@@ -625,7 +625,7 @@ Alink响应数据格式
 |:--|:-|:-|
 |460|request parameter error|请求参数错误|
 |6106|map size must less than 200|设备上报属性一次性最多只能上报200条属性|
-|6313|tsl service not available|用户上报属性时会进行校验，检查上报的属性是否符合用户定义的属性格式，当校验服务不可用时会报这个错。 属性校验参考[定义物模型](../../../../intl.zh-CN/用户指南/创建产品与设备/高级版/定义物模型.md#)|
+|6313|tsl service not available|用户上报属性时会进行校验，检查上报的属性是否符合用户定义的属性格式，当校验服务不可用时会报这个错。 属性校验参考[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)|
 
 **说明：** 云端会校验上报的属性信息，通过产品TSL描述判断上传的属性是否符合您定义的属性格式。不合格属性将直接过滤，仅保留合格属性。若所有属性都不合格，校验会过滤掉全部属性，返回的response也是成功的。
 
@@ -670,7 +670,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|属性设置参数|
 |method|String|请求方法|
@@ -731,7 +731,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|需要获取的属性名称列表|
 |method|String|请求方法|
@@ -782,7 +782,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|事件上报参数|
 |method|String|请求方法|
@@ -794,7 +794,7 @@ Alink响应数据格式
 
 **说明：** 
 
--   tsl.event.identifier 为TSL模板中事件的描述符。TSL模板具体参考[定义物模型](../../../../intl.zh-CN/用户指南/创建产品与设备/高级版/定义物模型.md#)。
+-   tsl.event.identifier 为TSL模板中事件的描述符。TSL模板具体参考[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)。
 -   对于上报的事件云端会做校验，通过产品的TSL描述判断上报的事件是否符合用户定义的事件格式。不合格的事件会直接过滤掉，并返回失败的信息。
 
 **设备服务触发**
@@ -837,7 +837,7 @@ Alink响应数据格式
 {
   "id": "123",
   "code": 200,
-  "data": {}
+  "data": { }
 }
 ```
 
@@ -845,7 +845,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|List|服务调用参数|
 |method|String|请求方法|
@@ -854,7 +854,846 @@ Alink响应数据格式
 |WF|String|事件参数名称|
 |code|Integer|结果信息，具体参考设备端通用code|
 
-**说明：** tsl.service.identifier 为tsl模板中定义的服务描述符。TSL使用参考[定义物模型](../../../../intl.zh-CN/用户指南/创建产品与设备/高级版/定义物模型.md#)。
+**说明：** tsl.service.identifier 为tsl模板中定义的服务描述符。TSL使用参考[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)。
+
+## 网关配置下发 {#section_lmz_ykc_z2b .section}
+
+物模型扩展配置及子设备的连接协议配置，由云端推送至设备端。
+
+-   TOPIC：/sys/\{productKey\}/\{deviceName\}/thing/model/config/push
+
+Alink配置推送数据格式
+
+```
+{
+  "id": 123,
+  "version": "1.0",
+  "method": "thing.model.config.push",
+  "data": {
+    "digest":"",
+    "digestMethod":"",
+    "url": ""
+  }
+}
+```
+
+参数说明
+
+|参数|类型|说明|
+|--|--|--|
+|id|String|消息ID号|
+|version|String|协议版本号，默认为1.0|
+|method|String|方法，使用`thing.model.config.push`|
+|data|Object|数据|
+|digest|String|签名，用于校验从url中获取的数据完整性|
+|digestMethod|String|签名方法，默认Sha256|
+|url|String|数据url，从oss中请求获取|
+
+Alink响应数据格式
+
+```
+{
+  "id":123,
+  "code":200,
+  "message":"success",
+  "data":{
+    "digest":"",
+    "digestMethod":"",
+    "url":""
+  }
+}
+```
+
+url中的数据格式
+
+```
+{
+  "modelList": [
+    {
+      "profile": {
+        "productKey": "test01"
+      },
+      "services": [
+        {
+          "outputData": "",
+          "identifier": "AngleSelfAdaption",
+          "inputData": [
+            {
+              "identifier": "test01",
+              "index": 0
+            }
+          ],
+          "displayName": "test01"
+        }
+      ],
+      "properties": [
+        {
+          "identifier": "identifier",
+          "displayName": "test02"
+        },
+        {
+          "identifier": "identifier_01",
+          "displayName": "identifier_01"
+        }
+      ],
+      "events": [
+        {
+          "outputData": [
+            {
+              "identifier": "test01",
+              "index": 0
+            }
+          ],
+          "identifier": "event1",
+          "displayName": "abc"
+        }
+      ]
+    },
+    {
+      "profile": {
+        "productKey": "test02"
+      },
+      "properties": [
+        {
+          "originalDataType": {
+            "specs": {
+              "registerCount": 1,
+              "reverseRegister": 0,
+              "swap16": 0
+            },
+            "type": "bool"
+          },
+          "identifier": "test01",
+          "registerAddress": "0x03",
+          "scaling": 1,
+          "operateType": "inputStatus",
+          "pollingTime": 1000,
+          "trigger": 1
+        },
+        {
+          "originalDataType": {
+            "specs": {
+              "registerCount": 1,
+              "reverseRegister": 0,
+              "swap16": 0
+            },
+            "type": "bool"
+          },
+          "identifier": "test02",
+          "registerAddress": "0x05",
+          "scaling": 1,
+          "operateType": "coilStatus",
+          "pollingTime": 1000,
+          "trigger": 2
+        }
+      ]
+    }
+  ],
+  "serverList": [
+    {
+      "baudRate": 1200,
+      "protocol": "RTU",
+      "byteSize": 8,
+      "stopBits": 2,
+      "parity": 1,
+      "name": "modbus01",
+      "serialPort": "0",
+      "serverId": "D73251B4277742"
+    },
+    {
+      "protocol": "TCP",
+      "port": 8000,
+      "ip": "192.168.0.1",
+      "name": "modbus02",
+      "serverId": "586CB066D6A34"
+    },
+    {
+      "password": "XIJTginONohPEUAyZxLB7Q==",
+      "secPolicy": "Basic128Rsa15",
+      "name": "server_01",
+      "secMode": "Sign",
+      "userName": "123",
+      "serverId": "55A9D276A7ED470",
+      "url": "tcp:00",
+      "timeout": 10
+    },
+    {
+      "password": "hAaX5s13gwX2JwyvUkOAfQ==",
+      "name": "service_09",
+      "secMode": "None",
+      "userName": "1234",
+      "serverId": "44895C63E3FF401",
+      "url": "tcp:00",
+      "timeout": 10
+    }
+  ],
+  "deviceList": [
+    {
+      "deviceConfig": {
+        "displayNamePath": "123",
+        "serverId": "44895C63E3FF4013924CEF31519ABE7B"
+      },
+      "productKey": "test01",
+      "deviceName": "test_02"
+    },
+    {
+      "deviceConfig": {
+        "displayNamePath": "1",
+        "serverId": "55A9D276A7ED47"
+      },
+      "productKey": "test01",
+      "deviceName": "test_03"
+    },
+    {
+      "deviceConfig": {
+        "slaveId": 1,
+        "serverId": "D73251B4277742D"
+      },
+      "productKey": "test02",
+      "deviceName": "test01"
+    },
+    {
+      "deviceConfig": {
+        "slaveId": 2,
+        "serverId": "586CB066D6A34E"
+      },
+      "productKey": "test02",
+      "deviceName": "test02"
+    }
+  ],
+  "tslList": [
+    {
+      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+      "profile": {
+        "productKey": "test02"
+      },
+      "services": [
+        {
+          "outputData": [],
+          "identifier": "set",
+          "inputData": [
+            {
+              "identifier": "test02",
+              "dataType": {
+                "specs": {
+                  "unit": "mm",
+                  "min": "0",
+                  "max": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试功能02"
+            }
+          ],
+          "method": "thing.service.property.set",
+          "name": "set",
+          "required": true,
+          "callType": "async",
+          "desc": "属性设置"
+        },
+        {
+          "outputData": [
+            {
+              "identifier": "test01",
+              "dataType": {
+                "specs": {
+                  "unit": "m",
+                  "min": "0",
+                  "max": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试功能01"
+            },
+            {
+              "identifier": "test02",
+              "dataType": {
+                "specs": {
+                  "unit": "mm",
+                  "min": "0",
+                  "max": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试功能02"
+            }
+          ],
+          "identifier": "get",
+          "inputData": [
+            "test01",
+            "test02"
+          ],
+          "method": "thing.service.property.get",
+          "name": "get",
+          "required": true,
+          "callType": "async",
+          "desc": "属性获取"
+        }
+      ],
+      "properties": [
+        {
+          "identifier": "test01",
+          "dataType": {
+            "specs": {
+              "unit": "m",
+              "min": "0",
+              "max": "1"
+            },
+            "type": "int"
+          },
+          "name": "测试功能01",
+          "accessMode": "r",
+          "required": false
+        },
+        {
+          "identifier": "test02",
+          "dataType": {
+            "specs": {
+              "unit": "mm",
+              "min": "0",
+              "max": "1"
+            },
+            "type": "int"
+          },
+          "name": "测试功能02",
+          "accessMode": "rw",
+          "required": false
+        }
+      ],
+      "events": [
+        {
+          "outputData": [
+            {
+              "identifier": "test01",
+              "dataType": {
+                "specs": {
+                  "unit": "m",
+                  "min": "0",
+                  "max": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试功能01"
+            },
+            {
+              "identifier": "test02",
+              "dataType": {
+                "specs": {
+                  "unit": "mm",
+                  "min": "0",
+                  "max": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试功能02"
+            }
+          ],
+          "identifier": "post",
+          "method": "thing.event.property.post",
+          "name": "post",
+          "type": "info",
+          "required": true,
+          "desc": "属性上报"
+        }
+      ]
+    },
+    {
+      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+      "profile": {
+        "productKey": "test01"
+      },
+      "services": [
+        {
+          "outputData": [],
+          "identifier": "set",
+          "inputData": [
+            {
+              "identifier": "identifier",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "7614"
+            },
+            {
+              "identifier": "identifier_01",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "测试功能1"
+            }
+          ],
+          "method": "thing.service.property.set",
+          "name": "set",
+          "required": true,
+          "callType": "async",
+          "desc": "属性设置"
+        },
+        {
+          "outputData": [
+            {
+              "identifier": "identifier",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "7614"
+            },
+            {
+              "identifier": "identifier_01",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "测试功能1"
+            }
+          ],
+          "identifier": "get",
+          "inputData": [
+            "identifier",
+            "identifier_01"
+          ],
+          "method": "thing.service.property.get",
+          "name": "get",
+          "required": true,
+          "callType": "async",
+          "desc": "属性获取"
+        },
+        {
+          "outputData": [],
+          "identifier": "AngleSelfAdaption",
+          "inputData": [
+            {
+              "identifier": "test01",
+              "dataType": {
+                "specs": {
+                  "min": "1",
+                  "max": "10",
+                  "step": "1"
+                },
+                "type": "int"
+              },
+              "name": "参数1"
+            }
+          ],
+          "method": "thing.service.AngleSelfAdaption",
+          "name": "角度自适应校准",
+          "required": false,
+          "callType": "async"
+        }
+      ],
+      "properties": [
+        {
+          "identifier": "identifier",
+          "dataType": {
+            "specs": {
+              "length": "2048"
+            },
+            "type": "text"
+          },
+          "name": "7614",
+          "accessMode": "rw",
+          "required": true
+        },
+        {
+          "identifier": "identifier_01",
+          "dataType": {
+            "specs": {
+              "length": "2048"
+            },
+            "type": "text"
+          },
+          "name": "测试功能1",
+          "accessMode": "rw",
+          "required": false
+        }
+      ],
+      "events": [
+        {
+          "outputData": [
+            {
+              "identifier": "identifier",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "7614"
+            },
+            {
+              "identifier": "identifier_01",
+              "dataType": {
+                "specs": {
+                  "length": "2048"
+                },
+                "type": "text"
+              },
+              "name": "测试功能1"
+            }
+          ],
+          "identifier": "post",
+          "method": "thing.event.property.post",
+          "name": "post",
+          "type": "info",
+          "required": true,
+          "desc": "属性上报"
+        },
+        {
+          "outputData": [
+            {
+              "identifier": "test01",
+              "dataType": {
+                "specs": {
+                  "min": "1",
+                  "max": "20",
+                  "step": "1"
+                },
+                "type": "int"
+              },
+              "name": "测试参数1"
+            }
+          ],
+          "identifier": "event1",
+          "method": "thing.event.event1.post",
+          "name": "event1",
+          "type": "info",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
+```
+
+参数说明如下：
+
+|参数|类型|说明|
+|--|--|--|
+|modelList|Object|网关下面所有子设备的产品扩展信息|
+|serverList|Object|网关下面所有的子设备通道管理|
+|deviceList|Object|网关下面所有子设备的连接配置|
+|tslList|Object|网关下面所有子设备的TSL描述|
+
+-   modelList说明
+
+    设备协议目前支持Modbus和OPC UA两种协议，两种协议的扩展信息不一致。
+
+    -   Modbus
+
+        ```
+        {
+          "profile": {
+            "productKey": "test02"
+          },
+          "properties": [
+            {
+              "originalDataType": {
+                "specs": {
+                  "registerCount": 1,
+                  "reverseRegister": 0,
+                  "swap16": 0
+                },
+                "type": "bool"
+              },
+              "identifier": "test01",
+              "registerAddress": "0x03",
+              "scaling": 1,
+              "operateType": "inputStatus",
+              "pollingTime": 1000,
+              "trigger": 1
+            },
+            {
+              "originalDataType": {
+                "specs": {
+                  "registerCount": 1,
+                  "reverseRegister": 0,
+                  "swap16": 0
+                },
+                "type": "bool"
+              },
+              "identifier": "test02",
+              "registerAddress": "0x05",
+              "scaling": 1,
+              "operateType": "coilStatus",
+              "pollingTime": 1000,
+              "trigger": 2
+            }
+          ]
+        }
+        ```
+
+        参数说明如下：
+
+        |参数|类型|说明|
+        |--|--|--|
+        |identifier|String|属性、事件和服务的描述符|
+        |operateType|String|参数类型。取值可以为        -   线圈状态：coilStatus
+        -   输入状态：inputStatus
+        -   保持寄存器：holdingRegister
+        -   输入寄存器：inputRegister
+|
+        |registerAddress|String|寄存器地址|
+        |originalDataType|Object|数据原始类型|
+        |type|String|取值。int16，uint16, int32，uint32，int64，uint64， float，double, string，customized data|
+        |specs|Object|描述信息|
+        |registerCount|Integer|寄存器的数据个数|
+        |swap16|Integer|把寄存器内16位数据的前后8个bits互换。0 false, 1 true。|
+        |reverseRegiste|Integer|把原始数据32位数据的bits互换。0 false, 1 true。|
+        |scaling|Integer|缩放因子|
+        |pollingTime|Integer|采集间隔|
+        |trigger|Integer|数据的上报方式。1 按时上报，2 变更上报。|
+
+    -   OPC UA
+
+        ```
+        {
+          "profile": {
+            "productKey": "test01"
+          },
+          "services": [
+            {
+              "outputData": "",
+              "identifier": "AngleSelfAdaption",
+              "inputData": [
+                {
+                  "identifier": "test01",
+                  "index": 0
+                }
+              ],
+              "displayName": "test01"
+            }
+          ],
+          "properties": [
+            {
+              "identifier": "identifier",
+              "displayName": "test02"
+            },
+            {
+              "identifier": "identifier_01",
+              "displayName": "identifier_01"
+            }
+          ],
+          "events": [
+            {
+              "outputData": [
+                {
+                  "identifier": "test01",
+                  "index": 0
+                }
+              ],
+              "identifier": "event1",
+              "displayName": "abc"
+            }
+          ]
+        }
+        ```
+
+        参数说明如下：
+
+        |参数|类型|说明|
+        |--|--|--|
+        |services|Object|服务|
+        |properties|Object|属性|
+        |events|Object|事件|
+        |outputData|Object|输出参数，如事件上报数据、服务调用的返回结果|
+        |identifier|String|描述信息，用于标识。|
+        |inputData|Object|输入参数，如服务的入参|
+        |index|Integer|索引信息|
+        |displayName|String|展示名称|
+
+-   serverList说明
+
+    通道的信息也分为Modbus和OPC UA协议两种。
+
+    -   Modbus协议
+
+        ```
+        [
+          {
+            "baudRate": 1200,
+            "protocol": "RTU",
+            "byteSize": 8,
+            "stopBits": 2,
+            "parity": 1,
+            "name": "modbus01",
+            "serialPort": "0",
+            "serverId": "D73251B4277742"
+          },
+          {
+            "protocol": "TCP",
+            "port": 8000,
+            "ip": "192.168.0.1",
+            "name": "modbus02",
+            "serverId": "586CB066D6A34"
+          }
+        ]
+        ```
+
+        |参数|类型|说明|
+        |--|--|--|
+        |protocol|String|协议类型，TCP或者RTU|
+        |port|Integer|端口号|
+        |ip|String|IP地址|
+        |name|String|通道名称|
+        |serverId|String|通道的ID|
+        |baudRate|Integer|波特率|
+        |byteSize|Integer|字节数|
+        |stopBits|Integer|停止位|
+        |parity|Integer|奇偶校验位。        -   E：偶校验
+        -   O：奇校验
+        -   N：无校验
+ |
+        |serialPort|String|串口号|
+
+    -   OPC UA协议
+
+        ```
+        {
+          "password": "XIJTginONohPEUAyZxLB7Q==",
+          "secPolicy": "Basic128Rsa15",
+          "name": "server_01",
+          "secMode": "Sign",
+          "userName": "123",
+          "serverId": "55A9D276A7ED470",
+          "url": "tcp:00",
+          "timeout": 10
+        }
+        ```
+
+        参数说明如下：
+
+        |参数|类型|说明|
+        |--|--|--|
+        |password|String|密码，采用AES算法加密。具体说明见下文。|
+        |secPolicy|String|加密策略，取值：None，Basic128Rsa15，Basic256|
+        |secMode|String|加密模式，取值：None，Sign，SignAndEncrypt|
+        |name|String|server名称|
+        |userName|String|用户名|
+        |serverId|String|server的ID|
+        |url|String|服务器连接地址|
+        |timeout|Integer|超时时间|
+
+        OPC UA的password加密方式
+
+        加密算法采用AES算法，使用128位（16字节）分组，缺省的mode为CBC，缺省的padding为PKCS5Padding， 秘钥使用设备的deviceSecret，加密后的内容采用BASE64进行编码。
+
+        加解密示例代码：
+
+        ```
+         private static String instance = "AES/CBC/PKCS5Padding";
+        
+            private static String algorithm = "AES";
+        
+            private static String charsetName = "utf-8";
+            /**
+             * 加密算法
+             *
+             * @param data             待加密内容
+             * @param deviceSecret     设备的秘钥
+             * @return
+             */
+            public static String aesEncrypt(String data, String deviceSecret) {
+                try {
+                    Cipher cipher = Cipher.getInstance(instance);
+                    byte[] raw = deviceSecret.getBytes();
+                    SecretKeySpec key = new SecretKeySpec(raw, algorithm);
+                    IvParameterSpec ivParameter = new IvParameterSpec(deviceSecret.substring(0, 16).getBytes());
+                    cipher.init(Cipher.ENCRYPT_MODE, key, ivParameter);
+                    byte[] encrypted = cipher.doFinal(data.getBytes(charsetName));
+        
+                    return new BASE64Encoder().encode(encrypted);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        
+                return null;
+            }
+        
+            public static String aesDecrypt(String data, String deviceSecret) {
+                try {
+                    byte[] raw = deviceSecret.getBytes(charsetName);
+                    byte[] encrypted1 = new BASE64Decoder().decodeBuffer(data);
+                    SecretKeySpec key = new SecretKeySpec(raw, algorithm);
+                    Cipher cipher = Cipher.getInstance(instance);
+                    IvParameterSpec ivParameter = new IvParameterSpec(deviceSecret.substring(0, 16).getBytes());
+                    cipher.init(Cipher.DECRYPT_MODE, key, ivParameter);
+                    byte[] originalBytes = cipher.doFinal(encrypted1);
+                    String originalString = new String(originalBytes, charsetName);
+                    return originalString;
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+        
+                return null;
+            }
+        
+            public static void main(String[] args) throws Exception {
+                String text = "test123";
+                String secret = "testTNmjyWHQzniA8wEkTNmjyWHQtest";
+                String data = null;
+                data = aesEncrypt(text, secret);
+                System.out.println(data);
+                System.out.println(aesDecrypt(data, secret));
+            }
+        ```
+
+-   deviceList说明
+    -   Modbus协议
+
+        ```
+        {
+          "deviceConfig": {
+            "slaveId": 1,
+            "serverId": "D73251B4277742D"
+          },
+          "productKey": "test02",
+          "deviceName": "test01"
+        }
+        ```
+
+        参数说明如下：
+
+        |参数|类型|取值|
+        |--|--|--|
+        |deviceConfig|Object|设备信息|
+        |slaveId|Integer|从站ID|
+        |serverId|String|通道ID|
+        |productKey|String|产品ID|
+        |deviceName|String|设备名称|
+
+    -   OPC UA协议
+
+        ```
+        {
+          "deviceConfig": {
+            "displayNamePath": "123",
+            "serverId": "44895C63E3FF4013924CEF31519ABE7B"
+          },
+          "productKey": "test01",
+          "deviceName": "test_02"
+        }
+        ```
+
+        参数说明如下：
+
+        |参数|类型|说明|
+        |--|--|--|
+        |deviceConfig|Object|设备连接信息|
+        |productKey|String|产品ID|
+        |deviceName|String|设备名称|
+        |displayNamePath|String|展示名称|
+        |serverId|String|关联的通道ID|
+
 
 ## 五、设备禁用、删除 {#section_xwd_p1h_12b .section}
 
@@ -892,7 +1731,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数， 为空即可|
 |method|String|请求方法|
@@ -932,7 +1771,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数， 为空即可|
 |method|String|请求方法|
@@ -972,7 +1811,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数， 为空即可|
 |method|String|请求方法|
@@ -1019,7 +1858,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object| 请求参数
 
@@ -1080,7 +1919,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|请求参数|
 |method|String|请求方法|
@@ -1103,7 +1942,7 @@ Alink响应数据格式
 
 ## 七、TSL模板 {#section_fr1_fbh_12b .section}
 
-设备可以通过上行请求获取设备的[描述TSL模板](../../../../intl.zh-CN/用户指南/创建产品与设备/高级版/定义物模型.md#)。
+设备可以通过上行请求获取设备的[描述TSL模板](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)。
 
 -   TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/dsltemplate/get
 -   REPLY TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/dsltemplate/get\_reply
@@ -1269,13 +2108,13 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |params|Object|为空即可|
 |method|String|请求方法|
 |productKey|String|产品的Key,，示例中取值为1234556554|
 |deviceName|String|设备名称，示例中取值为airCondition|
-|data|Object|物的TSL描述，具体参考[定义物模型](../../../../intl.zh-CN/用户指南/创建产品与设备/高级版/定义物模型.md#)|
+|data|Object|物的TSL描述，具体参考[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)|
 
 错误码
 
@@ -1309,7 +2148,7 @@ Alink请求数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|设备固件的版本信息|
 
 **推送固件信息**
@@ -1342,7 +2181,7 @@ Alink请求数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |message|String|结果信息|
 |version|String|设备固件的版本信息|
 |size|Long|固件大小，单位字节|
@@ -1375,7 +2214,7 @@ Alink请求数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |step|String| 固件升级进度信息
 
  取值范围：
@@ -1408,7 +2247,7 @@ Alink请求数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|设备固件的版本信息|
 
 ## 九、远程配置 {#section_xg4_fbh_12b .section}
@@ -1458,7 +2297,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |configScope|String|配置范围， 目前只支持产品维度配置。 取值：prodcut|
 |getType|String|获取配置类型。 目前支持文件类型，取值：file|
@@ -1517,7 +2356,7 @@ Alink响应数据格式
 
 |参数|取值|说明|
 |:-|:-|:-|
-|id|Long|消息ID号，保留值|
+|id|String|消息ID号，保留值|
 |version|String|协议版本号，目前协议版本1.0|
 |configScope|String|配置范围， 目前只支持产品维度配置。 取值：prodcut|
 |getType|String|获取配置类型，目前支持文件类型，取值：file|

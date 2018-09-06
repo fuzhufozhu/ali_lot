@@ -4,9 +4,9 @@
 
 以MQTT协议为例，固件升级流程如[图 1](#fig_xk2_bd1_ydb)所示。
 
- ![](images/6639_zh-CN.png "固件升级") 
+![](images/11336_zh-CN.png "固件升级")
 
-固件升级topic：
+固件升级Topic：
 
 -   设备端上报固件版本给云端
 
@@ -50,7 +50,7 @@
 
 1.  设备连接OTA服务，必须上报版本号。
 
-    设备端通过mqtt协议pub当前设备固件版本号到topic /ota/device/inform/$\{productKey\}/$\{deviceName\}，内容格式如下：
+    设备端通过MQTT协议pub当前设备固件版本号到Topic：`/ota/device/inform/${YourProductKey}/${YourDeviceName}`，内容格式如下：
 
     ```
     
@@ -75,7 +75,7 @@
     -   再次升级：该功能主要针对升级失败的设备进行操作，对于待升级，正在升级，升级成功的设备，是无效的，不可操作的。
 3.  触发升级操作之后，设备会收到OTA服务推送的固件的URL地址。
 
-    设备端订阅topic /ota/device/upgrade/$\{productKey\}/$\{deviceName\}，控制台对设备发起固件升级请求后，设备端会通过该topic收到固件的URL，格式如下：
+    设备端订阅Topic： `/ota/device/upgrade/${YourProductKey}/${YourDeviceName}`，控制台对设备发起固件升级请求后，设备端会通过该Topic收到固件的URL，格式如下：
 
     ```
     
@@ -100,7 +100,7 @@
 
     **说明：** URL是有时效限制的，目前限制时间是30分钟，超过这个时间后，会拒绝访问。
 
-    下载固件过程中，设备端必须pub升级进度到topic /ota/device/progress/$\{productKey\}/$\{deviceName\}，内容格式如下：
+    下载固件过程中，设备端必须pub升级进度到Topic： `/ota/device/progress/${YourProductKey}/${YourDeviceName}`，内容格式如下：
 
     ```
     
@@ -115,25 +115,25 @@
 
     -   id：消息ID号，保留值。
     -   step：\[1, 100\] 下载进度比。
-        -   "-1" ：代表升级失败
-        -   "-2" ：代表下载失败
-        -   "-3" ：代表校验失败
-        -   "-4" ：代表烧写失败
+        -   -1：代表升级失败
+        -   -2：代表下载失败
+        -   -3：代表校验失败
+        -   -4：代表烧写失败
     -   desc: 当前步骤的描述信息，如果发生异常可以用此字段承载错误信息。
-5.  设备端完成固件升级后，需要pub最新的固件版本到topic`/ota/device/inform/${productKey}/${deviceName}`，如果上报的版本与OTA服务要求的版本一致就认为升级成功，反之失败。
+5.  设备端完成固件升级后，需要pub最新的固件版本到Topic：`/ota/device/inform/${YourProductKey}/${YourDeviceName}`，如果上报的版本与OTA服务要求的版本一致就认为升级成功，反之失败。
 
     **说明：** 升级成功的唯一判断标志是设备上报正确的版本号。即使升级进度上报为100%，如果不上报新固件版本号，也视为升级失败。
 
 
 **常见下载固件错误**
 
--   签名错误，如果设备端获取的固件的url不全或者手动修改了url内容，就会出现如下错误：
+-   签名错误，如果设备端获取的固件的URL不全或者手动修改了URL内容，就会出现如下错误：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15347460023964_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15362009023964_zh-CN.png)
 
 -   访问拒绝，URL过期导致，目前过期时间为30分钟。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15347460023967_zh-CN.PNG)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15362009023967_zh-CN.PNG)
 
 
 ## OTA代码说明 {#section_ifq_q5s_zdb .section}

@@ -6,7 +6,7 @@
 
 JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应列值，这样就可以使用SQL处理。为便于理解，我们将规则引擎的一条规则抽象为一条SQL表达（类试MySQL语法）：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15348344213123_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15363172223123_zh-CN.png)
 
 ```
 
@@ -26,7 +26,7 @@ JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应�
 FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当有符合Topic规则的消息到达时，消息的payload数据以JSON格式解析，并根据SQL语句进行处理（如果消息格式不合法，将忽略此消息）。您可以使用`topic()`函数引用具体的Topic值。
 
 ```
-上文例子中，"FROM /ProductA/+/update"语句表示该SQL仅处理符合/ProductA/+/update格式的消息，具体匹配参考 [Topic](intl.zh-CN/用户指南/创建产品与设备/Topic/Topic列表.md#)。
+上文例子中，"FROM /ProductA/+/update"语句表示该SQL仅处理符合/ProductA/+/update格式的消息，具体匹配参考 [Topic](intl.zh-CN/用户指南/产品与设备/Topic/Topic列表.md#)。
 
 ```
 
@@ -46,9 +46,10 @@ FROM 需要填写Topic通配符，用于匹配需要处理的消息Topic。当�
     ```
 
 -   二进制数据格式
+    -   可填`*`直接透传数据。
+    -   可使用`to_base64(*)`函数，将原始Payload二进制数据转成base64String，提取出来。同时支持使用内置的函数和条件，如`deviceName()`，提取所需信息。
 
-    目前二进制数据不支持解析payload中的字段，SELECT语句固定为`SELECT *`，表示透传二进制数据。
-
+**说明：** SELECT语句中的字段最多支持50个。
 
 ## WHERE {#section_mnk_j1x_wdb .section}
 

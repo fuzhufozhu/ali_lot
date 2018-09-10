@@ -16,7 +16,7 @@
 -   使用[一机一密](../../../../intl.zh-CN/设备端开发指南/设备安全认证/一机一密.md#)提前烧录三元组，子设备上报三元组给网关，网关添加拓扑关系，复用网关的通道上报数据。
 -   使用动态注册方式提前烧录ProductKey，子设备上报ProductKey和DeviceName给网关，云端校验DeviceName成功后，下发DeviceSecret。子设备将获得的三元组信息上报网关，网关添加拓扑关系，通过网关的通道上报数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/15362133955802_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/15365492575802_zh-CN.png)
 
 ## 一、设备身份注册 {#section_gm3_svg_12b .section}
 
@@ -576,6 +576,10 @@ Alink响应数据格式
 -   TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/event/property/post
 -   REPLY TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/event/property/post\_reply
 
+此时，您可以配置规则引擎，将设备上报的属性信息转发至其他目的云产品。规则引擎设置示例如下：
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/153654925711508_zh-CN.png)
+
 Alink请求数据格式
 
 ```
@@ -677,68 +681,6 @@ Alink响应数据格式
 |temperature|String|属性名称|
 |code|Integer|结果信息， 具体参考设备端通用code|
 
-**设备属性获取**
-
-**说明：** 
-
--   参数按照TSL中出入参定义。
--   目前物的属性统一从云端获取，而非实时从设备获取。
-
-下行（透传）
-
--   TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/model/down\_raw
--   REPLY TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/model/down\_raw\_reply
-
-设备收到获取设备属性指令之后，通过reply消息向云端返回获取的属性信息。可以通过数据流转获取返回的属性信息， 数据流转Topic为`{productKey}/{deviceName}/thing/downlink/reply/message`。
-
-payload: 0x001FFEE23333
-
-下行（非透传）
-
--   TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/service/property/get
--   REPLY TOPIC：/sys/\{productKey\}/\{deviceName\}/thing/service/property/get\_reply
-
-设备收到下行获取设备属性指令之后，通过reply消息向云端返回获取的属性信息。云端可以通过数据流转获取返回的属性信息，数据流转Topic为`/{productKey}/{deviceName}/thing/downlink/reply/message`。
-
-Alink请求数据格式
-
-```
-{
-  "id": "123",
-  "version": "1.0",
-  "params": [
-    "power",
-    "temp"
-  ],
-  "method": "thing.service.property.get"
-}
-```
-
-Alink响应数据格式
-
-```
-{
-  "id": "123",
-  "code": 200,
-  "data": {
-    "power": "on",
-    "temp": "23"
-  }
-}
-```
-
-参数说明
-
-|参数|取值|说明|
-|:-|:-|:-|
-|id|String|消息ID号，保留值|
-|version|String|协议版本号，目前协议版本1.0|
-|params|List|需要获取的属性名称列表|
-|method|String|请求方法|
-|power|String|属性名称|
-|temp|String|属性名称|
-|code|Integer|结果信息|
-
 **设备事件上报**
 
 上行（透传）
@@ -750,6 +692,10 @@ Alink响应数据格式
 
 -   TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/event/\{tsl.event.identifier\}/post
 -   REPLY TOPIC: /sys/\{productKey\}/\{deviceName\}/thing/event/\{tsl.event.identifier\}/post\_reply
+
+此时，您可以配置规则引擎，将设备上报的事件信息转发至其他目的云产品。规则引擎设置示例如下：
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/153654925811616_zh-CN.png)
 
 Alink请求数据格式
 
@@ -806,7 +752,7 @@ Alink响应数据格式
 
 如果设备服务调用方式选择同步方式（物联网平台控制台中提前配置，产品服务定义中选择），云端直接使用RRPC同步方式下行推送，设备RRPC的集成方式，详见[文档介绍](../../../../intl.zh-CN/最佳实践/远程控制设备并返回结果.md#)；
 
-如果设备端服务调用方式选择异步方式（物联网平台控制台中提前配置，产品服务定义中选择），云端则采用异步方式下行推送，设备也采用异步方式返回。只有当前服务选择了异步方式，云端才会订阅该异步reply Topic：/sys/\{productKey\}/\{deviceName\}/thing/model/down\_raw\_reply。 异步调用的结果，可以通过数据流转获取，数据流转Topic为`/{productKey}/{deviceName}/thing/downlink/reply/message`。
+如果设备端服务调用方式选择异步方式（物联网平台控制台中提前配置，产品服务定义中选择），云端则采用异步方式下行推送，设备也采用异步方式返回。只有当前服务选择了异步方式，云端才会订阅该异步reply Topic：/sys/\{productKey\}/\{deviceName\}/thing/model/down\_raw\_reply。 异步调用的结果，可以通过数据流转获取，数据流转Topic为`/sys/{productKey}/{deviceName}/thing/downlink/reply/message`。
 
 非透传（下行）
 
@@ -815,7 +761,9 @@ Alink响应数据格式
 
 如果设备服务调用方式选择同步方式（物联网平台控制台产品管理，产品服务定义中选择），云端直接使用RRPC同步方式下行推送，设备RRPC的集成方式，详见[文档介绍](../../../../intl.zh-CN/最佳实践/远程控制设备并返回结果.md#)；
 
-如果设备端服务调用方式选择异步方式（物联网平台控制台产品管理，产品服务定义中选择），云端则采用异步方式下行推送，设备也采用异步方式返回，。只有当前服务选择了异步方式，云端才会订阅该异步reply topic：/sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identifier\}\_reply。 异步调用的结果，可以通过数据流转获取， 数据流转topic为`/{productKey}/{deviceName}/thing/downlink/reply/message`。
+如果设备端服务调用方式选择异步方式（物联网平台控制台产品管理，产品服务定义中选择），云端则采用异步方式下行推送，设备也采用异步方式返回，。只有当前服务选择了异步方式，云端才会订阅该异步reply topic：/sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identifier\}\_reply。 异步调用的结果，可以通过数据流转获取， 数据流转topic为`/sys/{productKey}/{deviceName}/thing/downlink/reply/message`。
+
+此时，您可以配置规则引擎，将服务调用时设备返回的结果转发至其它目的云产品。规则引擎设置示例如下：![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7638/153654925811505_zh-CN.png)
 
 Alink请求数据格式
 
@@ -853,6 +801,96 @@ Alink响应数据格式
 |Power|String|事件参数名称|
 |WF|String|事件参数名称|
 |code|Integer|结果信息，具体参考设备端通用code|
+
+data参数说明
+
+data参数的取值和物模型定义相关。如果服务没有返回结果，则data的值为空。如果服务有返回结果，则返回的数据需严格遵循服务的定义。
+
+比如产品中定义了服务SetWeight,它的TSL描述如下：
+
+```
+{
+  "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+  "profile": {
+    "productKey": "testProduct01"
+  },
+  "services": [
+    {
+      "outputData": [
+        {
+          "identifier": "OldWeight",
+          "dataType": {
+            "specs": {
+              "unit": "kg",
+              "min": "0",
+              "max": "200",
+              "step": "1"
+            },
+            "type": "double"
+          },
+          "name": "OldWeight"
+        },
+        {
+          "identifier": "CollectTime",
+          "dataType": {
+            "specs": {
+              "length": "2048"
+            },
+            "type": "text"
+          },
+          "name": "CollectTime"
+        }
+      ],
+      "identifier": "SetWeight",
+      "inputData": [
+        {
+          "identifier": "NewWeight",
+          "dataType": {
+            "specs": {
+              "unit": "kg",
+              "min": "0",
+              "max": "200",
+              "step": "1"
+            },
+            "type": "double"
+          },
+          "name": "NewWeight"
+        }
+      ],
+      "method": "thing.service.SetWeight",
+      "name": "设置重量",
+      "required": false,
+      "callType": "async"
+    }
+  ]
+}
+```
+
+当调用服务时，Alink请求数据格式
+
+```
+{
+  "method": "thing.service.SetWeight",
+  "id": "105917531",
+  "params": {
+    "NewWeight": 100.8
+  },
+  "version": "1.0.0"
+}
+```
+
+Alink响应数据格式
+
+```
+{
+  "id": "105917531",
+  "code": 200,
+  "data": {
+    "CollectTime": "1536228947682",
+    "OldWeight": 100.101
+  }
+}
+```
 
 **说明：** tsl.service.identifier 为tsl模板中定义的服务描述符。TSL使用参考[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/高级版/什么是物模型.md#)。
 

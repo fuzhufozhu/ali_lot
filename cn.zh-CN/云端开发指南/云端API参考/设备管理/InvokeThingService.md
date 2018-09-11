@@ -12,7 +12,7 @@
  **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，和ProductKey与DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 要查询的设备所隶属的产品Key。
+|ProductKey|String|否| 要查询的设备所隶属的产品ID。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
@@ -23,12 +23,13 @@
 
  |
 |Identifier|String|是|要查询的事件标识符。高级版设备的事件Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。|
-|Args|Map|是|要启用服务的入参信息，详情参见[Args](#table_gzl_z1t_xdb)。|
+|Args|Map|是|要启用服务的入参信息，如， Args=\{"param1":1\}。详情参见下表[Args](intl.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingService.md#table_gzl_z1t_xdb)。|
+|公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 |名称|类型|描述|
 |:-|:-|:-|
-|key|String|指定参数标识符。|
-|value|Object|设置参数值。|
+|key|String|输入参数的标识符。您在创建该服务时，设置的输入参数的标识符。|
+|value|Object|指定参数值。该值须在您设置的输入参数的取值范围内 。|
 
 ## 返回参数 {#section_vq2_2bt_xdb .section}
 
@@ -54,7 +55,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=InvokeThingService
 &ProductKey=al*********
 &DeviceName=device1
 &Identifier=service
-&Args=%7B%22service%22%3A1%7D
+&Args=%7B%22param1%22%3A1%7D
 &公共请求参数
 ```
 

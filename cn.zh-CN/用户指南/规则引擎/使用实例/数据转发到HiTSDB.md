@@ -17,7 +17,7 @@
 
 1.  单击**数据转发**一栏的**添加操作**，出现添加操作页面。选择**存储到高性能时间序列数据库\(HiTSDB\)中**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366635233031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366639103031_zh-CN.png)
 
 2.  按照界面提示，设置参数。
     -   选择操作：此处选择高性能时间序列数据库\(HiTSDB\)
@@ -39,7 +39,7 @@
 SELECT time,city,power,distance, FROM "/myproduct/myDevice/update"`；
 ```
 
-配置的规则如[操作步骤](cn.zh-CN/用户指南/规则引擎/使用实例/数据转发到HiTSDB.md#section_frh_gnj_wdb)所示。
+配置的规则如[操作步骤](cn.zh-CN/用户指南/规则引擎/使用实例/数据转发到HiTSDB.md#ol_wg3_4nj_wdb)所示。
 
 发送的消息：
 
@@ -80,6 +80,6 @@ tag:device=myDevice,product=bikes,cityName=beijing
 
     HiTSDB控制台白名单示例如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366635233032_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366639103032_zh-CN.png)
 
 

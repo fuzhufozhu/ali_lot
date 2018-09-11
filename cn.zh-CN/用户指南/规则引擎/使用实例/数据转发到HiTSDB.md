@@ -11,23 +11,23 @@
 
 ## 准备工作 { .section}
 
-在设置转发之前，您需要参考[设置规则引擎](intl.zh-CN/用户指南/规则引擎/设置规则引擎.md#)编写SQL完成对数据的处理。
+在设置转发之前，您需要参考[设置规则引擎](cn.zh-CN/用户指南/规则引擎/设置规则引擎.md#)编写SQL完成对数据的处理。
 
 ## 操作步骤 {#section_frh_gnj_wdb .section}
 
 1.  单击**数据转发**一栏的**添加操作**，出现添加操作页面。选择**存储到高性能时间序列数据库\(HiTSDB\)中**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15349065133031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366635233031_zh-CN.png)
 
 2.  按照界面提示，设置参数。
     -   选择操作：此处选择高性能时间序列数据库\(HiTSDB\)
     -   地域、实例：选择处理后的数据将要存入哪个数据库实例中。
     -   timestamp：此处的值必须为Unix时间戳，如1404955893000。有如下两种配置方式：
-        -   使用转义符`${}`表达式，例如`${time}`。此时timestamp的值为Topic中time字段对应的值。建议使用此方式。
+        -   使用转义符`${}`表达式，例如`${time}`。此时timestamp的值为指定Topic对应数据包中time字段对应的值。建议使用此方式。
         -   使用规则引擎函数`timestamp()`，此时timestamp的值为规则引擎服务器的时间戳。
     -   tag：必须使用常量配置，值有三种配置方式：
-        -   使用转义符`${}`表达式，例如`${city}`，此时值为Topic中city字段对应的值。建议使用此方式。
-        -   使用规则引擎函数规定的一些函数，例如`deviceName()`，此时值为DeviceName。
+        -   使用转义符`${}`表达式，例如`${city}`，此时值为指定Topic对应数据包中city字段对应的值。建议使用此方式。
+        -   使用规则引擎函数规定的一些函数，例如`deviceName()`，此时值为设备名称。
         -   使用常量配置，例如beijing，此时值为beijing。
     -   授权：勾选同意物联网平台向HiTSDB写数据。此时，规则引擎会向时间序列数据库实例中添加网络白名单，用于IoT访问您的数据库， 请勿删除这些IP段。
 
@@ -39,7 +39,7 @@
 SELECT time,city,power,distance, FROM "/myproduct/myDevice/update"`；
 ```
 
-配置的规则如[操作步骤](#section_frh_gnj_wdb)所示。
+配置的规则如[操作步骤](cn.zh-CN/用户指南/规则引擎/使用实例/数据转发到HiTSDB.md#section_frh_gnj_wdb)所示。
 
 发送的消息：
 
@@ -80,6 +80,6 @@ tag:device=myDevice,product=bikes,cityName=beijing
 
     HiTSDB控制台白名单示例如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15349065133032_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15366635233032_zh-CN.png)
 
 

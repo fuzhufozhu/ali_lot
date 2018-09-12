@@ -1,6 +1,6 @@
 # 下载设备端SDK {#concept_jlk_mjl_vdb .concept}
 
-物联网平台提供各类设备端SDK，简化开发过程，使设备快速上云。
+物联网平台提供各类设备端SDK，简化开发过程，使设备快速上云。若您不使用SDK，请参考[Alink协议](intl.zh-CN/设备端开发指南/基于Alink协议开发.md#)文档自行开发。
 
 ## 前提条件 {#section_j13_sxr_52b .section}
 
@@ -10,24 +10,22 @@
 
 您可以根据实际环境的协议、功能需求，选择合适的设备端SDK进行开发。推荐使用实现了更多逻辑的C SDK。
 
-**说明：** 如果提供的SDK不能满足您的需求，您也可以使用开源客户端或者参考设备协议，自行开发。
+**说明：** 如果提供的SDK不能满足您的需求，您也可以基于[Alink协议](intl.zh-CN/设备端开发指南/基于Alink协议开发.md#)自行开发。
 
-| |C SDK|Java SDK|Android SDK|iOS SDK|HTTP/2 SDK|开源客户端|泛化协议|
-|--|-----|--------|-----------|-------|----------|-----|----|
-|MQTT|√|√|√|√| |√| |
-|CoAP|√| | | | | | |
-|HTTP/HTTPS|√| | | | | | |
-|HTTP/2| | | | |√| | |
-|其他协议| | | | | | |√|
-|设备认证：一机一密|√|√|√|√|√|√|√|
-|设备认证：一型一密|√| | | | | | |
-|连接物联网平台|√|√|√|√|√|√|√|
-|设备通信|√|√|√|√|√|√|√|
-|OTA开发|√| | | | | | |
-|子设备接入|√| | | | | | |
-|设备影子|√|√| | | | | |
-|基于物模型的设备开发|√| | | | | | |
-|远程配置|√| | | | | | |
+| |C SDK|Java SDK|Android SDK|iOS SDK|HTTP/2 SDK|泛化协议|
+|--|-----|--------|-----------|-------|----------|----|
+|MQTT|√|√|√|√| | |
+|CoAP|√| | | | | |
+|HTTP/HTTPS|√| | | | | |
+|HTTP/2| | | | |√| |
+|其他协议| | | | | |√|
+|设备认证：一机一密|√|√|√|√|√|√|
+|设备认证：一型一密|√| |√| | | |
+|OTA开发|√| | | | | |
+|子设备接入|√| | | | | |
+|设备影子|√|√|√| | | |
+|基于物模型的设备开发|√| |√| | | |
+|远程配置|√| | | | | |
 
 ## 适配平台 {#section_rs1_m1s_52b .section}
 
@@ -39,24 +37,20 @@
 
 -   C SDK
 
-    下载地址：[https://github.com/aliyun/iotkit-embedded](https://github.com/aliyun/iotkit-embedded)
-
-    使用说明：请参考设备开发指南中的文档，使用C SDK。
+    使用说明：[SDK开发指南](https://code.aliyun.com/edward.yangx/public-docs/wikis/user-guide/Linkkit_User_Manual)
 
     |版本号|发布日期|开发环境|下载链接|更新内容|
     |---|----|----|----|----|
-    |V2.10|2018/03/31|64位Linux, GNU Make|[RELEASED\_V2\_10\_20180331.zip](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/iot-sdk-c/RELEASED_V2_10_20180331.7z)|     -   支持cmake: 支持cmake编译方式，可以直接在linux和windows下使用QT或者VS2017打开工程进行编译运行。
+    |V2.2.1|2018/09/03|64位Linux, GNU Make|[RELEASED\_V2.2.1](https://linkkit-sdk-download.oss-cn-shanghai.aliyuncs.com/linkkit2.2.1.tar.gz)|     -   WiFi配网、设备本地控制开源
+    -   支持离线倒计时例程
+    -   OTA支持使用iTls下载固件
+ |
+    |V2.1.0|2018/03/31|64位Linux, GNU Make|[RELEASED\_V2\_10\_20180331.zip](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/iot-sdk-c/RELEASED_V2_10_20180331.7z)|     -   支持cmake: 支持cmake编译方式，可以直接在linux和windows下使用QT或者VS2017打开工程进行编译运行。
     -   支持云端对物模型的抽象 : 设置`FEATURE_CMP_ENABLED = y`和`FEATURE_DM_ENABLED = y`, 可以支持物模型抽象，提供属性，服务和事件的接口。
     -   支持一型一密: 设置`FEATURE_SUPPORT_PRODUCT_SECRET = y`可以支持一型一密功能，优化产线流程。
     -   支持iTLS功能: 设置`FEATURE_MQTT_DIRECT_NOTLS = y`和`FEATURE_MQTT_DIRECT_NOITLS = n`可以支持ID2加密方式，使用iTLS进行数据建连，增加安全性，降低内存消耗。
     -   支持远程配置: 设置`FEATURE_SERVICE_OTA_ENABLED = y`和`FEATURE_SERVICE_COTA_ENABLED = y`，可以支持云端推送配置信息到设备。
     -   优化主子设备功能：主子设备添加部分功能。
- |
-    |V2.03|2018/01/31|64位Linux, GNU Make|[RELEASED\_V2\_03\_20180131.zip](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/iot-sdk-c/RELEASED_V2_03_20180130.7z?spm=a2c4g.11186623.2.12.VMVBFk&file=RELEASED_V2_03_20180130.7z)|     -   支持主子设备功能: 设置`FEATURE_SUBDEVICE_ENABLED = y`，可以支持子设备通过主设备\(网关设备\)进行数据交互。
-    -   升级HTTP通道: 优化HTTP流程。
-    -   优化TLS: 修复内存泄漏问题。
-    -   优化OTA的配置: 可以更合理的开关OTA功能。
-    -   升级MQTT通道: 支持topic更长，更多的订阅请求，MQTT支持多线程。
  |
 
 -   Java SDK
@@ -68,8 +62,6 @@
     使用说明：[JAVA-SDK \(MQTT\)](intl.zh-CN/设备端开发指南/SDK使用参考/JAVA-SDK (MQTT).md#)。
 
 -   Android SDK
-
-    下载地址：[https://github.com/eclipse/paho.mqtt.android](https://github.com/eclipse/paho.mqtt.android?spm=a2c4g.11186623.2.21.VMVBFk&file=paho.mqtt.android)
 
     使用说明：[Android-SDK](intl.zh-CN/设备端开发指南/SDK使用参考/Android-SDK.md#)
 

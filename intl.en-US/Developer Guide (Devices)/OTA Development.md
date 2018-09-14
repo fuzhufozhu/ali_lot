@@ -26,12 +26,6 @@ Topics for firmware update
     /ota/device/progress/${productKey}/${deviceName}
     ```
 
--   The device publishes a message to this topic to send an update request to IoT Platform.
-
-    ```
-    /ota/device/request/${productKey}/${deviceName}
-    ```
-
 
 **Note:** 
 

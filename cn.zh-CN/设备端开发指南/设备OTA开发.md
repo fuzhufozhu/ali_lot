@@ -26,12 +26,6 @@
     /ota/device/progress/${YourProductKey}/${YourDeviceName}
     ```
 
--   设备端请求是否固件升级
-
-    ```
-    /ota/device/request/${YourProductKey}/${YourDeviceName}
-    ```
-
 
 **说明：** 
 
@@ -129,11 +123,11 @@
 
 -   签名错误，如果设备端获取的固件的URL不全或者手动修改了URL内容，就会出现如下错误：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15362009023964_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15368905393964_zh-CN.png)
 
 -   访问拒绝，URL过期导致，目前过期时间为30分钟。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15362009023967_zh-CN.PNG)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15368905403967_zh-CN.PNG)
 
 
 ## OTA代码说明 {#section_ifq_q5s_zdb .section}

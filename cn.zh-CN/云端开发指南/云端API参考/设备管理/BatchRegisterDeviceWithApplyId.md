@@ -19,6 +19,7 @@
 |Action|String|是|要执行的操作，取值：BatchRegisterDeviceWithApplyId。|
 |ProductKey|String|是|要批量注册的设备所隶属的产品Key。|
 |ApplyId|Long|是|要批量注册的设备的申请批次ID。申请批次ID由调用BatchCheckDeviceNames接口返回。|
+|公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_iv1_ydn_xdb .section}
 

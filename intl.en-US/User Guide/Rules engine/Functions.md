@@ -1,23 +1,23 @@
 # Functions {#concept_mdn_mss_vdb .concept}
 
-The rules engine has provided a variety of functions for you to handle data when you write a SQL script.
+The rules engine provides functions that allow you to handle data when writing a SQL script.
 
 ## Call functions {#section_mml_cbt_vdb .section}
 
-When writing a SQL script, you can call functions to get or handle data.
+You can call functions to get or handle data.
 
-For example, the following code uses the deviceName\(\), abs\(number\), and topic\(number\) functions.
+For example, the following code uses the functions: deviceName\(\), abs\(number\), and topic\(number\).
 
 ```
-SELECT case flag when 1 then 'Lights On' when 2 then 'Lights Off' else '' end flag，deviceName(),abs(temperature) tmr FROM "/topic/#" WHERE temperature>10 and topic(2)='123'
+SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag，deviceName(),abs(temperature) tmr FROM "/topic/#" WHERE temperature>10 and topic(2)='123'
 ```
 
-**Note:** Exercise caution when you call functions. Constants are quoted with apostrophes \('\). Variables are not quoted or quoted with quotation marks \("\). For example, in `select “a” a1, ‘a’ a2, a a3`, both `a1` and `a3` represent a variable. `a2` represents constant `a`.
+**Note:** Exercise caution when you call functions. Constants are enclosed with apostrophes \('\). Variables are not enclosed or are enclosed with quotation marks \("\). For example, in `select “a” a1, ‘a’ a2, a a3`, `a1` and `a3`represent a variable, and `a2` represents constant `a`.
 
 |**Function**|**Description**|
 |abs\(number\)|Returns the absolute value of a number.|
 |asin\(number\)|Returns the asin of a number.|
-|attribute\(key\)|Returns the property value of the device that the key corresponds to. If the device is a dependent device and you use SQL to call this function, the returned result is empty.|
+|attribute\(key\)|Returns the device tag that corresponds with the key. If the device is a dependent device and you use SQL to call this function, the returned result is empty.|
 |concat\(string1, string2\)| Concatenates two strings.
 
  Example: concat\(field,’a’\).
@@ -33,13 +33,13 @@ SELECT case flag when 1 then 'Lights On' when 2 then 'Lights Off' else '' end fl
 |deviceName\(\)|Returns the name of the current device. If the device is a dependent device and you use SQL to call this function, the returned result is empty.|
 |endswith\(input, suffix\)|Validates whether the input string ends with the suffix string.|
 |exp\(number\)|Returns a specific value raised to the power of a number.|
-|floor\(number\)|Rounds a number down, toward zero, to the nearest multiple of significance.|
+|floor\(number\)|Rounds a number down, toward zero, to the nearest multiple of significance. Returns an integer that is equal|
 |log\(n, m\)| Returns the logarithm of a number to the base that you have specified.
 
  If you do not specify m, log\(n\) is returned.
 
  |
-|lower\(string\)|Returns a low-case string.|
+|lower\(string\)|Returns a lower-case string.|
 |mod\(n, m\)|Returns the remainder after a number has been divided by a divisor.|
 |nanvl\(value, default\)| Returns the value of a property.
 
@@ -65,7 +65,7 @@ SELECT case flag when 1 then 'Lights On' when 2 then 'Lights Off' else '' end fl
 |tanh\(n\)|Returns the hyperbolic tangent of n.|
 |timestamp\(format\)| Returns the current system time.
 
- The format parameter is optional. If you do not set this parameter, the function returns the current system timestamp in milliseconds. Example:  timestamp\(\) = 1232323233，timestamp\(‘yyyy-MM-dd HH:mm:ss.SSS’\)=2016-05-30 12:00:00.000.
+ The format parameter is optional. If you do not set this parameter, the function returns the current system timestamp in milliseconds. Example: timestamp\(\) = 1232323233, timestamp\(‘yyyy-MM-dd HH:mm:ss.SSS’\)=2016-05-30 12:00:00.000.
 
  |
 |topic\(number\)| Returns a segment of a topic.
@@ -74,4 +74,5 @@ SELECT case flag when 1 then 'Lights On' when 2 then 'Lights Off' else '' end fl
 
  |
 |upper\(string\)|Returns an upper-case string.|
+|to\_base64\(\*\)|If the original payload data is binary data, you can call this function to convert the binary data to a base64 string.|
 

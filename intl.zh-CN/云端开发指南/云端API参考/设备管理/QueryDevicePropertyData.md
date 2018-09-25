@@ -12,7 +12,7 @@
  **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 指定要查询的设备隶属的产品Key。
+|ProductKey|String|否| 指定要查询的设备隶属的产品ID。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
@@ -37,6 +37,7 @@
  1：正序。
 
  |
+|公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_pyc_l5s_xdb .section}
 

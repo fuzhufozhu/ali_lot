@@ -4,8 +4,8 @@ This article introduce how to define features in the IoT Platform console.
 
 1.  Log on to the [IoT Platform console](http://iot.console.aliyun.com/). 
 2.  In the left-side navigation pane, click Products, find the Pro Edition product for which you want to add features, and then click **View** next to it. 
-3.  Click **Define Feature** \> **Add**. ![](images/10854_en-US.png) 
-4.   In the Add Feature dialog box, select **Properties** as the feature type. ![](images/10855_en-US.png) The parameters of properties are listed in the following table.
+3.  Click **Define Feature** \> **Add**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/153793219610854_en-US.png) 
+4.   In the Add Feature dialog box, select **Properties** as the feature type. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/153793219710855_en-US.png) The parameters of properties are listed in the following table.
 
     |Parameter|Description|
     |---------|-----------|
@@ -47,7 +47,7 @@ This article introduce how to define features in the IoT Platform console.
 
 |Node Name: Each node name must be unique under the property|
 
-5.   In the Add Feature dialog box, select the feature type as **Services**. ![](images/10856_en-US.png) The parameters of a service are as follows.
+5.   In the Add Feature dialog box, select the feature type as **Services**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/153793219710856_en-US.png) The parameters of a service are as follows.
 
     |Parameter|Description |
     |---------|------------|
@@ -81,7 +81,7 @@ If the gateway connection protocol is OPC UA, you must set the parameter index t
 
 |Node Name: Each node name must be unique under the service.|
 
-6.   In the Add Feature dialog box, select the feature type as **Events**. ![](images/10857_en-US.png) The parameters of an event are as follows.
+6.   In the Add Feature dialog box, select the feature type as **Events**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/153793219710857_en-US.png) The parameters of an event are as follows.
 
     |Parameter|Description |
     |---------|------------|

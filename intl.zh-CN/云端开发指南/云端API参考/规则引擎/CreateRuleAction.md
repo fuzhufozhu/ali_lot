@@ -17,7 +17,7 @@
 ## 请求参数 {#section_fjp_hfz_xdb .section}
 
 |名称|类型|是否必需|描述|
-|--|--|----|--|
+|:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：CreateRuleAction。|
 |RuleId|Long|是|要为其创建动作的规则ID。|
 |Type|String|是| 规则动作类型，取值：
@@ -32,6 +32,7 @@
 
  |
 |Configuration|String|是|该规则动作的配置信息。不同规则动作类型所需内容不同，具体要求见下文描述。|
+|公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## REPUBLISH类型Configuration定义 {#section_ev2_m5z_xdb .section}
 
@@ -45,7 +46,7 @@
 -   `/sys/${YourProductKey}/${YourDeviceName}/thing/service/${tsl.service.identifier}`，变量$\{tsl.service.identifier\}的内容由该产品物模型中的服务决定。
 
  |
-|topicType|Topic的类型。-   0表示高级版产品下行Topic。
+|topicType|Topic的类型。-   0表示高级版产品下行系统Topic。
 -   1表示用户自定义Topic。
 
 |
@@ -222,6 +223,8 @@ FC类型Configuration示例
 ## 示例 {#section_ncq_dk1_ydb .section}
 
 **请求示例**
+
+**说明：** 为方便您查看和理解请求参数值的格式，以下请求参数值没有经过编码处理。在实际调用中，参数值中的符号需编码处理。
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=CreateRuleAction

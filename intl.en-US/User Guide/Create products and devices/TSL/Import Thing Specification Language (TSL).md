@@ -10,7 +10,7 @@ This article introduces how to import TSL for a product.
 
     -   After you have imported a new TSL for the product, any previously defined features of the product will be overwritten. Exercise caution when using this function.
     -   You cannot import a TSL for a product whose gateway connection protocol is defined as Modbus.
-     ![](images/10884_en-US.png) 
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17785/153793251410884_en-US.png) 
 
     -   Copy the TSL of another product
         1.  On the Copy Product page, select an existing product and click **OK** to import the TSL.

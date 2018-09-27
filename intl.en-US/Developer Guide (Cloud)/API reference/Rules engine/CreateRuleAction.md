@@ -223,6 +223,8 @@ Configuration example of the FC type
 
 **Request example**
 
+**Note:** For your easy understanding of the format of the parameter values, in the following example, the special characters in parameter values are not encoded. However, when you call the API in practice, the special characters must be encoded.
+
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=CreateRuleAction
 &RuleId=1000

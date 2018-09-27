@@ -11,6 +11,9 @@
 |DeviceName|String|是|要接收消息的设备名称。|
 |RequestBase64Byte|String|是|要发送的请求消息内容经过Base64编码得到的字符串格式数据。|
 |Timeout|Integer|是|等待设备回复消息的时间，单位是毫秒，取值范围是1,000 ~5,000。|
+|Topic|String|否|使用自定义的RRPC相关Topic。需要设备端配合使用，请参见设备端开发[自定义Topic](../../../../intl.zh-CN/设备端开发指南/不使用SDK开发/RRPC/自定义Topic.md#)。不传入此参数，则使用系统默认的RRPC Topic。
+
+|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_wbr_qhb_ydb .section}

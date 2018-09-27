@@ -43,6 +43,8 @@ You can call this operation to modify the specified rule action.
 
 **Request example**
 
+**Note:** For your easy understanding of the format of the parameter values, in the following example, the special characters in parameter values are not encoded. However, when you call the API in practice, the special characters must be encoded.
+
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=UpdateRuleAction
 &ActionId=10003

@@ -30,13 +30,7 @@ You can call this operation to retrieve all rule actions of a specified rule.
 
  MNS: Send to Message Service.
 
- ONS: Send to Message Queue.
-
- HiTSDB: Save to High-Performance Time Series Database.
-
  FC: Send to Function Compute.
-
- DATAHUB: Send to DataHub.
 
  RDS: Save to cloud databases.
 

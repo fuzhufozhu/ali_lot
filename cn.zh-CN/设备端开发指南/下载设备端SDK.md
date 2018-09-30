@@ -63,7 +63,7 @@
 
 -   Android SDK
 
-    使用说明：[Android-SDK](cn.zh-CN/设备端开发指南/Android-SDK.md#)
+    使用说明：[Android-SDK](cn.zh-CN/设备端开发指南/Android-SDK/工程配置.md#)
 
 -   iOS SDK
 

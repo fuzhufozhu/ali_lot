@@ -12,7 +12,6 @@ The following section details each JSON field.
     "link":"System-level URI in the cloud, used to invoke services and subscribe to events",
     "profile":{
         "productKey":" Product ID",
-        "deviceName":"Device name"
     },
     "properties":[
         {
@@ -21,7 +20,7 @@ The following section details each JSON field.
             "accessMode":"Read/write type of properties, including Read-Only and Read/Write",
             "required":"Determines whether a property that is required in the standard category is also required for a standard feature",
             "dataType":{
-                "type":"Property type: int (original), float (original), double (original), text (original), date (UTC string in milliseconds), bool (integer, 0 or 1), enum (integer), struct (supports int, float, double, text, date, and bool), array (supports int, double, float, and text)",
+                "type":"Data type: int (original), float (original), double (original), text (original), date (UTC string in milliseconds), bool (integer, 0 or 1), enum (integer), struct (supports int, float, double, text, date, and bool), array (supports int, double, float, and text)",
                 "specs":{
                     "min":"Minimum value, available only for the int, float, and double data types",
                     "max":"Maximum value, available only for the int, float, and double data types",
@@ -73,7 +72,7 @@ The following section details each JSON field.
             "inputData":[
                 {
                     "identifier":"Uniquely identifies an input parameter",
-                    "name":"Name of an input paramerter",
+                    "name":"Name of an input parameter",
                     "dataType":{
                         "type":"Data type: int (original), float (original), double (original), text (original), date (UTC string in milliseconds), bool (integer, 0 or 1), enum (integer), struct (supports int, float, double, text, date, and bool), array (supports int, double, float, and text)",
                         "specs":{
@@ -119,8 +118,7 @@ If the product is connected to a gateway as a sub-device and the connection prot
 ```
 {
 "profile": {
-"productKey": "Product key",
-"deviceName": "Device name"
+"productKey": "Product ID",
   },
 "properties": [
     {
@@ -128,9 +126,9 @@ If the product is connected to a gateway as a sub-device and the connection prot
 "operateType": "(coilStatus/inputStatus/holdingRegister/inputRegister)",
 "registerAddress": "Register address",
 "originalDataType": {
-"type": "Data type: int16，uint16, int32，uint32，int64，uint64, float, double, string, customized data(returns hex data according to big-endian)",
+"type": "Data type: int16, uint16, int32, uint32, int64, uint64, float, double, string, customized data(returns hex data according to big-endian)",
 "specs": {
-"registerCount":  "The number of registers, available only for string and customized data",
+"registerCount": "The number of registers, available only for string and customized data",
 "swap16": "swap the first 8 bits and the last 8 bits of the 16 bits of the register data(for example, byte1byte2 -> byte2byte10). Available for all the other data types except string and customized data",
 "reverseRegister": "Ex: Swap the bits of the original 32 bits data (for example, byte1byte2byte3byte4 ->byte3byte4byte1byte2”. Available for all the other data types except string and customized data"
         }

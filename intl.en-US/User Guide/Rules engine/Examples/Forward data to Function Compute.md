@@ -2,7 +2,7 @@
 
 Rules engine can forward processed data from IoT Hub to Function Compute \(FC\).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3033_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483033_en-US.png)
 
 Procedure:
 
@@ -16,21 +16,21 @@ Procedure:
 1.  Log on to the Function Compute console. Create a service and function.
     1.  Create a service. Service Name is required. Configure other parameters as required.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3039_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483039_en-US.png)
 
     2.  After you have created a service, create a function.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3036_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483036_en-US.png)
 
     3.  Select a function template. A blank template is used as an example.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3037_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483037_en-US.png)
 
     4.  Set parameters for the function.
 
         The function is configured to directly display data on the Function Compute console.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3038_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483038_en-US.png)
 
         In the proceeding parameters,
 
@@ -44,13 +44,13 @@ Procedure:
 
         Function Handler: Configure the function entry called to run FC. Set it to com.aliyun.fc.FcDemo::handleRequest.
 
-        Configure other parameters as required. For more information, see configurations in [Function Compute](https://help.aliyun.com/product/50980.html?spm=a2c4g.11186623.3.1.lo2iWt).
+        Configure other parameters as required. For more information, see configurations in [Function Compute](https://partners-intl.aliyun.com/help/product/50980.htm).
 
     5.  Verify whether the function runs as intended.
 
         After you create a function, you can run it on the Function Compute console for verification. FC will display information about function output and requests on the Function Compute console.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3040_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314483040_en-US.png)
 
 2.  Configure rules engine after the function successfully passes the verification.
 3.  Before you configure rules engine, follow the instructions in [Create and configure a rule](reseller.en-US/User Guide/Rules engine/Create and configure a rule.md#) to write a SQL script to process the data.
@@ -60,7 +60,7 @@ Procedure:
 4.  Click a rule name to go to the Rule Details page.
 5.  Select **Data Forwarding** **Add Operation**. On the Add Operation page, configure parameters:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3034_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314493034_en-US.png)
 
     -   Select Operation: Select Function Compute.
     -   Region: Select the region that your need to forward data based on your business requirements. If the region does not have any relevant resources, go to Function Compute Console to create resources.
@@ -76,5 +76,5 @@ Procedure:
 
 The Function Compute console collects monitored statistics about function execution. Statistics are delayed for five minutes, after which you can view monitored statistics about function execution on the dashboard.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/3035_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15393314493035_en-US.png)
 

@@ -14,7 +14,7 @@ RAM 提供的是一种长期有效的权限控制机制。通过创建子账号�
 
 相对于 RAM 提供的长效控制机制，STS 提供的是一种临时访问授权。通过调用 STS，获得临时的 AccessKey 和 Token。可以将临时 AccessKey 和 Token 发给临时用户，用来访问相应的资源。从 STS 获取的权限会受到更加严格的限制，并且具有时间限制。因此，即使出现信息泄露的情况，影响相对较小。
 
-使用场景示例，请参见[使用示例](intl.zh-CN/用户指南/账号与登录/RAM授权管理/RAM 和 STS 介绍.md#section_vdn_hgv_tdb)。
+使用场景示例，请参见[使用示例](#section_vdn_hgv_tdb)。
 
 ## 基本概念 {#section_p4v_qg5_tdb .section}
 

@@ -6,7 +6,7 @@ When using the rules engine, if your data is in JSON format, you can write SQL s
 
 JSON data can be mapped to a virtual table. Keys in a JSON data record correspond to the column names, and values in a JSON data record correspond to the column values. Once mapped to a virtual table, a JSON data record can be processed using SQL. The following section provides an example of abstracting a rule from the rules engine into a SQL statement.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15378437943123_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15393306873123_en-US.png)
 
 ```
 
@@ -26,7 +26,7 @@ Then, if the reported data meets the rule parameters, the rule is triggered and 
 To use the FROM statement, you must specify topic wildcards after FROM that are used to match the rule against topics that contain the messages to be processed. This means that when a message that belongs to the specified topics arrives, only the message payload that is in JSON format can be parsed and then processed by the SQL statement that you have defined. If the message format is invalid, the message will be ignored. You can use`topic()` to reference a specific topic.
 
 ```
-In this example, the "FROM /ProductA/+/update" statement indicates that only messages that match /ProductA/+/update are processed. For more information about how messages match topics, see [Topic](intl.en-US/User Guide/Create products and devices/Topics/System-defined topics.md#).
+In this example, the "FROM /ProductA/+/update" statement indicates that only messages that match /ProductA/+/update are processed. For more information about how messages match topics, see [Topic](reseller.en-US/User Guide/Create products and devices/Topics/System-defined topics.md#).
 
 ```
 
@@ -38,7 +38,7 @@ In this example, the "FROM /ProductA/+/update" statement indicates that only mes
 
     The reported JSON data can be an array or nested JSON data. You can also use a JSONPath expression to obtain the key values in the reported data record. For example, for a payload `{a:{key1:v1, key2:v2}}`, you can obtain the value of `v2` by specifying `a.key2` as the JSON path. When specifying variables in SQL statements, note the difference between using single quotes \('\) and double quotes \("\). Single quotes \('\) enclose constants. Double quotes \("\) enclose variables. Variables may also be written without being enclosed by quotes. For example, if you use single quotes \('\) around a variable such as `'a.key2'`, `a.key2` will be taken as a constant.
 
-    For more information about built-in functions, see [Functions](intl.en-US/User Guide/Rules engine/Functions.md#).
+    For more information about built-in functions, see [Functions](reseller.en-US/User Guide/Rules engine/Functions.md#).
 
     ```
     In the statement "SELECT temperature as t, deviceName() as deviceName, location" that is provided in the previous example, temperature and location are the fields in the reported message, and deviceName() is a built-in function.
@@ -94,7 +94,7 @@ Use double quotes \("\) when referencing arrays in SQL statements. For example, 
 |<=|Less than or equal to|5 <= 6|
 |\>|Greater than|6 \> 5|
 |\>=|Greater than or equal to|6 \>= 5|
-|Function call|For more information about supported functions, see[Functions](intl.en-US/User Guide/Rules engine/Functions.md#).|deviceId\(\)|
+|Function call|For more information about supported functions, see[Functions](reseller.en-US/User Guide/Rules engine/Functions.md#).|deviceId\(\)|
 |Attributes expressed in the JSON format|You can extract attributes from the message payload and express them in the JSON format.|state.desired.color,a.b.c\[0\].d|
 |CASE … WHEN … THEN … ELSE … END|CASE expression|CASE col WHEN 1 THEN ‘Y’ WHEN 0 THEN ‘N’ ELSE ‘’ END as flag|
 |IN|Only listing is supported. Subqueries are not supported.|For example, you can use WHERE a IN\(1, 2, 3 \). However, you cannot use WHERE a IN\(select xxx\).|

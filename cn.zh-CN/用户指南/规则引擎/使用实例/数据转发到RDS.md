@@ -4,7 +4,6 @@
 
 ## 使用须知 {#section_y5v_fv3_wdb .section}
 
--   目前转发至RDS只发布在华东2、硅谷和新加坡三个节点。
 -   只支持同region转发，不支持跨区转发。比如，华东2节点的平台数据只能转发到华东2的RDS中。
 -   只支持转发到VPC实例。
 -   只支持MySQL实例。
@@ -18,7 +17,7 @@
 
 1.  单击**数据转发**一栏的**添加操作**，出现添加操作页面。选择**存储到云数据库\(RDS\)中**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/2856_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15396825592856_zh-CN.png)
 
 2.  按照界面提示，设置参数。
     -   选择操作：选择存储到云数据库\(RDS\)中。
@@ -34,9 +33,9 @@
     -   字段：此处输入数据表的字段，规则引擎将把处理后的数据存入该字段中。
     -   值：此处填写输入数据表字段的值。可以使用转义符`$`，格式为`${key}`，即提取Topic中key对应的Value值作为输入值。
 
-        规则引擎的SQL为：`SELECT tem FROM mytopic`；RDS数据库有一张表，表中有`tem`字段，类型是`String`。
+        例如，当规则引擎的SQL为：`SELECT key FROM mytopic`，且RDS数据库有一张表，表中有`tem`字段，类型是`String`时，
 
-        控制台配置时，**字段**处填入RDS数据表的字段tem，**值**处填入规则引擎筛选出来的JSON字段$\{key\}。
+        控制台配置，请在**字段**处填入RDS数据表的字段tem，**值**处填入规则引擎筛选出来的JSON字段$\{key\}。
 
         **说明：** 
 
@@ -46,9 +45,12 @@
 
     -   华东2：100.104.123.0/24
     -   亚太东南1（新加坡\)：100.104.106.0/24
-    -   美国西部1（硅谷）：100.104.8.0/24
+    -   美国（硅谷）：100.104.8.0/24
+    -   美国（弗吉尼亚）：100.104.133.64/26
+    -   德国（法兰克福）：100.104.160.192/26
+    -   日本（东京）：100.104.160.192/26
     RDS控制台的白名单示例如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/3010_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15396825603010_zh-CN.png)
 
 

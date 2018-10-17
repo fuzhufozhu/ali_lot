@@ -10,14 +10,14 @@ Billable items for IoT Platform Basic and IoT Platform Pro are listed in the fol
 |-----|:----------|:-----------------|----------------|
 |Message communication fee\(Device\)
 
-|Messages sent from devices by calling the Pub or PubBroadcast operation.|√|√|
+|Messages sent from devices by calling the Pub operation.|√|√|
 |Requests sent from devices used to call the RPC interface.|√|√|
 |Responses sent from devices used to reply to the Revert-RPC service.|√|√|
 |Messages received by devices by calling the Sub operation.|√|√|
 |Messages sent and received by calling TSL model related interfaces.|-|√|
 |Message communication fee\(Server\)
 
-|Messages sent from the server by calling the Pub operation.|√|√|
+|Messages sent from the server by calling the Pub or PubBroadcast operation.|√|√|
 |Responses that the server sends to devices.|√|√|
 |Messages sent from the server by calling the Revert-RPC interface.|√|√|
 |Messages sent from the server by calling sub-device related interfaces.|√|√|

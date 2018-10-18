@@ -1,6 +1,6 @@
 # PubBroadcast {#reference_i4y_bkd_xdb .reference}
 
-You can call this operation to broadcast messages to all topics of a specified product.
+You can call this operation to broadcast messages to all the devices that has subscribed to the specified topic.
 
 ## Request parameters {#section_idz_y2b_ydb .section}
 

@@ -1,6 +1,6 @@
 # Log service {#concept_a32_x4w_f2b .concept}
 
-This topic describes three types of Log Service and log details.
+This topic describes three types of logs and log details in Log Service.
 
 ## Usage {#section_z51_fsw_f2b .section}
 
@@ -16,14 +16,14 @@ This following table describes the methods for using IoT Platform to filter logs
 |-------------|-----------|
 |DeviceName|Specifies the device name. It is the unique identifier of a device for a product. You can filter logs by deviceName.|
 |MessageId|Specifies the message ID. It is the unique identifier of a message on IoT Platform. You can use the messageId to track the entire process of message forwarding.|
-|Status|Log service has two statuses: success and failure.|
+|Status|A log entry has two statuses: success and failure.|
 |Time range|Filters logs based on the time range specified.|
 
 **Note:** 
 
 -   `{}` indicates variables. The system will display logs based on the actual running.
 -   Logs are in English only.
--   When logs about failures are displayed, all errors except `system error` are caused by improper use or violations of product restrictions. These errors need to be rectified carefully.
+-   When logs about failures are displayed, all errors except `system error` are caused by improper use or violations of product restrictions. Troubleshoot these errors carefully..
 
 ## Device behavior analytics {#section_aq2_ksw_f2b .section}
 
@@ -31,13 +31,13 @@ Device behavior analytics includes the analytics of the online and offline logs 
 
 You can filter logs by DeviceName and time range, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401752996524_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401831746524_en-US.png)
 
 **Device connection failure causes **
 
 |Detail| Description|
 |------|------------|
-|Kicked by the same device|Other devices used the same ProductKey, DeviceName and ProductKey to get online, and this device is kicked off.|
+|Kicked by the same device|Another device used the same combination of ProductKey, DeviceName, and ProductKey to come online, and the current device is forced offline.|
 |Connection reset by peer| TCP connection is reset by peer.|
 |Connection occurs exception| Connection exception. IoT server disconnected itself.|
 |Device disconnect| Device sent MQTT disconnection request.|
@@ -49,7 +49,7 @@ Upstream analytics indicates the analytics of the following processes: A device 
 
 You can filter logs by DeviceName, MessageId, status, and time range, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401752996525_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401831746525_en-US.png)
 
 **Upstream analytics \(English and Chinese\)**
 
@@ -92,7 +92,7 @@ Downstream analytics are the logs about messages sent from IoT Hub to your devic
 
 You can filter logs by DeviceName, MessageId, execution status, and time range, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401752996526_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15401831746526_en-US.png)
 
 **Downstream analytics**
 

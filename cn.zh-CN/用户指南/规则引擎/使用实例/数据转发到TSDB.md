@@ -6,7 +6,7 @@
 
 -   目前转发至TSDB仅发布在华东2节点。
 -   只支持专有网络下TSDB实例。
--   只支持同region转发。例如：华东2节点的套件数据只能转发到华东2的TSDB中。
+-   只支持同region转发。例如：华东2节点的设备数据只能转发到华东2的TSDB中。
 -   只支持JSON格式数据转发。
 
 ## 准备工作 { .section}
@@ -17,7 +17,7 @@
 
 1.  单击**数据转发**一栏的**添加操作**，出现添加操作页面。选择**存储到时序时空数据库\(TSDB\)中**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15398708073031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15402786683031_zh-CN.png)
 
 2.  按照界面提示，设置参数。
     -   选择操作：此处选择存储到时序时空数据库\(TSDB\)中。
@@ -80,6 +80,6 @@ tag:device=myDevice,product=bikes,cityName=beijing
 
     TSDB控制台白名单示例如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15398708073032_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15402786683032_zh-CN.png)
 
 

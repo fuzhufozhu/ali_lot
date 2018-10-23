@@ -4,7 +4,7 @@ STS 权限管理系统是比访问控制（RAM）更为严格的权限管理系�
 
 子账号和授予子账号的权限均长期有效。删除子账号或解除子账号权限，均需手动操作。发生子账号信息泄露后，如果无法及时删除该子账号或解除权限，可能给您的阿里云资源和重要信息带来危险。所以，对于关键性权限或子账号无需长期使用的权限，您可以通过 STS 权限管理系统来进行控制。
 
- ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7495/5054_zh-CN.jpg "子账号获得临时访问权限的操作流程") 
+![](images/5054_zh-CN.jpg "子账号获得临时访问权限的操作流程")
 
 ## 步骤一：创建角色 {#section_aqw_zqd_5db .section}
 
@@ -35,135 +35,133 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
     授权策略内容示例：IoT 资源只读权限。
 
     ```
-    
     {
-    "Version": "1",
-    "Statement": [
-    {
-    "Action": [
-    "rds:DescribeDBInstances",
-    "rds:DescribeDatabases",
-    "rds:DescribeAccounts",
-    "rds:DescribeDBInstanceNetInfo"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": "ram:ListRoles",
-    "Effect": "Allow",
-    "Resource": "*"
-    },
-    {
-    "Action":[
-    "mns:ListTopic"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": [
-    "dhs:ListProject",
-    "dhs:ListTopic",
-    "dhs:GetTopic"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": [
-    "ots:ListInstance",
-    "ots:ListTable",
-    "ots:DescribeTable"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action":[
-    "log:ListShards",
-    "log:ListLogStores",
-    "log:ListProject"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Effect": "Allow",
-    "Action": [
-    "iot:Query*",
-    "iot:List*",
-    "iot:Get*",
-    "iot:BatchGet*" 
-    ],
-    "Resource": "*"
-    }
-    ]
+        "Version":"1",
+        "Statement":[
+            {
+                "Action":[
+                    "rds:DescribeDBInstances",
+                    "rds:DescribeDatabases",
+                    "rds:DescribeAccounts",
+                    "rds:DescribeDBInstanceNetInfo"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":"ram:ListRoles",
+                "Effect":"Allow",
+                "Resource":"*"
+            },
+            {
+                "Action":[
+                    "mns:ListTopic"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "dhs:ListProject",
+                    "dhs:ListTopic",
+                    "dhs:GetTopic"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "ots:ListInstance",
+                    "ots:ListTable",
+                    "ots:DescribeTable"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "log:ListShards",
+                    "log:ListLogStores",
+                    "log:ListProject"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Effect":"Allow",
+                "Action":[
+                    "iot:Query*",
+                    "iot:List*",
+                    "iot:Get*",
+                    "iot:BatchGet*"
+                ],
+                "Resource":"*"
+            }
+        ]
     }
     ```
 
     授权策略内容示例：IoT 资源读写权限。
 
     ```
-    
     {
-    "Version": "1",
-    "Statement": [
-    {
-    "Action": [
-    "rds:DescribeDBInstances",
-    "rds:DescribeDatabases",
-    "rds:DescribeAccounts",
-    "rds:DescribeDBInstanceNetInfo"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": "ram:ListRoles",
-    "Effect": "Allow",
-    "Resource": "*"
-    },
-    {
-    "Action":[
-    "mns:ListTopic"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": [
-    "dhs:ListProject",
-    "dhs:ListTopic",
-    "dhs:GetTopic"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action": [
-    "ots:ListInstance",
-    "ots:ListTable",
-    "ots:DescribeTable"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Action":[
-    "log:ListShards",
-    "log:ListLogStores",
-    "log:ListProject"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-    },
-    {
-    "Effect": "Allow",
-    "Action": "iot:*",
-    "Resource": "*"
-    }
-    ]
+        "Version":"1",
+        "Statement":[
+            {
+                "Action":[
+                    "rds:DescribeDBInstances",
+                    "rds:DescribeDatabases",
+                    "rds:DescribeAccounts",
+                    "rds:DescribeDBInstanceNetInfo"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":"ram:ListRoles",
+                "Effect":"Allow",
+                "Resource":"*"
+            },
+            {
+                "Action":[
+                    "mns:ListTopic"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "dhs:ListProject",
+                    "dhs:ListTopic",
+                    "dhs:GetTopic"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "ots:ListInstance",
+                    "ots:ListTable",
+                    "ots:DescribeTable"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Action":[
+                    "log:ListShards",
+                    "log:ListLogStores",
+                    "log:ListProject"
+                ],
+                "Resource":"*",
+                "Effect":"Allow"
+            },
+            {
+                "Effect":"Allow",
+                "Action":"iot:*",
+                "Resource":"*"
+            }
+        ]
     }
     ```
 
@@ -178,7 +176,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 2.  找到要授权的角色，单击**授权**。
 3.  在授权对话框中，选择要授予角色的自定义授权策略，单击中间的向右箭头，将选中的授权策略移至**已选授权策略名称**下，再单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/4853_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15402781034853_zh-CN.jpg)
 
 
 授权完成后，该角色就具有了授权策略定义的权限。您可以单击该角色对应的**管理**操作按钮，进入角色详情页，查看该角色的基本信息和权限信息。
@@ -200,16 +198,15 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
     角色授权策略示例：
 
     ```
-    
     {
-    "Version": "1",
-    "Statement": [
-    {
-    "Effect": "Allow",
-    "Action": "iot:QueryProduct",
-    "Resource": "角色Arn"
-    }
-    ]
+        "Version":"1",
+        "Statement":[
+            {
+                "Effect":"Allow",
+                "Action":"iot:QueryProduct",
+                "Resource":"角色Arn"
+            }
+        ]
     }
     ```
 
@@ -222,7 +219,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
 ## 步骤五：子账号获取临时身份凭证 {#section_lwx_nxk_5db .section}
 
-获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[API 参考（STS）](https://help.aliyun.com/document_detail/28756.html)和[SDK 参考（STS）](https://help.aliyun.com/document_detail/28786.html)。
+获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[API 参考（STS）](https://www.alibabacloud.com/help/zh/doc-detail/28756.htm)和[SDK 参考（STS）](https://www.alibabacloud.com/help/zh/doc-detail/28786.htm)。
 
 使用 API 和 SDK 获取扮演角色的临时身份凭证需传入以下参数：
 

@@ -18,7 +18,7 @@ With the Remote Configuration service, you can perform the following operations:
 
 Remote Configuration flow chart:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516235_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614786235_en-US.png)
 
 Remote Configuration consists of the following parts:
 
@@ -40,7 +40,7 @@ If devices receive configuration information from the IoT platform, use the foll
     2.  Click **Remote Configuration** to enter the detail page, and click **Enable Service**.
     3.  Select a product and click to enable Remote Configuration.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516236_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614786236_en-US.png)
 
         **Note:** 
 
@@ -48,17 +48,17 @@ If devices receive configuration information from the IoT platform, use the foll
         -   You can also disable Remote Configuration here.
     4.  In the editing area, click **Edit** to edit configuration information. You can also copy configuration information to the editing area. The product configuration template is applicable to all devices under this product. Currently, you cannot update the configuration of individual devices.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516237_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614786237_en-US.png)
 
         -   Remote Configuration supports JSON files. IoT Platform does not have requirements for the configuration content. The system only checks the format of the data when you submit the configuration file. This prevents configuration errors that are caused by format errors.
         -   The configuration file can be up to 64 KB in size. The file size is dynamically displayed in the upper-right corner of the editing area. Configuration files larger than 64 KB cannot be submitted.
     5.  After you have finished editing the configuration information, click **Update** to create the configuration file. This allows devices to send requests to update configuration information.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516238_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614796238_en-US.png)
 
     6.  After the configuration file has been submitted, IoT Platform does not push updates to devices immediately. You must click **Batch Update** so that the system pushes the updated configuration file to all devices.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516239_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614796239_en-US.png)
 
         **Note:** 
 
@@ -68,11 +68,11 @@ If devices receive configuration information from the IoT platform, use the foll
 
         Remote Configuration saves the latest five configuration changes by default. After you have submitted a configuration change, the latest configuration is displayed in the version records. You can then view the configuration information and time of update, providing high traceability of records.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826516240_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614796240_en-US.png)
 
         Click **View** to view the configuration information of the specified version. Click **Restore to This Version** to copy the configuration information into the editing area so that you can edit and update the configuration.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15353826526241_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15404614796241_en-US.png)
 
 3.  The device automatically updates the configuration after receiving the configuration updates from IoT Platform.
 

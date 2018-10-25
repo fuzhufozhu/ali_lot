@@ -1,6 +1,6 @@
 # Architecture {#concept_txj_mnp_tdb .concept}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7451/3364_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7451/15404587583364_en-US.png)
 
 **IoT Hub**
 
@@ -17,7 +17,7 @@ The IoT Hub has the following features:
 
 **Device management**
 
-IoT Platform offers various features to manage devices. These features manage the lifecycle, device groups, device shadows, firmware upgrade, Thing Special Language \(TSL\), data parsing, online debugging, remote maintenance, and real-time monitoring. Device management in different versions of IoT Platform has different features, see [Specifications](intl.en-US/Product Introduction/Specifications.md#) for details .
+IoT Platform offers various features to manage devices. These features manage the lifecycle, device groups, device shadows, firmware upgrade, Thing Special Language \(TSL\), data parsing, online debugging, remote maintenance, and real-time monitoring. Device management in different versions of IoT Platform has different features, see [Specifications](reseller.en-US/Product Introduction/Specifications.md#) for details .
 
 **Rules engine**
 

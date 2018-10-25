@@ -6,7 +6,10 @@ You can add a sub-device to a gateway device and assign the TSL and the extended
 -   Products and devices created before September 3, 2018, Beijing time, can be added to gateways as sub-devices. However, you can only add their topological relationships,and not channel configurations.
 
 1.  On the Devices page, find the gateway device for which you want to add sub-devices and click **View** next to it. 
-2.  Click **Sub-device Management** \> **Add Sub-device**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/153820538810897_en-US.png) 
+2.  Click **Sub-device Management** \> **Add Sub-device**. 
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/154046052910897_en-US.png)
+
 3.  Enter information of the sub-device in the dialog box. 
 
     |Parameter|Description|
@@ -25,5 +28,5 @@ You can add a sub-device to a gateway device and assign the TSL and the extended
 
 4.  On the details page of the sub-device, you can view the gateway device information. Click **Edit** to modify the configuration information. 
 
--   You can refer to [Alink protocol](../../../../intl.en-US/Developer Guide (Devices)/Alink Protocol.md#) to develop your own devices and assign the configurations between the gateway device and the sub-device to the device client.
+-   You can refer to [Alink protocol](../../../../reseller.en-US/Developer Guide (Devices)/Alink Protocol.md#) to develop your own devices and assign the configurations between the gateway device and the sub-device to the device client.
 

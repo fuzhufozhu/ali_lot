@@ -6,7 +6,7 @@ When using the rules engine, if your data is in JSON format, you can write SQL s
 
 JSON data can be mapped to a virtual table. Keys in a JSON data record correspond to the column names, and values in a JSON data record correspond to the column values. Once mapped to a virtual table, a JSON data record can be processed using SQL. The following section provides an example of abstracting a rule from the rules engine into a SQL statement.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15393306873123_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15404607853123_en-US.png)
 
 ```
 

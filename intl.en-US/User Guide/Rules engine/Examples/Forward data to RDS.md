@@ -4,7 +4,6 @@ You can configure rules engine to forward processed data to RDS instances in VPC
 
 ## Restrictions {#section_y5v_fv3_wdb .section}
 
--   Only five nodes support data forwarding to RDS: China East 2, US West 1 \(Silicon Valley\), Asia Pacific SE 1 \(Singapore\), Asia Pacific NE 1 \(Tokyo\), and EU Central 1 \(Frankfurt\).
 -   Data can be forwarded only from IoT Platform to RDS within the same region but cannot be forwarded from IoT Platform to RDS in a different region. For example, for an IoT Platform on China East 2, data can only be forwarded to a RDS in China East 2.
 -   Only forwarding to RDS instances in VPCs is supported.
 -   Only MySQL instances are supported.
@@ -18,7 +17,7 @@ Before you configure a forwarding rule, you need to follow the instructions in 
 
 1.  Click **Add Operation** next to **Data Forwarding** to open the Add Operation dialog box. Select **Save to RDS**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/2856_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15404610472856_en-US.png)
 
 2.  Configure the following parameters as prompted:
     -   Select Operation: Save to RDS.
@@ -51,6 +50,6 @@ Before you configure a forwarding rule, you need to follow the instructions in 
     -   Asia Pacific NE 1 \(Tokyo\): 100.104.160.192/26
     The whitelist \(example\) for the RDS console is as follows:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/3010_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15404610473010_en-US.png)
 
 

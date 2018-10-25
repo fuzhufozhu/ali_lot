@@ -5,7 +5,7 @@ You can create sub-device channels for Pro Edition gateway devices. Gateway devi
 1.  On the Devices page, find the gateway device for which you want to create channels, and click **View** next to it.
 2.  Click **Sub-device Channels** and then create sub-device management channels according to your required protocol.
 
-    ![](images/10890_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18798/154046050610890_en-US.png)
 
     -   Modbus
 

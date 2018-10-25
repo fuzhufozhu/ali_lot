@@ -14,12 +14,12 @@ Product tags typically describe the information that is common to all devices un
 
 To add a product tag, follow these steps:
 
-1.  Log on to the [IoT Platform console](https://iot.console.aliyun.com/).
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
 2.  On the Products page, find the product to which you want to add a tag, click **View** in the Actions column, and then go to the **Product Details** page.
 3.  Click **Edit** in the **Product Tags** section.
 4.  In the **Edit Tags** dialog box, enter the Key and  Value for the tag, and then click **OK**.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15349044202847_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15404604652847_en-US.png)
 
 After a product tag is created, newly created devices under the product will be automatically assigned the product tag.
 
@@ -29,13 +29,13 @@ After a device is created under a product, the device will be automatically assi
 
 To add a device tag in the console, follow these steps:
 
-1.  Log on to the [IoT Platform console](https://iot.console.aliyun.com/).
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
 2.  Click **Devices**.
 3.  On the **Devices** page, find the device that you want to add a tag, click **View** under the Actions column, and then go to the **Device Details** page.
 4.  Click **Edit** in the **Device Tags** section.
 5.  In the **Edit Tags** dialog box, enter the Key and  Value for the tag, and then click **OK**.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15349044212849_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15404604652849_en-US.png)
 
 The device tag follows the device through the system. In addition, IoT Platform can send device tags to other services in Alibaba Cloud based on the Rule Engine.
 

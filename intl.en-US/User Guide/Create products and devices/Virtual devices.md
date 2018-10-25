@@ -6,10 +6,13 @@ The general development process of IoT is that, after a device client has been s
 
 ## Procedure {#section_gbs_tyx_w2b .section}
 
-1.  Log on to the [IoT Platform console](http://iot.console.aliyun.com/).
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
 2.  In the left-side navigation pane, click Products and then click **View** next to the product that you want to debug.
 3.  On the Product Details page, click Online Debugging.
-4.  Select the target device to be debugged.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/153793324210859_en-US.png)
+4.  Select the target device to be debugged.
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/154046039510859_en-US.png)
+
 5.  Click **Virtual Device** \> **Start Virtual Device**.
 
     **Note:** If the physical device is active or disabled, you will be unable to start the virtual device.
@@ -18,7 +21,7 @@ The general development process of IoT is that, after a device client has been s
 
     For example, you can set the **Properties**, indoor temperature to be 24 degrees Celsius.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/153793324210879_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/154046039510879_en-US.png)
 
 7.  Select a push method.
     -   Push: Only push the data once.

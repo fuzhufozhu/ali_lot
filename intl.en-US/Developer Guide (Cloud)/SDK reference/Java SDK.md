@@ -19,7 +19,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.2.0</version>
+            <version>6.3.1</version>
         </dependency>
         ```
 
@@ -46,7 +46,7 @@ IClientProfile profile = DefaultProfile.getProfile("cn-shanghai", accessKey, acc
 DefaultAcsClient client = new DefaultAcsClient(profile); //Initialize the SDK
 ```
 
-accessKeyId is the AccessKeyId of your account, andaccessSecret is the AccessKeySecret paired with the AccessKeyId. You can go to [AccessKeys](https://ak-console.aliyun.com) page in the Alibaba Cloud console to create or view your AccessKey.
+accessKeyId is the AccessKeyId of your account, andaccessSecret is the AccessKeySecret paired with the AccessKeyId. You can go to [AccessKey](https://partners-intl.console.aliyun.com) page in the console to create or view your AccessKey.
 
 ## Initiate a call {#section_ins_yrd_zdb .section}
 

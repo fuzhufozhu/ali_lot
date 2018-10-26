@@ -6,7 +6,7 @@ IoT Platform performs sender identity authentication for every access request. T
 
 **Note:** Alibaba Cloud provides SDKs in multiple programming languages, such as Java, Python, and PHP. If you use these SDKs, you can skip the signing process. See [Download SDKs](reseller.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#).
 
-When you are signing the parameters, you can view the AccessKey ID and the AccessKey Secret for your Alibaba Cloud account on the [AccessKey](https://usercenter.console.aliyun.com/?spm=5176.2020520111.1001.d601.CMXhiF#/manage/ak) page in the console, and then encrypt them in symmetry. An AccessKey ID is used to identify the visitor, and an AccessKey Secret is the secret key used to encrypt the signature string and verify the signature string on the server. You must keep your AccessKey confidential to minimize the risk of data breaches.
+When you are signing the parameters, you can view the AccessKey ID and the AccessKey Secret for your account on the [AccessKey](https://partners-intl.console.aliyun.com) page in the console, and then encrypt them in symmetry. An AccessKey ID is used to identify the visitor, and an AccessKey Secret is the secret key used to encrypt the signature string and verify the signature string on the server. You must keep your AccessKey confidential to minimize the risk of data breaches.
 
 Sign the request parameters as follows:
 

@@ -43,7 +43,7 @@ This parameter is only available for Pro Edition products.
 
 |
 |Id2|Boolean|No|Whether the product is an ID² product. \(Currently, ID² has not been released.\)|
-|Common request parameters|-| Yes|For more information about common request parameters, see [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-| Yes|For more information about common request parameters, see [Common parameters](intl.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_jmn_bvl_vdb .section}
 

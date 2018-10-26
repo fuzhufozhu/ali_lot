@@ -37,7 +37,7 @@ accessKeyId = '<your accessKey>'
  clt = client.AcsClient(accessKeyId, accessKeySecret, 'cn-shanghai')
 ```
 
-accessKeyId is the AccessKeyId of your account,and accessKeySecret is the AccessKeySecret corresponding to the AccessKeyId. You can create and view your AccessKey on the AccessKey Management in the console.
+accessKeyId is the AccessKeyId of your account, and accessKeySecret is the AccessKeySecret corresponding to the AccessKeyId. You can create and view your AccessKey on the AccessKey Management in the console.
 
 ## Initiate a call {#section_xdd_5zd_zdb .section}
 

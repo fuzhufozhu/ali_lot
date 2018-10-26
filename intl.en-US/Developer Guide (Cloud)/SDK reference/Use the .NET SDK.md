@@ -10,7 +10,7 @@
     -   Visual Studio 2010 and later.
 2.  Import IoT .NET SDK core library from the Alibaba Cloud.
 
-    Download the package of the IoT .NET SDK core library from [.NET SDK releases](https://develop.aliyun.com/tools/sdk?spm=5176.doc53095.2.4.zA0LmD#/dotnet), and extract the DLL file from the package.
+    Download the package of the IoT .NET SDK core library from [.NET SDK releases](https://github.com/aliyun/aliyun-openapi-net-sdk/tree/master/aliyun-net-sdk-iot), and extract the DLL file from the package.
 
 3.  Add a reference to the core library.
     1.  In the Solution Explorer of Visual Studio, right-click your project, and select **Reference**.
@@ -31,7 +31,7 @@ IClientProfile clientProfile = DefaultProfile.GetProfile("cn-shanghai", "<your-a
 DefaultAcsClient client = new DefaultAcsClient(clientProfile);
 ```
 
-Create or view your AccessKeyId and AccessKeySecret on the [AccessKey Management](https://ak-console.aliyun.com) page in the Alibaba Cloud console.
+Create or view your AccessKeyId and AccessKeySecret on the [AccessKey](https://partners-intl.console.aliyun.com)page in the console.
 
 ## Initiate a call {#section_xsr_yj2_zdb .section}
 

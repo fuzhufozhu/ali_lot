@@ -30,7 +30,7 @@ Error codes beginning with `iot.prod` are error codes related to IoT Platform pr
 
 |Error code|Description|
 |:---------|:----------|
-|iot.prod.AlreadyExistedProductName|The same product name already exists.|
+|iot.prod.AlreadyExistedProductName|The product name is already in use.|
 |iot.prod.CreateProductFailed|Failed to create the product.|
 |iot.prod.CreateProductTopicFailed|Failed to create the topic category.|
 |iot.prod.InvalidAliyunCommodityCode|The value of AliyunCommodityCode is invalid.|
@@ -58,7 +58,7 @@ Error codes beginning with `iot.device` are error codes related to devices.
 |Error code|Description|
 |:---------|:----------|
 |iot.device.AddTopoRelationFailed|Failed to add topological relationship.|
-|iot.device.AlreadyExistedDeviceName|The device name already exists.|
+|iot.device.AlreadyExistedDeviceName|The device name is already in use.|
 |iot.device.ApplyManyDevicesFailed|Failed to batch register devices.|
 |iot.device.CreateDeviceFailed|Failed to create the device.|
 |iot.device.CreateDeviceTaskIsRunning|The device creation task is still in progress.|
@@ -70,7 +70,7 @@ Error codes beginning with `iot.device` are error codes related to devices.
 |iot.device.EnableDeviceFailed|Failed to enable the device.|
 |iot.device.InactiveDevice|The device is inactive.|
 |iot.device.InvalidFormattedApplyId|The ApplyId is incorrect.|
-|iot.device.IncorrentDeviceApplyInfo|The device application information is not correct.|
+|iot.device.IncorrentDeviceApplyInfo|The device application information is incorrect.|
 |iot.device.InvalidFormattedDeviceName|The format of the device name is invalid.|
 |iot.device.InvalidFormattedDevicePropertyKey|The format of the device property name is invalid.|
 |iot.device.InvalidFormattedDevicePropertiesString|The format of device property string is invalid.|
@@ -101,6 +101,34 @@ Error codes beginning with `iot.device` are error codes related to devices.
 |iot.device.TopoRelationCountExceeded|The number of topology relationships exceeds the limit.|
 |iot.device.VerifyDeviceFailed|Failed to verify the device.|
 
+## Device group related error codes {#section_fqm_z1n_mfb .section}
+
+Error codes beginning with `iot.group` are error codes related to device groups.
+
+|Error code|Description|
+|:---------|:----------|
+|iot.group.NullGroupId|Value of the parameter GroupId cannot be empty.|
+|iot.group.DeleteGroupFailed|Failed to delete the group.|
+|iot.group.SubGroupNotNull|This group has sub-groups.|
+|iot.group.InvalidGroupName|The group name is invalid.|
+|iot.group.GroupNameExisted|The group name is already in use.|
+|iot.group.QueryGroupInfoFailed|Failed to query the group details.|
+|iot.group.NotExistedGroup|The specified group is not found.|
+|iot.group.QueryGroupCountFailed|Failed to query the number of groups.|
+|iot.group.QueryGroupListFailed|Failed to query the group list.|
+|iot.group.BindGroupRelationFailed|Failed to build the group relationship.|
+|iot.group.UpdateGroupFailed|Failed to modify the group information.|
+|iot.group.QueryGroupTreeFailed|Failed to query the group relationship tree.|
+|iot.group.CreateGroupFailed|Failed to create the group.|
+|iot.group.InvalidFormattedTagString|The tag format is invalid.|
+|iot.group.TagCountExceedMax|The number of tags exceeds the maximum limit.|
+|iot.group.GroupCountExceedMax|The number of groups exceeds the maximum limit.|
+|iot.group.SetGroupTagFailed|Failed to create the group tag\(s\).|
+|iot.group.QueryGroupTagFailed|Failed to query the group tag\(s\).|
+|iot.group.LongGroupDescError|The length of the description exceeds the limit.|
+|iot.group.QueryGroupRelationFailed|Failed to query the group relationship.|
+|iot.group.GroupLevelExceedingLimitError|The number of group levels exceeds the limit.|
+
 ## Message related error codes. {#section_xs2_x4f_t2b .section}
 
 Error codes beginning with `iot.messagebroker` are error codes related to message communication. This type of error code appears when you fail to call APIs related to message communication, device shadow, and rule engine. \(For error codes related to rule engine APIs, see the following section.\)
@@ -123,8 +151,8 @@ Error codes beginning with `iot.messagebroker` are error codes related to messag
 |iot.messagebroker.InvalidFormattedTopicName|Format of the topic is invalid.|
 |iot.messagebroker.InvalidFormattedTopicTemplateId|Format of the topic category is invalid.|
 |iot.messagebroker.InvalidTimeoutValue|The timeout value is invalid.|
-|iot.messagebroker.InvalidTopicTemplateOperationValue|The operation value of the topic category is not correct.|
-|iot.messagebroker.InvalidVersionValueInShadowMessage|The version value of device shadow is not correct.|
+|iot.messagebroker.InvalidTopicTemplateOperationValue|The operation value of the topic category is incorrect.|
+|iot.messagebroker.InvalidVersionValueInShadowMessage|The version value of device shadow is incorrect.|
 |iot.messagebroker.MethodValueIsNotUpdate|The method value of device shadow is not update.|
 |iot.messagebroker.MessageContentIsNotBase64Encode|The message content is not base64 encoded.|
 |iot.messagebroker.NoneElementInDesire|desire cannot be empty.|
@@ -154,7 +182,7 @@ Error codes beginning with `iot.messagebroker` are error codes related to messag
 |iot.messagebroker.RateLimit|Failed because of rate limit.|
 |iot.messagebroker.ReportInShadowMessageIsNotJson|report information of state is not in JSON format.|
 |iot.messagebroker.RrpcException|An exception occurred when sending message by PPRC.|
-|iot.messagebroker.RrpcFailed|Failed to send message by RRPC.|
+|iot.messagebroker.RrpcFailed|Failed to send message by using RRPC.|
 |iot.messagebroker.ShadowMessageIsNotJson|Device shadow is not in JSON format.|
 |iot.messagebroker.ShadowMessageLengthIsLarge|The length of device shadow exceeds the limit.|
 |iot.messagebroker.TIMEOUT|Failed because of timeout.|
@@ -169,15 +197,15 @@ Error codes beginning with `iot.messagebroker` are error codes related to messag
 
 ## Error codes related to rule engine. {#section_erm_31h_t2b .section}
 
-Error codes beginning with `iot.rule` and `iot.ruleng`, and some `iot.messagebroker` started error codes are related to rule engine. 
+Error codes beginning with `iot.rule` and `iot.ruleng`, and some `iot.messagebroker` started error codes are related to rule engine.
 
 |Error code|Description|
 |:---------|:----------|
 |iot.rule.CreateRuleException|An exception occurred when creating the rule.|
 |iot.rule.DeleteRuleFailed|Failed to delete the rule.|
-|iot.rule.IncorrentRuleActionId|The rule action ID is not correct.|
-|iot.rule.IncorrentRuleActionType|The type of the rule action is not correct.|
-|iot.rule.IncorrentRuleId|The rule ID is not correct.|
+|iot.rule.IncorrentRuleActionId|The rule action ID is incorrect.|
+|iot.rule.IncorrentRuleActionType|The type of the rule action is incorrect.|
+|iot.rule.IncorrentRuleId|The rule ID is incorrect.|
 |iot.rule.NullForwardDestForRule|The data forwarding destination cannot be empty.|
 |iot.rule.NullSqlForRule|SQL statement for the rule cannot be empty.|
 |iot.rule.NotFoundRule|The specified rule is not found.|
@@ -204,7 +232,7 @@ Error codes beginning with `iot.rule` and `iot.ruleng`, and some `iot.messagebro
 |iot.ruleng.NullRamRoleName|roleName cannot be empty.|
 |iot.ruleng.NullRuleActionConfig|Rule action configuration cannot be empty.|
 |iot.ruleng.NullRuleActionType|Rule action type cannot be empty.|
-|iot.messagebroker.IncorrectRuleSql|The SQL statement of the rule is not correct.|
+|iot.messagebroker.IncorrectRuleSql|The SQL statement of the rule is incorrect.|
 |iot.messagebroker.QueryRuleConfigActionException|An exception occurred when configuring the rule.|
 
 The following tables list the error codes related to different message targets.
@@ -214,7 +242,7 @@ The following tables list the error codes related to different message targets.
 |iot.messagebroker.InvalidFormattedTopicName|The theme name format is invalid.|
 |iot.prod.NotExistedProduct|The specified product does not exist.|
 |iot.common.QueryProductActionError|Failed to query the product.|
-|iot.ruleng.IncorrectSysTopic|The system topic is not correct.|
+|iot.ruleng.IncorrectSysTopic|The system topic is incorrect.|
 |iot.messagebroker.NullTopicName|Topic name cannot be empty.|
 
 |Error code|Description|
@@ -240,5 +268,5 @@ The following tables list the error codes related to different message targets.
 
 |Error code|Description|
 |:---------|:----------|
-|iot.messagebroker.NullTopicName|The target topic in Message Queue cannot be empty.|
+|iot.messagebroker.NullTopicName|Message receiving topic cannot be empty.|
 

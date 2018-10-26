@@ -10,6 +10,7 @@
 |[UpdateProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/UpdateProduct.md#)|修改产品信息。|
 |[QueryProductList](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProductList.md#)|查询产品列表。|
 |[QueryProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProduct.md#)|查询产品详细信息。|
+|[DeleteProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProduct.md#)|删除指定产品。|
 
 ## 设备管理相关 API {#section_dcj_qzc_xdb .section}
 
@@ -42,6 +43,20 @@
 |[RemoveThingTopo](cn.zh-CN/云端开发指南/云端API参考/设备管理/RemoveThingTopo.md#)|移除网关设备或子设备所具有的拓扑关系。|
 |[QueryDeviceStatistics](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceStatistics.md#)|获取设备的统计数量。|
 |[GetGatewayBySubDevice](cn.zh-CN/云端开发指南/云端API参考/设备管理/GetGatewayBySubDevice.md#)|根据挂载的子设备信息查询对应的网关设备信息。|
+
+## 分组管理相关API {#section_atx_lcg_mfb .section}
+
+|API|描述|
+|:--|:-|
+|[CreateDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/CreateDeviceGroup.md#)|创建分组。|
+|[DeleteDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/DeleteDeviceGroup.md#)|删除分组。|
+|[UpdateDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/UpdateDeviceGroup.md#)|修改分组信息。|
+|[QueryDeviceGroupInfo](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupInfo.md#)|查询分组详情。|
+|[QueryDeviceGroupList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupList.md#)|分页查询分组列表。|
+|[BatchAddDeviceGroupRelations](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchAddDeviceGroupRelations.md#)|添加设备到分组。|
+|[BatchDeleteDeviceGroupRelations](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchDeleteDeviceGroupRelations.md#)|删除分组中已添加的指定设备。|
+|[SetDeviceGroupTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/SetDeviceGroupTags.md#)|添加或更新分组标签。|
+|[QueryDeviceGroupTagList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupTagList.md#)|查询分组标签列表。|
 
 ## 规则引擎相关 API {#section_enr_vbd_xdb .section}
 

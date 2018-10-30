@@ -7,7 +7,7 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：CreateProduct。|
-|ProductName|String|是|为新建产品命名。产品名应满足以下限制：由4-30位中文、英文字母、数字和下划线组成（一个中文字符占两位）。**说明：** 产品名在当前账号下应保持唯一。
+|ProductName|String|是|为新建产品命名。产品名应满足以下限制：由4-30位中文、英文字母、数字和下划线（\_）组成（一个中文字符占两位）。**说明：** 产品名在当前账号下应保持唯一。
 
 |
 |NodeType|Integer|否| 产品的节点类型，取值：
@@ -19,7 +19,13 @@
  如果不传入该参数，则使用默认值0。
 
  |
-|DataFormat|Integer|否|高级版产品的数据格式：-   0：透传/自定义格式（CUSTOM\_FORMAT）。
+|AliyunCommodityCode|String|否|产品版本类型。-   iothub\_senior：高级版。
+-   iothub：基础版。
+
+若不传入此参数默，则默认为基础版。
+
+|
+|DataFormat|Integer|是|产品版本类型选择为iothub\_senior的产品数据格式：-   0：透传/自定义格式（CUSTOM\_FORMAT）。
 -   1：Alink协议（ALINK\_FORMAT）。
 
 此参数为高级版产品的特有参数，并且是创建高级版产品的必需参数。
@@ -29,12 +35,6 @@
 
 |
 |Description|String|否|为新建产品添加描述信息。描述信息应在100字符以内。|
-|AliyunCommodityCode|String|否|产品版本类型。-   iothub\_senior：高级版。
--   iothub：基础版。
-
-若不传入此参数默，则默认为基础版。
-
-|
 |ProtocolType|String|否|设备接入网关协议类型。-   modbus：Modbus协议。
 -   opc-ua：OPC UA协议。
 -   customize：自定义协议。
@@ -52,13 +52,14 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时返回的出错信息。|
-|ProductKey|String|产品ID。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
+|ProductKey|String|产品的Key。|
 |Data|Data|调用成功时返回的新建产品信息。详情参见[表 1](#table_z3k_lz2_xdb)。|
 
 |名称|类型|描述|
 |:-|:-|:-|
-|ProductName|String|新建产品的名称。|
-|ProductKey|String|IoT为新建产品颁发的产品ID，作为该产品的全局唯一标识。**说明：** 请妥善保管新建产品的ProductKey。在其他操作中会用到该信息。
+|ProductName|String|产品的名称。|
+|ProductKey|String|IoT为新建产品颁发的产品Key，作为该产品的全局唯一标识。**说明：** 请妥善保管新建产品的ProductKey。在其他操作中会用到该信息。
 
 |
 |Description|String|产品描述信息。|

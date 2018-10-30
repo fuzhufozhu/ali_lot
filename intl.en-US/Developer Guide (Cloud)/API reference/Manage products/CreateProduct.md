@@ -19,7 +19,13 @@ You can call this operation to create a product.
  If you do not specify this parameter, the system uses 0 by default.
 
  |
-|DataFormat|Integer|No|The data type of Pro Edition products:-   0: Do not parse/Custom.
+|AliyunCommodityCode|String|Yes|The edition of the product that you want to create.-   iothub\_senior: Pro Edition.
+-   iothub: Basic Edition.
+
+If you do not input this parameter, the default value is iothub \(Basic Edition\).
+
+|
+|DataFormat|Integer|Yes|The data type of Pro Edition products:-   0: Do not parse/Custom.
 -   1: Alink JSON.
 
 This parameter is only available for Pro Edition products.
@@ -29,12 +35,6 @@ This parameter is only available for Pro Edition products.
 
 |
 |Description|String|No|The description of the product. The description can be a maximum of 100 characters in length.|
-|AliyunCommodityCode|String|No|The edition of the product that you want to create.-   iothub\_senior: Pro Edition.
--   iothub: Basic Edition.
-
-If you do not input this parameter, the default value is iothub \(Basic Edition\).
-
-|
 |ProtocolType|String|No|The protocol that the devices use to connect to a gateway.-   modbus: Modbus.
 -   opc-ua: OPC UA.
 -   customize: Customized protocol.

@@ -9,7 +9,7 @@
 |Action|String|是|要执行的操作，取值：UpdateRule。|
 |RuleId|Long|是|要修改的规则ID。|
 |Name|String|是|规则名称。支持使用中英文字符、数字和下划线（\_），长度应为4~30位（一个中文字符算2位）。|
-|ProductKey|String|否|应用该规则的产品ID。|
+|ProductKey|String|否|应用该规则的产品Key。|
 |ShortTopic|String|否| 应用该规则的具体Topic，格式为：`${deviceName}/ topicShortName`。其中，$\{deviceName\}指具体设备的名称，topicShortName是该设备的自定义类目。
 
  您可以调用QueryDevice接口，查看产品下的所有设备。返回结果中包含所有的DeviceName。
@@ -22,7 +22,7 @@
  **说明：** 此处传入的是Select下的内容。例如，如果Selcet语句为`Select a,b,c`，则此处传入`a,b,c`。
 
  |
-|RuleDesc|String|否|规则的描述信息。|
+|RuleDesc|String|否|规则的描述信息。长度限制为100字符（一个汉字占一个字符）。|
 |Where|String|否| 规则的触发条件。具体内容参照SQL表达式。
 
  **说明：** 此处传入的是Where中的内容。例如，如果Where语句为`Where a>10`，则此处传入`a>10`。
@@ -53,12 +53,11 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 
 ## 示例 {#section_p4w_ky1_ydb .section}
 
 **请求示例**
-
-**说明：** 为方便您查看和理解请求参数值的格式，以下请求参数值没有经过编码处理。在实际调用中，参数值中的符号需编码处理。
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=UpdateRule

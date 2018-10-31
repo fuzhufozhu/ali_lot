@@ -6,7 +6,7 @@
 
 该接口需要和BatchCheckDeviceNames接口结合使用，实现在一个产品下批量注册（即新建）多个设备，并且为每个设备单独命名。
 
-首先，您必须调用BatchCheckDeviceNames接口，传入要批量注册的设备的名称。IoT平台检查您提交的设备名称符合要求后，为您返回申请批次ID（ApplyId）。然后，您可以通过使用ApplyId调用本接口，批量注册设备。
+首先，您必须调用BatchCheckDeviceNames接口，传入要批量注册的设备的名称。物联网平台检查您提交的设备名称符合要求后，为您返回申请批次ID（ApplyId）。然后，您可以通过使用ApplyId调用本接口，批量注册设备。
 
 如果您想在一个产品下批量注册多个设备，且不指定设备名称，设备名称由系统随机生成，您可以调用BatchRegisterDevice接口。
 
@@ -28,6 +28,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |Data|Data|调用成功时，返回的数据。详情见下表Data。|
 
 |名称|类型|描述|

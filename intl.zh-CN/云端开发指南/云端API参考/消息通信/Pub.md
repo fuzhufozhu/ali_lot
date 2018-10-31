@@ -7,12 +7,12 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：Pub。|
-|ProductKey|String|是|要发送消息产品ID。|
+|ProductKey|String|是|要发送消息产品Key。|
 |TopicFullName|String|是| 要接收消息的Topic全称。可以是用户Topic类和您自定义的Topic类（不支持系统Topic类）。
 
- -   用户Topic类结构：`/productKey/deviceName/update`
+ -   用户Topic类结构：`/$\{productKey\}/$\{deviceName\}/update`
 
--   自定义Topic类结构：`productKey/deviceName/topicShortName`
+-   自定义Topic类结构：`$\{productKey\}/$\{deviceName\}/topicShortName`
 
 其中，topicShortName是您创建Topic时自定义的类目。
 
@@ -41,6 +41,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |MessageId|String|成功发送消息后，云端生成的消息ID，用于标识该消息。|
 
 ## 示例 {#section_vtd_sdb_ydb .section}

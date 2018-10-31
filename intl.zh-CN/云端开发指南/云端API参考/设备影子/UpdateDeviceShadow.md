@@ -7,7 +7,7 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：UpdateDeviceShadow。|
-|ProductKey|String|是|要修改影子信息的设备所隶属的产品ID。|
+|ProductKey|String|是|要修改影子信息的设备所隶属的产品Key。|
 |DeviceName|String|是|要修改影子信息的设备名称。|
 |ShadowMessage|String|是| 修改后的设备影子信息。示例如下：
 
@@ -41,6 +41,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 
 ## 示例 {#section_kxf_jmb_ydb .section}
 

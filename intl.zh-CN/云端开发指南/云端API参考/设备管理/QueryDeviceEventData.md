@@ -9,10 +9,10 @@
 |Action|String|是|要执行的操作，取值：QueryDeviceEventData。|
 |IotId|String|否| 要查询的设备ID。
 
- **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey&DeviceName组合，则以IotId为准。
+ **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 要查询的设备所隶属的产品ID。
+|ProductKey|String|否| 要查询的设备所隶属的产品Key。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
@@ -51,6 +51,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |Data|Data|调用成功时，返回的设备事件记录。详情参见[Data](#table_sdc_kyr_xdb)。|
 
 |名称|类型|描述|

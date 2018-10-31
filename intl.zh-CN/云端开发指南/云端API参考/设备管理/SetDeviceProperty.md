@@ -12,7 +12,7 @@
  **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 要查询的设备所隶属的产品ID。
+|ProductKey|String|否| 要查询的设备所隶属的产品Key。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
@@ -22,17 +22,17 @@
  **说明：** 如果传入该参数，需同时传入ProductKey。
 
  |
-|Items|Map|是|要设置的属性信息，详情参见[Item](#table_omd_gft_xdb)。|
+|Items|Map|是|要设置的属性信息，组成为key:value。详情参见[Item](#table_omd_gft_xdb)。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 |名称|类型|描述|
 |:-|:-|:-|
-|Key|String| 要设置的属性的标识符（identifier）。高级版设备的事件Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。
+|key|String| 要设置的属性的标识符（identifier）。高级版设备的事件Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。
 
  **说明：** 设置的属性必需是读写型。如果您指定了一个只读型的属性，设置将会失败。
 
  |
-|Value|Obejct|属性值。取值需跟您定义的属性的数据类型和取值范围保持一致。|
+|value|Obejct|属性值。取值需跟您定义的属性的数据类型和取值范围保持一致。|
 
 ## 返回参数 {#section_znb_2ft_xdb .section}
 

@@ -6,7 +6,7 @@
 
 规则引擎支持的地域及目标云产品，请参见[地域与可用区](../../../../intl.zh-CN/用户指南/规则引擎/地域和可用区.md#)。
 
-在调用CreateRule接口创建规则后，您可以调用本接口，在规则下创建具体的规则动作，定义将Topic数据转发至支持的其他阿里云服务。
+在调用CreateRule接口创建规则后，您可以调用本接口，在规则下创建具体的规则动作，定义将Topic数据转发至其他Topic或支持的其他阿里云产品服务。
 
 一个规则下面最多可创建10个规则动作。
 
@@ -66,7 +66,7 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
 |tableName|表格存储中用来接收信息的数据表名称。|
 |regionName| 目标实例所在地域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
 |role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的表格存储。授权角色信息如下：
@@ -135,7 +135,7 @@ OTS类型Configuration示例：
 |themeName|消息服务中用来接收信息的目标主题名称。|
 |regionName| 目标消息服务所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
 |role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的消息服务。授权角色信息如下：
@@ -175,7 +175,7 @@ MNS类型​Configuration​​示例：
 |serviceName|函数服务中用来接收信息的目标服务名称。|
 |regionName| 目标函数服务实例所在区域。
 
- 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/zh/doc-detail/40654.htm)文档。
+ 具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
 |role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的函数计算服务。授权角色信息如下：
@@ -214,6 +214,7 @@ FC类型Configuration示例
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |ActionId|Long| 调用成功时，规则引擎为该规则动作生成的规则动作ID，作为其标识符。
 
  **说明：** 请妥善保管该信息。在调用与规则动作相关的接口时，您可能需要提供对应的规则动作ID。
@@ -223,8 +224,6 @@ FC类型Configuration示例
 ## 示例 {#section_ncq_dk1_ydb .section}
 
 **请求示例**
-
-**说明：** 为方便您查看和理解请求参数值的格式，以下请求参数值没有经过编码处理。在实际调用中，参数值中的符号需编码处理。
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=CreateRuleAction

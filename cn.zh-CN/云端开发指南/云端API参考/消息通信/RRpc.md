@@ -7,7 +7,7 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：RRpc。|
-|ProductKey|String|是|要发送消息的产品ID。|
+|ProductKey|String|是|要发送消息的产品Key。|
 |DeviceName|String|是|要接收消息的设备名称。|
 |RequestBase64Byte|String|是|要发送的请求消息内容经过Base64编码得到的字符串格式数据。|
 |Timeout|Integer|是|等待设备回复消息的时间，单位是毫秒，取值范围是1,000 ~5,000。|
@@ -23,6 +23,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |MessageId|String|成功发送请求消息后，云端生成的消息ID，用于标识该消息。|
 |RrpcCode|String| 调用成功时，生成的调用返回码，标识请求状态。取值：
 

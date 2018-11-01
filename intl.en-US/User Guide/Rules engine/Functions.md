@@ -6,7 +6,7 @@ The rules engine provides functions that allow you to handle data when writing a
 
 You can call functions to get or handle data.
 
-For example, the following code uses the functions: deviceName\(\), abs\(number\), and topic\(number\).
+For example, in the following example, the functions: deviceName\(\), abs\(number\), and topic\(number\) are used.
 
 ```
 SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag，deviceName(),abs(temperature) tmr FROM "/topic/#" WHERE temperature>10 and topic(2)='123'
@@ -17,7 +17,7 @@ SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag
 |**Function**|**Description**|
 |abs\(number\)|Returns the absolute value of a number.|
 |asin\(number\)|Returns the asin of a number.|
-|attribute\(key\)|Returns the device tag that corresponds with the key. If the device is a dependent device and you use SQL to call this function, the returned result is empty.|
+|attribute\(key\)|Returns the device tag value that corresponds with the key. If no such device tag key exists, the returned result is empty.|
 |concat\(string1, string2\)| Concatenates two strings.
 
  Example: concat\(field,’a’\).
@@ -30,10 +30,10 @@ SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag
  The String parameter represents an algorithm. Available algorithms include MD2, MD5, SHA1, SHA-256, SHA-384, and SHA-512.
 
  |
-|deviceName\(\)|Returns the name of the current device. If the device is a dependent device and you use SQL to call this function, the returned result is empty.|
+|deviceName\(\)|Returns the name of the current device. When you debug your SQL statements, because no real device is connected, the returned result is empty.|
 |endswith\(input, suffix\)|Validates whether the input string ends with the suffix string.|
 |exp\(number\)|Returns a specific value raised to the power of a number.|
-|floor\(number\)|Rounds a number down, toward zero, to the nearest multiple of significance. Returns an integer that is equal|
+|floor\(number\)|Rounds a number down, toward zero, to the nearest multiple of significance. Returns an integer that is equal.|
 |log\(n, m\)| Returns the logarithm of a number to the base that you have specified.
 
  If you do not specify m, log\(n\) is returned.
@@ -65,7 +65,7 @@ SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag
 |tanh\(n\)|Returns the hyperbolic tangent of n.|
 |timestamp\(format\)| Returns the current system time.
 
- The format parameter is optional. If you do not set this parameter, the function returns the current system timestamp in milliseconds. Example: timestamp\(\) = 1232323233, timestamp\(‘yyyy-MM-dd HH:mm:ss.SSS’\)=2016-05-30 12:00:00.000.
+ The format parameter is optional. If you do not enter a value for format, the real-time system timestamp in milliseconds will be returned. For example, timestamp\(\) = 1540483200000，timestamp\('yyyy-MM-dd HH:mm:ss.SSS'\)=2018-10-26 00:00:00.000.
 
  |
 |topic\(number\)| Returns a segment of a topic.

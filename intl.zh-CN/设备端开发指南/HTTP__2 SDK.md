@@ -156,7 +156,7 @@
     Action consume(final MessageToken messageToken);
     ```
 
-    通过MessageToken.getMessage获取消息后，该方法会被调用。因接口在线程池中调用，所以请注意现成安全问题。该方法返回值决定了QoS1及QoS2消息是否回复的ACK。返回值说明如下：
+    通过MessageToken.getMessage获取消息后，该方法会被调用。因接口在线程池中调用，所以请注意线程安全问题。该方法返回值决定了QoS1及QoS2消息是否回复的ACK。返回值说明如下：
 
     |返回值|描述|
     |---|--|

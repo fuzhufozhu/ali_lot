@@ -15,7 +15,7 @@ iOS SDK封装了 MQTT 建连、长连接维护和基于MQTT协议的上下行请
     source 'https://github.com/CocoaPods/Specs.git'
     source 'https://github.com/aliyun/aliyun-specs.git'
     target "necslinkdemo" do
-    pod 'IMLChannelCore', '1.1.0'
+    pod 'IMLChannelCore', '1.1.1'
     end
     ```
 
@@ -27,14 +27,13 @@ iOS SDK封装了 MQTT 建连、长连接维护和基于MQTT协议的上下行请
 初始化时，使用三元组信息跟物联网平台建立可信安全的长连接通道，配置自己的server地址以及端口。
 
 ```
-
 #import 
 #import 
 LKIoTConnectConfig * config = [LKIoTConnectConfig new];
 config.productKey = @"your product key";
 config.deviceName = @"your device name";
 config.deviceSecret = @"your device secret";
-config.server = @"www.youserver.com";//设为nil表示使用IoT套件作为连接服务器
+config.server = @"www.youserver.com";//设为nil表示使用IoT平台作为连接服务器
 config.port = 1883,//your server port。如果server被设置为nil。则port也不要设置。
 config.receiveOfflineMsg = NO;//如果希望收到客户端离线时的消息，可以设为YES.
 [[LKIoTExpress sharedInstance]startConnect:config connectListener:self];
@@ -48,7 +47,6 @@ SDK 封装了上行Publish请求、订阅Subscribe和取消订阅unSubscribe等�
 上行请求需要在 SDK 初始化建联成功之后才能正常调用。
 
 ```
-
 /**
 RPC请求接口，封装了业务的上行request以及下行resp。request业务报文由SDK内部按alink标准协议封装，形如
 {
@@ -104,14 +102,13 @@ params:(NSDictionary*)params respHandler:(LKExpressResponseHandler)responseHandl
 
 三个上行方法的区别如下：
 
--   `-(void)invokeWithTopic:(NSString )topic opts:(NSDictionary _Nullable)opts respHandler:(LKExpressResponseHandler)responseHandler;`：这个是业务请求响应模型，发一个请求回去，服务端的响应会在responseHandler回调中抛回来。但是对
+-   `-(void)invokeWithTopic:(NSString )topic opts:(NSDictionary _Nullable)opts respHandler:(LKExpressResponseHandler)responseHandler;`：这个是业务请求响应模型，发一个请求回去，服务端的响应会在responseHandler回调中抛回来。但是此API对 topic有要求。比如你 发送一个topic为 /$\{productKey\}/$\{deviceName\}/req 的请求。则对方在处理完业务逻辑后必须回复一个 /$\{productKey\}/$\{deviceName\}/req\_reply。否则会出现响应超时的错误。
 -   `uploadData:(NSString )topic data:(NSData )dat complete:(LKExpressOnUpstreamResult)completeCallback;`：这个是数据透传接口，不进行任何处理，直接上行到云端，也不会有响应回来。
 -   `-(void)publish:(NSString *\) topic params:\(NSDictionary*)params complete:(LKExpressOnUpstreamResult)completeCallback;`：数据上行时会按alink业务报文协议封装后再上行。alink业务报文协议在api reference里有较详细的说明。
 
 业务请求响应模型调用示例：
 
 ```
-
 NSString *topic = @"/sys/${YourProductKey}/${YourDeviceName}/account/bind";
 NSDictionary *params = @{
 @"iotToken": token,
@@ -131,7 +128,6 @@ NSLog(@"业务请求失败");
 订阅topic调用示例：
 
 ```
-
 NSString *topic = @"/sys/${YourProductKey}/${YourDeviceName}/app/down/event";
 [[LKIoTExpress sharedInstance] subscribe:topic complete: ^(NSError * error) {
 if (error != nil) {

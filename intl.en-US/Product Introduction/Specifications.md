@@ -2,7 +2,7 @@
 
 Two editions of IoT Platform are provided, IoT Platform Basic and IoT Platform Pro. The yellow modules in the following figure are features exclusive to the Pro Edition.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7452/15404587733365_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7452/15415799073365_en-US.png)
 
 **IoT Platform Basic**
 
@@ -34,7 +34,7 @@ The following table compares the features supported the by Basic Edition and the
 |Reporting of device events|-|√|
 |Online device debugging|-|√|
 |Device location tracking|-|√|
-|Remote configuration of devices|-|√|
+|Remote configuration of devices|√|√|
 |Firmware upgrade for devices|√|√|
 |Log analysis|√|√|
 |Rule engine|√|√|

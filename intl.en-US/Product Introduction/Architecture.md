@@ -1,6 +1,6 @@
 # Architecture {#concept_txj_mnp_tdb .concept}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7451/15404587583364_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7451/15420941423364_en-US.png)
 
 **IoT Hub**
 

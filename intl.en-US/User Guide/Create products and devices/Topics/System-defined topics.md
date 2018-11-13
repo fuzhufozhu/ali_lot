@@ -63,7 +63,6 @@ System-defined topic categories are available for you to broadcast to devices. Y
 
 The IoT Hub has integrated the synchronous communication mode based on the open-source MQTT protocol. The server sends commands to devices to receive responses in real time. These topic categories are as follows:
 
--   `/sys/${productKey}/${deviceName}/rrpc/request/${messageId}`: for devices to publish Revert-RPC requests. Permission operation: Publish.
--   `/sys/${productKey}/${deviceName}/rrpc/request/${messageId}`: for devices to respond to Revert-RPC requests. Permission operation: Publish.
--   `/sys/${productKey}/${deviceName}/rrpc/request/+`: for devices to subscribe to Revert-RPC requests. Permission operation: Subscribe.
+-   `/sys/${YourProductKey}/${YourDeviceName}/rrpc/response/${messageId}`: for devices to respond to Revert-RPC requests. Permission operation: Publish.
+-   `/sys/${YourProductKey}/${YourDeviceName}/rrpc/request/+`: for devices to subscribe to Revert-RPC requests. Permission operation: Subscribe.
 

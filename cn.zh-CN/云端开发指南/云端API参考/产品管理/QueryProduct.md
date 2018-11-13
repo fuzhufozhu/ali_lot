@@ -12,6 +12,7 @@
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：QueryProduct。|
 |ProductKey|String|是|要查询的产品的ProductKey。ProductKey是物联网平台为新建产品颁发的产品Key，作为其全局唯一标识符。您可以在创建产品的返回结果中查看该信息。|
+|公共请求参数|-|是|公共请求参数，请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#) 。|
 
 ## 返回参数 {#section_jbf_mmf_xdb .section}
 
@@ -44,7 +45,7 @@
  1：网关。网关可以挂载子设备，具有子设备管理模块，维持子设备的拓扑关系，并且可以将拓扑关系同步到云端。
 
  |
-|ProductKey|String|产品ID。新建产品时，IoT平台为该产品颁发的全局唯一标识。|
+|ProductKey|String|产品Key。新建产品时，IoT平台为该产品颁发的全局唯一标识。|
 |ProductName|String|产品名称。|
 |ProductSecret|String|产品秘钥。|
 |CategoryName|String|高级版产品的设备类型。取值为您在创建高级版产品时，所选择的设备类型。|
@@ -53,7 +54,7 @@
 -   iothub\_senior：物联网平台高级版。
 
 |
-|Id2|Boolean|是否为id2产品（目前尚未开放）。|
+|Id2|Boolean|是否为ID²产品（目前尚未开放）。|
 
 ## 示例 {#section_tvz_rnf_xdb .section}
 

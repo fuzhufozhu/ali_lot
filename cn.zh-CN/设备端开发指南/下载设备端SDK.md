@@ -37,8 +37,6 @@
 
 -   C SDK
 
-    使用说明：[SDK开发指南](https://code.aliyun.com/edward.yangx/public-docs/wikis/user-guide/Linkkit_User_Manual)
-
     |版本号|发布日期|开发环境|下载链接|更新内容|
     |---|----|----|----|----|
     |V2.2.1|2018/09/03|64位Linux, GNU Make|[RELEASED\_V2.2.1](https://linkkit-sdk-download.oss-cn-shanghai.aliyuncs.com/linkkit2.2.1.tar.gz)|     -   WiFi配网、设备本地控制开源
@@ -77,7 +75,7 @@
 
     下载地址：[iot-http2-sdk-demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/iot-http2-sdk-demos.zip)。
 
-    使用说明：[HTTP/2 SDK](intl.zh-CN/设备端开发指南/HTTP/2 SDK.md#)
+    使用说明：[HTTP/2 SDK](intl.zh-CN/设备端开发指南/HTTP__2 SDK.md#)
 
 -   泛化协议
 

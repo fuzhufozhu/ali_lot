@@ -2,7 +2,7 @@
 
 Two editions of IoT Platform are provided, IoT Platform Basic and IoT Platform Pro. The yellow modules in the following figure are features exclusive to the Pro Edition.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7452/15415799073365_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7452/15420941583365_en-US.png)
 
 **IoT Platform Basic**
 

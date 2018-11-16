@@ -6,9 +6,9 @@
 
 泛化协议核心SDK概念、功能及Maven依赖，请参考[概览](intl.zh-CN/设备端开发指南/泛化协议/概览.md#)。
 
-## 配置管理 {#section_fy2_5s1_p2b .section}
+## 配置管理 {#Configuration .section}
 
-泛化协议核心SDK默认使用基于文件的配置管理。自定义配置请参见[自定义组件\>配置管理](#section_sz2_5s1_p2b)。
+泛化协议核心SDK默认使用基于文件的配置管理。自定义配置请参见[自定义组件\>配置管理](#)。
 
 -   支持格式包括Java Proterties、JSON以及可读性较好的[HOCON](https://github.com/lightbend/config/blob/master/HOCON.md)（JSON超集）。
 -   支持结构化配置项以提升可维护性。
@@ -38,7 +38,7 @@ RegionId 的表达方法，请参见通用参考[地域与可用区](https://www
 RegionId 的表达方法，请参见通用参考[地域与可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)
 
 |
-|popClientProfile|是|Open API调用客户端相关配置，参见下表[API Client配置](#table_xr3_12v_hfb)。|
+|popClientProfile|是|Open API调用客户端相关配置，参见下表[API Client配置](#)。|
 
 |参数|是否必需|描述|
 |:-|:---|:-|
@@ -57,7 +57,7 @@ RegionId 的表达方法，请参见通用参考[地域与可用区](https://www
 
 **devices.conf**
 
-配置设备在阿里云物联网平台的映射，即配置设备三元组。自定义配置文件请参见[自定义组件\>配置管理](#section_sz2_5s1_p2b)。
+配置设备在阿里云物联网平台的映射，即配置设备三元组。自定义配置文件请参见[自定义组件\>配置管理](#)。
 
 ```
 XXXX // 表示设备的原始标识
@@ -73,7 +73,7 @@ XXXX // 表示设备的原始标识
 
 **初始化**
 
-`com.aliyun.iot.as.bridge.core.BridgeBootstrap`负责初始化设备到阿里云物联网平台的通信。创建新的BridgeBootstrap实例后，网关[基本配置](#section_fy2_5s1_p2b)的管理组件会被初始化。使用自定义的配置管理，请参见[自定义组件\>配置管理](#section_sz2_5s1_p2b)。
+`com.aliyun.iot.as.bridge.core.BridgeBootstrap`负责初始化设备到阿里云物联网平台的通信。创建新的BridgeBootstrap实例后，网关[基本配置](#)的管理组件会被初始化。使用自定义的配置管理，请参见[自定义组件\>配置管理](#)。
 
 请通过以下接口完成初始化。
 
@@ -94,7 +94,7 @@ bootstrap.bootstrap();
 
 1.  Session初始化
 
-    泛化协议SDK提供非持久化的本地Session管理功能，关于自定义Session管理，请参见[自定义组件\>Session管理](#section_sz2_5s1_p2b)。
+    泛化协议SDK提供非持久化的本地Session管理功能，关于自定义Session管理，请参见[自定义组件\>Session管理](#)。
 
     创建接口：
 
@@ -105,7 +105,7 @@ bootstrap.bootstrap();
 
 2.  设备认证
 
-    设备本地Session初始化完成后请调用`com.aliyun.iot.as.bridge.core.handler.UplinkChannelHandler.doOnline(Session newSession, String originalIdentity, String... credentials)`完成本地设备认证和阿里云物联网平台上线认证，并根据结果允许设备后续通信或者断开连接。默认无本地认证，到阿里云物联网平台上线认证由SDK提供支持，如需使用自定义本地认证，请参见[自定义组件\>连接认证](#section_sz2_5s1_p2b)。
+    设备本地Session初始化完成后请调用`com.aliyun.iot.as.bridge.core.handler.UplinkChannelHandler.doOnline(Session newSession, String originalIdentity, String... credentials)`完成本地设备认证和阿里云物联网平台上线认证，并根据结果允许设备后续通信或者断开连接。默认无本地认证，到阿里云物联网平台上线认证由SDK提供支持，如需使用自定义本地认证，请参见[自定义组件\>连接认证](#)。
 
     示例代码：
 
@@ -185,7 +185,7 @@ public class SampleDownlinkHandler implements DownlinkChannelHandler {
 
 ```
 
-## 自定义组件 {#section_sz2_5s1_p2b .section}
+## 自定义组件 {#CustomComponents .section}
 
 开发者可以自定义设备连接认证、Session管理以及配置管理组件，如果期望使用自定义的组件，请务必在调用BridgeBootstrap初始化之前完成这些组件的初始化和替换。
 

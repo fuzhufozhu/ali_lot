@@ -7,17 +7,17 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：RemoveThingTopo。|
-|IotId|String|否| 要删除的设备ID。
+|IotId|String|否| 要删除拓扑关系的设备ID。
 
  **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 要删除的设备所隶属的产品Key。
+|ProductKey|String|否| 要删除拓扑关系的设备所隶属的产品Key。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
  |
-|DeviceName|String|否| 要删除的设备的名称。
+|DeviceName|String|否| 要删除拓扑关系的设备的名称。
 
  **说明：** 如果传入该参数，需同时传入ProductKey。
 

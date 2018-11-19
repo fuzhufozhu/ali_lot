@@ -7,22 +7,26 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：SetDeviceProperty。|
-|IotId|String|否| 要查询的设备ID。
+|IotId|String|否| 要设置的设备ID。
 
  **说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
 
  |
-|ProductKey|String|否| 要查询的设备所隶属的产品Key。
+|ProductKey|String|否| 要设置的设备所隶属的产品Key。
 
  **说明：** 如果传入该参数，需同时传入DeviceName。
 
  |
-|DeviceName|String|否| 要查询的设备的名称。
+|DeviceName|String|否| 要设置的设备的名称。
 
  **说明：** 如果传入该参数，需同时传入ProductKey。
 
  |
-|Items|Map|是|要设置的属性信息，组成为key:value。详情参见[Item](#table_omd_gft_xdb)。|
+|Items|String|是|要设置的属性信息，组成为key:value，数据格式为 JSON String。
+
+若此参数为空时，需传入 Items=\{\}。
+
+详情参见[Items](#table_omd_gft_xdb)。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 |名称|类型|描述|
@@ -32,7 +36,7 @@
  **说明：** 设置的属性必需是读写型。如果您指定了一个只读型的属性，设置将会失败。
 
  |
-|value|Obejct|属性值。取值需跟您定义的属性的数据类型和取值范围保持一致。|
+|value|Obejct|属性值。取值需和您定义的属性的数据类型和取值范围保持一致。|
 
 ## 返回参数 {#section_znb_2ft_xdb .section}
 
@@ -65,12 +69,12 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=SetDeviceProperty
 -   JSON格式
 
     ```
-    {
-      "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
-      "Success": true,
+    { 
+      "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207", 
+      "Success": true, 
       "Data": {
-    	  "MessageId":"abcabc123"
-      }
+         "MessageId":"abcabc123"
+       } 
     }
     ```
 

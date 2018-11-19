@@ -5,42 +5,92 @@ This topic describes how to create and configure a rule.
 1.   On the Rules page of the IoT Platform console, click **Create Rule**. 
 2.   Specify a Rule Name and select a Data Type. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15404607622331_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15426101712331_en-US.png)
 
-    -   Rule Name: Enter a unique rule name. Rule names are used to identify rules.
+    -   Rule Name: Enter a unique rule name that will be used to identify the rule.
     -   Data Type: JSON and binary formats are supported. The rules engine processes data based on topics. Therefore, you must select the format of the data in the topic that you want to process.
 3.   Locate the rule you have created and click **Manage**. On the Rule Details page, configure the rule. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15404607632334_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15426101712334_en-US.png)
 
     1.   Click **Write SQL**, and then write a SQL statement as the detailed rule for data processing. 
 
-        **Note:** You can use `to_base64(*)` to convert binary data to a base64 string. Built-in functions and conditions are also supported.
-
         For example, the following SQL statement can be used to extract the deviceName field from the custom topic category, which ends with the level labeled data, of the product Basic\_Light\_001.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15404607632344_en-US.png)
+        **Note:** You can use `to_base64(*)` to convert binary data to a base64 string. Built-in functions and conditions are also supported.
 
-        -   Rule Query Expression: You must define the Field,Topic, and Condition. The system will then automatically generate a complete rule query expression.
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15426101712344_en-US.png)
+
+        The parameters to be configured are explained as follows. For more information, see [SQL statements](reseller.en-US/User Guide/Rules engine/SQL statements.md#) and [Functions](reseller.en-US/User Guide/Rules engine/Functions.md#).
+
+        -   Rule Query Expression: You must define the Field, Topic, and Condition. The system will then automatically generate a complete rule query expression.
         -   Field: The message content field. For example, `deviceName() as deviceName`.
-        -   Topic: Select a topic whose messages are to be processed.
-
+        -   Topic: Select a topic from which the messages are to be processed.
             -   Custom: Indicates that it is a custom topic. After you select a product, you can enter a custom topic.
             -   sys: Indicates that it is a system-defined topic. If you select sys, you must select a product, a device, and a system-defined topic.
-            In this example, the custom topic category of the product Basic\_Light\_001 is set.
-
         -   Condition: The condition by which the rule is triggered.
-        For more information about how to write SQL statements, see [SQL statements](reseller.en-US/User Guide/Rules engine/SQL statements.md#)and [Functions](reseller.en-US/User Guide/Rules engine/Functions.md#).
+    2.  Click **Add Operation** next to **Data Forwarding**. Select the Alibaba Cloud service to which you want to forward the processed data, and follow the instructions on the page to configure the parameters. For more information about data forwarding examples, see [Examples](reseller.en-US/User Guide/Rules engine/Examples.md#). 
 
-    2.   Click **Add Operation** next to **Data Forwarding**. Select the Alibaba Cloud service to which you want to forward the processed data, and follow the instructions on the page to configure the parameters. 
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15426101712352_en-US.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15404607632352_en-US.png)
+    3.  Click **Add Misoperation** next to **Forward Error Data** and then create an action to forward error messages about data forwarding failures to the specified target. 
 
-        For more information about data forwarding examples, see [Examples](reseller.en-US/User Guide/Rules engine/Examples.md#).
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/154261017112671_en-US.png)
 
-4.   Go back to the Rules page and click **Start**. Data will then be forwarded following this rule. 
+        **Note:** 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15404607632361_en-US.png)
+        -   Error messages and device data cannot be forwarded to the same cloud product. For example, you cannot set Table Store as the target for both error messages and device data.
+        -   If a message fails to be forwarded to the target, the system will try again. If the retry fails, an error message will be forwarded to the defined target.
+        -   Error messages are forwarded only once.
+        -   Here, the term "error messages" refers only to messages about errors resulting from problems caused by the target cloud product instance.
+        -   You can add only one target for error message forwarding.
+        -   Error message format:
+
+            ```
+            {
+            "ruleName":"",
+            "topic":"",
+            "productKey":"",
+            "deviceName":"",
+            "messageId":"",
+            "base64OriginalPayload":"",
+            "failures":[
+                    {
+            "actionType":"OTS",
+            "actionRegion":"cn-shanghai",
+            "actionResource":"table1",
+            "errorMessage":""
+                    },
+                    {
+            "actionType":"RDS",
+            "actionRegion":"cn-shanghai",
+            "actionResource":"instance1/table1",
+            "errorMessage":""
+                    }
+                  ]
+            
+            }
+            ```
+
+            The parameters are described as follows.
+
+            |Parameter|Description|
+            |---------|-----------|
+            |ruleName|The name of the rule.|
+            |topic|The source topic of the message.|
+            |productKey|The product key.|
+            |deviceName|The device name.|
+            |messageId|The message ID that is generated by IoT Platform for this message.|
+            |base64OriginalPayload|The original data that has been Base64 encoded .|
+            |failures|Error description\(s\).|
+            |actionType|The action type.|
+            |actionRegion|The region where the action is performed.|
+            |actionResource|The target resource of the action.|
+            |ErrorMessage|Error message.|
+
+4.   Go back to the Rules page. Click **Start**. Data will then be forwarded following this rule. 
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7542/15426101722361_en-US.png)
 
     You can also perform the following operations:
 

@@ -47,7 +47,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|List|List<ServiceInfo\>|事件集合。每个元素代表一个服务。元素的结构参见[ServiceInfo](#table_o4z_bys_xdb)。|
+|List|List<ServiceInfo\>|服务记录集合。每个元素代表一个服务记录。元素的结构参见[ServiceInfo](#table_o4z_bys_xdb)。|
 |NextValid|Boolean|表示下一页面是否可用。true表示可用，false表示不可用。|
 |NextTime|Long|下一页面中的服务记录的起始时间。|
 

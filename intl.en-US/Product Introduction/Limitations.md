@@ -89,11 +89,11 @@ The default heartbeat interval is 1,200 seconds. If the time interval that you s
 
 ## Cloud API limitations {#section_zds_vcv_4fb .section}
 
-|API|One interface \(QPS\)|One tenant \(QPS\)|One IP address \(QPS\)|
-|:--|:--------------------|:-----------------|:---------------------|
-|Pub|5,000|1,600|50|
-|PubBroadcast|1,000|1|50|
-|BatchGetDeviceState|1,000|50|50|
-|Other APIs|1,000|500|50|
+|API|One tenant \(QPS\)|One IP address \(QPS\)|
+|:--|:-----------------|:---------------------|
+|Pub|1600|100|
+|RRpc|500|100|
+|PubBroadcast|1|100|
+|Other APIs|50|100|
 
 

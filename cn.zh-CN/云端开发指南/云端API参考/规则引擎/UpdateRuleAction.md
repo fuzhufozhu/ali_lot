@@ -16,16 +16,15 @@
 
  OTS：将根据规则处理后的Topic数据发送至阿里云表格存储，进行NoSQL数据存储。
 
- REPUBLISH：将根据规则处理后的Topic数据转发至另一个IoT Topic。
+ REPUBLISH：将根据规则处理后的Topic数据转发至另一个物联网平台 Topic。
 
  **说明：** 
 
--   新加坡地域服务（接入endpoint为ap-southeast）不支持FC。
--   美国西部1地域服务（接入endpoint为us-west-1）不支持、FC、。
--   二进制数据格式的规则（即规则的DataType参数是BINARY）不支持OTS。
+-   服务地域不同，规则引擎所支持的数据转发目标云产品不同。具体请参见规则引擎相关[地域和可用区](../../../../intl.zh-CN/用户指南/规则引擎/地域和可用区.md#)。
+-   数据格式为二进制的规则（即规则的DataType参数是BINARY）不支持转发数据至OTS（表格存储）。
 
  |
-|Configuration|String|是|该规则动作的配置信息。不同规则动作类型所需配置内容不同。具体要求，请参见[CreateActionRule](intl.zh-CN/云端开发指南/云端API参考/规则引擎/CreateRuleAction.md#section_ev2_m5z_xdb)中的各类型的Configuration描述。|
+|Configuration|String|是|该规则动作的配置信息。不同规则动作类型所需配置内容不同。具体要求，请参见[CreateActionRule](intl.zh-CN/云端开发指南/云端API参考/规则引擎/CreateRuleAction.md#section_ev2_m5z_xdb)中的各规则动作类型的Configuration描述。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_ctr_z1b_ydb .section}

@@ -19,7 +19,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.3.1</version>
+            <version>6.4.0</version>
         </dependency>
         ```
 
@@ -46,20 +46,13 @@ IClientProfile profile = DefaultProfile.getProfile("cn-shanghai", accessKey, acc
 DefaultAcsClient client = new DefaultAcsClient(profile); //Initialize the SDK
 ```
 
-accessKeyId is the AccessKeyId of your account, andaccessSecret is the AccessKeySecret paired with the AccessKeyId. You can go to [AccessKey](https://partners-intl.console.aliyun.com) page in the console to create or view your AccessKey.
+accessKeyId is the AccessKeyId of your account, andaccessSecret is the AccessKeySecret paired with the AccessKeyId. You can go to [AccessKey](https://ak-console.aliyun.com) page in the console to create or view your AccessKey.
 
 ## Initiate a call {#section_ins_yrd_zdb .section}
 
 The following example demonstrates how to call the Pub operation to publish messages to a topic.
 
 ```
-PubRequest request = new PubRequest();
-request.setProductKey("productKey");
-request.setMessageContent(Base64.encodeBase64String("hello world".getBytes()));
-request.setTopicFullName("/productKey/deviceName/get");
-request.setQos(0); //Currently, QoS0 and QoS1 are supported.
-PubResponse response = client.getAcsResponse(request);
-System.out.println(response.getSuccess());
-System.out.println(response.getErrorMessage());
+
 ```
 

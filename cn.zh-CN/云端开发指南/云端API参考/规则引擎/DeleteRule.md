@@ -21,7 +21,7 @@
 
 ## 示例 {#section_v5b_bm1_ydb .section}
 
-**请求参数**
+**请求示例**
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=DeleteRule

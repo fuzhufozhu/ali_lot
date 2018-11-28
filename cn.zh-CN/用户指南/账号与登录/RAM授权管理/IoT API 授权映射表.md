@@ -24,7 +24,9 @@
 |QueryDeviceEventData|iot:QueryDeviceEventData|\*|获取设备的事件历史数据。|
 |QueryDeviceServiceData|iot:QueryDeviceServiceData|\*|获取设备的服务记录历史数据。|
 |SetDeviceProperty|iot:SetDeviceProperty|\*|设置设备的属性。|
+|SetDevicesProperty|iot:SetDevicesProperty|\*|批量设置设备属性。|
 |InvokeThingService|iot:InvokeThingService|\*|调用设备的服务。|
+|InvokeThingsService|iot:InvokeThingsService|\*|批量调用设备服务。|
 |QueryDevicePropertyStatus|iot:QueryDevicePropertyStatus|\*|查询设备的属性快照。|
 |QueryDeviceDetail|iot:QueryDeviceDetail|\*|查询设备详情。|
 |DisableThing|iot:DisableThing|\*|禁用设备。|
@@ -37,7 +39,7 @@
 |SaveDeviceProp|iot:SaveDeviceProp|\*|为指定设备设置标签。|
 |QueryDeviceProp|iot:QueryDeviceProp|\*|查询指定设备的标签列表。|
 |DeleteDeviceProp|iot:DeleteDeviceProp|\*|删除设备标签。|
-|QueryAppDeviceList|iot:QueryAppDeviceList|\*|查看应用所绑定的设备列表。|
+|QueryDeviceByTags|iot:QueryDeviceByTags|\*|根据标签查询设备。|
 |CreateDeviceGroup|iot:CreateDeviceGroup|\*|创建分组。|
 |UpdateDeviceGroup|iot:UpdateDeviceGroup|\*|更新分组信息。|
 |DeleteDeviceGroup|iot:DeleteDeviceGroup|\*|删除分组。|
@@ -47,6 +49,7 @@
 |QueryDeviceGroupList|iot:QueryDeviceGroupList|\*|查询分组列表。|
 |SetDeviceGroupTags|iot:SetDeviceGroupTags|\*|添加或更新分组标签。|
 |QueryDeviceGroupTagList|iot:QueryDeviceGroupTagList|\*|查询分组标签列表。|
+|QueryDeviceGroupByDevice|iot:QueryDeviceGroupByDevice|\*|查询指定设备所在的分组列表。|
 |StartRule|iot:StartRule|\*|启动规则。|
 |StopRule|iot:StopRule|\*|暂停规则。|
 |ListRule|iot:ListRule|\*|查询规则列表。|

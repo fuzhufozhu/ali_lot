@@ -1,18 +1,15 @@
 # CreateRuleAction {#reference_qzh_sjd_xdb .reference}
 
-调用该接口在指定的规则下创建一个规则动作，定义将处理后的Topic数据转发至支持的其他阿里云服务。
+调用该接口在指定的规则下创建一个规则动作，定义将处理后的Topic数据转发至物联网平台的其他Topic或所支持的其他阿里云服务。
 
 ## 限制说明 {#section_uzf_3fz_xdb .section}
 
-规则引擎支持的地域及目标云产品，请参见[地域与可用区](../../../../intl.zh-CN/用户指南/规则引擎/地域和可用区.md#)。
+-   服务地域不同，所支持的目标云产品有所不同。规则引擎支持的地域及目标云产品，请参见[地域与可用区](../../../../intl.zh-CN/用户指南/规则引擎/地域和可用区.md#)。
 
-在调用CreateRule接口创建规则后，您可以调用本接口，在规则下创建具体的规则动作，定义将Topic数据转发至其他Topic或支持的其他阿里云产品服务。
+-   一个规则下面最多可创建10个规则动作。
 
-一个规则下面最多可创建10个规则动作。
+-   您可以通过调用该API创建规则动作，定义将数据转发至物联网平台其他Topic和其他阿里云产品 ，包括消息服务、函数计算和表格存储。但是，如果您想将数据转发至云数据库RDS版，请在[物联网平台控制台](https://iot.console.aliyun.com/rule)进行操作。
 
-您可以通过调用该API创建规则动作，定义将数据转发至消息服务、函数计算和表格存储。
-
-**说明：** 如果您想将数据转发至云数据库RDS版，请在物联网平台控制台进行操作。
 
 ## 请求参数 {#section_fjp_hfz_xdb .section}
 
@@ -28,7 +25,9 @@
 
  OTS：将根据规则处理后的Topic数据发送至阿里云表格存储，进行NoSQL数据存储。
 
- REPUBLISH：将根据规则处理后的Topic数据转发至另一个IoT Topic。
+**说明：** 数据格式为二进制的规则（即规则的DataType参数是BINARY）不支持转发数据至OTS（表格存储）。
+
+ REPUBLISH：将根据规则处理后的Topic数据转发至另一个物联网平台 Topic。
 
  |
 |Configuration|String|是|该规则动作的配置信息。不同规则动作类型所需内容不同，具体要求见下文描述。|
@@ -40,7 +39,7 @@
 |:-|:-|
 |topic| 转发至的目标Topic（系统Topic或自定义Topic）。
 
- 高级版设备的下行系统Topic如下：
+ 支持将数据转发至如下高级版设备的下行系统Topic：
 
 -   `/sys/${YourProductKey}/${YourDeviceName}/thing/service/property/set`
 -   `/sys/${YourProductKey}/${YourDeviceName}/thing/service/${tsl.service.identifier}`，变量$\{tsl.service.identifier\}的内容由该产品物模型中的服务决定。
@@ -69,7 +68,7 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
  具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
-|role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的表格存储。授权角色信息如下：
+|role| 授权角色信息。通过授予物联网平台指定的系统服务角色，您可以授权物联网平台访问您的表格存储。授权角色信息如下：
 
  ```
 {
@@ -80,7 +79,7 @@ sys类型：{"topic":"/sys/a1TXXXXXWSN/xxx_cache001/thing/service/property/set",
 
  请将`6541***`替换成您的阿里云账号ID。您可以登录控制台，在 [账号安全设置](https://account.console.aliyun.com/#/secure) 页面查看您的账号ID。
 
- `AliyunIOTAccessingOTSRole`是访问控制中定义的服务角色。用于授予IoT访问表格存储。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
+ `AliyunIOTAccessingOTSRole`是访问控制中定义的服务角色。用于授予物联网平台访问表格存储。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
 
  |
 |primaryKeys|目标表中的主键列表。详情参见[PrimaryKeys](#table_qfn_hd1_ydb)。|
@@ -138,7 +137,7 @@ OTS类型Configuration示例：
  具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
-|role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的消息服务。授权角色信息如下：
+|role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权物联网平台访问您的消息服务。授权角色信息如下：
 
  ```
 {
@@ -150,7 +149,7 @@ OTS类型Configuration示例：
 
  请将`6541***`替换成您的阿里云账号ID。您可以登录控制台，在 [账号安全设置](https://account.console.aliyun.com/#/secure) 页面查看您的账号ID。
 
- `AliyunIOTAccessingMNSRole`是访问控制中定义的服务角色。用于授予IoT访问消息服务。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
+ `AliyunIOTAccessingMNSRole`是访问控制中定义的服务角色。用于授予物联网平台访问消息服务。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
 
  |
 
@@ -178,7 +177,7 @@ MNS类型​Configuration​​示例：
  具体RegionName写法请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
 
  |
-|role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权IoT访问您的函数计算服务。授权角色信息如下：
+|role| 授权角色信息。通过授予IoT指定的系统服务角色，您可以授权物联网平台访问您的函数计算服务。授权角色信息如下：
 
  ```
 {
@@ -189,7 +188,7 @@ MNS类型​Configuration​​示例：
 
  请将`6541***`替换成您的阿里云账号ID。您可以登录控制台，在 [账号安全设置](https://account.console.aliyun.com/#/secure) 页面查看您的账号ID。
 
- `AliyunIOTAccessingFCRole`是访问控制中定义的服务角色。用于授予IoT访问函数计算。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
+ `AliyunIOTAccessingFCRole`是访问控制中定义的服务角色。用于授予物联网平台访问函数计算。关于角色的更多信息，您可以登录访问控制控制台，在[角色管理](https://ram.console.aliyun.com/#/role/list)页面进行角色管理。
 
  |
 

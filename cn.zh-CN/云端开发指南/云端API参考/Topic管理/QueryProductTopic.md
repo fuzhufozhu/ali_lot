@@ -2,7 +2,7 @@
 
 调用该接口查询指定产品的Topic类。
 
-## 请求示例 {#section_abq_1f5_xdb .section}
+## 请求参数 {#section_abq_1f5_xdb .section}
 
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
@@ -22,8 +22,8 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|ProductKey|String|产品ID。|
-|Id|String|Topic类的Topic ID。|
+|ProductKey|String|产品Key。|
+|Id|String|Topic类的 ID。|
 |TopicShortName|String|Topic类中除productKey和deviceName以外的类目。|
 |Operation|String| 设备对该Topic类的操作权限，取值：
 

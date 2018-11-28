@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.3.1</version>
+            <version>6.4.0</version>
         </dependency>
         ```
 
@@ -53,13 +53,24 @@ accessKey即您的账号的AccessKeyId，accessSecret即AccessKeyId对应的Acce
 以调用Pub接口发布消息到Topic为例。
 
 ```
-PubRequest request = new PubRequest();
-request.setProductKey("productKey");
-request.setMessageContent(Base64.encodeBase64String("hello world".getBytes()));
-request.setTopicFullName("/productKey/deviceName/get");
-request.setQos(0); //目前支持QoS0和QoS1
-PubResponse response = client.getAcsResponse(request);
-System.out.println(response.getSuccess());
-System.out.println(response.getErrorMessage());
+PubRequest request = new PubRequest(); 
+request.setProductKey("productKey"); 
+request.setMessageContent(Base64.encodeBase64String("hello world".getBytes())); 
+request.setTopicFullName("/productKey/deviceName/get"); 
+request.setQos(0); //目前支持QoS0和QoS1 
+try 
+{ 
+   PubResponse response = client.getAcsResponse(request); 
+   System.out.println(response.getSuccess()); 
+   System.out.println(response.getErrorMessage());
+} 
+catch (ServerException e) 
+{
+   e.printStackTrace();
+}
+ catch (ClientException e)
+{
+   e.printStackTrace();
+}
 ```
 

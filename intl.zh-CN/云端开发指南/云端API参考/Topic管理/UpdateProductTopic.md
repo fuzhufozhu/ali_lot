@@ -25,7 +25,7 @@
 |Desc|String|否|Topic类的描述信息。长度限制为100字符（一个汉字占一个字符）。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
-## 返回示例 {#section_hpq_b25_xdb .section}
+## 返回参数 {#section_hpq_b25_xdb .section}
 
 |名称|类型|描述|
 |:-|:-|:-|

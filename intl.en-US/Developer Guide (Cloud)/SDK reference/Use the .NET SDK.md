@@ -10,7 +10,7 @@
     -   Visual Studio 2010 and later.
 2.  Import IoT .NET SDK core library from the Alibaba Cloud.
 
-    Download the package of the IoT .NET SDK core library from [.NET SDK releases](https://github.com/aliyun/aliyun-openapi-net-sdk/tree/master/aliyun-net-sdk-iot), and extract the DLL file from the package.
+    Download the package of the IoT .NET SDK core library from [.NET SDK releases](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1543303532729/aliyun-net-sdk-iot-4.0.0.zip), and extract the DLL file from the package.
 
 3.  Add a reference to the core library.
     1.  In the Solution Explorer of Visual Studio, right-click your project, and select **Reference**.
@@ -40,8 +40,8 @@ In this example, call the Pub API to send messages to a topic.
 ```
 PubRequest request = new PubRequest();
 request.ProductKey = "<productKey>";
-request.TopicFullName = "/" + request.ProductKey + "/<deviceName>/get";
-byte[] payload = Encoding.Default.GetBytes("Hello World.") ;
+request.TopicFullName = "/<productKey>/<deviceName>/get";
+byte[] payload = Encoding.Default.GetBytes("Hello World.");
 String payloadStr = Convert.ToBase64String(payload);
 request.MessageContent = payloadStr;
 request.Qos = 0;

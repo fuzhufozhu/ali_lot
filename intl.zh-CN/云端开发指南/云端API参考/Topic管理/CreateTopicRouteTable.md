@@ -41,7 +41,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=CreateTopicRouteTable
 &公共请求参数
 ```
 
-**返回参数**
+**返回示例**
 
 ```
 {

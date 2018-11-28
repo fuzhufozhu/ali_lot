@@ -41,7 +41,7 @@
 
 ## 示例 {#section_uz3_j51_ydb .section}
 
-**请求参数**
+**请求示例**
 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=ListRuleActions

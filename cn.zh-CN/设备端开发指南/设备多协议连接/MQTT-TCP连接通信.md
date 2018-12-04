@@ -4,7 +4,7 @@
 
 **说明：** 在进行MQTT CONNECT协议设置时：
 
--   Connect指令中的KeepAlive不能小于30秒，否则会拒绝连接。建议值为\[60秒,300秒\]之间。
+-   Connect指令中的KeepAlive时间为30至1200秒。心跳时间不在此区间内会拒绝连接。建议取值300秒以上。
 -   如果同一个设备三元组，同时用于多个连接，可能导致客户端互相上下线。
 -   MQTT默认开源SDK会自动重连，您可以通过日志服务查看设备行为。
 
@@ -28,7 +28,7 @@ mqttUsername: deviceName+"&"+productKey
 mqttPassword: sign_hmac(deviceSecret,content)
     ```
 
- sign签名需要把以下参数按字典排序后，根据signmethod加签。
+ sign签名需要把提交给服务器的参数按字典排序后，根据signmethod加签。
 
  content的值为提交给服务器的参数（ProductKey、DeviceName、timestamp和clientId），按照字母顺序排序, 然后将参数值依次拼接。
 
@@ -73,7 +73,7 @@ clientId12345deviceNamedevicedeviceSecretsecretproductKeypk
         |--|----|----|
         |productKey|必选|ProductKey，从物联网平台的控制台获取。|
         |deviceName|必选|DeviceName，从物联网平台的控制台获取。|
-        |sign|必选|签名，格式为hmacmd5\(deviceSecret,content\)，content将所有提交给服务器的参数（version、sign、resources和signmethod除外）, 按照字母顺序排序， 然后将参数值依次拼接，无拼接符号。|
+        |sign|必选|签名，格式为hmacmd5\(deviceSecret,content\)，content将所有提交给服务器的参数（version、sign、resources和signmethod除外），按照字母顺序排序， 然后将参数值依次拼接，无拼接符号。|
         |signmethod|可选|算法类型。支持hmacmd5，hmacsha1，hmacsha256和 sha256，默认为hmacmd5。|
         |clientId|必选|表示客户端ID，64字符内。|
         |timestamp|可选|时间戳，不做窗口校验。|
@@ -131,11 +131,11 @@ clientId12345deviceNamedevicedeviceSecretsecretproductKeypk
 
         错误码说明如下：
 
-        -   401: request auth error，在这个场景中，通常在签名匹配不通过时返回。
-        -   460: param error，参数异常。
-        -   500: unknow error，一些未知异常。
-        -   5001: meta device not found，指定的设备不存在。
-        -   6200: auth type mismatch，未授权认证类型错误。
+        -   401: request auth error：在这个场景中，通常在签名匹配不通过时返回。
+        -   460: param error：参数异常。
+        -   500: unknow error：一些未知异常。
+        -   5001: meta device not found：指定的设备不存在。
+        -   6200: auth type mismatch：未授权认证类型错误。
 
 ## MQTT保活 {#section_x45_pjm_b2b .section}
 
@@ -143,5 +143,5 @@ clientId12345deviceNamedevicedeviceSecretsecretproductKeypk
 
 如果服务端在保活时间内无法收到任何报文，物联网平台会断开连接，设备端需要进行重连。
 
-设置保活时间的取值，建议取值范围60~300s。
+设置保活时间的取值，取值范围为30至1200秒，建议取值300秒以上。
 

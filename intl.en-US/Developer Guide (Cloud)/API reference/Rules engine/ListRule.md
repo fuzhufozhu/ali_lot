@@ -19,7 +19,7 @@ Call this operation to query the list of rules by page.
 |Success|Boolean|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.|
 |ErrorMessage|String|The error message returned when the call fails.|
 |Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](intl.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
-|Data|RuleInfo|The rule information returned when the call is successful. See the following table [RuleInfo](#table_lbq_bs1_ydb).|
+|Data|RuleInfo|The rule information returned when the call is successful. See the following table RuleInfo.|
 |PageSize|Integer|The number of rules displayed per page.|
 |Page|Integer|The current page number.|
 |Total|Integer|The total number of pages.|
@@ -54,7 +54,7 @@ Call this operation to query the list of rules by page.
 https://iot.cn-shanghai.aliyuncs.com/?Action=ListRule
 &PageSize=10
 &CurrentPage=1
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

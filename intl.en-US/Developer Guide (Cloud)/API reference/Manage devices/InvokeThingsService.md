@@ -59,7 +59,7 @@ https://iot.cn-shanghai.aliyuncs.com/&Action=InvokeThingsService
 &DeviceName. 2=1102android01
 &Identifier=TimeReset
 &ProductKey=a1hWjHDWUbF
-&<Common request parameters>
+&Common request parameters
 ```
 
 **Response example**

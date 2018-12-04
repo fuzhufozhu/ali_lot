@@ -56,7 +56,7 @@ https://iot.cn-shanghai.aliyuncs.com/&Action=QueryDeviceByTags
 &Tag. 1. TagValue=dfdfdfdf
 &Tag. 2. TagKey=ddfdfdf
 &Tag. 2. TagValue=dfdfdfdfd
-&<Common request parameters>
+&Common Request Parameters
 ```
 
 **Response example**

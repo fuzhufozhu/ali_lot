@@ -9,7 +9,7 @@ You can call this operation to create tags for a specified device.
 |Action|String|Yes|The operation that you want to perform. Set the value to SaveDeviceProp.|
 |ProductKey|String|Yes|The ProductKey of the device for which you want to create tags.|
 |DeviceName|String|Yes|The name of the device for which you want to create tags.|
-|Props|String|Yes| Tags to be created. For more information about the structure of a device tag, see the following table [Prop](#table_rxn_33t_xdb).
+|Props|String|Yes| Tags to be created. For more information about the structure of a device tag, see the following table Prop.
 
  **Note:** 
 
@@ -44,7 +44,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=SaveDeviceProp
 &ProductKey=al**********
 &DeviceName=device1
 &Props=%7B%22color%22%3A%22red%22%7D
-& <Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

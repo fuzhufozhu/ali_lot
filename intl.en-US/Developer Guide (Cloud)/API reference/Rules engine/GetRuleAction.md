@@ -18,7 +18,7 @@ Call this operation to query the information of a specified rule action.
 |Success|Boolean|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.|
 |ErrorMessage|String|The error message returned when the call fails.|
 |Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](reseller.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
-|RuleActionInfo|RuleActionInfo|The details of the rule action returned when the call is successful. See the following table [RuleActionInfo](#table_nct_lq1_ydb).|
+|RuleActionInfo|RuleActionInfo|The details of the rule action returned when the call is successful. See the following table RuleActionInfo.|
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
@@ -46,7 +46,7 @@ Call this operation to query the information of a specified rule action.
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=GetRuleAction
 &ActionId=10001
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

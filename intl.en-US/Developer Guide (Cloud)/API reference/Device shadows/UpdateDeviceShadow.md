@@ -23,7 +23,7 @@ Call this operation to update the shadow information of a specified device.
 }
 ```
 
- For more information, see the following table [ShadowMessage](reseller.en-US/Developer Guide (Cloud)/API reference/Device shadows/UpdateDeviceShadow.md#table_ry1_nlb_ydb).
+ For more information, see the following table ShadowMessage.
 
  |
 |Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
@@ -52,7 +52,7 @@ https://iot.cn-shanghai.aliyuncs.com/?&Action=UpdateDeviceShadow
 &ProductKey=al*********
 &DeviceName=device1
 &ShadowMessage=[{"method":"update","state":{"desired":{"color":"green"},"reported":"\"},"version":1}]
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

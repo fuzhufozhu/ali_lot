@@ -34,7 +34,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=DeleteDeviceProp
 &ProductKey=al*********
 &DeviceName=device1
 &PropKey=temperature
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

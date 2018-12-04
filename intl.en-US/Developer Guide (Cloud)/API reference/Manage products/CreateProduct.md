@@ -52,7 +52,7 @@ This parameter is specific to creating a Pro Edition product that is to be conne
 |ErrorMessage|String|The error message returned when the call fails.|
 |Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](reseller.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
 |ProductKey|String|The product key.|
-|Data|Data|The information of the created product that is returned when the call is successful. See [Table 1](#table_z3k_lz2_xdb).|
+|Data|Data|The information of the created product that is returned when the call is successful. See the following table ProductInfo.|
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
@@ -97,7 +97,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=CreateProduct
 &NodeType=0
 &ProductName=Test
 &ProtocolType=modbus
-&<Public Request Parameters>
+&Public Request Parameters
 
 
 ```

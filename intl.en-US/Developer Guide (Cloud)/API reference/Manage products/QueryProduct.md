@@ -63,7 +63,7 @@ You can call this API at a frequency of up to 50 times per second.
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryProduct
 &ProductKey=al*********
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

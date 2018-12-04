@@ -27,7 +27,7 @@ Call this operation to query the message source topics that are subscribed to by
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryTopicReverseRouteTable
 &Topic=%2Fx7aWKW94bb8%2FtestDataToDataHub%2Fupdate
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

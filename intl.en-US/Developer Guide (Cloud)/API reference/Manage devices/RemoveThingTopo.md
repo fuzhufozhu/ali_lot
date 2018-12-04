@@ -41,7 +41,7 @@ Call this operation to remove the topological relationships of a device. If the 
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=RemoveThingTopo
 &IotId=CqXL5h5ysRTA4NxjABjj0010fa****
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

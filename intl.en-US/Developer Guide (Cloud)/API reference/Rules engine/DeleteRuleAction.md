@@ -26,7 +26,7 @@ Call this operation to delete a specified rule action.
 ```
 https://iot.cn-shanghai.aliyuncs.com/?Action=DeleteRuleAction
 &ActionId=10001
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

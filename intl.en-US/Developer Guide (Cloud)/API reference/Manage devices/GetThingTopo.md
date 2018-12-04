@@ -34,7 +34,7 @@ Call this operation to query the topological relationships of a specified device
 |Success|Boolean|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.|
 |ErrorMessage|String|The error message returned when the call fails.|
 |Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](reseller.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
-|Data|Data|The information of devices which have topological relationships with this specified device. For more information, see the following table [DeviceDataInfo](#table_av3_mnt_xdb).|
+|Data|Data|The information of devices which have topological relationships with this specified device. For more information, see the following table DeviceDataInfo.|
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
@@ -61,7 +61,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=GetThingTopo
 &DeviceName=device1
 &PageSize=10
 &PageNo=1
-&<Public Request Parameters>
+&Public Request Parameters
 ```
 
 **Response example**

@@ -33,8 +33,10 @@
 |[QueryDevicePropertyData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyData.md#)|获取设备的属性历史数据。|
 |[QueryDeviceServiceData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceServiceData.md#)|获取设备的服务记录历史数据。|
 |[InvokeThingService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingService.md#)|调用设备的服务。|
+|[InvokeThingsService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingsService.md#)|批量调用设备的服务。|
 |[QueryDevicePropertyStatus](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyStatus.md#)|查询设备的属性快照。|
 |[SetDeviceProperty](cn.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceProperty.md#)|设置设备的属性。|
+|[SetDevicesProperty](cn.zh-CN/云端开发指南/云端API参考/设备管理/SetDevicesProperty.md#)|批量设置设备属性。|
 |[SaveDeviceProp](cn.zh-CN/云端开发指南/云端API参考/设备管理/SaveDeviceProp.md#)|设置设备标签。|
 |[QueryDeviceProp](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceProp.md#)|查询设备标签列表。|
 |[DeleteDeviceProp](cn.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDeviceProp.md#)|删除设备标签。|
@@ -43,6 +45,7 @@
 |[RemoveThingTopo](cn.zh-CN/云端开发指南/云端API参考/设备管理/RemoveThingTopo.md#)|移除网关设备或子设备所具有的拓扑关系。|
 |[QueryDeviceStatistics](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceStatistics.md#)|获取设备的统计数量。|
 |[GetGatewayBySubDevice](cn.zh-CN/云端开发指南/云端API参考/设备管理/GetGatewayBySubDevice.md#)|根据挂载的子设备信息查询对应的网关设备信息。|
+|[QueryDeviceByTags](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceByTags.md#)|根据标签查询设备。|
 
 ## 分组管理相关API {#section_atx_lcg_mfb .section}
 
@@ -57,6 +60,7 @@
 |[BatchDeleteDeviceGroupRelations](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchDeleteDeviceGroupRelations.md#)|删除分组中已添加的指定设备。|
 |[SetDeviceGroupTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/SetDeviceGroupTags.md#)|添加或更新分组标签。|
 |[QueryDeviceGroupTagList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupTagList.md#)|查询分组标签列表。|
+|[QueryDeviceGroupByDevice](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByDevice.md#)|查询指定设备所在的分组列表。|
 
 ## 规则引擎相关 API {#section_enr_vbd_xdb .section}
 

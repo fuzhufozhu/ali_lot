@@ -10,7 +10,7 @@
 
 ## 前提条件 {#section_i4f_ml5_mfb .section}
 
-在控制台创建传感器产品和设备，并将设备连接到物联网平台。具体请参考[高级版快速入门](../../../../cn.zh-CN/快速入门/高级版快速开始/创建产品/创建产品.md#)。
+在控制台创建传感器产品和设备，并将设备连接到物联网平台。具体请参考[高级版快速入门](../../../../cn.zh-CN/快速入门/高级版快速开始/创建产品/创建产品与设备.md#)。
 
 ## 数据上报 {#section_bd2_2g1_kfb .section}
 
@@ -40,14 +40,14 @@
 
     其余参数请按照下图中的取值设置。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/153987114313340_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/154406777413340_zh-CN.png)
 
 
 ## 时序数据使用 {#section_n4f_2g1_kfb .section}
 
 1.  登录[时序时空数据库控制台](https://tsdb.console.aliyun.com)。
 2.  在实例列表中找到存储数据的VPC实例，并单击右侧**管理**。
-3.  参考[查询数据](https://help.aliyun.com/document_detail/56267.html)中的操作步骤，查询IoT发送到实例中的数据。
+3.  参考[时序洞察](https://help.aliyun.com/document_detail/89056.html)中的查询数据操作步骤，查询IoT发送到实例中的数据。
     -   按楼层聚合对比数据，根据如下表格设置查询参数：
 
         |参数|取值|
@@ -58,7 +58,7 @@
 
         数据查询结果如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/153987114413341_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/154406777413341_zh-CN.png)
 
     -   按大厦聚合avg，降采样1分钟查询数据，根据如下表格设置查询参数：
 
@@ -74,6 +74,6 @@
 
         数据查询结果如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/153987114413342_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/154406777413342_zh-CN.png)
 
 

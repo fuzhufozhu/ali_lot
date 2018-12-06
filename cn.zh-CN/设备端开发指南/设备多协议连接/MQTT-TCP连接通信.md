@@ -35,7 +35,7 @@ mqttPassword: sign_hmac(deviceSecret,content)
     -   clientId：表示客户端ID，建议使用设备的MAC地址或SN码，64字符内。
     -   timestamp：表示当前时间毫秒值，可以不传递。
     -   mqttClientId：格式中`||`内为扩展参数。
-    -   signmethod：表示签名算法类型。支持hmacmd5，hmacsha1，hmacsha256和 sha256，默认为hmacmd5。
+    -   signmethod：表示签名算法类型。支持hmacmd5，hmacsha1和hmacsha256，默认为hmacmd5。
     -   securemode：表示目前安全模式，可选值有2 （TLS直连模式）和3（TCP直连模式）。
  |
     |示例| 如果`clientId = 12345，deviceName = device， productKey = pk， timestamp = 789，signmethod=hmacsha1，deviceSecret=secret`，那么使用TCP方式提交给MQTT的参数如下：
@@ -50,12 +50,6 @@ mqttPassword=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimesta
 
      ```
 FAFD82A3D602B37FB0FA8B7892F24A477F851A14
-    ```
-
- **说明：** 当signmethod=sha256时，比较特殊，需要将productSecret或者deviceSecret加入签名算法中，加密前的Password格式如下：
-
-    ```
-clientId12345deviceNamedevicedeviceSecretsecretproductKeypk
     ```
 
  |
@@ -74,7 +68,7 @@ clientId12345deviceNamedevicedeviceSecretsecretproductKeypk
         |productKey|必选|ProductKey，从物联网平台的控制台获取。|
         |deviceName|必选|DeviceName，从物联网平台的控制台获取。|
         |sign|必选|签名，格式为hmacmd5\(deviceSecret,content\)，content将所有提交给服务器的参数（version、sign、resources和signmethod除外），按照字母顺序排序， 然后将参数值依次拼接，无拼接符号。|
-        |signmethod|可选|算法类型。支持hmacmd5，hmacsha1，hmacsha256和 sha256，默认为hmacmd5。|
+        |signmethod|可选|算法类型。支持hmacmd5，hmacsha1和hmacsha256，默认为hmacmd5。|
         |clientId|必选|表示客户端ID，64字符内。|
         |timestamp|可选|时间戳，不做窗口校验。|
         |resources|可选|希望获取的资源描述，如MQTT。 多个资源名称用逗号隔开。|

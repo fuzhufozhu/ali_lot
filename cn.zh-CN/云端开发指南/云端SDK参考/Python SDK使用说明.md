@@ -4,7 +4,7 @@
 
 1.  安装Python开发环境。
 
-    访问[Python官网](https://www.python.org/downloads/)下载Python安装包，并完成安装。
+    访问[Python官网](https://www.python.org/downloads/)下载Python安装包，并完成安装。支持Python 2.6.5及以上版本。
 
 2.  安装Python的包管理工具 pip。（如果您已安装pip，请忽略此步骤。）
 
@@ -12,7 +12,7 @@
 
 3.  安装IoT Python SDK。
 
-    以管理员权限执以下命令，安装IoTPython SDK。
+    以管理员权限执以下命令，安装IoT Python SDK。请参见最新版[aliyun-python-sdk-iot](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-iot)信息。
 
     ```
     sudo pip install aliyun-python-sdk-core

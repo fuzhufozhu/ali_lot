@@ -29,8 +29,9 @@
 |[BatchRegisterDevice](cn.zh-CN/云端开发指南/云端API参考/设备管理/BatchRegisterDevice.md#)|批次申请特定数量设备。|
 |[QueryBatchRegisterDeviceStatus](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryBatchRegisterDeviceStatus.md#)|查询批量注册设备状态。|
 |[QueryPageByApplyId](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryPageByApplyId.md#)|查询批次设备列表。|
-|[QueryDeviceEventData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceEventData.md#)|获取设备的事件历史数据。|
-|[QueryDevicePropertyData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyData.md#)|获取设备的属性历史数据。|
+|[QueryDeviceEventData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceEventData.md#)|查询设备的事件历史数据。|
+|[QueryDevicePropertyData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyData.md#)|查询设备的属性历史数据。|
+|[QueryDevicePropertiesData](cn.zh-CN/.md#)|批量查询指定设备的多个属性的历史数据。|
 |[QueryDeviceServiceData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceServiceData.md#)|获取设备的服务记录历史数据。|
 |[InvokeThingService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingService.md#)|调用设备的服务。|
 |[InvokeThingsService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingsService.md#)|批量调用设备的服务。|
@@ -61,6 +62,8 @@
 |[SetDeviceGroupTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/SetDeviceGroupTags.md#)|添加或更新分组标签。|
 |[QueryDeviceGroupTagList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupTagList.md#)|查询分组标签列表。|
 |[QueryDeviceGroupByDevice](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByDevice.md#)|查询指定设备所在的分组列表。|
+|[QuerySuperDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QuerySuperDeviceGroup.md#)|根据子分组ID查询父分组信息。|
+|[QueryDeviceListByDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceListByDeviceGroup.md#)|查询分组中的设备列表。|
 
 ## 规则引擎相关 API {#section_enr_vbd_xdb .section}
 

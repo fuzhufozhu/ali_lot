@@ -19,7 +19,7 @@ To add a product tag, follow these steps:
 3.  Click **Edit** in the **Product Tags** section.
 4.  In the **Edit Tags** dialog box, enter the Key and  Value for the tag, and then click **OK**.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15404604652847_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15446005672847_en-US.png)
 
 After a product tag is created, newly created devices under the product will be automatically assigned the product tag.
 
@@ -35,7 +35,7 @@ To add a device tag in the console, follow these steps:
 4.  Click **Edit** in the **Device Tags** section.
 5.  In the **Edit Tags** dialog box, enter the Key and  Value for the tag, and then click **OK**.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15404604652849_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15446005672849_en-US.png)
 
 The device tag follows the device through the system. In addition, IoT Platform can send device tags to other services in Alibaba Cloud based on the Rule Engine.
 

@@ -6,7 +6,7 @@
 
 基于CoAP协议将NB-IoT设备接入物联网平台的流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15444279343114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15445942093114_zh-CN.png)
 
 基础流程说明如下：
 
@@ -64,7 +64,7 @@
  |
     |signmethod|否|算法类型，支持hmacmd5和hmacsha1。|
     |clientId|是|客户端ID，长度需在64字符内。建议使用设备的的MAC地址或SN码作为clientId的值。|
-    |timestamp|否|时间戳。目前，时间戳不做窗口校验。|
+    |timestamp|否|时间戳。目前，时间戳不做时间窗口校验。|
 
     返回结果示例：
 
@@ -174,11 +174,7 @@
     |Port|是|端口。取值：5682。|
     |Accept|是|设备接收的数据编码方式。目前，支持两种方式：application/json和application/cbor。|
     |Content-Format|是|上行数据的编码格式，服务端对此不做校验。目前，支持两种方式：application/json和application/cbor。|
-    |payload|是|需要上传的数据经高级加密标准（AES）加密后的数据。AES加密说明如下：
-
-    -   加密key， SHA256\(设备密钥+","+认证后返回随机数\)，截取中间32个字符（16个字节）。
-    -   AES参数， 向量：543yhjy97ae7fyfg，模式：AES/CBC/PKCS5Padding，字符集UTF-8。
-|
+    |payload|是|待上传的数据经高级加密标准（AES）加密后的数据。|
     |CustomOptions|是|option值有2088和2089两种类型，说明如下：    -   2088：表示token，取值为设备认证后返回的token值。
 
 **说明：** 每次上报数据都需要携带token信息。如果token失效，需重新认证获取token。

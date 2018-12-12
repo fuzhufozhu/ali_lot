@@ -1,18 +1,18 @@
 # Development guide {#concept_cgg_k2v_y2b .concept}
 
-This topic introduces how to configure the service subscription, connect to the HTTP/2 SDK, authenticate identity, and configure the message-receiving interface.
+This article introduces how to configure the service subscription, connect to the HTTP/2 SDK, authenticate identity, and configure the message-receiving interface.
 
 Specifically, this section details the development process of the service subscription. For more information, see [SDK demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/http2-server-side-demo.zip).
 
 ## Configure service subscription {#section_tbd_2s5_42b .section}
 
-1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
-2.  In the left-side navigation pane, click **Products**.
+1.  Log on to the [IoT Platform console](https://iot.console.aliyun.com/product/region/cn-shanghai).
+2.  In the left-side navigation pane, click **Devices** \> **Product**.
 3.  In the product list, find the product for which you want to configure the service subscription and click **View**. You are directed to the Product Details page.
 4.  Click **Service Subscription** \> **Set Now**.
 5.  Select the types of notifications that you want to push to the SDK.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/154260973312666_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/154459799312666_en-US.png)
 
     -   Device Upstream Notification: Indicates the messages of the topics to which devices are allowed to publish messages. If this notification type is selected, the HTTP/2 SDK can receive messages reported by devices.
 
@@ -50,16 +50,16 @@ Add the maven dependency to the project to connect to the SDK.
 
 ## Identity authentication {#section_atv_yl5_42b .section}
 
-Use the AccessKey information of your account for both identity authentication and to build the connection between the SDK and IoT Platform.
+Use the AccessKey information of your account for identity authentication and to build the connection between the SDK and IoT Platform.
 
 Example:
 
 ```
-// Your account AccessKeyID
+//Your account accessKeyID
         String accessKey = "xxxxxxxxxxxxxxx";
         // Your account AccessKeySecret
         String accessSecret = "xxxxxxxxxxxxxxx";
-        // The region ID
+        // regionId
         String regionId = "cn-shanghai";
         // Your account ID.
         String uid = "xxxxxxxxxxxx";
@@ -80,7 +80,7 @@ Example:
         });
 ```
 
-The value of accessKey is the AccessKeyID of your account, and the value of accessSecret is the AccessKeySecret corresponding to the AccessKeyID. Log on to the [console](https://partners-intl.console.aliyun.com), hover the mouse over your account image, and click **AccessKey** to view your AccessKeyID and AccessKeySecret. You can also click **Security Settings** to view your account ID.
+The value of accessKey is the AccessKeyID of your account, and the value of accessSecret is the AccessKeySecret corresponding to the AccessKeyID. Log on to the [Alibaba Cloud console](https://home.console.aliyun.com/new#/), hover the mouse over your account image, and click **AccessKey** to view your AccessKeyID and AccessKeySecret. You can also click **Security Settings** to view your account ID.
 
 The value of regionId is the region ID of your IoT Platform service.
 
@@ -100,7 +100,7 @@ MessageCallback messageCallback = new MessageCallback() {
     public Action consume(MessageToken messageToken) {
         Message m = messageToken.getMessage();
         log.info("receive : " + new String(messageToken.getMessage().getPayload()));
-        return true;
+        return MessageCallback.Action.CommitSuccess;
     }
 };
 messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
@@ -108,7 +108,7 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
 
 The parameters are as follows:
 
--   MessageToken indicates the body of the returned message. Use `MessageToken.getMessage()` to get the message body. MessageToken is required when you reply to ACKs manually.
+-   MessageToken indicates the body of the returned message. Use `MessageToken.getMessage()` to get the message body. MessageToken is required when you send ACKs manually.
 
     A message body example is as follows:
 
@@ -158,12 +158,12 @@ The parameters are as follows:
 
     After a message with QOS\>0 is consumed, an ACK must be sent as the reply. SDKs support sending ACKs as replies both automatically and manually. The default setting is to reply with ACKs automatically. In this example, no ACK reply setting is configured, so the system replies with ACKs automatically.
 
-    -   Reply ACKs automatically: If the returned value of `MessageCallback.consume` is true, the SDK will reply an ACK automatically; If the returned value is false or an exception occurs, the SDK will not reply with any ACK. If no ACK is sent for messages with QOS\>0, the server will send the message again.
+    -   Reply ACKs automatically: If the returned value of `MessageCallback.consume` is true, the SDK will reply an ACK automatically; If the returned value is false or an exception occurs, the SDK will not reply with any ACK. If no ACK is replied for the messages with QOS\>0, the server will send the message again.
     -   Reply ACKs manually: Use `MessageClient.setManualAcks`to configure for replying ACKs manually.
 
         Call `MessageClient.ack()` to reply ACKs manually, and the parameter MessageToken is required. You can obtain the value of MessageToken from the received message.
 
-        The method for configuring ACK replies manually is as follows:
+        The method to manually reply ACKs is as follows:
 
         ```
         messageClient.ack(messageToken);
@@ -187,8 +187,8 @@ The parameters are as follows:
     }
     ```
 
-    |Parameter|Type |Description|
-    |---------|-----|-----------|
+    |Parameter|Type|Description|
+    |---------|----|-----------|
     |status|String|Device status: online or offline.|
     |productKey|String|The unique identifier of the product to which the device belongs.|
     |deviceName|String|The name of the device.|
@@ -213,8 +213,8 @@ The parameters are as follows:
     }
     ```
 
-    |Parameter|Type |Description|
-    |---------|-----|-----------|
+    |Parameter|Type|Description|
+    |---------|----|-----------|
     |action|String|     -   create: Create devices.
     -   delete: Delete devices.
     -   enable: Enable devices.
@@ -235,33 +235,33 @@ The parameters are as follows:
     "gwProductKey": "1234556554",
     "gwDeviceName": "deviceName1234",
     "devices": [
-            {
+    {
     "iotId": "4z819VQHk6VSLmmBJfrf00107ee201",
     "productKey": "12345565569",
     "deviceName": "deviceName1234"
-           }
-        ],
+    }
+    ],
     "messageCreateTime": 1510292739881
     }
     ```
 
-    |Parameter|Type |Description|
-    |---------|-----|-----------|
-    |action|String|     -   add: Add topological relationship.
-    -   remove: Remove topological relationship.
-    -   enable: Enable topological relationship.
-    -   disable: Disable topological relationship.
+    |Parameter|Type|Description|
+    |---------|----|-----------|
+    |action|String|     -   add: Add topological relationships.
+    -   remove: Delete topological relationships.
+    -   enable: Enable topological relationships.
+    -   disable: Disable topological relationships.
  |
     |gwIotId|String|The unique identifier of the gateway device.|
     |gwProductKey|String|The ProductKey of the product to which the gateway device belongs.|
     |gwDeviceName|String|The name of the gateway device.|
     |devices|Object|The sub-devices whose topological relationship with the gateway will be changed.|
-    |iotId|String|The unique identifier of the sub-device within IoT Platform.|
+    |iotId|String|The unique identifier of the sub-device.|
     |productKey|String|The ProductKey of the product to which the sub-device belongs.|
     |deviceName|String|The name of the sub-device.|
     |messageCreateTime|Long|The timestamp when the messages is generated, in milliseconds.|
 
--   Report sub-devices detected by the gateway:
+-   A gateway detects and reports sub-devices:
 
     ```
     {
@@ -278,14 +278,14 @@ The parameters are as follows:
     }
     ```
 
-    |Parameter|Type |Description|
-    |---------|-----|-----------|
+    |Parameter|Type|Description|
+    |---------|----|-----------|
     |gwIotId|String|The unique identifier of the gateway device.|
     |gwProductKey|String|The unique identifier of the gateway product.|
     |gwDeviceName|String|The name of the gateway device.|
     |devices|Object|The sub-devices detected by the gateway.|
     |iotId|String|The unique identifier of the sub-device.|
-    |productKey|String|The unique identifier of the sub-device product.|
+    |productKey|String|The ProductKey of the product that the sub-device belongs to.|
     |deviceName|String|The name of the sub-device.|
 
 

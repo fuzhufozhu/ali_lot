@@ -1,20 +1,20 @@
 # IoT Platform billing policy {#concept_g13_gsv_tdb .concept}
 
-Two editions of IoT Platform are provided, IoT Platform Basic and IoT Platform Pro. For IoT Platform Basic, you only pay for your message usage \(counts\). For IoT Platform Pro, you pay for your message usage \(counts\) and device management. The billing method for both editions is Pay-As-You-Go, and you pay only for what you use with no minimum fees.
+IoT Platform is provided in two editions: IoT Platform Basic and IoT Platform Pro. For IoT Platform Basic, you only pay for your message usage \(counts\). For IoT Platform Pro, you pay for your message usage \(counts\) and device management. The billing method for both editions is Pay-As-You-Go, which means you pay only for what you use with no minimum fees.
 
 ## Billing table {#section_yqw_zwz_22b .section}
 
 Billable items for IoT Platform Basic and IoT Platform Pro are listed in the following table. For the billable interfaces, see the appendix in this documentation.
 
-|Items|Description|IoT Platform Basic|IoT Platform Pro|
-|-----|:----------|:-----------------|----------------|
+|Item|Description|IoT Platform Basic|IoT Platform Pro|
+|----|:----------|:-----------------|----------------|
 |Message communication fee\(Device\)
 
 |Messages sent from devices by calling the Pub operation.|√|√|
 |Requests sent from devices used to call the RPC interface.|√|√|
 |Responses sent from devices used to reply to the Revert-RPC service.|√|√|
 |Messages received by devices by calling the Sub operation.|√|√|
-|Messages sent and received by calling TSL model related interfaces.|-|√|
+|Messages sent and received by calling TSL model related interfaces.|-|√|
 |Message communication fee\(Server\)
 
 |Messages sent from the server by calling the Pub or PubBroadcast operation.|√|√|
@@ -29,13 +29,16 @@ Billable items for IoT Platform Basic and IoT Platform Pro are listed in the fol
 
  |-|√|
 |Free tier message categories| -   Connect
+-   Connect Ack
 -   Disconnect
--   Ping pong
--   PubAck
--   SubAck
+-   PingReq
+-   PingResp
+-   Publish Ack
 -   Subscribe
+-   Subscribe Ack
 -   Unsubscribe
--   The messages delivered by the rules engine
+-   Unsubscribe Ack
+-   The messages forwarded by Rules Engine
 
 **Note:** Messages sent by the rules engine are free of charge. You only pay for fees associated with using associated cloud services if you transfer data to these services.
 
@@ -47,13 +50,13 @@ Billable items for IoT Platform Basic and IoT Platform Pro are listed in the fol
 Billable units
 
 -   Billing is calculated according to your message usage \(counts\). See the preceding table to check the billable message categories.
--   The first 1 million \(1,000,000\) messages \(sent and received\) each month are offered as a free quota.  The billing cycle starts from the first day of every month at 00:00:00 Beijing Time \(UTC+8\). Unused messages from the free quota do not carry over to the next month.
+-   The first 1 million \(1,000,000\) messages \(sent and received\) each month are offered as a free quota. The billing cycle starts from the first day of every month at 00:00:00 Beijing Time \(UTC+8\). Unused messages from the free quota do not carry over to the next month.
 
 Message counts
 
--   One billable message count equals a maximum of 512 bytes. 
+-   One billable message count equals a maximum of 512 bytes.
 -   Messages that exceed 512 bytes will be counted as two or more new messages.
--   To calculate the billable message count, divide message size in bytes by 512, and round any resulting value to the next largest integer. 
+-   To calculate the billable message count, divide message size in bytes by 512, and round any resulting value to the next largest integer.
 
 Pricing unit
 
@@ -77,12 +80,12 @@ Pricing unit
 
 Billing cycles
 
--   Pay by day. The amount is calculated daily.
+-   Pay by day. The living device amount is calculated daily.
 -   The value of the payment amount is rounded to two decimal places.
 
 **Note:** The above content is for your reference only. The actual fee is subject to the price when you purchase the service.
 
-## Appendix:  Billable interfaces {#section_zd2_vgf_h2b .section}
+## Appendix: Billable interfaces {#section_zd2_vgf_h2b .section}
 
 |Interface|IoT Platform Basic|IoT Platform Pro|
 |---------|------------------|----------------|
@@ -126,7 +129,7 @@ Billing cycles
 |Pub|√|√|
 |PubBroadcast|√|√|
 |RRpc|√|√|
-|DeleteDeviceWhen you delete a sub-device, a message of /sys/\{productKey\}/\{deviceName\}/thing/delete is triggered.
+|DeleteDeviceWhen you delete a sub-device, a message of /sys/\{productKey\}/\{deviceName\}/thing/delete is triggered.
 
 |√|√|
 |DisableThingWhen you disable a sub-device, a message of /sys/\{productKey\}/\{deviceName\}/thing/disable is triggered.
@@ -139,10 +142,16 @@ Billing cycles
 
 |√|√|
 |UpdateDeviceShadow|√|-|
-|InvokeThingServiceWhen you run a specified service on a device, a message like /sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identitier\} is sent. 
+|InvokeThingServiceWhen you run a specified service on a device, a message like /sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identifier\} is sent.
 
 |-|√|
-|SetDevicePropertyWhen you set properties of a specified device,  a message of /sys/\{productKey\}/\{deviceName\}/thing/service/property/set is triggered.
+|InvokeThingsServiceWhen you run a specified service on multiple devices, messages like /sys/\{productKey\}/\{deviceName\}/thing/service/\{tsl.service.identifier\} are sent.
+
+|-|√|
+|SetDevicePropertyWhen you set properties for a specified device, a message of /sys/\{productKey\}/\{deviceName\}/thing/service/property/set are triggered.
+
+|-|√|
+|SetDevicesPropertyWhen you set properties for multiple devices, messages of /sys/\{productKey\}/\{deviceName\}/thing/service/property/set are triggered.
 
 |-|√|
 

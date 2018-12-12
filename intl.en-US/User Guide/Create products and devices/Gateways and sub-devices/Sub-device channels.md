@@ -2,18 +2,19 @@
 
 You can create sub-device channels for Pro Edition gateway devices. Gateway devices can then use the management channels to manage sub-devices. Currently, IoT Platform supports three kinds of channels: Modbus protocol channels, OPC UA protocol channels, and custom protocol channels.
 
-1.  On the Devices page, find the gateway device for which you want to create channels, and click **View** next to it.
-2.  Click **Sub-device Channels** and then create sub-device management channels according to your required protocol.
+1.  In the left-side navigation pane, click **Devices** \> **Device**.
+2.  On the Devices page, find the gateway device for which you want to create channels, and click **View** next to it. You are directed to the Device Details page.
+3.  Click **Sub-device Channels** and then create sub-device management channels according to your required protocol.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18798/154046050610890_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18798/154459797310890_en-US.png)
 
     -   Modbus
 
         In the Modbus tab, click **Create Modbus Channel** and enter the required information in the dialog box.
 
-        |Parameter|Description|
-        |---------|-----------|
-        |Channel Name|The channel identifier. It must be unique under the gateway device.|
+        |Parameter|Description-|
+        |---------|------------|
+        |Channel Name|The channel identifier. It must be unique in the gateway device.|
         |Transmission Mode|Supports RTU and TCP.|
         |If you select RTU as the transmission mode, you must set the following parameters:|
         |Select Serial Port|For example, /dev/tty0 or /dev/tty1.|
@@ -22,7 +23,7 @@ You can create sub-device channels for Pro Edition gateway devices. Gateway devi
         |Check Bit|Supports no parity check, odd parity check, and even parity check.|
         |Stop Bit|Support the following stop bit values: 1, 1.5, and 2.|
         |If you select the transmission mode as TCP, you must set the following parameters:|
-        |IP address|Enter an IP address in dot-decimal notation.|
+        |IP Address|Enter an IP address in dot-decimal notation.|
         |Port Number|Enter an integer in the range of 0-65535.|
 
     -   OPC UA
@@ -31,11 +32,11 @@ You can create sub-device channels for Pro Edition gateway devices. Gateway devi
 
         |Parameter|Description|
         |---------|-----------|
-        |Channel Name|The channel name must be unique under the gateway device.|
+        |Channel Name|The channel name must be unique in the gateway device.|
         |Connection Address|For example, opc.tcp://localhost:4840|
         |User Name|An optional parameter.|
         |Password|An optional parameter.|
-        |Function Call Timeout|The unit is in seconds.|
+        |Function Call Timeout|In seconds.|
 
     -   Custom
 

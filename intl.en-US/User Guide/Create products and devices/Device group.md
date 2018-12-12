@@ -1,14 +1,14 @@
 # Device group {#task_ejm_qp2_cfb .task}
 
-IoT Platform supports device groups. You can assign devices from different products to the same group. This article introduces how to create and manage device groups on the IoT Platform console.
+IoT Platform supports device groups. You can assign devices from different products to the same group. This article introduces how to create and manage device groups in the IoT Platform console.
 
-1.  Log on to the [IoT Platform console](https://iot.console.aliyun.com/). 
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot). 
 2.  Click **Devices** \> **Group**. 
 3.  On the group management page, click **Create Group**, enter group information, and then click **Save**. 
 
     **Note:** You can create up to 1,000 groups \(including parent groups and subgroups\) .
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154046057411979_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154459801511979_en-US.png)
 
     The parameters are as follows:
 
@@ -24,7 +24,7 @@ IoT Platform supports device groups. You can assign devices from different produ
 
         **Note:** You can add up to 100 tags for a group.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154046057411991_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154459801511991_en-US.png)
 
 6.  Click **Device List** \> **Add Device to Group**. Select the devices that you want to add to the group. 
 
@@ -32,9 +32,9 @@ IoT Platform supports device groups. You can assign devices from different produ
 
     -   You can add up to 200 devices at a time. You can add up to 20,000 devices for a group in total.
     -   A device can be included in a maximum of 10 groups.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154046057412058_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154459801512058_en-US.png)
 
-    There are two buttons at the upper-right corner of the Add Device to Group page.
+    There are two buttons at the upper-right corner of the Add Device to Group page:********.
 
     -   Click **All** to display all the devices.
     -   Click **You have selected** to display the devices you have selected.
@@ -44,7 +44,7 @@ IoT Platform supports device groups. You can assign devices from different produ
 
     1.  Select the parent group, enter a group name and description, and click **Save**. 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154046057412059_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21141/154459801512059_en-US.png)
 
     2.  On the Subgroups page of the parent group , click **View** to view the corresponding Group Details page. 
     3.  Click **Device List** \> **Add Device to Group**, and then add devices for the subgroup. 

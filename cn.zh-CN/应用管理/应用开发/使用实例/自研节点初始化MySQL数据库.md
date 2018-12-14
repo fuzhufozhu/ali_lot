@@ -62,7 +62,7 @@
 
     脚本中MySQL访问信息对应的环境变量中动态内容，需要与应用配置中部署节点的设置保持一致。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78131/154458217933865_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78131/154475617033865_zh-CN.png)
 
     RDS MySQL节点的配置示例：
 
@@ -87,7 +87,7 @@
 
     脚本中RDS MySQL访问信息对应的环境变量中动态内容，需要与应用配置中部署节点的设置保持一致。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78131/154458217933866_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78131/154475617033866_zh-CN.png)
 
 3.  编写Dockerfile文件，将编写好的sh文件（容器初始化运行脚本）和sql文件（数据库表初始化sql文件）拷贝到容器指定的目录，并配置相应的执行权限。
 

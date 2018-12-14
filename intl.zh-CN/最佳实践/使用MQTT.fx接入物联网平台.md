@@ -16,7 +16,7 @@
 
 2.  打开MQTT.fx软件，单击设置图标。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974837694_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087694_zh-CN.png)
 
 3.  在参数设置页面，设置连接参数。
 
@@ -28,7 +28,7 @@
 
         General栏目下的设置项可保持系统默认，也可根据您的具体需求设置。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974837698_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087698_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
@@ -45,12 +45,12 @@
 
     2.  单击**User Credentials**，设置 **User Name** 和 **Password**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974837699_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087699_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
         |User Name|由设备名DeviceName、符号（&）和产品ProductKey组成。格式为：$\{YourDeviceName\}&$\{YourPrductKey\}。完整示例如：device&fOAt5H5TOWF。|
-        |Password|密码由参数值拼接加密而成。您可以下载并使用[Password生成小工具](https://files.alicdn.com/tpsservice/471c155376d6a88a29c9ad66784e94f0.zip)自动生成Password，也可以手动生成Password。        -   使用Password生成小工具中参数说明：
+        |Password|密码由参数值拼接加密而成。您可以下载并使用[Password生成小工具](https://files.alicdn.com/tpsservice/88413c66e471bec826257781969d1bc7.zip)自动生成Password，也可以手动生成Password。        -   使用Password生成小工具中参数说明：
             -   productKey：设备所属产品Key。可在控制台设备详情页查看。
             -   deviceName：设备名称。可在控制台设备详情页查看。
             -   deviceSecret：设备密钥。可在控制台设备详情页查看。
@@ -74,12 +74,12 @@
 
         勾选 **Enable SSL/TLS**对应的复选框，并选择 Protocol 为 **TLSv1**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974837734_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087734_zh-CN.png)
 
     4.  填写完成后，单击**OK**。
 4.  设置完成后，单击 **Connect**进行连接。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974837735_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087735_zh-CN.png)
 
 
 ## 通信测试 {#section_rmt_vgk_p2b .section}
@@ -89,25 +89,25 @@
 1.  在MQTT.fx上，单击**Subscribe**。
 2.  输入一个设备下的Topic，然后单击**Subscribe**，订阅这个Topic。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974847736_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087736_zh-CN.png)
 
     订阅成功后，该Topic将显示在列表中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974847737_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087737_zh-CN.png)
 
 3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的设备详情页，**Topic列表**下，单击已订阅的Topic对应的**发布消息**操作按钮。
 4.  输入消息内容，单击**确认**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974847738_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087738_zh-CN.png)
 
 5.  回到MQTT.fx上，查看是否接收到消息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974847739_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087739_zh-CN.png)
 
 
 ## 查看日志 {#section_lnm_nkk_p2b .section}
 
 在MQTT.fx上，单击**Log**查看操作日志和错误提示日志。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15444974847740_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087740_zh-CN.png)
 

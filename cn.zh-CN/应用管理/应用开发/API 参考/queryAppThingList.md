@@ -51,10 +51,11 @@
 |createTime|String|设备创建时间。|
 |lastOnlineTime|String|设备最后在线时间。|
 |childDeviceCount|Long|子设备数量。|
-|status|String|设备状态。取值：-   0：未激活。
--   1：在线。
--   3：离线。
--   8：已禁用。
+|status|String|设备状态。取值：-   UNACTIVE：设备未激活。
+-   ONLINE：设备在线。
+-   OFFLINE：设备离线。
+-   DISABLE：设备已禁用。
+-   ACTIVE：设备已激活。
 
 |
 |utcLastOnlineTime|String|设备最后在线的 UTC 时间。|
@@ -113,7 +114,7 @@
                 "nodeType":1,
                 "productKey":"xxx",
                 "productName":"name",
-                "status":"0",
+                "status":"ACTIVE",
                 "utcActiveTime":"",
                 "utcCreateTime":"",
                 "utcLastOnlineTime":""
@@ -130,7 +131,7 @@
                 "nodeType":1,
                 "productKey":"xxx",
                 "productName":"name",
-                "status":"0",
+                "status":"ACTIVE",
                 "utcActiveTime":"",
                 "utcCreateTime":"",
                 "utcLastOnlineTime":""

@@ -17,8 +17,8 @@
     	[id] bigint NOT NULL ,
     	[gmt_create] datetime NOT NULL ,
     	[gmt_modified] datetime NOT NULL ,
-    	[name] varchar(50) NOT NULL ,
-    	[phone] varchar(50) NOT NULL 
+    	[name] nvarchar(50) NOT NULL ,
+    	[phone] nvarchar(50) NOT NULL 
     )
     ON [PRIMARY]
     GO
@@ -28,13 +28,16 @@
     )
     WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
     GO
-    INSERT INTO [demoDB].[dbo].[user] (id, gmt_create, gmt_modified, name, phone) VALUES ('1', '2018-11-26 10:00:00', '2018-11-26 10:00:00', '测试', '1388888888');
-    INSERT INTO [demoDB].[dbo].[user] (id, gmt_create, gmt_modified, name, phone) VALUES ('2', '2018-11-26 10:00:00', '2018-11-26 10:00:00', 'test', '1366666666');
+    INSERT INTO [demoDB].[dbo].[user] (id, gmt_create, gmt_modified, name, phone) VALUES ('1', '2018-11-26 10:00:00', '2018-11-26 10:00:00', N'测试', N'1388888888');
+    INSERT INTO [demoDB].[dbo].[user] (id, gmt_create, gmt_modified, name, phone) VALUES ('2', '2018-11-26 10:00:00', '2018-11-26 10:00:00', N'test', N'1366666666');
     GO
     ```
 
-    **说明：** 如果使用现有库导出的sql文件，请务必确保sql文件中已经添加了创建数据库的相关语句。
+    **说明：** 
 
+    -   如果使用现有库导出的sql文件，请务必确保sql文件中已经添加了创建数据库的相关语句。
+    -   导出的sql文件请不要携带本地系统的数据库文件的配置信息。
+    -   字符串属性字段请使用`nvarchar`，防止中文字符出现乱码，同时在脚本中插入中文字段时，需要在中文字段前添加英文字符`N`标识，如上述示例所示。
 2.  创建用于容器初始化的运行脚本，在脚本中添加sqlcmd调用数据库初始化sql文件的脚本指令，以及启动自有应用的指令（本文档以iot-demo.jar自有应用为例）。 
 
     **说明：** 
@@ -48,31 +51,35 @@
         env|grep "${1}"|cut -d'=' -f2
     }
     
-    #mssql
-    USER=$(prop 'iot.hosting.{这里填写服务名称}.mssqlUser')
-    PASSWORD=$(prop 'iot.hosting.{这里填写服务名称}.mssqlPassword')
-    HOSTNAME_FULL=$(prop 'iot.hosting.{这里填写服务名称}.mssqlUrl')
+    #从容器中的环境变量获取SQLServer访问参数
+    USER=$(prop 'iot\.hosting\.{这里填写服务名称}\.mssqlUser')
+    PASSWORD=$(prop 'iot\.hosting\.{这里填写服务名称}\.mssqlPassword')
+    HOSTNAME_FULL=$(prop 'iot\.hosting\.{这里填写服务名称}\.mssqlUrl')
     HOSTNAME_TEMP=${HOSTNAME_FULL#jdbc:sqlserver://}
     HOSTNAME=${HOSTNAME_TEMP%:*}",1433"
     
-    ######################
+    #使用数据库初始化sql文件初始化数据库
+    /opt/mssql-tools/bin/sqlcmd -S ${HOSTNAME} -U ${USER} -P ${PASSWORD} -i db.sql -o db_execution.log
     
-    /opt/mssql-tools/bin/sqlcmd -S ${HOSTNAME} -U ${USER} -P ${PASSWORD} -i db.sql
+    #启动运行自有应用
     java -jar -Xms512m -Xmx512m /iot-demo.jar --server.port=8080
     ```
 
     脚本中SQL Server访问信息对应的环境变量中动态内容，需要与应用配置中部署节点的设置保持一致。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78711/154461388034066_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78711/154684629034066_zh-CN.png)
 
 3.  编写Dockerfile文件，将编写好的sh文件（容器初始化运行脚本）和sql文件（数据库表初始化sql文件）拷贝到容器指定的目录，并配置相应的执行权限。 
 
-    同时需要配置sqlcmd（用于shell脚本访问SQL Server数据库的应用）的安装指令以及tomcat的安装指令，建议您使用Ubuntu作为基础镜像来源。示例如下：
+    同时需要配置sqlcmd（用于shell脚本访问SQL Server数据库的应用）的安装指令。示例如下：
 
     **说明：** 当前sqlcmd必须使用Ubuntu 16.04版本作为基础镜像来源才能被正确安装。
 
     ```
     FROM ubuntu:16.04
+    
+    # 安装jdk8
+    RUN apt-get update && apt-get install -y openjdk-8-jdk
     
     # 安装sqlcmd环境
     RUN apt-get update && apt-get install -y \
@@ -83,10 +90,13 @@
     RUN apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql mssql-tools
     RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
     RUN /bin/bash -c "source ~/.bashrc"
-    RUN apt-get install -y locales
-    RUN apt-get update && apt-get -y install openjdk-8-jdk
-    RUN locale-gen en_US.UTF-8
-    RUN update-locale LANG=en_US.UTF-8
+    
+    # 安装中文显示环境,在终端操作时，确保能正确的显示中文内容
+    RUN apt-get update && apt-get install -y locales
+    ENV LANG C.UTF-8
+    
+    # 因sqlcmd限制，需要配置终端环境使用en_US.UTF-8
+    RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
     
     # 复制自有应用
     COPY iot-demo-0.0.1-SNAPSHOT.jar /iot-demo.jar
@@ -94,8 +104,6 @@
     # 复制数据库初始化文件和启动脚本
     COPY db.sql /db.sql
     COPY init.sh /init.sh
-    RUN chmod 777 /db.sql
-    RUN chmod 777 /init.sh
     RUN chmod +x /init.sh
     
     EXPOSE 8080

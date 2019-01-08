@@ -1,20 +1,24 @@
 # Gateways and sub-devices {#concept_ngv_knl_vdb .concept}
 
-IoT Platform allows devices to connect to it directly. Devices can also be mounted as sub-devices to a gateway that connects to IoT Platform.
+IoT Platform allows devices to connect to it directly, or be mounted as sub-devices to gateways that connect to IoT Platform.
 
 ## Gateways and devices {#section_xwh_fbc_wdb .section}
 
-When creating products and devices, you need to select a node type. IoT Platform currently supports two node types, device and gateway.
+When you create a product, you must select a node type for the devices of the product. Currently, IoT Platform supports two node types, Device and Gateway.
 
--   Device: refers to a device to which sub-devices cannot be mounted. Devices can connect directly to the IoT Hub. Alternatively, devices can connect as sub-devices mounted to gateways that are connected to the IoT Hub.
--   Gateway: refers to a device to which sub-devices can be mounted. A gateway connects sub-devices to IoT Platform. Gateways can manage sub-devices, maintain their topological relationships with sub-devices, and synchronize these topological relationships to the cloud.
+-   Device: Devices of this node type cannot be mounted with sub-devices, but can be connected directly to the IoT Platform or be mounted as sub-devices to gateways.
+-   Gateway: Devices of this node type can connect to IoT Platform directly and can be mounted with sub-devices. Gateways are then used to manage sub-devices, maintain topological relationships with sub-devices, and synchronize these topological relationships to IoT Platform.
 
-## Topological relationship between a gateway and its sub-devices {#section_yv4_1fc_wdb .section}
+The topological relationship between a gateway and its sub-devices is shown in the following figure:
 
-![](images/2876_en-US.PNG "Device topological relationship")
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12824/15469118782876_en-US.PNG)
 
-After creating products and devices, you can:
+## Connect gateways and sub-devices to IoT Platform {#section_yv4_1fc_wdb .section}
 
--   Connect the gateway to IoT Platform and use the gateway to synchronize the topologial relationship with the cloud. The gateway is then responsible for device authentication, message uploading, instruction receiving and other communications with IoT Platform for all sub-devices. Please refer to [Developer Guide \(Devices\)](reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) and [Connect sub-devices to IoT Platform](reseller.en-US/Developer Guide (Devices)/C-SDK/Connect sub-devices to the cloud/Connect sub-devices to IoT Platform.md#) for details.
--   Configure the sub-device communication channels in the console, manage the topological relationships and send the configuration details to the gateway. Please refer to [Sub-device channels](reseller.en-US/User Guide/Create products and devices/Gateways and sub-devices/Sub-device channels.md#) and [Sub-device management](reseller.en-US/User Guide/Create products and devices/Gateways and sub-devices/Sub-device management.md#) for details.
+Once a gateway has been connected to IoT Platform, the gateway will synchronize its topological relationships with its sub-devices to IoT Platform. A gateway supports device authentication, message reporting, instruction receiving, and other communications with IoT Platform for all its sub-devices. That is, sub-devices are managed by their corresponding gateway.
+
+1.  For more information about how to connect gateways to IoT Platform, see [Link Kit SDK](https://help.aliyun.com/product/93051.html).
+2.  You can connect sub-devices to IoT Platform using either of the following two methods:
+    -   The [Unique-certificate-per-device authentication](../../../../../reseller.en-US/Developer Guide (Devices)/Authenticate devices /Unique-certificate-per-device authentication.md#) method. This method requires you to install the device certificates \(namely, the ProductKey, DeviceName, and DeviceSecret\) in the physical sub-devices, and then connect the sub-devices to IoT Platform.
+    -   The [Unique-certificate-per-product authentication](../../../../../reseller.en-US/Developer Guide (Devices)/Authenticate devices /Unique-certificate-per-product authentication.md#) method. This method requires you to enable Dynamic Registration on the product details page and register devices in the IoT Platform console. Then, when a physical sub-device is being connected, the gateway will initiate a connection request to IoT Platform for the sub-device. IoT Platform then verifies the sub-device information. If the verification passes, IoT Platform will assign the DeviceSecret to the sub-device. The sub-device then receives all the required information \(namely, the ProductKey, DeviceName, and DeviceSecret\) to successfully connect to IoT Platform.
 

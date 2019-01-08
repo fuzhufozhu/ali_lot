@@ -8,7 +8,7 @@ IoT Platform supports two editions of products: Basic Edition and Pro Edition. T
 2.  In the left-side navigation pane, click **Devices** \> **Product**, and then click **Create Product**. 
 3.  Select **Pro Edition** and click **Next**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/15445978912362_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/15469131662362_en-US.jpg)
 
 4.  Enter all the required information and then click **OK**. 
 
@@ -61,16 +61,16 @@ For example, If you select **Smart City** \> **Power Management** \> **Electrici
 
 
 1.  To configure features for a product \(such as [Notifications](reseller.en-US/User Guide/Create products and devices/Topics/What is a topic?.md#), [TSL \(Define Feature\)](reseller.en-US/User Guide/Create products and devices/TSL/What is Thing Specification Language (TSL)?.md#), and [Service Subscription](reseller.en-US/User Guide/Create products and devices/Service Subscription/What is Service Subscription?.md#)\), go to the product list, find the target product and then click its corresponding **View** button
-2.  Develop your real devices by referring to [Developer Guide \(Devices\)](../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#).
+2.  Develop your real devices by referring to [Developer Guide \(Devices\)](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#).
 3.  To publish a product, go to the product details page and click **Publish**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154459789113396_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154691316613396_en-US.png)
 
     Note that before you publish a product, you must make sure that you have configured all the correct information for the product, have completed debugging the features, and have verified that it meets the criteria for being published.
 
     When the product status is **Published**, you can view the product information but cannot modify or delete the product.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154459789113395_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154691316713395_en-US.png)
 
     To cancel the publishing of a product, click **Cancel Publishing**.
 

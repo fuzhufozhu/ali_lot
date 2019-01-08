@@ -6,9 +6,9 @@ Servers and devices communicate with each other in IoT Platform through topics. 
 
 To simplify authorization operations and facilitate communication between devices and IoT Platform, topic categories were introduced. When you create a product, IoT Platform will create a default topic category  for the product. In addition, when you create a device, the topic category will be automatically assigned to the device. You do not need to authorize each individual device to publish or subscribe to a topic.
 
-![](images/2678_en-US.png "The process of automatically creating a topic")
+![](images/35287_en-US.png "The process of automatically creating a topic")
 
-When you create a product, IoT Platform automatically creates standard topic categories for the product. You can view all topic categories of the product on the Communication  page.
+When you create a product, IoT Platform automatically creates standard topic categories for the product. You can view all topic categories of the product on the Topic Categories  tab page.
 
 Description of topic categories:
 

@@ -7,13 +7,13 @@
 1.  登录[物联网平台控制台](https://iot.console.aliyun.com)。
 2.  左侧导航栏单击**设备管理** \> **产品**。
 3.  在产品管理页面，找到需要自定义Topic类的产品，并单击对应操作栏中的**查看**按钮。
-4.  在产品详情页面，单击**消息通信** \> **定义Topic类**。
+4.  在产品详情页面，单击**Topic类列表** \> **定义Topic类**。
 5.  定义Topic类。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15452925017118_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15469117387118_zh-CN.png)
 
-    -   **Topic类**：根据页面上方的Topic规则设置Topic类。
     -   **设备操作权限**：设备对该Topic的操作权限，可设置为发布、订阅、发布和订阅。
+    -   **Topic类**：根据页面上方的Topic规则设置Topic类的自定义类目名称。
     -   **描述**：对自定义的Topic类进行描述，可以为空。
 6.  单击**确认**。
 
@@ -28,5 +28,5 @@
 
 -   只有设备操作权限为订阅的产品，才支持使用通配符。
 -   通配符`#`只能在Topic类的最后一个类目。
--   带通配符的Topic不支持在设备**Topic列表**页面执行**发布消息**操作。
+-   带通配符的Topic不支持在设备的**Topic列表**页面执行**发布消息**操作。
 

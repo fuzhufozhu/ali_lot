@@ -10,7 +10,7 @@ This article introduces how to create a custom topic category for a product. Cus
 4.  On the Product Details page, click **Topic Categories** \> **Create Topic Category**.
 5.  Define a topic category.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15469117447118_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15469180717118_en-US.png)
 
     -   **Topic Category**: Enter a topic category name according to the Topic Rule on the page.
     -   **Device Operation Authorization**: Indicates the operations that devices can perform on the topics of this topic category. You can select from Publish, Subscribe, and Publish and Subscribe.

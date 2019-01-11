@@ -18,7 +18,7 @@
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
 |Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
-|Data|DeviceApplyStatusInfo|调用成功时返回的申请单信息。详情参见[DeviceApplyStatusInfo](#table_dy2_whn_xdb)。|
+|Data|Data|调用成功时，返回的状态信息。详情参见[DeviceApplyStatusInfo](#table_dy2_whn_xdb)。|
 
 |名称|类型|描述|
 |:-|:-|:-|
@@ -37,8 +37,14 @@
  CREATE\_FAILED：创建失败。
 
  |
-|ValidList|List|创建成功的设备名称（DeviceName）集合。|
-|InvalidList|List|创建失败的设备名称（DeviceName）集合。|
+|ValidList|List| -   当返回Status参数值为CHECK\_FAILED或CREATE\_FAILED时，返回创建成功的设备名称集合。
+-   当返回Status参数值为CHECK\_SUCCESS或CREATE\_SUCCESS时，该参数为空数组。
+
+ |
+|InvalidList|List| -   当返回Status参数值为CHECK\_FAILED或CREATE\_FAILED时，创建失败的设备名称集合。
+-   当返回Status参数值为CHECK\_SUCCESS或CREATE\_SUCCESS时，该参数为空数组。
+
+ |
 
 ## 示例 {#section_ahw_23n_xdb .section}
 

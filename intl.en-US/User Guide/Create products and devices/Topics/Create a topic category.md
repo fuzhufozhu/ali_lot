@@ -1,33 +1,32 @@
 # Create a topic category {#concept_ppk_rz4_k2b .concept}
 
-This article introduces how to create a custom topic category for a product. Custom topic categories will be automatically assigned to devices under the product.
+This article introduces how to create a topic category for a product. Topic categories will be automatically assigned to devices of the product.
 
 ## Procedure {#section_nhd_3ly_w2b .section}
 
-1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
-2.  In the left navigation pane, click **Products**.
-3.  On the Product List page, find the product you want to create a topic category for, and click **View** in the operation column.
+1.  Log on to the [IoT Platform console](https://iot.console.aliyun.com).
+2.  In the left-side navigation pane, click **Devices** \> **Product**
+3.  On the Products page, find the product for which you want to create a topic category, and click **View** in the operation column.
 4.  On the Product Details page, click **Topic Categories** \> **Create Topic Category**.
 5.  Define a topic category.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15469180717118_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15475331617118_en-US.png)
 
-    -   **Topic Category**: Enter a topic category name according to the Topic Rule on the page.
-    -   **Device Operation Authorization**: Indicates the operations that devices can perform on the topics of this topic category. You can select from Publish, Subscribe, and Publish and Subscribe.
+    -   **Device Operation Authorizations**: Indicates the operations that devices can perform on the topics of this topic category. You can select from Publish, Subscribe, and Publish and Subscribe.
+    -   **Topic Category**: Enter a custom topic category name according to the Topic Rule on the page.
     -   **Description**: Describes the topic category. You can leave this box empty.
 6.  Click **OK**.
 
-## Create a topic category with a wildcard character {#section_ytf_qjy_w2b .section}
+## Wildcard characters in topic categories {#section_ytf_qjy_w2b .section}
 
-IoT Platform supports custom topic categories with wildcard characters. When you configure a topic subscription and you want to set topics with wildcard characters, you must first create topic categories with wildcard characters. The procedures of creating a topic category with a wildcard character is almost the same as that of creating a general topic category.
+When you create topic categories, you can use wildcards. For more information about wildcards, see [What is a topic?](intl.en-US/User Guide/Create products and devices/Topics/What is a topic?.md#) Supported wildcards:
 
-When you are creating a topic category with a wildcard character, pay attention to the following:
+-   `#`: Includes the category level you enter and all lower levels in topics.
+-   `+`: Includes only one category level in topics, and not lower levels.
 
--   You must firstly select Subscribe as the Device Operation Authorizations. Only when the device operation authorization is set as Subscribe can you enter wildcard characters in topic category name field.
--   Topic Category: You can use wildcard characters `#` and `+` in the topic category name.
+**Note:** When you want to create topic categories with wildcards, note that:
 
-    **Note:** `#` can only be located at the end of the topic category name.
-
-
-For topics with wildcard characters, you cannot click **Publish** to publish messages on the Topic List page of devices.
+-   Only topics with Device Operation Authorizations as Subscription support wildcards.
+-   `#` can only be at the end of topics.
+-   For topics with wildcard characters, you cannot click **Publish** to publish messages on the **Topic List** tab page of devices.
 

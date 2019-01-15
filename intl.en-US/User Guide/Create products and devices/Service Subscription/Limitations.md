@@ -15,4 +15,5 @@ If the client has not received any pong packets in the specified time period, th
 |Repush policy for failed messages|The stacked messages \(due to client being offline, slow message consumption, or other reasons\) are repushed every 60 seconds.|
 |Message storage time|Messages with QoS 0 are saved for one day, and messages with QoS 1 are saved for seven days.|
 |Number of SDK instances|Each account can enable up to 64 SDK instances.|
+|Message limit for each tenant|The maximum number of messages sent each second for a single tenant is 1,000 QPS. If your business requires more, you can open a ticket and make a request.|
 

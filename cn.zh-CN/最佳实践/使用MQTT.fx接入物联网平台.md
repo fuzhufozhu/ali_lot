@@ -4,7 +4,7 @@
 
 ## 前提条件 {#section_dhm_qz3_p2b .section}
 
-您已在[物联网平台控制台](https://iot.console.aliyun.com)创建了产品和设备，并获取了设备三元组信息：ProductKey、DeviceName和DeviceSerect。在MQTT.fx中设置连接参数时，将需要使用设备的三元组信息。创建产品和设备时，如需帮助请参见[创建产品\(基础版\)](../../../../intl.zh-CN/用户指南/产品与设备/创建产品(基础版).md#)、[创建产品\(高级版\)](../../../../intl.zh-CN/用户指南/产品与设备/创建产品(高级版).md#)、[单个创建设备](../../../../intl.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)和[批量创建设备](../../../../intl.zh-CN/用户指南/产品与设备/创建设备/批量创建设备.md#)。
+您已在[物联网平台控制台](https://iot.console.aliyun.com)创建了产品和设备，并获取了设备三元组信息：ProductKey、DeviceName和DeviceSerect。在MQTT.fx中设置连接参数时，将需要使用设备的三元组信息。创建产品和设备时，如需帮助请参见[创建产品\(基础版\)](../../../../../intl.zh-CN/用户指南/产品与设备/创建产品(基础版).md#)、[创建产品\(高级版\)](../../../../../intl.zh-CN/用户指南/产品与设备/创建产品(高级版).md#)、[单个创建设备](../../../../../intl.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)和[批量创建设备](../../../../../intl.zh-CN/用户指南/产品与设备/创建设备/批量创建设备.md#)。
 
 ## MQTT.fx接入物联网平台 {#section_whq_1bj_p2b .section}
 
@@ -16,7 +16,7 @@
 
 2.  打开MQTT.fx软件，单击设置图标。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087694_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034777694_zh-CN.png)
 
 3.  在参数设置页面，设置连接参数。
 
@@ -28,7 +28,7 @@
 
         General栏目下的设置项可保持系统默认，也可根据您的具体需求设置。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087698_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787698_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
@@ -45,7 +45,7 @@
 
     2.  单击**User Credentials**，设置 **User Name** 和 **Password**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087699_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787699_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
@@ -74,40 +74,56 @@
 
         勾选 **Enable SSL/TLS**对应的复选框，并选择 Protocol 为 **TLSv1**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087734_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787734_zh-CN.png)
 
     4.  填写完成后，单击**OK**。
 4.  设置完成后，单击 **Connect**进行连接。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087735_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787735_zh-CN.png)
 
 
-## 通信测试 {#section_rmt_vgk_p2b .section}
+## 下行通信测试 {#section_rmt_vgk_p2b .section}
 
-测试MQTT.fx与物联网平台连接是否成功 。
+从物联网平台发送消息，在MQTT.fx上接收消息，测试MQTT.fx与物联网平台连接是否成功 。
 
 1.  在MQTT.fx上，单击**Subscribe**。
 2.  输入一个设备下的Topic，然后单击**Subscribe**，订阅这个Topic。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087736_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787736_zh-CN.png)
 
     订阅成功后，该Topic将显示在列表中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087737_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787737_zh-CN.png)
 
 3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的设备详情页，**Topic列表**下，单击已订阅的Topic对应的**发布消息**操作按钮。
 4.  输入消息内容，单击**确认**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087738_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787738_zh-CN.png)
 
 5.  回到MQTT.fx上，查看是否接收到消息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087739_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787739_zh-CN.png)
+
+
+## 上行通信测试 {#section_ysm_bxt_lgb .section}
+
+在MQTT.fx上发送消息，通过查看设备日志，测试MQTT.fx与物联网平台连接是否成功 。
+
+1.  在MQTT.fx上，单击**Publish**。
+2.  输入一个设备的Topic，然后单击**Publish**，向这个Topic推送QoS 1的消息。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/154760347837281_zh-CN.png)
+
+3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的**设备详情** \> **日志服务** \> **上行消息分析**栏下，查看上行消息。
+
+    您还可以复制MessageID，在**消息内容查询**中，选择**原始数据**查看具体消息内容。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/154760347837288_zh-CN.png)
 
 
 ## 查看日志 {#section_lnm_nkk_p2b .section}
 
 在MQTT.fx上，单击**Log**查看操作日志和错误提示日志。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15447814087740_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15476034787740_zh-CN.png)
 

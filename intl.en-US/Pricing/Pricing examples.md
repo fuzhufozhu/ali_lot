@@ -52,26 +52,7 @@ Total messages: 43,200 + 432,000 = 475,200 messages.
 
 No fees apply, because the total message count \(sent and received\) does not exceed the free monthly message quota of 1,000,000.
 
-## Case 4: IoT Platform Basic {#section_f35_p2b_5db .section}
-
-Your device sends one 0.6 KB request every minute to IoT Platform by calling the RPC interface. IoT Platform then delivers this message to the server. The server accepts this message and replies one 0.4 KB response to IoT Platform. IoT Platform then delivers the response to your device. 
-
-The fees are calculated as follows:
-
-0.5 KB \*2 \> 0.6 KB \>0.5 KB, so each 0.6 KB message is counted as two messages.
-
-Each response message, which is 0.4 KB, is counted as one message.
-
-Messages sent per month:
-
--   Device \(Requests\): 2 messages/minute \* 60 minutes/hour \* 24 hours/day \* 30 days = 86,400 messages.
--   Server \(Responses\): 1 message/minute \* 60 minutes/hour \* 24 hours/day \* 30 days = 43,200 messages.
-
-Total messages: 86,400 + 43,200 = 129,600 messages.
-
-No fees apply, because the total message count \(sent and received\) does not exceed the free monthly message quota of 1,000,000.
-
-## Case 5: IoT Platform Basic {#section_g5r_q2b_5db .section}
+## Case 4: IoT Platform Basic {#section_g5r_q2b_5db .section}
 
 The server sends one 0.6 KB request every minute to IoT Platform by calling the Revert-RPC interface. IoT Platform then delivers the request to your device. Your device accepts the request and replies one 0.4 KB response to IoT Platform. IoT Platform then delivers the response to the server. 
 
@@ -90,7 +71,7 @@ Total messages: 86,400 + 43,200 = 129,600 messages.
 
 No fees apply, because the total message count \(sent and received\) does not exceed the free monthly message quota of 1,000,000.
 
-## Case 6: IoT Platform Pro {#section_zpg_vkn_42b .section}
+## Case 5: IoT Platform Pro {#section_zpg_vkn_42b .section}
 
 Billing items of IoT Platform Pro include message \(sent and received\) fee and device management fee.
 
@@ -119,7 +100,7 @@ Billing items:
 
 The total fee is calculated as USD 13.72 + USD 0 = USD 13.72.
 
-## Case 7: IoT Platform Pro {#section_u3v_npn_42b .section}
+## Case 6: IoT Platform Pro {#section_u3v_npn_42b .section}
 
 Your device sends one 0.4 KB message every second to IoT Platform. IoT Platform then delivers this message to 20 other devices. For this scenario, we assume one month equals 30 days.
 

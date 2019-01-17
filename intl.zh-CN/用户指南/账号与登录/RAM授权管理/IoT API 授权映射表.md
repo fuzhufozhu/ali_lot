@@ -1,8 +1,10 @@
 # IoT API 授权映射表 {#concept_sqt_mw4_tdb .concept}
 
-下表中 IoT API 名称，即您在创建 IoT 相关授权策略时，参数 Action 的可选值。
+定义授权策略，为RAM用户授予具体某些API的访问权限。
 
 为RAM用户授权的具体方法，请参见[自定义权限](intl.zh-CN/用户指南/账号与登录/RAM授权管理/自定义权限.md#)。
+
+下表中列举的物联网平台 API 名称，即您在创建物联网平台相关授权策略时，参数 Action 的可选值。
 
 |IoT API|RAM 授权操作（Action\)|资源 （Resource）|接 口 说 明|
 |:------|:----------------|:------------|:------|
@@ -11,6 +13,11 @@
 |QueryProduct|iot:QueryProduct|\*|查询产品信息。|
 |QueryProductList|iot:QueryProductList|\*|查询产品列表。|
 |DeleteProduct|iot:DeleteProduct|\*|删除产品。|
+|CreateProductTags|iot:CreateProductTags|\*|创建产品标签。|
+|UpdateProductTags|iot:UpdateProductTags|\*|更新产品标签。|
+|DeleteProductTags|iot:DeleteProductTags|\*|删除产品标签。|
+|ListProductTags|iot:ListProductTags|\*|查询产品标签。|
+|ListProductByTags|iot:ListProductByTags|\*|根据标签查询产品。|
 |RegisterDevice|iot:RegisterDevice|\*|注册设备。|
 |QueryDevice|iot:QueryDevice|\*|查询指定产品下的所有设备列表。|
 |DeleteDevice|iot:DeleteDevice|\*|删除设备。|
@@ -35,6 +42,7 @@
 |RemoveThingTopo|iot:RemoveThingTopo|\*|移除设备拓扑关系。|
 |NotifyAddThingTopo|iot:NotifyAddThingTopo|\*|通知云端增加设备拓扑关系。|
 |QueryDevicePropertyData|iot:QueryDevicePropertyData|\*|获取设备的属性历史数据。|
+|QueryDevicePropertiesData|iot:QueryDevicePropertiesData|\*|批量查询指定设备的属性上报数据。|
 |GetGatewayBySubDevice|iot:GetGatewayBySubDevice|\*|根据挂载的子设备信息查询对应的网关设备信息。|
 |SaveDeviceProp|iot:SaveDeviceProp|\*|为指定设备设置标签。|
 |QueryDeviceProp|iot:QueryDeviceProp|\*|查询指定设备的标签列表。|
@@ -50,6 +58,9 @@
 |SetDeviceGroupTags|iot:SetDeviceGroupTags|\*|添加或更新分组标签。|
 |QueryDeviceGroupTagList|iot:QueryDeviceGroupTagList|\*|查询分组标签列表。|
 |QueryDeviceGroupByDevice|iot:QueryDeviceGroupByDevice|\*|查询指定设备所在的分组列表。|
+|QueryDeviceListByDeviceGroup|iot:QueryDeviceListByDeviceGroup|\*|查询分组中的设备列表。|
+|QuerySuperDeviceGroup|iot:QuerySuperDeviceGroup|\*|根据子分组ID查询父分组信息。|
+|QueryDeviceGroupByTags|iot:QueryDeviceGroupByTags|\*|根据标签查询设备分组。|
 |StartRule|iot:StartRule|\*|启动规则。|
 |StopRule|iot:StopRule|\*|暂停规则。|
 |ListRule|iot:ListRule|\*|查询规则列表。|

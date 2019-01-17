@@ -11,6 +11,11 @@ For more information about creating authentication policies for RAM users, see[C
 |QueryProduct|iot:QueryProduct|\*|Query the detailed information of a product.|
 |QueryProductList|iot:QueryProductList|\*|Query all the products.|
 |DeleteProduct|iot:DeleteProduct|\*|Delete a product.|
+|CreateProductTags|iot:CreateProductTags|\*|Create product tags.|
+|UpdateProductTags|iot:UpdateProductTags|\*|Update product tags.|
+|DeleteProductTags|iot:DeleteProductTags|\*|Delete product tags.|
+|ListProductTags|iot:ListProductTags|\*|Query tags of a product.|
+|ListProductByTags|iot:ListProductByTags|\*|Query products by tags.|
 |RegisterDevice|iot:RegisterDevice|\*|Register a device.|
 |QueryDevice|iot:QueryDevice|\*|Query all the devices of a specified product.|
 |DeleteDevice|iot:DeleteDevice|\*|Delete a device.|
@@ -34,7 +39,8 @@ For more information about creating authentication policies for RAM users, see[C
 |GetThingTopo|iot:GetThingTopo|\*|Query the topological relationships of a device.|
 |RemoveThingTopo|iot:RemoveThingTopo|\*|Delete the topological relationships of a device.|
 |NotifyAddThingTopo|iot:NotifyAddThingTopo|\*|Notify a gateway device to add topological relationships with specified sub-devices.|
-|QueryDevicePropertyData|iot:QueryDevicePropertyData|\*|Query the historical records of a device property .|
+|QueryDevicePropertyData|iot:QueryDevicePropertyData|\*|Query the historical records of a device property.|
+|QueryDevicePropertiesData|iot:QueryDevicePropertiesData|\*|Query the historical records of device properties.|
 |GetGatewayBySubDevice|iot:GetGatewayBySubDevice|\*|Query the gateway device information using the sub-device information.|
 |SaveDeviceProp|iot:SaveDeviceProp|\*|Create tags for a device.|
 |QueryDeviceProp|iot:QueryDeviceProp|\*|Query all the tags of a device.|
@@ -50,6 +56,9 @@ For more information about creating authentication policies for RAM users, see[C
 |SetDeviceGroupTags|iot:SetDeviceGroupTags|\*|Create, update, or delete tags of a group.|
 |QueryDeviceGroupTagList|iot:QueryDeviceGroupTagList|\*|Query all the tags of a group.|
 |QueryDeviceGroupByDevice|iot:QueryDeviceGroupByDevice|\*|Query the groups that a specified device is in.|
+|QueryDeviceListByDeviceGroup|iot:QueryDeviceListByDeviceGroup|\*|Query devices in a device group.|
+|QuerySuperDeviceGroup|iot:QuerySuperDeviceGroup|\*|Query the parent group of a device group.|
+|QueryDeviceGroupByTags|iot:QueryDeviceGroupByTags|\*|Query device groups by tags.|
 |StartRule|iot:StartRule|\*|Enable a rule.|
 |StopRule|iot:StopRule|\*|Stop a rule.|
 |ListRule|iot:ListRule|\*|Query all the rules.|

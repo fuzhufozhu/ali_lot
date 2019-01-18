@@ -11,6 +11,11 @@
 |[QueryProductList](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProductList.md#)|查询产品列表。|
 |[QueryProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProduct.md#)|查询产品详细信息。|
 |[DeleteProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProduct.md#)|删除指定产品。|
+|[CreateProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/CreateProductTags.md#)|创建产品标签。|
+|[UpdateProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/UpdateProductTags.md#)|更新产品标签。|
+|[DeleteProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProductTags.md#)|删除产品标签。|
+|[ListProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductTags.md#)|查询产品的所有标签。|
+|[ListProductByTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductByTags.md#)|根据标签查询产品。|
 
 ## 设备管理相关 API {#section_dcj_qzc_xdb .section}
 
@@ -64,6 +69,7 @@
 |[QueryDeviceGroupByDevice](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByDevice.md#)|查询指定设备所在的分组列表。|
 |[QuerySuperDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QuerySuperDeviceGroup.md#)|根据子分组ID查询父分组信息。|
 |[QueryDeviceListByDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceListByDeviceGroup.md#)|查询分组中的设备列表。|
+|[QueryDeviceGroupByTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByTags.md#)|根据标签查询设备分组。|
 
 ## 规则引擎相关 API {#section_enr_vbd_xdb .section}
 

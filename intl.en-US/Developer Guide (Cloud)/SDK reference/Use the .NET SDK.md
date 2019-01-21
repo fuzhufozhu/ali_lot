@@ -8,15 +8,16 @@
 
     -   Microsoft .NET Framework 4.0 and later.
     -   Visual Studio 2010 and later.
-2.  Import IoT .NET SDK core library from the Alibaba Cloud.
+2.  Download Alibaba Cloud .NET SDK packages.
 
-    Download the package of the IoT .NET SDK core library from [.NET SDK releases](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1543303532729/aliyun-net-sdk-iot-4.0.0.zip), and extract the DLL file from the package.
+    Click [IoT.NET SDK releases](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1543303532729/aliyun-net-sdk-iot-4.0.0.zip) to download the IoT .NET SDK package and [.NET SDK core](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/29415/cn_zh/1548039262149/aliyun-net-sdk-core-1.1.9.zip) to download the Alibaba Cloud core library package, and then extract the DLL files from the packages.
 
-3.  Add a reference to the core library.
+3.  Import Alibaba Cloud .NET SDK libraries.
     1.  In the Solution Explorer of Visual Studio, right-click your project, and select **Reference**.
     2.  Click **Add Reference**.
     3.  Click **Browse** in the dialog box.
     4.  Select the DDL file aliyun-net-sdk-Iot.dll, and click **OK**.
+    5.  Import aliyun-net-sdk-Core.dll.
 
 ## Initialize the SDK {#section_gbs_4j2_zdb .section}
 

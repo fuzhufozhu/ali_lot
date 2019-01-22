@@ -52,15 +52,7 @@ Response data format when using the Alink protocol
 |params|List|Input parameters of the request.|
 |deviceName|String |Device name. The value is the name of the sub-device.|
 |productKey|String |Product ID. The value is the ID of the product to which the sub-device belongs.|
-|sign|String |Signature.|
-|signmethod|String |Signing method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.|
-|timestamp|String |Timestamp.|
-|clientId|String |Identifier of a sub-device. This parameter is optional and may have the same value as ProductKey or DeviceName.|
-|code|Integer|Result code. A value of 200 indicates the request is successful.|
-
-Signature algorithm
-
-**Note:** IoT Platform supports common signature algorithms.
+|sign|String |Signature.Signature algorithm:
 
 Sort all the parameters \(except for sign and signMethod\) that will be submitted to the server in lexicographical order, and then connect the parameters and values in turn \(no connect symbols \).
 
@@ -71,6 +63,12 @@ For example, in the following request, sort the parameters in params in alphabet
 ```
 sign= hmac_md5(deviceSecret, clientId123deviceNametestproductKey123timestamp1524448722000)
 ```
+
+|
+|signmethod|String |Signing method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.|
+|timestamp|String |Timestamp.|
+|clientId|String |Identifier of a sub-device. This parameter is optional and may have the same value as ProductKey or DeviceName.|
+|code|Integer|Result code. A value of 200 indicates the request is successful.|
 
 Error messages
 

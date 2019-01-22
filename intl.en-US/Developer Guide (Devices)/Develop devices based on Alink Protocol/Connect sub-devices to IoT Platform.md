@@ -49,18 +49,7 @@ Response message
 |params|Object|Request parameters.|
 |deviceName|String|Name of the sub-device.|
 |productKey|String|ID of the product to which the sub-device belongs.|
-|sign|String|Signature of a sub-device. Sub-devices use the same signature rules as the gateway.|
-|signmethod|String|Sign method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.|
-|timestamp|String|Timestamp.|
-|clientId|String|Identifier of a device client. This parameter can have the same value as the ProductKey or DeviceName parameter.|
-|cleanSession|String|A value of true indicates that when the device is offline, messages sent based on QoS=1 method will be cleared.|
-|code|Integer|Result code. A value of 200 indicates that the request is successful.|
-|message|String|Result message.​|
-|data|String|Additional information in the response, in JSON format.|
-
-**Note:** A gateway can accommodate a maximum of 200 concurrent online sub-devices. When the maximum number is reached, the gateway rejects any connection requests. 
-
-Sign the parameters
+|sign|String|Signature of a sub-device. Sub-devices use the same signature rules as the gateway.Sign algorithm:
 
 Sort all the parameters \(except sign and signmethod\) to be submitted to the server in alphabetical order, and then splice the parameters and values in turn \(without splice symbols \).
 
@@ -71,6 +60,17 @@ Example:
 ```
 sign= hmac_md5(deviceSecret, cleanSessiontrueclientId123deviceNametestproductKey123timestamp123)
 ```
+
+|
+|signmethod|String|Sign method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.|
+|timestamp|String|Timestamp.|
+|clientId|String|Identifier of a device client. This parameter can have the same value as the ProductKey or DeviceName parameter.|
+|cleanSession|String|A value of true indicates that when the device is offline, messages sent based on QoS=1 method will be cleared.|
+|code|Integer|Result code. A value of 200 indicates that the request is successful.|
+|message|String|Result message.​|
+|data|String|Additional information in the response, in JSON format.|
+
+**Note:** A gateway can accommodate a maximum of 1500 concurrent online sub-devices. When the maximum number is reached, the gateway rejects any connection requests. 
 
 Error messages
 

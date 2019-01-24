@@ -2,7 +2,9 @@
 
 本文档介绍如何配置服务端订阅、接入HTTP/2 Java版SDK、进行身份认证和设置消息接收接口。
 
-以下简单介绍服务端订阅的开发流程。有关配置的具体信息，请参考[服务端接收消息 Java SDK demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/http2-server-side-demo.zip)。
+有关配置的具体信息，请下载[HTTP/2 Java SDK demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/http2-server-side-demo.zip)，并参考[配置HTTP/2 Java SDK](../../../../../intl.zh-CN/设备端开发指南/C-SDK/配置HTTP__2 Java SDK.md#)接入物联网平台。
+
+以下简单介绍服务端订阅的开发流程。
 
 ## 配置服务端订阅 {#section_tbd_2s5_42b .section}
 
@@ -12,7 +14,7 @@
 4.  单击**服务端订阅** \> **设置**。
 5.  选择推送的消息类型。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/154746285612666_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/154831277512666_zh-CN.png)
 
     -   设备上报消息：指产品下所有设备 Topic 列表中，具有发布权限的 Topic 中的消息。勾选后，可以通过 HTTP/2 SDK 接收这些消息。
 

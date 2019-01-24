@@ -32,11 +32,11 @@
 
 -   Topic格式和Topic类格式一致。区别在于Topic类中的变量`${YourDeviceName}`，在Topic中则是具体的设备名称。
 -   设备对应的Topic是从产品Topic类映射出来，根据设备名称而动态创建的。设备的具体Topic中带有设备名称（即`DeviceName`），只能被该设备用于消息通信。例如，Topic：`/${YourProductKey}/device1/user/update`归属于设备名为device1的设备，所以只能被设备 device1 用于发布、订阅消息，而不能被设备 device2 用于发布、订阅消息。
--   使用规则引擎来转发设备数据，需配置相关Topic。在[设置规则引擎](intl.zh-CN/用户指南/规则引擎/设置数据流转规则.md#)时，配置的Topic中可使用通配符，且同一个类目中只能出现一个通配符。
+-   使用规则引擎来转发设备数据，需配置相关Topic。在[设置规则引擎](intl.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)时，配置的Topic中可使用通配符，且同一个类目中只能出现一个通配符。
 
     |通配符|描述|
     |:--|:-|
-    |\#|这个通配符必须出现在Topic的最后一个类目，代表本级及下级所有类目。例如， Topic：`/${YourProductKey}/device1/user/#`，可以代表`/${YourProductKey}/device1//user/update`和`/${YourProductKey}/device1/user/update/error`。|
+    |\#|这个通配符必须出现在Topic的最后一个类目，代表本级及下级所有类目。例如， Topic：`/${YourProductKey}/device1/user/#`，可以代表`/${YourProductKey}/device1/user/update`和`/${YourProductKey}/device1/user/update/error`。|
     |+|代表本级所有类目。例如，Topic：`/${YourProductKey}/+/user/update`，可以代表`/${YourProductKey}/device1/user/update`和`/${YourProductKey}/device2/user/update`。|
 
 

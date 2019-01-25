@@ -84,15 +84,16 @@
 3.   Configure IoT Platform. 
     1.  In the IoT Platform console, select **Products** and then create a product for the temperature and humidity sensor. 
     2.  On the Topic Categories tab page of the product details page, create a topic category `/productKey/${deviceName}/user/data` whose Device Operation Authorizations is Publish.  
-    3.  Select **Devices** and then register a device. 
-    4.  Click **View** next to the device name. On the Device Tag tab, click **Add** to add two device tags. 
+    3.  On the Define Feature tab page, define two properties: temperature and humidity. 
+    4.  Select **Devices** and then register a device. 
+    5.  Click **View** next to the device name. On the Device Tag tab, click **Add** to add two device tags. 
 
         |Tag Key|Tag Value|Description|
         |-------|---------|-----------|
         |tag|Room 007S, 3rd Floor, Building 2, Cloud Town |Device location|
         |deviceISN|T20180102XnbKjmoAnUb|Device number|
 
-    5.  Select Rules to create and enable a rule. A complete rule contains three parts: basic information, data processing SQL, and data forwarding. You can specify multiple forwarding actions for a rule. 
+    6.  Select Rules to create and enable a rule. A complete rule contains three parts: basic information, data processing SQL, and data forwarding. You can specify multiple forwarding actions for a rule. 
         1.  Configure the data processing script.
 
             The rules engine supports [SQL statements](../../../../../intl.en-US/User Guide/Rules/Data Forwarding/SQL statements.md#).
@@ -101,7 +102,7 @@
 
             This SQL is to obtain the temperature and humidity values from the payload of the messages that are sent from the temperature and humidity sensor.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484084214798_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484087434798_en-US.png)
 
             The SQL statements are as follows:
 
@@ -120,13 +121,13 @@
 
         2.  Configure the data forwarding action.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484084214799_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484087444799_en-US.png)
 
             The complete rule is as follows:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484084214805_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484087444805_en-US.png)
 
-    6.  On the rules page, click **Enable** to enable the rule. 
+    7.  On the rules page, click **Enable** to enable the rule. 
 4.   Temperature and humidity sensor. 
 
     To facilitate testing, a Node.js program is used to simulate the temperature and humidity sensor and send the temperature and humidity data. The [aliyun-iot-mqtt library](https://npmjs.org/package/aliyun-iot-mqtt) is used in this example. The complete code is as follows:
@@ -156,7 +157,7 @@
         $ node demo.js
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484084214806_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15484087444806_en-US.png)
 
     2.  DingTalk robot receives the data, and sends a message to the DintTalk group. 
 

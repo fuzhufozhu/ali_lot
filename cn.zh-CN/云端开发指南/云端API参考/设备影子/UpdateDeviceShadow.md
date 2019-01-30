@@ -48,7 +48,7 @@
 **请求示例**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=UpdateDeviceShadow
+https://iot.cn-shanghai.aliyuncs.com/?Action=UpdateDeviceShadow
 &ProductKey=al*********
 &DeviceName=device1
 &ShadowMessage=[{"method":"update","state":{"desired":{"color":"green"},"reported":"\"},"version":1}]

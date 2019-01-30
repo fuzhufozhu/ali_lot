@@ -21,7 +21,7 @@
 |Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |ShadowMessage|String| 调用成功时，返回的设备影子信息。
 
- **说明：** 根据影子设备的不同状态，查询到的影子信息结构有所差别，详情请参考[设备影子开发](../../../../intl.zh-CN/设备端开发指南/C-SDK/设备影子/设备影子介绍.md#)。
+ **说明：** 根据影子设备的不同状态，查询到的影子信息结构有所差别，详情请参考[设备影子开发](../../../../../intl.zh-CN/设备端开发指南/设备影子/设备影子介绍.md#)。
 
  |
 
@@ -30,7 +30,7 @@
 **请求示例**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=GetDeviceShadow
+https://iot.cn-shanghai.aliyuncs.com/?Action=GetDeviceShadow
 &ProductKey=al*********
 &DeviceName=device1
 &公共请求参数

@@ -42,7 +42,7 @@
 **请求示例**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=PubBroadcast
+https://iot.cn-shanghai.aliyuncs.com/?Action=PubBroadcast
 &ProductKey=al**********
 &TopicFullName=%252Fbroadcast%252FUPqSxj2vXXX%252Fxxx
 &MessageContent=aGVsbG93b3JsZA==

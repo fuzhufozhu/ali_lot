@@ -53,7 +53,7 @@
 **请求示例**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/&Action=QueryDeviceByTags
+https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceByTags
 &CurrentPage=1
 &PageSize=10
 &Tag.1.TagKey=dfdfd
@@ -65,24 +65,49 @@ https://iot.cn-shanghai.aliyuncs.com/&Action=QueryDeviceByTags
 
 **返回示例**
 
-```
-{
-    "PageCount": 1,
-    "Data": {
-        "SimpleDeviceInfo": [
-            {
-                "DeviceName": "1102jichu02",
-                "ProductKey": "a1SM5S1shy1",
-                "IotId": "GookTiUcwqRbHosp9Ta10017d3a00",
-                "ProductName": "TEST"
-            }
-        ]
-    },
-    "PageSize": 10,
-    "Page": 1,
-    "RequestId": "2B5091E4-32D5-4884-A5B2-2E8E713D84AF",
-    "Success": true,
-    "Total": 1
-}
-```
+-   JSON格式
+
+    ```
+    {
+        "PageCount": 1,
+        "Data": {
+            "SimpleDeviceInfo": [
+                {
+                    "DeviceName": "1102jichu02",
+                    "ProductKey": "a1SM5S1shy1",
+                    "IotId": "GookTiUcwqRbHosp9Ta10017d3a00",
+                    "ProductName": "TEST"
+                }
+            ]
+        },
+        "PageSize": 10,
+        "Page": 1,
+        "RequestId": "2B5091E4-32D5-4884-A5B2-2E8E713D84AF",
+        "Success": true,
+        "Total": 1
+    }
+    ```
+
+-   XML格式
+
+    ```
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <QueryDeviceByTags>
+    	<PageCount>1</PageCount>
+    	<Data>
+    		<SimpleDeviceInfo>
+    			<DeviceName>1102jichu02</DeviceName>
+    			<ProductKey>a1SM5S1shy1</ProductKey>
+    			<IotId>GookTiUcwqRbHosp9Ta10017d3a00</IotId>
+    			<ProductName>TEST</ProductName>
+    		</SimpleDeviceInfo>
+    	</Data>
+    	<PageSize>10</PageSize>
+    	<Page>1</Page>
+    	<RequestId>2B5091E4-32D5-4884-A5B2-2E8E713D84AF</RequestId>
+    	<Success>true</Success>
+    	<Total>1</Total>
+    </QueryDeviceByTags>
+    ```
+
 

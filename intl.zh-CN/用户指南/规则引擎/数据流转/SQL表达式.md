@@ -6,7 +6,7 @@
 
 JSON数据可以映射为虚拟的表，其中Key对应表的列，Value对应列值，这样就可以使用SQL处理。为便于理解，我们将数据流转的一条规则抽象为一条SQL表达（类试MySQL语法）：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15475358723123_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7487/15489223723123_zh-CN.png)
 
 ```
 
@@ -35,7 +35,9 @@ FROM 可以填写Topic。而且，Topic中的设备名（deviceName）一级类�
 
 -   JSON数据格式
 
-    SELECT语句中的字段，可以使用上报消息的payload解析结果，即JSON中的键值，也可以使用SQL内置的函数，比如`deviceName()`。不支持子SQL查询。
+    SELECT语句中的字段，可以使用上报消息的payload解析结果，即JSON中的键值，也可以使用SQL内置的函数，比如`deviceName()`。
+
+    支持`*`和函数的组合。不支持子SQL查询。
 
     上报的JSON数据格式，可以是数组或者嵌套的JSON，SQL语句支持使用JSONPath获取其中的属性值，如对于`{a:{key1:v1, key2:v2}}`，可以通过`a.key2` 获取到值`v2`。使用变量时，需要注意单双引号区别：单引号表示常量，双引号或不加引号表示变量。如使用单引号`'a.key2'`，值为`a.key2`。
 
@@ -47,8 +49,8 @@ FROM 可以填写Topic。而且，Topic中的设备名（deviceName）一级类�
     ```
 
 -   二进制数据格式
-    -   可填`*`直接透传数据。
-    -   可使用`to_base64(*)`函数，将原始Payload二进制数据转成base64String，提取出来。同时支持使用内置的函数和条件，如`deviceName()`，提取所需信息。
+    -   可填`*`直接透传数据。`*`后不能再使用函数。
+    -   可使用内置函数，如`to_base64(*)`函数，将原始Payload二进制数据转成base64String提取出来；`deviceName()`函数，将设备名称信息提取出来。
 
 **说明：** SELECT语句中的字段最多支持50个。
 

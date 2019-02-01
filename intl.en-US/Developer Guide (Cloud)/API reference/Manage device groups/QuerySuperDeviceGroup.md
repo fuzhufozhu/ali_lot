@@ -6,9 +6,9 @@ Call this operation to query the parent group of a subgroup.
 
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
-|Action|String|Yes|The operation to be performed. Set the value to QuerySuperDeviceGroup.|
+|Action|String|Yes|The operation that is to be performed. Set the value to QuerySuperDeviceGroup.|
 |GroupId|String|Yes|The unique identifier of the subgroup.|
-|Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_t2p_ht4_1gb .section}
 
@@ -31,39 +31,40 @@ Call this operation to query the parent group of a subgroup.
 **Request example**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=QuerySuperDeviceGroup
+https://iot.cn-shanghai.aliyuncs.com/?Action=QuerySuperDeviceGroup
 &GroupId=DMoI2Kby5m62Sirz
-&Public Request Parameters
+&Common request parameters
 ```
 
 **Response example**
 
-JSON format
+-   JSON format
 
-```
-{
-    "Data":{
-        "GroupName":"IOTTEST",
-        "GroupId":"tDQvBJqbUyHskDse",
-	"GroupDesc":"A test."
-    },
-    "RequestId":"7411716B-A488-4EEB-9AA0-6DB05AD2491F",
-    "Success":true
-}
-```
+    ```
+    {
+        "Data":{
+            "GroupName":"IOTTEST",
+            "GroupId":"tDQvBJqbUyHskDse",
+    	"GroupDesc":"A test."
+        },
+        "RequestId":"7411716B-A488-4EEB-9AA0-6DB05AD2491F",
+        "Success":true
+    }
+    ```
 
-XML format
+-   XML format
 
-```
-<? xml version="1.0" encoding="UTF-8" ? >
-<QuerySuperDeviceGroupResponse>
-	<Data>
-	    <GroupName>IOTTEST</GroupName>
-	    <GroupId>tDQvBJqbUyHskDse</GroupId>
-	    <GroupDesc>A test. </GroupDesc>
-	</Data>
-	<RequestId>7411716B-A488-4EEB-9AA0-6DB05AD2491F</RequestId>
-	<Success>true</Success>
-</QuerySuperDeviceGroupResponse>
-```
+    ```
+    <? xml version="1.0" encoding="UTF-8" ? >
+    <QuerySuperDeviceGroupResponse>
+    	<Data>
+    	    <GroupName>IOTTEST</GroupName>
+    	    <GroupId>tDQvBJqbUyHskDse</GroupId>
+    	    <GroupDesc>A test. </GroupDesc>
+    	</Data>
+    	<RequestId>7411716B-A488-4EEB-9AA0-6DB05AD2491F</RequestId>
+    	<Success>true</Success>
+    </QuerySuperDeviceGroupResponse>
+    ```
+
 

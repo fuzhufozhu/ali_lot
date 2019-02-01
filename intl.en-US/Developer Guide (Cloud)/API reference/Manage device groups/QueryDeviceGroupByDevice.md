@@ -2,9 +2,9 @@
 
 Call this operation to query the groups that a device is in.
 
-## Description {#section_its_1kv_xfb .section}
+## Limit {#section_its_1kv_xfb .section}
 
-Currently, a devices can be add into ten groups.
+Currently, a device can be included in up to ten groups.
 
 ## Request parameters {#section_s2g_fkv_xfb .section}
 
@@ -13,7 +13,7 @@ Currently, a devices can be add into ten groups.
 |Action|String|Yes|The operation that you want to perform. Set the value to QueryDeviceGroupByDevice.|
 |ProductKey|String|Yes|The unique identifier of the product that the device belongs to.|
 |DeviceName|String|Yes|The device name.|
-|Common Request Parameters|-|Yes|See[Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#)|
+|Common request parameters|-|Yes|See[Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#)|
 
 ## Response parameters {#section_hgw_4lv_xfb .section}
 
@@ -37,7 +37,7 @@ Currently, a devices can be add into ten groups.
 **Request example**
 
 ```
-http://iot.cn-shanghai.aliyuncs.com/?&Action=QueryDeviceGroupByDevice
+http://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceGroupByDevice
 &DeviceName=test456
 &ProductKey=a1SKk9K****
 &Public Request Parameters
@@ -45,20 +45,41 @@ http://iot.cn-shanghai.aliyuncs.com/?&Action=QueryDeviceGroupByDevice
 
 **Response example**
 
-```
-{
-  "RequestId": "7941C8CD-7764-4A94-8CD9-E2762D4A73AC",
-  "GroupInfos": {
-    "GroupInfo": [
-      {
-        "GroupDesc": "father desc",
-        "GroupName": "father1543152336554",
-        "UtcCreate": "2018-11-25T13:25:37.000Z",
-        "GroupId": "6a3FF2XE2BKayWsM"
-      }
-    ]
-  },
-  "Success": true
-}
-```
+-   JSON format
+
+    ```
+    {
+      "RequestId": "7941C8CD-7764-4A94-8CD9-E2762D4A73AC",
+      "GroupInfos": {
+        "GroupInfo": [
+          {
+            "GroupDesc": "father desc",
+            "GroupName": "father1543152336554",
+            "UtcCreate": "2018-11-25T13:25:37.000Z",
+            "GroupId": "6a3FF2XE2BKayWsM"
+          }
+        ]
+      },
+      "Success": true
+    }
+    ```
+
+-   XML format
+
+    ```
+    <? xml version="1.0" encoding="UTF-8" ? >
+    <QueryDeviceGroupByDevice>
+    	<RequestId>7941C8CD-7764-4A94-8CD9-E2762D4A73AC</RequestId>
+    	<GroupInfos>
+    		<GroupInfo>
+    			<GroupDesc>father desc</GroupDesc>
+    			<GroupName>father1543152336554</GroupName>
+    			<UtcCreate>2018-11-25T13:25:37.000Z</UtcCreate>
+    			<GroupId>6a3FF2XE2BKayWsM</GroupId>
+    		</GroupInfo>
+    	</GroupInfos>
+    	<Success>true</Success>
+    </QueryDeviceGroupByDevice>
+    ```
+
 

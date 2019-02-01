@@ -4,6 +4,7 @@ Call this operation to query the historical data of multiple properties of a dev
 
 ## Limits {#section_hxf_qmp_1gb .section}
 
+-   This operation is only for Pro edition products.
 -   Up to 10 properties can be queried at a time.
 -   Up to 100 data records of each property can be queried at a time.
 
@@ -17,8 +18,8 @@ Call this operation to query the historical data of multiple properties of a dev
 |Identifiers|List|Yes|The identifiers of the properties that you want to query. In the IoT Platform console, you can see your defined property identifiers on the Define Feature page of the product.You cannot enter duplicate property identifiers.
 
 |
-|StartTime|Long|Yes|The start time of the property record that you want to query. The value is a 13-bit timestamp.|
-|EndTime|Long|Yes|The end time of the property record. The value is a 13-bit timestamp.|
+|StartTime|Long |Yes|The start time of the property record that you want to query. The value is a 13-bit timestamp.|
+|EndTime|Long |Yes|The end time of the property record. The value is a 13-bit timestamp.|
 |PageSize|Integer|Yes|Specify the number of data records of each property that will be returned. The maximum value is 100.The record number of any property returned does not exceed this value.
 
 |
@@ -26,7 +27,7 @@ Call this operation to query the historical data of multiple properties of a dev
 -   1: Ascending. The value of StartTime must be earlier than that of EndTime.
 
  |
-|Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_lvt_l4p_1gb .section}
 
@@ -49,8 +50,8 @@ Call this operation to query the historical data of multiple properties of a dev
 |Identifier|String|The identifier of the property.|
 |List|List|The property records. For more information, see the following PropertyInfo table.|
 
-|Parameter|Type|Description|
-|:--------|:---|:----------|
+|Parameter|Type|Decription|
+|:--------|:---|:---------|
 |Time|Long|The time when the property is reported.|
 |Value|String|The value of the property.|
 
@@ -59,7 +60,7 @@ Call this operation to query the historical data of multiple properties of a dev
 **Request example**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=QueryDevicePropertiesData
+https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDevicePropertiesData
 &Asc=0
 &DeviceName=water
 &EndTime=1540115948152
@@ -68,139 +69,140 @@ https://iot.cn-shanghai.aliyuncs.com/?&Action=QueryDevicePropertiesData
 &PageSize=100
 &ProductKey=a1bdOxkDbGC
 &StartTime=1540116010723
-&Public Request Parameters
+&Common request parameters
 ```
 
-**Response parameter**
+**Response example**
 
-JSON format
+-   JSON format
 
-```
-{
-	"NextValid": true,
-	"NextTime": 1540115949818,
-	"RequestId": "75649FF8-36CD-421B-96C6-35B725FE823B",
-	"Success": true
-	"PropertyDataInfos": {
-             "PropertyDataInfo": [{
-		  "List":{
-			 "PropertyInfo": [{
-				"Value": "166.0",
-				"Time": 1540116010518
-			  },
-			  {
-				"Value": "166.0",
-				"Time": 1540116009906
-			  },
-			  {
-				"Value": "134.0",
-				"Time": 1540115951051
-			  },
-			  {
-				"Value": "133.0",
-				"Time": 1540115950431
-		          },
-			  {
-				"Value": "133.0",
-				"Time": 1540115949819
-			  }
-			]
-		      }, 
-		   "Identifier":"Circle"
-    
-		 },
-		 {
-		  "List": {
-		          "PropertyInfo": [{
-				"Value": "99.0",
-				"Time": 1540116010314
-			  },
-			  {
-				"Value": "99.0",
-				"Time": 1540116009702
-			  },
-			  {
-				"Value": "98.0",
-				"Time": 1540116009090
-			  },
-			  {
-				"Value": "51.0",
-				"Time": 1540115950844
-			  },
-			  {
-				"Value": "50.0",
-				"Time": 154011595228
-			   }
-			 ]
-			},
-		   "Identifier": "Weight"
-		 }
-	   ]
-     },
-}
-```
+    ```
+    {
+    	"NextValid": true,
+    	"NextTime": 1540115949818,
+    	"RequestId": "75649FF8-36CD-421B-96C6-35B725FE823B",
+    	"Success": true
+    	"PropertyDataInfos": {
+                 "PropertyDataInfo": [{
+    		  "List":{
+    			 "PropertyInfo": [{
+    				"Value": "166.0",
+    				"Time": 1540116010518
+    			  },
+    			  {
+    				"Value": "166.0",
+    				"Time": 1540116009906
+    			  },
+    			  {
+    				"Value": "134.0",
+    				"Time": 1540115951051
+    			  },
+    			  {
+    				"Value": "133.0",
+    				"Time": 1540115950431
+    		          },
+    			  {
+    				"Value": "133.0",
+    				"Time": 1540115949819
+    			  }
+    			]
+    		      }, 
+    		   "Identifier":"Circle"
+        
+    		 },
+    		 {
+    		  "List": {
+    		          "PropertyInfo": [{
+    				"Value": "99.0",
+    				"Time": 1540116010314
+    			  },
+    			  {
+    				"Value": "99.0",
+    				"Time": 1540116009702
+    			  },
+    			  {
+    				"Value": "98.0",
+    				"Time": 1540116009090
+    			  },
+    			  {
+    				"Value": "51.0",
+    				"Time": 1540115950844
+    			  },
+    			  {
+    				"Value": "50.0",
+    				"Time": 154011595228
+    			   }
+    			 ]
+    			},
+    		   "Identifier": "Weight"
+    		 }
+    	   ]
+         },
+    }
+    ```
 
-XML format
+-   XML format
 
-```
-<? xml version="1.0" encoding="UTF-8" ? >
-<QueryDevicePropertiesData>
-	<NextValid>true</NextValid>
-	<NextTime>1540115949818</NextTime>
-	<RequestId>75649FF8-36CD-421B-96C6-35B725FE823B</RequestId>
-	<PropertyDataInfos>
-		<PropertyDataInfo>
-			<List>
-				<PropertyInfo>
-					<Value>166.0</Value>
-					<Time>1540116010518</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>166.0</Value>
-					<Time>1540116009906</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>134.0</Value>
-					<Time>1540115951051</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>133.0</Value>
-					<Time>1540115950431</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>133.0</Value>
-					<Time>1540115949819</Time>
-				</PropertyInfo>
-			</List>
-			<Identifier>Circle</Identifier>
-		</PropertyDataInfo>
-		<PropertyDataInfo>
-			<List>
-				<PropertyInfo>
-					<Value>99.0</Value>
-					<Time>1540116010314</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>99.0</Value>
-					<Time>1540116009702</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>98.0</Value>
-					<Time>1540116009090</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>51.0</Value>
-					<Time>1540115950844</Time>
-				</PropertyInfo>
-				<PropertyInfo>
-					<Value>50.0</Value>
-					<Time>1540115950228</Time>
-				</PropertyInfo>
-			</List>
-			<Identifier>Weight</Identifier>
-		</PropertyDataInfo>
-	</PropertyDataInfos>
-	<Success>true</Success>
-</QueryDevicePropertiesData>
-```
+    ```
+    <? xml version="1.0" encoding="UTF-8" ? >
+    <QueryDevicePropertiesData>
+    	<NextValid>true</NextValid>
+    	<NextTime>1540115949818</NextTime>
+    	<RequestId>75649FF8-36CD-421B-96C6-35B725FE823B</RequestId>
+    	<PropertyDataInfos>
+    		<PropertyDataInfo>
+    			<List>
+    				<PropertyInfo>
+    					<Value>166.0</Value>
+    					<Time>1540116010518</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>166.0</Value>
+    					<Time>1540116009906</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>134.0</Value>
+    					<Time>1540115951051</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>133.0</Value>
+    					<Time>1540115950431</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>133.0</Value>
+    					<Time>1540115949819</Time>
+    				</PropertyInfo>
+    			</List>
+    			<Identifier>Circle</Identifier>
+    		</PropertyDataInfo>
+    		<PropertyDataInfo>
+    			<List>
+    				<PropertyInfo>
+    					<Value>99.0</Value>
+    					<Time>1540116010314</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>99.0</Value>
+    					<Time>1540116009702</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>98.0</Value>
+    					<Time>1540116009090</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>51.0</Value>
+    					<Time>1540115950844</Time>
+    				</PropertyInfo>
+    				<PropertyInfo>
+    					<Value>50.0</Value>
+    					<Time>1540115950228</Time>
+    				</PropertyInfo>
+    			</List>
+    			<Identifier>Weight</Identifier>
+    		</PropertyDataInfo>
+    	</PropertyDataInfos>
+    	<Success>true</Success>
+    </QueryDevicePropertiesData>
+    ```
+
 

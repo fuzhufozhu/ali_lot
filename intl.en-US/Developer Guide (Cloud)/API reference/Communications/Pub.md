@@ -2,12 +2,12 @@
 
 Call this operation to publish a message to a specified topic.
 
-## Request Parameters {#section_elh_ccb_ydb .section}
+## Request parameters {#section_elh_ccb_ydb .section}
 
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
 |Action|String|Yes|The operation that you want to perform. Set the value to Pub.|
-|ProductKey|String|Yes|The unique identifier of the product that publishes the message.|
+|ProductKey|String|Yes|The key of the product that publishes the message.|
 |TopicFullName|String|Yes| The full name of the topic that receives the message. User topic categories and custom topic categories are supported, however, system-defined topic categories are not supported.
 
  -   User topic category: `/$\{productKey\}/$\{deviceName\}/update`
@@ -21,7 +21,7 @@ topicShortName is the category level you have customized when you created the to
 
  |
 |MessageContent|String|Yes|The body of the message to be published. Convert the message into binary data and encode the data in Base64 to generate the message body.|
-|Qos|Integer|No| Specifies the quality of service. Value options:
+|Qos|Integer|No| Specifies the quality of service. Options:
 
  0: At most once.
 
@@ -32,7 +32,7 @@ topicShortName is the category level you have customized when you created the to
  **Note:** A message can be stored in IoT Platform for up to seven days.
 
  |
-|Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_x1z_ndb_ydb .section}
 
@@ -49,12 +49,12 @@ topicShortName is the category level you have customized when you created the to
 **Request example**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=Pub
+https://iot.cn-shanghai.aliyuncs.com/?Action=Pub
 &ProductKey=al*********
 &TopicFullName=%2FproductKey%2FdeviceName%2Fget
 &MessageContent=aGVsbG8gd29ybGQ%3D
 &Qos=0
-&Public Request Parameters
+&Common request parameters
 ```
 
 **Response example**

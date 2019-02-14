@@ -9,15 +9,15 @@
         -   设备上报消息，指平台将设备上报的数据自动转发至MNS。
         -   设备状态变化通知，指平台将设备上下线的消息自动推送至MNS。
     3.  订阅完成后，MNS将自动新建一个消息队列。消息队列信息显示在控制台上。 
-     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/154805836337625_zh-CN.png)
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/155011070937625_zh-CN.png)
 
     配置完成大约1分钟后生效。
 
 2.  通过监听MNS队列，接收设备消息。 
 
-    此处使用MNS Java SDK监听消息，涉及以下信息填写。
-
     具体操作，请参考[MNS文档](https://help.aliyun.com/document_detail/27508.html)。
+
+    本文示例中使用MNS Java SDK监听消息，涉及以下信息填写。
 
     -   在pom.xml文件中，添加如下依赖：
 
@@ -36,8 +36,8 @@
         CloudAccount account = new CloudAccount( $AccessKeyId, $AccessKeySecret, $AccountEndpoint);
         ```
 
-        -   $AccessKeyId和$AccessKeySecret需替换为阿里云账号访问API的基本信息，可以单击阿里云账号头像找到。
-        -   $AccountEndpoint需填写实际的Endpoint值，可以从MNS控制台上获取。
+        -   $AccessKeyId和$AccessKeySecret需替换为您的阿里云账号访问API的基本信息。登录阿里云控制台，光标移至阿里云账号头像上，然后单击**AccessKey管理**，创建或查看AccessKey信息。
+        -   $AccountEndpoint需填写实际的Endpoint值。在MNS控制台，单击**获取Endpoint**获取。
     -   填写接收设备消息的逻辑：
 
         ```
@@ -93,6 +93,7 @@
     "lastTime":"2018-08-31 15:32:28 .195",//状态变更时最后一次通信时间 
     "utcLastTime":"2018-08-31T07:32:28.195Z",//状态变更时最后一次通信UTC时间
     "clientIp":"xxx.xxx.xxx.xxx"//设备端公网出口IP
+}
         ```
 
 **说明：** 为避免消息时序紊乱造成影响，建议您根据lastTime来维护最终设备状态。

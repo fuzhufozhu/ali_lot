@@ -27,7 +27,7 @@
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
-DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
+DefaultProfile.AddEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
 IClientProfile clientProfile = DefaultProfile.GetProfile("cn-shanghai", "<your-access-key-id>", "<your-access-key-secret>");
 DefaultAcsClient client = new DefaultAcsClient(clientProfile);
 ```

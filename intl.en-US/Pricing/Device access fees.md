@@ -1,6 +1,6 @@
 # Device access fees {#concept_msp_l2g_ffb .concept}
 
-The device access fee is calculated based on the duration that devices are connected to IoT Platform. These fees are not charged if a device is connected to IoT Platform over CoAP or HTTP. The device access fee supports the Pay-As-You-Go billing method and has no minimum charge fee.
+The device access fee is calculated based on the duration that devices are connected to IoT Platform. These fees are not charged if a device is connected to IoT Platform over CoAP or HTTP, or if the device is a sub-device within a topological relationship. The device access fee supports the Pay-As-You-Go billing method and has no minimum charge fee.
 
 ## Billing method {#section_bsh_jlh_ffb .section}
 

@@ -17,7 +17,7 @@ An authorization policy is a JSON string that requires the following parameters:
 
 ## Define actions {#section_fpg_jrb_5db .section}
 
-Action is an application programming interface \(API\) operation name. When creating an authorization policy, use iot: as the prefix for each action, and separate multiple actions with commas \(,\). You can also use an asterisk \(\*\) as a wildcard character. For more information about API name definitions that are used on IoT Platform, see[API permissions](reseller.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/API permissions.md#) .
+Action is an application programming interface \(API\) operation name. When creating an authorization policy, use iot: as the prefix for each action, and separate multiple actions with commas \(,\). You can also use an asterisk \(\*\) as a wildcard character. For more information about API name definitions that are used on IoT Platform, see[API permissions](intl.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/API permissions.md#) .
 
 The following are some examples of action definitions.
 
@@ -394,5 +394,5 @@ Scenario: Rejects read requests from IP address 10.101.169.111.
 }
 ```
 
-After creating the authorization policy, apply this policy to the RAM users on the User Management page in the RAM console. Authorized RAM users can perform the operations defined in this policy. For more information about creating RAM users and granting permissions, see [Use RAM users](reseller.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/Use RAM users.md#).
+After creating the authorization policy, apply this policy to the RAM users on the User Management page in the RAM console. Authorized RAM users can perform the operations defined in this policy. For more information about creating RAM users and granting permissions, see [Use RAM users](intl.en-US/User Guide/Accounts and logon/Resource Access Management (RAM)/Use RAM users.md#).
 

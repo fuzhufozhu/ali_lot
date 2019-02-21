@@ -12,9 +12,9 @@
 |
 |NodeType|Integer|是| 产品的节点类型，取值：
 
- 0：设备。设备不能挂载子设备，可以直连IoT Hub，也可以作为网关的子设备连接IoT Hub。
+ 0：设备。设备不能挂载子设备。可以直连物联网平台，也可以作为网关的子设备连接物联网平台。
 
- 1：网关。网关可以挂载子设备，具有子设备管理模块，维持子设备的拓扑关系，并且可以将拓扑关系同步到云端。
+ 1：网关。网关可以挂载子设备，具有子设备管理模块，维持子设备的拓扑关系，和将拓扑关系同步到物联网平台。
 
  |
 |AliyunCommodityCode|String|否|产品版本类型。-   iothub\_senior：高级版。
@@ -23,24 +23,49 @@
 若不传入此参数默，则默认为基础版。
 
 |
-|DataFormat|Integer|是|产品版本类型选择为iothub\_senior的产品数据格式：-   0：透传/自定义格式（CUSTOM\_FORMAT）。
--   1：Alink协议（ALINK\_FORMAT）。
+|DataFormat|Integer|是|产品版本类型选择为iothub\_senior的产品数据格式。此参数为高级版产品的特有参数，并且是创建高级版产品的必需参数。
 
-此参数为高级版产品的特有参数，并且是创建高级版产品的必需参数。
+可选值：
+
+-   0：透传/自定义格式（CUSTOM\_FORMAT）。
+-   1：Alink协议（ALINK\_FORMAT）。
 
 |
 |CategoryId|Long|否|设备类型。此参数为创建高级版产品的特有参数。
 
 |
 |Description|String|否|为新建产品添加描述信息。描述信息应在100字符以内。|
-|ProtocolType|String|否|设备接入网关协议类型。-   modbus：Modbus协议。
--   opc-ua：OPC UA协议。
--   customize：自定义协议。
+|Id2|Boolean|否|是否使用ID²认证。可选值：
 
-此参数为创建高级版产品且该产品要接入网关设备时的特有参数。
+-   true：开通ID²认证。
+-   false：不开通ID²认证。
+
+不传入此参数，则默认为不开通。
 
 |
-|Id2|Boolean|否|是否为ID²产品。\(本功能暂未开放）|
+|ProtocolType|String|否|设备接入网关的协议类型。此参数为创建高级版产品，且产品节点类型为要接入网关的设备时的特有参数。
+
+可选值：
+
+-   modbus：Modbus协议。
+-   opc-ua：OPC UA协议。
+-   customize：自定义协议。
+-   ble：BLE协议。
+-   zigbee:ZigBee协议。
+
+|
+|NetType|String|否|联网方式。此参数为创建高级版产品，产品节点类型为网关或不接入网关的设备时的特有参数。
+
+可选值：
+
+-   WIFI: WiFi
+-   CELLULAR：蜂窝网
+-   ETHERNET：以太网
+-   OTHER：其他
+
+若不传入此参数，则默认为WiFi。
+
+|
 |公共请求参数|-|是|公共请求参数，请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#) 。|
 
 ## 返回参数 {#section_jmn_bvl_vdb .section}
@@ -57,7 +82,7 @@
 |名称|类型|描述|
 |:-|:-|:-|
 |ProductName|String|产品的名称。|
-|ProductKey|String|IoT为新建产品颁发的产品Key，作为该产品的全局唯一标识。**说明：** 请妥善保管新建产品的ProductKey。在其他操作中会用到该信息。
+|ProductKey|String|物联网平台为新建产品颁发的产品Key，作为该产品的全局唯一标识。**说明：** 请妥善保管新建产品的ProductKey。在其他操作中会用到该信息。
 
 |
 |Description|String|产品描述信息。|
@@ -76,14 +101,14 @@
 |
 |NodeType|Integer| 产品的节点类型，取值：
 
- 0：设备。设备不能挂载子设备，可以直连IoT Hub，也可以作为网关的子设备连接IoT Hub。
+ 0：设备。设备不能挂载子设备。可以直连物联网平台，也可以作为网关的子设备连接物联网平台。
 
- 1：网关。网关可以挂载子设备，具有子设备管理模块，维持子设备的拓扑关系，并且可以将拓扑关系同步到云端。
+ 1：网关。网关可以挂载子设备，具有子设备管理模块，维持子设备的拓扑关系，和将拓扑关系同步到物联网平台。
 
  此参数为高级版产品的特有参数。
 
  |
-|Id2|Boolean|是否为ID²产品。|
+|Id2|Boolean|是否为使用ID²认证的产品。|
 
 ## 示例 {#section_c1k_qvl_vdb .section}
 

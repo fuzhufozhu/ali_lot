@@ -6,7 +6,7 @@ Devices in IoT Platform support Over-The-Air \(OTA\) updates. This topic introdu
 
 The process of a firmware OTA update over MQTT protocol is shown as the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/154805197911336_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155073404511336_en-US.png)
 
 Topics for firmware update:
 
@@ -44,7 +44,7 @@ Topics for firmware update:
 
 ## Data format of messages {#section_nm2_m4c_r2b .section}
 
-For OTA development and code examples, see the documentations in [Link Kit SDK](https://help.aliyun.com/product/93051.html).
+For OTA development and code examples, see the documentations in [Link Kit SDK](https://www.alibabacloud.com/help/product/93051.htm).
 
 1.  When devices connects to the OTA service, they report their firmware versions.
 
@@ -64,7 +64,7 @@ For OTA development and code examples, see the documentations in [Link Kit SDK](
     -   version: The current firmware version of the device.
 2.  In the IoT Platform console, upload the firmware update file, verify the file using some devices, and then trigger firmware updates for all the devices of a product.
 
-    For more information, see [Firmware update](../../../../../reseller.en-US/User Guide/Monitoring and Maintenance/Firmware update.md#).
+    For more information, see [Firmware update](../../../../../intl.en-US/User Guide/Monitoring and Maintenance/Firmware update.md#).
 
 3.  When you trigger a batch update in the console, devices of the product will receive the URL of the firmware file.
 
@@ -123,10 +123,10 @@ For OTA development and code examples, see the documentations in [Link Kit SDK](
 
 -   Signature error. If the firmware URL received by the device is incomplete or the URL content has been manually modified, the following error occurs:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/154805197935716_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155073404535716_en-US.png)
 
 -   Failed to download the firmware file. The firmware file URL is expired. The URL is only available for 24 hours after its generation.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/154805198035717_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155073404635717_en-US.png)
 
 

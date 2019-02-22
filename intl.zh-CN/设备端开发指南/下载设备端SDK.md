@@ -6,7 +6,7 @@
 
 在设备端开发之前，您需要首先完成控制台所需操作，以获取设备开发阶段的必要信息，包括设备信息、Topic信息等。具体内容请参考用户指南。
 
-## 设备端SDK {#section_e4x_yxr_52b .section}
+## 基于设备端SDK开发 {#section_e4x_yxr_52b .section}
 
 您可以根据实际环境的协议、功能需求，参考[Link Kit SDK汇总](https://help.aliyun.com/document_detail/100576.html)选择合适的设备端SDK进行开发。Link Kit SDK包含：
 
@@ -31,4 +31,11 @@
 
 -   [核心SDK](../../../../../intl.zh-CN/用户指南/泛化协议/核心SDK开发.md#)
 -   [Server SDK](../../../../../intl.zh-CN/用户指南/泛化协议/Server SDK开发/Server SDK开发.md#)
+
+## HTTP/2 SDK {#section_fd3_rvj_wgb .section}
+
+您可以使用HTTP/2 SDK，建立设备端与阿里云物联网平台的数据通道。
+
+-   [HTTP/2 SDK \(Java\)](intl.zh-CN/设备端开发指南/C-SDK/使用HTTP__2 SDK(Java)建连.md#)
+-   [HTTP/2 SDK \(.NET\)](intl.zh-CN/设备端开发指南/C-SDK/配置HTTP__2 .NET SDK.md#)
 

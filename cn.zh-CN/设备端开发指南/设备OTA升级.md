@@ -6,7 +6,7 @@ OTA（Over-the-Air Technology）即空中下载技术。物联网平台支持通
 
 MQTT协议下固件升级流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/154753555311336_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155140397411336_zh-CN.png)
 
 固件升级Topic：
 
@@ -44,7 +44,7 @@ MQTT协议下固件升级流程如下图所示：
 
 ## 数据格式说明 {#section_nm2_m4c_r2b .section}
 
-设备端OTA开发流程和代码示例，请参见[Link Kit SDK](https://help.aliyun.com/product/93051.html)中，各语言SDK文档中，关于设备OTA开发章节。
+设备端OTA开发流程和代码示例，请参见[Link Kit SDK文档](https://www.alibabacloud.com/help/product/93051.htm)中，各语言SDK文档中，关于设备OTA开发章节。
 
 1.  设备连接OTA服务，必须上报版本号。
 
@@ -123,10 +123,10 @@ MQTT协议下固件升级流程如下图所示：
 
 -   签名错误。如果设备端获取的固件的URL不全或者手动修改了URL内容，就会出现如下错误：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15475355533964_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15514039743964_zh-CN.png)
 
 -   拒绝访问。URL过期导致。目前，URL有效期为24小时。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15475355543967_zh-CN.PNG)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15514039743967_zh-CN.PNG)
 
 

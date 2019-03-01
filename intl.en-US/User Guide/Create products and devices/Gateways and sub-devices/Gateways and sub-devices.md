@@ -11,7 +11,7 @@ When you create a product, you must select a node type for the devices of the pr
 
 The topological relationship between a gateway and its sub-devices is shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12824/15507308652876_en-US.PNG)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12824/15514043092876_en-US.PNG)
 
 ## Connect gateways and sub-devices to IoT Platform {#section_yv4_1fc_wdb .section}
 

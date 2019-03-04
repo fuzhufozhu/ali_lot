@@ -10,7 +10,7 @@ NodeMCU是基于ESP8266芯片的开发板。ESP8266芯片集成了Wifi功能，�
 
 **说明：** 将传感器数据线连接NodeMCU开发板上的D7引脚（对应GPIO 13）。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/154839616338110_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155169608738110_zh-CN.png)
 
 ## 前提条件 {#section_lzp_ddy_ngb .section}
 
@@ -26,7 +26,7 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
 
     本文以如下属性为例：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/154839616437986_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155169608737986_zh-CN.png)
 
 4.  创建设备，并获取设备证书信息（ProductKey、DeviceName和DeviceSecret）。请参见[单个创建设备](../../../../../cn.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)。
 5.  编写代码。
@@ -184,12 +184,12 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
     }
     ```
 
-6.  根据业务需要，修改MQTT客户端上MQTT\_MAX\_PACKET\_SIZE和MQTT\_KEEPALIVE的值。
+6.  修改MQTT客户端上MQTT\_MAX\_PACKET\_SIZE值为1024，修改MQTT\_KEEPALIVE值为60。您可以根据业务需要修改为合适的值。
 
     1.  在Arduino IDE的库管理器中找到PubSubClient。
     2.  打开src下的PubSubClient.h文件。
     3.  修改消息长度限制和MQTT连接保活时长。设置消息长度限制和MQTT连接保活时长，请参见[使用限制](../../../../../cn.zh-CN/产品简介/使用限制.md#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/154839616438000_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155169608738000_zh-CN.png)
 
 
 ## 测试 {#section_mwz_pj1_4gb .section}
@@ -202,10 +202,10 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
 
     运行效果如下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/154839616438009_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155169608738009_zh-CN.png)
 
 -   在物联网平台控制台，对应的设备详情页运行状态页签栏下查看设备上报的属性值和历史属性数据。如下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/154839616438010_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155169608738010_zh-CN.png)
 
 

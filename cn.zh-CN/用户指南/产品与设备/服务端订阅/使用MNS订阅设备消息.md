@@ -9,13 +9,13 @@
         -   设备上报消息，指平台将设备上报的数据自动转发至MNS。
         -   设备状态变化通知，指平台将设备上下线的消息自动推送至MNS。
     3.  订阅完成后，MNS将自动新建一个消息队列。消息队列信息显示在控制台上。 
-     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/155011070937625_zh-CN.png)
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/155192439137625_zh-CN.png)
 
     配置完成大约1分钟后生效。
 
 2.  通过监听MNS队列，接收设备消息。 
 
-    具体操作，请参考[MNS文档](https://help.aliyun.com/document_detail/27508.html)。
+    具体操作，请参考[MNS文档](https://www.alibabacloud.com/help/doc-detail/27508.htm)。
 
     本文示例中使用MNS Java SDK监听消息，涉及以下信息填写。
 
@@ -58,7 +58,7 @@
     -   运行程序，完成对MNS队列的监听。
 3.  启动设备，上报消息。 
 
-    可参考[SDK文档](https://help.aliyun.com/document_detail/96624.html)，查看设备上报消息的具体内容。
+    可参考[Link Kit SDK文档](https://www.alibabacloud.com/help/doc-detail/96624.htm)，查看设备上报消息的具体内容。
 
 4.  检查云端应用是否监听到设备消息。若成功监听，将获得如下所示消息代码。 
 
@@ -75,11 +75,11 @@
     |参数|说明|
     |:-|:-|
     |messageid|物联网平台生成的消息ID，19位大小。|
-    |messagetype|消息类型。    -   status：设备状态通知
-    -   upload：设备上报消息
+    |messagetype|消息类型。    -   status：设备状态通知。
+    -   upload：设备上报消息。
 |
-    |topic|云端监听到的信息来自哪个Topic。    -   当messagetype=status时，为null
-    -   当messagetype=upload时，为具体Topic
+    |topic|云端监听到的信息来自哪个Topic。    -   当messagetype=status时，为null。
+    -   当messagetype=upload时，为具体Topic。
 |
     |payload|Base64编码的数据。    -   当messagetype=status时，数据是平台的通知数据，数据格式为：
 

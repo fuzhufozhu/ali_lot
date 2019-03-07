@@ -9,7 +9,7 @@
         -   设备上报消息，指平台将设备上报的数据自动转发至MNS。
         -   设备状态变化通知，指平台将设备上下线的消息自动推送至MNS。
     3.  订阅完成后，MNS将自动新建一个消息队列。消息队列信息显示在控制台上。 
-     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/155083274237625_zh-CN.png)
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7461/155192439137625_zh-CN.png)
 
     配置完成大约1分钟后生效。
 

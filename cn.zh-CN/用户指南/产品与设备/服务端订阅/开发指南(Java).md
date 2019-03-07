@@ -1,11 +1,8 @@
 # 开发指南\(Java\) {#concept_cgg_k2v_y2b .concept}
 
-本文档介绍如何配置服务端订阅、接入HTTP/2 Java版SDK、进行身份认证和设置消息接收接口。
+本文档为服务端订阅功能的开发指南，介绍了Java版本的开发方法。完成后，您可以成功使用SDK，通过HTTP/2通道，接收物联网平台推送过来的设备消息。
 
-SDK配置方法：
-
--   有关设备端接入配置，请下载[iot-http2-sdk-demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/iot-http2-sdk-demos.zip)，并参考[配置HTTP/2 Java SDK](../../../../../intl.zh-CN/设备端开发指南/C-SDK/配置HTTP__2 Java SDK.md#)接入物联网平台。
--   有关服务端订阅配置，请下载[HTTP/2 Java SDK demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/http2-server-side-demo.zip)，参考本文以下章节进行配置。
+服务端订阅Demo：[HTTP/2 SDK\(Java\) server side demo](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/java-http2-sdk-demo/http2-server-side-demo.zip)。
 
 以下简单介绍服务端订阅的开发流程。
 
@@ -17,7 +14,7 @@ SDK配置方法：
 4.  单击**服务端订阅** \> **设置**。
 5.  选择推送的消息类型。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/154833572012666_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155192435012666_zh-CN.png)
 
     -   设备上报消息：指产品下所有设备 Topic 列表中，具有发布权限的 Topic 中的消息。勾选后，可以通过 HTTP/2 SDK 接收这些消息。
 
@@ -173,124 +170,5 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
         ```
         messageClient.ack(messageToken);
         ```
-
-
-## 消息体格式 {#section_csq_yv5_4fb .section}
-
--   设备状态通知：
-
-    ```
-    {
-        "status":"online|offline",
-        "productKey":"12345565569",
-        "deviceName":"deviceName1234",
-        "time":"2018-08-31 15:32:28.205",
-        "utcTime":"2018-08-31T07:32:28.205Z",
-        "lastTime":"2018-08-31 15:32:28.195",
-        "utcLastTime":"2018-08-31T07:32:28.195Z",
-        "clientIp":"123.123.123.123"
-    }
-    ```
-
-    |参数|类型|说明|
-    |--|--|--|
-    |status|String|设备状态，online上线，offline离线|
-    |productKey|String|设备所属产品的唯一标识|
-    |deviceName|String|设备名称|
-    |time|String|发送通知的时间点|
-    |utcTime|String|发送通知的UTC时间点|
-    |lastTime|String|状态变更时最后一次通信时间|
-    |utcLastTime|String|状态变更时最后一次通信的UTC时间|
-    |clientIp|String|设备公网出口IP|
-
-    **说明：** 为避免消息时序紊乱造成影响，建议您根据lastTime来维护最终设备状态。
-
--   设备生命周期变更：
-
-    ```
-    {
-        "action" : "create|delete|enable|disable",
-        "iotId" : "4z819VQHk6VSLmmBJfrf00107ee201",
-        "productKey" : "12345565569",
-        "deviceName" : "deviceName1234",
-        "deviceSecret" : "",
-        "messageCreateTime": 1510292739881
-    }
-    ```
-
-    |参数|类型|描述|
-    |--|--|--|
-    |action|String|     -   create：创建设备
-    -   delete：删除设备
-    -   enable：启用设备
-    -   disable：禁用设备
- |
-    |iotId|String|设备在平台内的唯一标识|
-    |productKey|String|设备所属产品的ProductKey|
-    |deviceName|String|设备名称|
-    |deviceSecret|String|设备密钥，仅在action为create时包含该参数|
-    |messageCreateTime|Long|消息产生的时间戳，单位为毫秒|
-
--   设备拓扑关系变更：
-
-    ```
-    {
-        "action" : "add|remove|enable|disable",
-        "gwIotId": "4z819VQHk6VSLmmBJfrf00107ee200",
-        "gwProductKey": "1234556554",
-        "gwDeviceName": "deviceName1234",
-        "devices": [
-            {
-              "iotId": "4z819VQHk6VSLmmBJfrf00107ee201",
-              "productKey": "12345565569",
-              "deviceName": "deviceName1234"
-           }
-        ],
-        "messageCreateTime": 1510292739881
-    }
-    ```
-
-    |参数|类型|说明|
-    |--|--|--|
-    |action|String|     -   add：新增拓扑关系
-    -   remove：移除拓扑关系
-    -   enable：启用拓扑关系
-    -   disable：禁用拓扑关系
- |
-    |gwIotId|String|网关设备在平台内的唯一标识|
-    |gwProductKey|String|网关设备所属产品的ProductKey|
-    |gwDeviceName|String|网关设备名称|
-    |devices|Object|变更的子设备列表|
-    |iotId|String|子设备在平台内的唯一标识|
-    |productKey|String|子设备所属产品的ProductKey|
-    |deviceName|String|子设备名称|
-    |messageCreateTime|Long|消息产生的时间戳，单位为毫秒|
-
--   网关发现子设备上报：
-
-    ```
-    {
-        "gwIotId":"4z819VQHk6VSLmmBJfrf00107ee200",
-        "gwProductKey":"1234556554",
-        "gwDeviceName":"deviceName1234",
-        "devices":[
-            {
-                "iotId":"4z819VQHk6VSLmmBJfrf00107ee201",
-                "productKey":"12345565569",
-                "deviceName":"deviceName1234"
-            }
-        ]
-    }
-    ```
-
-    |参数|类型|说明|
-    |--|--|--|
-    |gwIotId|String|网关设备在平台内的唯一标识|
-    |gwProductKey|String|网关产品的唯一标识|
-    |gwDeviceName|String|网关设备名称|
-    |devices|Object|发现的子设备列表|
-    |iotId|String|子设备在平台内的唯一标识|
-    |productKey|String|子设备产品的唯一标识|
-    |deviceName|String|子设备名称|
 
 

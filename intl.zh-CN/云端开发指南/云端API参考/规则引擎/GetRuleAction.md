@@ -38,6 +38,10 @@
 
  |
 |Configuration|String|该规则动作的配置信息。|
+|ErrorActionFlag|String|该规则动作是否为转发错误操作数据的转发动作，即转发流转到其他云产品失败且重试失败的数据。-   true：该规则动作转发错误操作数据。
+-   false：该规则动作不转发错误操作数据，而是正常转发操作。
+
+|
 
 ## 示例 {#section_dwh_vq1_ydb .section}
 
@@ -51,16 +55,41 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=GetRuleAction
 
 **返回示例**
 
-```
-{
-    "RequestId": "8FC9E36B-E0DC-4802-84EE-184E255B4E95",
-    "RuleActionInfo": {
-        "Configuration": "{\"endPoint\":\"http://ons.aliyun.com:8080/rocketmq/nsaddr4client\",\"regionName\":\"cn-shanghai\",\"topic\":\"test_hhf\",\"uid\":\"3216***\"}",
-        "Id": 10001,
-        "RuleId": 1000,
-        "Type": "ONS"
-    },
-    "Success": true
-}
-```
+-   JSON格式
+
+    ```
+    {
+      "RuleActionInfo": {
+        "Type": "REPUBLISH", 
+        "RuleId": 152323, 
+        "Id": 100001, 
+        "Configuration": "{\"topic\":\"/sys/a1zSA28HUyy/device/thing/service/property/set\",\"topicType\":0,\"uid\":\"1231579*******\"}", 
+        "ErrorActionFlag": false
+      }, 
+      "RequestId": "F2D0755D-F350-40FE-9A6D-491859DB5E5F", 
+      "Success": true
+    }
+    ```
+
+-   XML格式
+
+    ```
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <GetRuleActionResponse>
+        <RuleActionInfo>
+            <Type>REPUBLISH</Type>
+            <RuleId>152323</RuleId>
+            <Id>100001</Id>
+            <Configuration>
+                <topic>/sys/a1zSA28HUyy/device/thing/service/property/set</topic>
+                <topicType>0</topicType>
+                <uid>1231579*******</uid>
+            </Configuration>
+            <ErrorActionFlag>false</ErrorActionFlag>
+        </RuleActionInfo>
+        <RequestId>F2D0755D-F350-40FE-9A6D-491859DB5E5F</RequestId>
+        <Success>true</Success>
+    </GetRuleActionResponse>
+    ```
+
 

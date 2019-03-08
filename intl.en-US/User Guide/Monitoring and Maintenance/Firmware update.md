@@ -2,12 +2,10 @@
 
 IoT Platform provides the firmware update function. To update firmware, you need to configure your device client to support OTA updates. Then, in the IoT Platform console, you can upload a firmware file and push the firmware update file to devices. This topic describes how to configure firmware updates and manage firmware file versions.
 
-Before you use the firmware update function, make sure that:
+Before you use the firmware update function, make sure that you have developed your device client to support OTA updates.
 
--   You have developed your device client to support OTA updates.
-    -   If you use device SDKs, see [OTA Development](../../../../../reseller.en-US/Developer Guide (Devices)/OTA Development.md#).
-    -   If you use AliOS Things, see [OTA tutorial for AliOS Things](https://github.com/alibaba/AliOS-Things/wiki).
--   You have enabled the firmware update function in the console. If you have not enabled the firmware update function, log on to the IoT Platform console and then, in the left-side navigation pane, click **Maintenance** \> **Firmware Update**. Then, enable the function.
+-   If you use device SDKs, see [OTA updates](../../../../../reseller.en-US/Developer Guide (Devices)/OTA updates.md#).
+-   If you use AliOS Things, see [OTA tutorial for AliOS Things](https://github.com/alibaba/AliOS-Things/wiki).
 
 1.  Log on to the IoT Platform console. 
 2.  In the left-side navigation pane, click **Maintenance** \> **Firmware Update** 
@@ -20,7 +18,7 @@ Before you use the firmware update function, make sure that:
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15478094363946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15520298623946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -40,12 +38,10 @@ Before you use the firmware update function, make sure that:
 
     **Note:** After the firmware file is uploaded to IoT Platform, you need to test whether the firmware file is available on one or more devices. Only when you confirm that the test devices have been successfully updated can the firmware file be used for batch update. You can launch validations for a firmware to occur multiple times.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/154780943610898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155202986210898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
-    |Update Method|     -   Full: Push the entire update package to devices.
- |
     |Pending Update Version|The drop-down box displays the current firmware versions of all devices of the product. Select one or more versions that you want to update to the new version.After you select the versions, the devices with these firmware versions will be displayed when you click the drop-down button of **DeviceName**.
 
 |
@@ -61,17 +57,19 @@ Before you use the firmware update function, make sure that:
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/154780943610902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155202986210902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
-    |Update Method|     -   Full: Push the entire update package to devices for update. You must specify the firmware versions that are to be updated.
- |
     |Pending Update Version|The drop-down box displays the current firmware versions of all devices of the product. Select one or more versions that you want to update to the new version.|
     |Update Policy|     -   Static Update: Only update activated devices that meet the specified criteria.
     -   Dynamic Update: All devices that meets the specified criteria receive an update notification. If you select Dynamic Update, the system maintains the scope of devices that need to be updated, including devices that have reported the current versions and newly activated devices.
  |
-    |Update Scope|     -   All Devices: All devices that belong to the product will be updated.
+    |Update Region|     -   All Devices: All devices that belong to the product will be updated.
+    -   Directional Upgrade: If you select Directional Upgrade, Device Range field will appear. You then need to select devices to be updated. Only selected devices will be updated.
+
+**Note:** You can select multiple pending versions if you select to update specified devices. The version that you previously selected for update is selected by default. If you have not specified any version, all versions are selected by default.
+
  |
     |Update Time|Specify a time when the update performs.    -   Update Now: Update immediately after the request is submitted.
     -   Scheduled Update: Manually specify a time for the system to push the update requests to devices. You can specify a time in the range of five minutes to seven days later.

@@ -6,7 +6,7 @@ Use this operation to query the event records of a specified device.
 
 You can query event data that was generated within the last 30 days.
 
-**Note:** The data of an event is stored from the day the event was generated. Data that was generated more than 30 days ago is no longer stored.
+**Note:** The data of an event is stored from the day the event data was generated. Data that was generated more than 30 days ago is no longer stored.
 
 ## Request parameters {#section_srt_qqr_xdb .section}
 
@@ -45,9 +45,10 @@ You can query event data that was generated within the last 30 days.
 |PageSize|Integer  |No|The number of records per page in the response. The maximum limit is 50.|
 |Asc|Integer|No| The sorting order of the property records in returned results. Value options:
 
- 0: In reverse chronological order
+ -   0: In reverse chronological order. The value of StartTime must be later than that of EndTime.
 
- 1: In chronological order
+-   1: In chronological order. The value of StartTime must be earlier than that of EndTime.
+
 
  |
 |Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|

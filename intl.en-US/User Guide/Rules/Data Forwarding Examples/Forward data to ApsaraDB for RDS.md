@@ -19,7 +19,7 @@ You can configure the rules engine to forward processed data to ApsaraDB for RDS
 
 1.  Click **Add Operation** next to **Data Forwarding**, and then select **Save to RDS**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15520325602856_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15520327382856_en-US.png)
 
 2.  Configure the following parameters as prompted:
 
@@ -56,6 +56,6 @@ You can configure the rules engine to forward processed data to ApsaraDB for RDS
     -   Japan \(Tokyo\): 100.104.160.192/26
     On the Security page of the RDS console, you can set and view the whitelist.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15520325603010_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7547/15520327383010_en-US.png)
 
 

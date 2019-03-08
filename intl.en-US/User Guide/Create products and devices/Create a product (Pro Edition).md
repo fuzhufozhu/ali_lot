@@ -8,7 +8,7 @@ IoT Platform supports two editions of products: Basic Edition and Pro Edition. T
 2.  In the left-side navigation pane, click **Devices** \> **Product**, and then click **Create Product**. 
 3.  Select **Pro Edition** and click **Next**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/15469131662362_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/15520106522362_en-US.jpg)
 
 4.  Enter all the required information and then click **OK**. 
 
@@ -17,16 +17,6 @@ IoT Platform supports two editions of products: Basic Edition and Pro Edition. T
     |Parameter|Description|
     |:--------|:----------|
     |Product Name|The name of the product that you want to create. The product name must be unique within the account. For example, you can enter the product model as the product name. A product name is 4 to 30 characters in length, and can contain Chinese characters, English letters, digits, and underscores. A Chinese character counts as two.|
-    |Category|Select a product category from the list. IoT Platform has defined [TSL](reseller.en-US/User Guide/Create products and devices/TSL/What is Thing Specification Language (TSL)?.md#) for the predefined categories.You can select:
-
-    -   **Custom category**: Define features for the product by yourself.
-    -   Predefined category.
-
-Select a predefined product category according to your requirements for this product. You can then easily define features for the product. You only edit, modify or add features based on the existing TSL.
-
-For example, If you select **Smart City** \> **Power Management** \> **Electricity Meter** as the product category, the product to be created will be predefined with features such as electricity consumption, voltage, current, and other features of electricity meters.
-
-|
     |Node Type|     -   **Device**: Indicates that devices of this product cannot be mounted with sub-devices. This kind of device can connect to IoT Platform directly or as a sub-device of a gateway device.
     -   **Gateway**: Indicates that devices of this product connect to IoT Platform directly and can be mounted with sub-devices . A gateway can manage sub-devices, maintain topological relationships with sub-devices, and synchronize topological relationships to IoT Platform.
  For more information about gateway devices and sub-devices, see [Gateways and sub-devices](reseller.en-US/User Guide/Create products and devices/Gateways and sub-devices/Gateways and sub-devices.md#).
@@ -60,17 +50,18 @@ For example, If you select **Smart City** \> **Power Management** \> **Electrici
     After the product is created successfully, you are automatically redirected to the Products page.
 
 
-1.  To configure features for a product \(such as [Notifications](reseller.en-US/User Guide/Create products and devices/Topics/What is a topic?.md#), [TSL \(Define Feature\)](reseller.en-US/User Guide/Create products and devices/TSL/What is Thing Specification Language (TSL)?.md#), and [Service Subscription](reseller.en-US/User Guide/Create products and devices/Service Subscription/What is Service Subscription?.md#)\), go to the product list, find the target product and then click its corresponding **View** button
-2.  Develop your real devices by referring to [Developer Guide \(Devices\)](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#).
-3.  To publish a product, go to the product details page and click **Publish**.
+1.  To configure features for a product \(such as [Notifications](reseller.en-US/User Guide/Create products and devices/Topics/What is a topic?.md#), [TSL \(Define Feature\)](reseller.en-US/User Guide/Create products and devices/TSL/Overview.md#), and [Service Subscription](reseller.en-US/User Guide/Create products and devices/Service Subscription/What is Service Subscription?.md#)\), go to the product list, find the target product and then click its corresponding **View** button.
+2.  Register devices on IoT Platform.
+3.  Develop your physical devices by referring to [Developer Guide \(Devices\)](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#).
+4.  To publish a product, go to the product details page and click **Publish**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154691316613396_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155201065213396_en-US.png)
 
     Note that before you publish a product, you must make sure that you have configured all the correct information for the product, have completed debugging the features, and have verified that it meets the criteria for being published.
 
     When the product status is **Published**, you can view the product information but cannot modify or delete the product.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/154691316713395_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155201065213395_en-US.png)
 
     To cancel the publishing of a product, click **Cancel Publishing**.
 

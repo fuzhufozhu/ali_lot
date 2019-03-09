@@ -7,17 +7,17 @@ Call this operation to delete a specified tag of a device.
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
 |Action|String|Yes|The operation that you want to perform. Set the value to DeleteDeviceProp.|
-|IotId|String|No| The unique identifier of the device that you want to delete.
+|IotId|String|No| The unique identifier of the device whose tag you want to delete.
 
  **Note:** If you use this parameter, ProductKey and DeviceName are not required. IotId is a globally unique identifier \(GUID\) of a device, and corresponds to the combination of ProductKey and DeviceName. If you specify both IotId and the combination of ProductKey and DeviceName, the system follows IotId.
 
  |
-|ProductKey|String|No| The product key of the device that you want to delete.
+|ProductKey|String|No| The product key of the device whose tag you want to delete.
 
  **Note:** If you use this parameter, DeviceName is required.
 
  |
-|DeviceName|String|No| The name of the device that you want to delete.
+|DeviceName|String|No| The name of the device whose tag you want to delete.
 
  **Note:** If you use this parameter, ProductKey is required.
 

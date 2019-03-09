@@ -37,7 +37,7 @@ The successful result returned only indicates that the request to build topologi
 |DeviceName|String|No|The name of a sub-device.**Note:** If you specify this parameter, you must also specify ProductKey.
 
 |
-|IotId| String| No| The identifier of the device whose event records you want to query.
+|IotId| String| No| The identifier of a sub-device.
 
  **Note:** If you specify this parameter, ProductKey and DeviceName are not required. IotId is the globally unique identifier \(GUID\) of a device, and corresponds to the combination of ProductKey and DeviceName. If you specify both IotId and the combination of ProductKeyand DeviceName, the system follows IotId.
 

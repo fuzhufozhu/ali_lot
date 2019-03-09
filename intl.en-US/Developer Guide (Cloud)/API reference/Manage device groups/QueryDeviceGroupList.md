@@ -28,7 +28,9 @@ Call this operation to query groups.
 |PageSize|Integer|The number of groups on each page.|
 |CurrentPage|Integer|The current page number.|
 |Total|Integer|The total number of groups.|
-|Data|Data|The group information returned when the call is successful. See the following table GroupInfo.|
+|Data|Data|The group information returned when the call is successful. See the following table GroupInfo.**Note:** The group information is listed in reverse chronological order.
+
+|
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|

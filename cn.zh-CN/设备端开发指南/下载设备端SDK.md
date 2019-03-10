@@ -37,5 +37,4 @@
 您可以使用HTTP/2 SDK，建立设备端与阿里云物联网平台的数据通道。
 
 -   [HTTP/2 SDK \(Java\)](intl.zh-CN/设备端开发指南/C-SDK/使用HTTP__2 SDK(Java)建连.md#)
--   [HTTP/2 SDK \(.NET\)](intl.zh-CN/设备端开发指南/C-SDK/配置HTTP__2 .NET SDK.md#)
 

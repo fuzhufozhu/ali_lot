@@ -6,7 +6,7 @@ IoT Platform SDKs support the following programming languages: Java, Python, PHP
 
 Click one of the following links to download the corresponding SDK source code:
 
--   [IoT SDK demo](https://github.com/aliyun/iotx-api-demo)
+-   [SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)
 
     **Note:** Platform API demo resources are available for Java, Python, PHP, and .NET.
 

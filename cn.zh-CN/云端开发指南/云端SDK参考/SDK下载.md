@@ -15,7 +15,5 @@
 
 阿里云提供物联网平台SDK使用 Demo。Demo 中包含Java、Python、PHP、.NET版本SDK。
 
-Demo下载地址：[IoT SDK Demo](https://github.com/aliyun/iotx-api-demo)
-
-**说明：** 目前，SDK Demo只支持基础版API封装，暂不支持高级版API。
+点击下载[SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)
 

@@ -7,8 +7,15 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：QueryDeviceProp。|
-|ProductKey|String|是|要查询的设备所隶属的产品Key。|
-|DeviceName|String|是|要查询的设备的名称。|
+|IotId|String|否|物联网平台为该设备颁发的设备ID，作为该设备的唯一标识符。**说明：** 如果传入该参数，则无需传入ProductKey和DeviceName。IotId作为设备唯一标识符，与ProductKey和DeviceName组合是一一对应的关系。如果您同时传入IotId和ProductKey与DeviceName组合，则以IotId为准。
+
+|
+|ProductKey|String|否|要查询的设备所隶属的产品Key。**说明：** 如果传入该参数，需同时传入DeviceName。
+
+|
+|DeviceName|String|否|要查询的设备的名称。**说明：** 如果传入该参数，需同时传入ProductKey。
+
+|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_v43_5gt_xdb .section}
@@ -38,20 +45,22 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceProp
 
     ```
     {
-    　　"Props":"{"firmwareVersion":"12","color":"red"}",
-    　　"RequestId":"F28BDA06-D8DB-4F70-BAED-DDA59AD6EF46",
-    　　"Success":true
+    	"RequestId": "D8CEF5E7-1484-4164-A242-C06BA3A54E0F",
+    	"Props": "{\"coordinate\":\"104.07086:30.549169\"}",
+    	"Success": true
     }
     ```
 
 -   XML格式
 
     ```
-    <?xml version='1.0' encoding='UTF-8'?>
+    <?xml version="1.0" encoding="UTF-8" ?>
     <QueryDevicePropResponse>
-        <RequestId>F28BDA06-D8DB-4F70-BAED-DDA59AD6EF46</RequestId>
+        <RequestId>D8CEF5E7-1484-4164-A242-C06BA3A54E0F</RequestId>
+        <Props>
+            <coordinate>104.07086:30.549169</coordinate>
+        </Props>
         <Success>true</Success>
-        <Props>{"firmwareVersion":"12","color":"red"}</Props>
     </QueryDevicePropResponse>
     ```
 

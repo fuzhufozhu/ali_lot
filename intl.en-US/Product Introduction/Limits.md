@@ -27,11 +27,12 @@ IoT Platform has the following limits.
 |Each event can have a maximum of 20 output parameters.|20|
 |Data parsing|The size of a data parsing script cannot exceed 48 KB.|48 KB|
 |Remote configuration|The remote configuration file can only be in JSON format and cannot exceed 64 KB.|64 KB|
+|Data storage|The data of Pro edition properties, events, and services is stored for 30 days.|30 days|
 
 ## Communication {#section_x5w_ycv_4fb .section}
 
-|Item|Limit|
-|:---|:----|
+|Description|Limit|
+|:----------|:----|
 |The maximum number of MQTT requests that each account can send per second.|500|
 |The maximum number of MQTT requests that each device can send per second.|1|
 |The maximum number of connection times that each device can try per minute.|5|
@@ -58,8 +59,8 @@ A heartbeat interval begins at the time when IoT Platform sends a CONNACK messag
 
 ## Topics {#section_mmp_bdv_4fb .section}
 
-|Item|Limit|
-|:---|:----|
+|Description|Limit|
+|:----------|:----|
 |A product can have a maximum of 50 topic categories.|50|
 |A device can only publish messages to and subscribe to its own topics.|-|
 |Topics use UTF-8 encoded characters and cannot exceed 128 bytes.|128 bytes|
@@ -73,8 +74,8 @@ A heartbeat interval begins at the time when IoT Platform sends a CONNACK messag
 
 ## Device shadow {#section_cnm_ddv_4fb .section}
 
-|Item|Limit|
-|:---|:----|
+|Description|Limit|
+|:----------|:----|
 |The maximum depth level of a device shadow JSON file.|5|
 |The maximum size of a device shadow JSON file.|16 KB|
 |The maximum number of attributes in a device shadow JSON file.|128|
@@ -95,7 +96,7 @@ A heartbeat interval begins at the time when IoT Platform sends a CONNACK messag
 |API|One tenant \(QPS\)|One IP address \(QPS\)|
 |:--|:-----------------|:---------------------|
 |Pub|1,600|100|
-|RRpc|500|100|
+|RRpc|1000|100|
 |PubBroadcast|1|100|
 |Other APIs|50|100|
 

@@ -42,6 +42,12 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=Pub
 ...
 ```
 
+## API在线调试 {#section_iyj_mmq_bhb .section}
+
+阿里云提供API在线调试工具 [OpenAPI Explore](https://api.aliyun.com)。在OpenAPI Explore页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下供您参考。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7563/155289664540697_zh-CN.png)
+
 ## API授权 {#section_qd5_fx5_ydb .section}
 
 为了确保您的账号安全，建议您使用子账号的身份凭证调用API。如果您使用RAM子账号调用物联网平台API，您需要为该RAM子账号创建、授予相应的授权策略。

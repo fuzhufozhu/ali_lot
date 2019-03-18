@@ -86,4 +86,6 @@
 |QueryTopicRouteTable|iot:QueryTopicRouteTable|\*|查询向指定Topic订阅消息的目标Topic。|
 |GetDeviceShadow|iot:GetDeviceShadow|\*|查询设备的影子信息。|
 |UpdateDeviceShadow|iot:UpdateDeviceShadow|\*|修改设备的影子信息。|
+|SetDeviceDesiredProperty|iot:SetDeviceDesiredProperty|\*|为指定设备批量设置期望属性值。|
+|QueryDeviceDesiredProperty|iot:QueryDeviceDesiredProperty|\*|查询指定设备的期望属性值。|
 

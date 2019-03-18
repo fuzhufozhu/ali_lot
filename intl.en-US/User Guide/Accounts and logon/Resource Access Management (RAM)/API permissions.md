@@ -84,4 +84,6 @@ For more information about creating authentication policies for RAM users, see[C
 |QueryTopicRouteTable|iot:QueryTopicRouteTable|\*|Query the target topics of a source topic.|
 |GetDeviceShadow|iot:GetDeviceShadow|\*|Query the shadow information of a device.|
 |UpdateDeviceShadow|iot:UpdateDeviceShadow|\*|Update the shadow information of a device.|
+|SetDeviceDesiredProperty|iot:SetDeviceDesiredProperty|\*|Set desired property values for a device.|
+|QueryDeviceDesiredProperty|iot:QueryDeviceDesiredProperty|\*|Query the desired property values of a specified device.|
 

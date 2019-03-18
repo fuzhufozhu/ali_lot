@@ -4,7 +4,7 @@ Call this operation to set properties for multiple Pro Edition devices.
 
 ## Limits {#section_f1v_4vj_sfb .section}
 
-The maximum number of requests per second for a tenant is 50 QPS, and the maximum number of requests per second for an API is 1000 QPS.
+The maximum number of requests per second for a tenant is 50 QPS.
 
 ## Request parameters {#section_jgt_v2t_xdb .section}
 

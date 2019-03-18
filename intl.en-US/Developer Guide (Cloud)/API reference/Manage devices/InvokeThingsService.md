@@ -4,7 +4,7 @@ Call this operation to run a service on multiple Pro Edition devices.
 
 ## Limits {#section_f1v_4vj_sfb .section}
 
--   The maximum number of requests per second for a tenant is 50 QPS, and the maximum number of requests per second for an API is 1000 QPS.
+-   The maximum number of requests per second for a tenant is 50 QPS.
 -   Currently, only asynchronous calls to the API are supported.
 
 ## Request parameters {#section_uz4_dzj_sfb .section}

@@ -2,6 +2,12 @@
 
 调用该接口查询指定设备的属性记录。
 
+## 限制说明 {#section_whh_qlh_tgb .section}
+
+仅能查询最近30天内的属性数据。
+
+**说明：** 数据存储时间从属性时间戳表示的时间当日开始计算。
+
 ## 请求参数 {#section_s1v_mss_xdb .section}
 
 |名称|类型|是否必需|描述|
@@ -27,7 +33,9 @@
  高级版设备的属性Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。若设备有多个属性，您可以多次调用该接口进行查询，一次输入一个Identifier。
 
  |
-|StartTime|Long|是|要查询的属性记录的开始时间。取值为毫秒值时间戳。|
+|StartTime|Long|是|要查询的属性记录的开始时间。取值为毫秒值时间戳。**说明：** 只能查询最近30天内的属性数据记录。
+
+|
 |EndTime|Long|是|要查询的属性记录的结束时间。取值为毫秒值时间戳。|
 |PageSize|Integer|是|返回结果中每页显示的记录数。数量限制：每页最多可显示50条。|
 |Asc|Integer|是| 返回结果中属性记录的排序方式，取值：
@@ -51,7 +59,9 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|List|List<PropertyList\>|属性集合。每个元素代表一个属性。元素的结构参见[PropertyInfo](#table_z2b_7593_xdb)。|
+|List|List<PropertyList\>|属性集合。每个元素代表一个属性。元素的结构参见[PropertyInfo](#table_z2b_7593_xdb)。**说明：** 返回的属性信息按照属性生成时间倒序排列。
+
+|
 |NextValid|Boolean|表示下一页面是否可用。true表示可用，false表示不可用。|
 |NextTime|Long|下一页面中的属性记录的起始时间。|
 
@@ -70,8 +80,8 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDevicePropertyData
 &ProductKey=al*********
 &DeviceName=device1
 &Identifier=lightLevel
-&StartTime=1516538300303L
-&EndTime=1516541900303L
+&StartTime=1516538300303
+&EndTime=1516541900303
 &PageSize=10
 &Asc=1
 &公共请求参数

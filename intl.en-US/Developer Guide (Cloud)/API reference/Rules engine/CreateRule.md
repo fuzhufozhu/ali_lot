@@ -6,31 +6,49 @@ Call this operation to create a rule for a specified topic.
 
 **Note:** If you want to start a rule, you are required to provide the following three parameters: ProductKey, ShortTopic, and Select.
 
-|Parameter|Type|Required|Description|
-|:--------|:---|:-------|:----------|
-|Action|String|Yes|The operation that you want to perform. Set the value to CreateRule.|
+|Parameter|Type|Required?|Description|
+|:--------|:---|:--------|:----------|
+|Action|String|Yes|The operation that you want to perform. Value: CreateRule|
 |Name|String|Yes|The rule name. The name can be 4 to 30 characters in length and can contain English letters, digits, and underscores \(\_\).|
 |ProductKey|String|No|The unique identifier of the product that uses this rule.|
 |ShortTopic|String|No| The topic \(does not contain the ProductKey hierarchy\) to which this rule applies. A ShortTopic is in the following format: `${deviceName}/topicShortName`. $\{deviceName\} is the name of the specified device, and topicShortName is the custom hierarchy of the topic.
 
- You can call QueryDevice to query the devices of a product and view the DeviceName values.
+ You can call [QueryDevice](reseller.en-US/Developer Guide (Cloud)/API reference/Manage devices/QueryDevice.md#) to query the devices of a product and view the DeviceName values.
 
- You can call QueryProductTopic to query all the topic categories of a product and view the TopicShortName values.
+ You can call [QueryProductTopic](reseller.en-US/Developer Guide (Cloud)/API reference/Manage Topics/UpdateProductTopic.md#) to query all the topic categories of a product and view the TopicShortName values.
+
+ Example:
+
+ -   `${deviceName}/thing/event/property/post` is the ShortTopic of a system topic. For the `${deviceName}` hierarchy, you can use the `+`symbol to include all the device names under the specified product.
+
+-   `${deviceName}/user/get` is the ShortTopic of a custom topic.
+
+Wildcards `+` and `#` are supported when you specify custom topics.
+
+    -   For the `${deviceName}` hierarchy, you can use the `+`symbol to include all the device names under the specified product.
+    -   Then for the following hierarchies, you can specify `/user/#`. `#` includes all the hierarchies following `/user`.
+
+For information about to use wildcards in topics, see [Wildcards in topics](../../../../../reseller.en-US/User Guide/Create products and devices/Topics/Create a topic category.md#).
+
+-   `${deviceName}` is the ShortTopic of the topic with device status information.
 
  |
-|Select|String|No| The SQL SELECT statement. For more information, see the SQL syntax.
+|Select|String|No| The SQL SELECT statement. For more information, see [SQL syntax](../../../../../reseller.en-US/User Guide/Rules/Data Forwarding/SQL statements.md#).
 
  **Note:** The value is the value of SELECT in the SQL statements. For example, if the SELECT statement is `Select a,b,c`, set the parameter value to `a,b,c`.
 
  |
 |RuleDesc|String|No|The description of the rule. You can enter a description with up to 100 characters.|
-|DataType|String|No| The type of data the rule processes. Value options:
+|DataType|String|No| The format of the data to be processed by the rule. This data type must be the same as that of the device data to be processed. Options:
 
- JSON
+ -   JSON
 
- BINARY
+-   BINARY
 
- The default data type is JSON.
+**Note:** If you select BINARY, you cannot set the parameter TopicType to 0 \(indicating system topics\), and cannot set Table Store or ApsaraDB for RDS as the data forwarding destination.
+
+
+ Default data type: JSON
 
  |
 |Where|String|No| The trigger of the rule. For more information, see the SQL syntax.
@@ -38,35 +56,33 @@ Call this operation to create a rule for a specified topic.
  **Note:** The value is the value of WHERE in the SQL statements. For example, if the WHERE clause is `Where a>10`, set the parameter value to `a>10`.
 
  |
-|topicType|Integer|Yes| -   0: Indicates the topic is an upstream topic of a Pro Edition product.
+|TopicType|Integer|Yes| -   0: Indicates system topics, including:
 
-The followings are upstream topics of Pro Edition products:
+    -   `/thing/event/property/post` This category of topics contain property messages reported by devices.
+    -   `/thing/event/${tsl.event.identifier}/post` Values of the variable `${tsl.event.identifier}` are the identifiers of events in TSL. This category of topics contain event messages reported by devices.
+    -   `thing/lifecycle` This category of topics contain device lifecycle change messages.
+    -   `/thing/downlink/reply/message`This category of topics contain messages that devices send to IoT Platform as responses to commands from IoT Platform.
+    -   `/thing/list/found` This category of topics contain sub-device information reported by gateways.
+    -   `thing/topo/lifecycle` This category of topics contain device topological relationship change messages.
+-   1: Indicates custom topics.
 
-    -   `/thing/event/property/post`
-    -   `/thing/event/${tsl.event.identifier}/post`: The content in $\{\} is from the TSL of the product.
-    -   `/thing/list/found`: This is only available for gateway products.
-    -   `/thing/downlink/reply/message`
-For example, `/sys/${productKey}/${deviceName}/thing/event/property/post`. You can use wildcard characters `+` to indicate any device name \(`${deviceName}`\).
-
--   1: Indicates the topic is a custom topic.
-
-For example, `/${productKey}/${deviceName}/get`. You can use wildcard characters `+` to indicate any device name \(`${deviceName}`\).
+-   2: Indicates the topic for device status change messages. Topic format: `/as/mqtt/status/${productKey}/${deviceName}`.
 
 
  |
-|Common request parameters|-|Yes|See [Common parameters](intl.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_hqw_wbz_xdb .section}
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
 |RequestId|String|The globally unique ID generated by Alibaba Cloud for the request.|
-|Success|Boolean|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.|
+|Success|Boolean|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call failed.|
 |ErrorMessage|String|The error message returned when the call fails.|
-|Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](intl.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
-|RuleId|Long| The rule ID that is the unique identifier of the rule generated by Rules Engine when the call is successful.
+|Code|String|The error code returned when the call fails. For more information about error codes, see [Error codes](reseller.en-US/Developer Guide (Cloud)/API reference/Error codes.md#).|
+|RuleId|Long| The rule ID that is the unique identifier of the rule generated by the rules engine when the call is successful.
 
- **Note:** Save the information for future reference. You are required to provide the rule ID when you call operations related to this rule.
+ **Note:** Keep this information confidential. You are required to provide the rule ID when you call operations related to this rule.
 
  |
 
@@ -82,18 +98,32 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=CreateRule
 &Select=a,b,c
 &RuleDesc=rule test
 &DataType=JSON
-&Where=a>10
-&topicType=1
-&Public Request Parameters
+&Where=a>10 
+&TopicType=1
+&Common request parameters
 ```
 
 **Response example**
 
-```
-{
-    "RequestId": "E4C0FF92-2A86-41DB-92D3-73B60310D25E",
-    "RuleId":1000,
-    "Success": true
-}
-```
+-   JSON format
+
+    ```
+    {
+        "RequestId": "E4C0FF92-2A86-41DB-92D3-73B60310D25E",
+        "RuleId":1000,
+        "Success": true
+    }
+    ```
+
+-   XML format
+
+    ```
+    <? xml version="1.0" encoding="UTF-8" ? > 
+    <CreateRuleResponse>
+    	<RequestId>E4C0FF92-2A86-41DB-92D3-73B60310D25E</RequestId>
+    	<RuleId>1000</RuleId>
+    	<Success>true</Success> 
+    </CreateRuleResponse> 
+    ```
+
 

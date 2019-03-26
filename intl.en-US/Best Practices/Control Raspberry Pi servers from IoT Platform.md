@@ -1,46 +1,46 @@
-# 远程控制树莓派服务器 {#concept_f12_wqn_jgb .concept}
+# Control Raspberry Pi servers from IoT Platform {#concept_f12_wqn_jgb .concept}
 
-使用阿里云物联网平台可实现伪内网穿透，对无公网IP的树莓派服务器进行远程控制。本文以实现基于树莓派服务器远程控制为例，介绍伪内网穿透的实现流程，并提供开发代码示例。
+Alibaba Cloud IoT Platform allows you to remotely control Raspberry Pi servers without public IP addresses. This topic describes how to control Raspberry Pi servers from IoT Platform, and provides sample development code.
 
-## 背景信息 {#section_ckl_2wh_kgb .section}
+## Background information {#section_ckl_2wh_kgb .section}
 
-假如您在公司或家里使用树莓派搭建一个服务器，用于执行一些简单的任务，比如启动某个脚本，开始下载文件等。但是，如果树莓派没有公网IP，您不在公司或家里的情况下，您就无法控制该服务器。如果使用其他内网穿透工具，也会经常出现断线的情况。为解决以上问题，您可以使用阿里云物联网平台的[RRPC](../../../../../intl.zh-CN/用户指南/RRPC/什么是RRPC.md#)（同步远程过程调用）功能结合[JSch](http://www.jcraft.com/jsch/)库来实现对树莓派服务器的远程控制。
+Assume that you use Raspberry Pi to build a server at your company or home to run some simple tasks, such as starting a script or downloading files. However, if the Raspberry Pi server does not have a public IP address, you cannot control the server when you are not in the company or at home. If you use other NAT traversal tools to contol the server, disconnection may occur frequently. To resolve these issues, you can combine the IoT Platform [RRPC](../../../../../reseller.en-US/User Guide/RRPC/What is RRPC?.md#) \(remote synchronous process call\) function with [JSch](http://www.jcraft.com/jsch/) to control the Raspberry Pi server from IoT Platform.
 
-## 实现远程控制的流程 {#section_thm_yq3_kgb .section}
+## Process {#section_thm_yq3_kgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155359898436953_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155359899036953_en-US.png)
 
-通过物联网平台远程控制树莓派服务器的流程：
+Use the following process to control a Raspberry Pi server from IoT Platform:
 
--   在电脑上调用物联网平台[RRPC接口](../../../../../intl.zh-CN/云端开发指南/云端API参考/消息通信/RRpc.md#)发送SSH指令。
--   物联网平台接收到指令后，通过MQTT协议将SSH指令下发给树莓派服务器。
--   服务器执行SSH指令。
--   服务器将SSH指令执行结果封装成RRPC响应，通过MQTT协议上报到物联网平台。
--   物联网平台将RRPC响应回复给电脑。
+-   Call the IoT Platform [RRPC method](../../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Communications/RRpc.md#) from your computer to send an SSH command.
+-   After receiving the SSH command, IoT Platform sends the SSH command to the Raspberry Pi server by using MQTT.
+-   The server runs the SSH command.
+-   The server encapsulates the command output into an RRPC response and reports the response to IoT Platform by using MQTT.
+-   IoT Platform returns the RRPC response to the computer.
 
-**说明：** RRPC调用的超时限制为5秒。服务器5秒内未收到设备回复，会返回超时错误。如果您发送的指令操作耗时较长，可忽略该超时错误信息。
+**Note:** The RRPC call timeout period is 5 seconds. If IoT Platform does not receive any reply from the Raspberry Pi server within 5 seconds, a timeout error will be returned. If the command you have sent takes a relatively long time to process, you can ignore the timeout error.
 
-## 下载SDK和Demo {#section_tdl_zw3_kgb .section}
+## Download SDKs and demos {#section_tdl_zw3_kgb .section}
 
-实现物联网平台远程控制树莓派，您需先进行服务端SDK和设备端SDK开发。
+To remotely control Raspberry Pi servers, you must first develop the server SDK and device SDK.
 
--   在电脑上安装物联网平台[服务端SDK](../../../../../intl.zh-CN/云端开发指南/云端SDK参考/下载云端SDK.md#)。您可以使用[服务端Java SDK Demo](https://github.com/aliyun/iotx-api-demo)来进行服务端开发。
--   在树莓派上安装物联网平台[设备端SDK](../../../../../intl.zh-CN/设备端开发指南/下载设备端SDK.md#)。您可以使用[设备端Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip)来进行设备端开发。
+-   Install the IoT Platform [server SDK](../../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#) on the computer. To develop the server, you can use the [server Java SDK demo](https://github.com/aliyun/iotx-api-demo).
+-   Install the IoT Platform [device SDK](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) on the Raspberry Pi server. To develop the device, use the [device Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip).
 
-以下章节中，将介绍服务端SDK和设备端SDK的开发示例。
+The following sections provide examples about how to develop the server SDK and device SDK.
 
-**说明：** 本文示例中提供的代码仅支持一些简单的linux命令，如uname、touch、mv等，不支持文件编辑等复杂的指令，需要您自行实现。
+**Note:** In the examples, only simple Linux commands are supported in the code, such as uname, touch, and mv. Complex commands such as file editing are not supported. To implement complex commands, you must write code as needed.
 
-## 设备端SDK开发 {#section_llg_vy3_kgb .section}
+## Develop the device SDK {#section_llg_vy3_kgb .section}
 
-下载、安装设备端SDK和下载SDK Demo后，您需添加项目依赖和增加以下Java文件。
+After you have downloaded and installed the device SDK and SDK demo, add project dependencies and the following Java files.
 
-项目可以导出成jar包在树莓派上运行。
+The project can be exported as a JAR package and run on the Raspberry Pi server.
 
-1.  在pom.xml文件中，添加依赖。
+1.  Add dependencies to the pom.xml file.
 
     ```
-    <!-- 设备端SDK -->
+    <! -- Device SDK -->
     <dependency>
     	<groupId>com.aliyun.alink.linksdk</groupId>
     	<artifactId>iot-linkkit-java</artifactId>
@@ -60,8 +60,8 @@
     	<scope>compile</scope>
     </dependency>
     
-    <!-- SSH客户端 -->
-    <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+    <! -- SSH client-->
+    <! -- https://mvnrepository.com/artifact/com.jcraft/jsch -->
     <dependency>
     	<groupId>com.jcraft</groupId>
     	<artifactId>jsch</artifactId>
@@ -69,7 +69,7 @@
     </dependency>
     ```
 
-2.  增加SSHShell.java文件，用于执行SSH指令。
+2.  Add the SSHShell.java file that is used to run SSH commands.
 
     ```
     public class SSHShell {
@@ -115,7 +115,7 @@
     			channel.connect();
     
     			String line = null;
-    			while ((line = input.readLine()) != null) {
+    			while ((line = input.readLine()) ! = null) {
     				stdout.add(line);
     			}
     			input.close();
@@ -142,7 +142,7 @@
     }
     ```
 
-3.  增加SSHUserInfo.java文件，用于验证SSH账号密码。
+3.  Add the SSHUserInfo.java file that is used to verify the SSH account and password.
 
     ```
     public class SSHUserInfo implements UserInfo {
@@ -182,39 +182,39 @@
     }
     ```
 
-4.  增加Device.java文件，用于创建MQTT连接。
+4.  Add the Device.java file that is used to establish an MQTT connection.
 
     ```
     public class Device {
     
     	/**
-    	 * 建立连接
+    	 * Establish a connection
     	 * 
-    	 * @param productKey 产品key
-    	 * @param deviceName 设备名称
-    	 * @param deviceSecret 设备密钥
+    	 * @param productKey The product key
+    	 * @param deviceName The device name
+    	 * @param deviceSecret The device secret
     	 * @throws InterruptedException
     	 */
     	public static void connect(String productKey, String deviceName, String deviceSecret) throws InterruptedException {
     
-    		// 初始化参数
+    		//Initialization parameters
     		LinkKitInitParams params = new LinkKitInitParams();
     
-    		// 设置 Mqtt 初始化参数
+    		//Set MQTT initialization parameters
     		IoTMqttClientConfig config = new IoTMqttClientConfig();
     		config.productKey = productKey;
     		config.deviceName = deviceName;
     		config.deviceSecret = deviceSecret;
     		params.mqttClientConfig = config;
     
-    		// 设置初始化设备证书信息，传入：
+    		//Set device certificate information for initialization and import the certificate information
     		DeviceInfo deviceInfo = new DeviceInfo();
     		deviceInfo.productKey = productKey;
     		deviceInfo.deviceName = deviceName;
     		deviceInfo.deviceSecret = deviceSecret;
     		params.deviceInfo = deviceInfo;
     
-    		// 初始化
+    		//Initialize the SDK
     		LinkKit.getInstance().init(params, new ILinkKitConnectListener() {
     			public void onError(AError aError) {
     				System.out.println("init failed !! code=" + aError.getCode() + ",msg=" + aError.getMsg() + ",subCode="
@@ -222,19 +222,19 @@
     			}
     
     			public void onInitDone(InitResult initResult) {
-    				System.out.println("init success !!");
+    				System.out.println("init success !!") ;
     			}
     		});
     
-    		// 确保初始化成功后才执行后面的步骤，可以根据实际情况适当延长这里的延时
+    		//Perform the subsequent operations only after the initialization is complete. You can increase the sleep time as needed.
     		Thread.sleep(2000);
     	}
     
     	/**
-    	 * 发布消息
+    	 * Publish a message
     	 * 
-    	 * @param topic 发送消息的topic
-    	 * @param payload 发送的消息内容
+    	 * @param topic The topic to which the message is published
+    	 * @param payload The message payload
     	 */
     	public static void publish(String topic, String payload) {
     		MqttPublishRequest request = new MqttPublishRequest();
@@ -253,9 +253,9 @@
     	}
     
     	/**
-    	 * 订阅消息
+    	 * Subscribe to a topic
     	 * 
-    	 * @param topic 订阅消息的topic
+    	 * @param topic The topic of messages to subscribe to
     	 */
     	public static void subscribe(String topic) {
     		MqttSubscribeRequest request = new MqttSubscribeRequest();
@@ -273,9 +273,9 @@
     	}
     
     	/**
-    	 * 取消订阅
+    	 * Unsubscribe from a topic
     	 * 
-    	 * @param topic 取消订阅消息的topic
+    	 * @param topic The topic of messages to unsubscribe from
     	 */
     	public static void unsubscribe(String topic) {
     		MqttSubscribeRequest request = new MqttSubscribeRequest();
@@ -293,49 +293,49 @@
     	}
     
     	/**
-    	 * 断开连接
+    	 * Terminate the connection
     	 */
     	public static void disconnect() {
-    		// 反初始化
+    		//Perform the deinitialization
     		LinkKit.getInstance().deinit();
     	}
     
     }
     ```
 
-5.  增加SSHDevice.java文件。SSHDevice.java包含main方法，用于接收RRPC指令，调用`SSHShell`执行SSH指令，返回RRPC响应。SSHDevice.java文件中，需要填写设备证书信息（ProductKey、DeviceName和DeviceSecret）和SSH账号密码。
+5.  Add the SSHDevice.java file. The SSHDevice.java file includes the main method. You can call the main method to receive RRPC commands, call `SSHShell` to run SSH commands, and return RRPC responses. In the SSHDevice.java file, you must enter the device certificate information, including ProductKey, DeviceName, and DeviceSecret, and the SSH account and password.
 
     ```
     public class SSHDevice {
     
-    	// ===================需要填写的参数开始===========================
-    	// 产品productKey
+    	//===================Start to Enter Required Parameters===========================
+    	//ProductKey
     	private static String productKey = "";
     	// 
     	private static String deviceName = "";
-    	// 设备密钥deviceSecret
+    	//DeviceSecret
     	private static String deviceSecret = "";
-    	// 消息通信的topic，无需创建和定义，直接使用即可
+    	//The message communication topic. You can directly use the topic without creating or defining the topic.
     	private static String rrpcTopic = "/sys/" + productKey + "/" + deviceName + "/rrpc/request/+";
-    	// ssh 要访问的域名或IP
+    	//The domain name or IP address that you want to access by using SSH
     	private static String host = "127.0.0.1";
-    	// ssh 用户名
+    	//The SSH username
     	private static String username = "";
-    	// ssh 密码
+    	//The SSH password
     	private static String password = "";
-    	// ssh 端口号
+    	//The SSH port
     	private static int port = 22;
-    	// ===================需要填写的参数结束===========================
+    	//===================End===========================
     
     	public static void main(String[] args) throws InterruptedException {
     
-    		// 下行数据监听
+    		//Listen to downstream data
     		registerNotifyListener();
     
-    		// 建立连接
+    		//Establish the connection
     		Device.connect(productKey, deviceName, deviceSecret);
     
-    		// 订阅topic
+    		//Subscribe to a topic
     		Device.subscribe(rrpcTopic);
     	}
     
@@ -343,7 +343,7 @@
     		LinkKit.getInstance().registerOnNotifyListener(new IConnectNotifyListener() {
     			@Override
     			public boolean shouldHandle(String connectId, String topic) {
-    				// 只处理特定topic的消息
+    				//Only process messages of the specified topic
     				if (topic.contains("/rrpc/request/")) {
     					return true;
     				} else {
@@ -353,14 +353,14 @@
     
     			@Override
     			public void onNotify(String connectId, String topic, AMessage aMessage) {
-    				// 接收rrpc请求并回复rrpc响应
+    				//Receive RRPC requests and resturn RRPC responses
     				try {
-    					// 执行远程命令
+    					//Run the SSH command
     					String payload = new String((byte[]) aMessage.getData(), "UTF-8");
     					SSHShell sshExecutor = new SSHShell(host, username, password, port);
     					sshExecutor.execute(payload);
     
-    					// 获取命令回显
+    					//Obtain the command output
     					StringBuffer sb = new StringBuffer();
     					Vector<String> stdout = sshExecutor.getStdout();
     					for (String str : stdout) {
@@ -368,7 +368,7 @@
     						sb.append("\n");
     					}
     
-    					// 回复回显到服务端
+    					//Return command output to the server
     					String response = topic.replace("/request/", "/response/");
     					Device.publish(response, sb.toString());
     				} catch (UnsupportedEncodingException e) {
@@ -386,14 +386,14 @@
     ```
 
 
-## 服务端SDK开发 {#section_mfd_tbj_kgb .section}
+## Develop the server SDK {#section_mfd_tbj_kgb .section}
 
-下载、安装服务端SDK和下载SDK Demo后，您需添加项目依赖和增加以下Java文件。
+After you have downloaded and installed the server SDK and SDK demo, add project dependencies and the following Java files.
 
-1.  在pom.xml文件中，添加依赖。
+1.  Add dependencies to the pom.xml file.
 
     ```
-    <!-- 服务端SDK -->
+    <! -- Server SDK -->
     <dependency>
     	<groupId>com.aliyun</groupId>
     	<artifactId>aliyun-java-sdk-iot</artifactId>
@@ -405,7 +405,7 @@
     	<version>3.5.1</version>
     </dependency>
     
-    <!-- commons-codec -->
+    <! -- commons-codec -->
     <dependency>
     	<groupId>commons-codec</groupId>
     	<artifactId>commons-codec</artifactId>
@@ -413,7 +413,7 @@
     </dependency>
     ```
 
-2.  增加OpenApiClient.java文件，用于调用物联网平台开放接口。
+2.  Add the OpenApiClient.java file that is used to call the IoT Platform API.
 
     ```
     public class OpenApiClient {
@@ -422,7 +422,7 @@
     
     	public static DefaultAcsClient getClient(String accessKeyID, String accessKeySecret) {
     
-    		if (client != null) {
+    		if (client ! = null) {
     			return client;
     		}
     
@@ -440,48 +440,48 @@
     }
     ```
 
-3.  增加SSHCommandSender.java文件。SSHCommandSender.java包含main方法，用于发送SSH指令和接收SSH指令响应。SSHCommandSender.java中，需要填写您的账号AccessKey信息、设备证书信息（ProductKey和DeviceName）、以及SSH指令。
+3.  Add the SSHCommandSender.java file. The SSHCommandSender.java file contains the main method that is used to send SSH commands and receive responses to SSH commands. In the SSHCommandSender.java file, you must enter your Alibaba Cloud account information including AccessKey ID and AccessKey Secret, and device certificate information including ProductKey and DeviceName, and SSH command.
 
     ```
     public class SSHCommandSender {
     
-    	// ===================需要填写的参数开始===========================
-    	// 用户账号AccessKey
+    	//===================Start to Enter Required Parameters===========================
+    	//AccessKey ID of your Alibaba Cloud account
     	private static String accessKeyID = "";
-    	// 用户账号AccesseKeySecret
+    	//AccessKey Secret of your Alibaba Cloud account
     	private static String accessKeySecret = "";
-    	// 产品Key
+    	//ProductKey
     	private static String productKey = "";
-    	// 设备名称deviceName
+    	//DeviceName
     	private static String deviceName = "";
-    	// ===================需要填写的参数结束===========================
+    	//===================End===========================
     
     	public static void main(String[] args) throws ServerException, ClientException, UnsupportedEncodingException {
     
-    		// linux 远程命令
+    		//The Linux command
     		String payload = "uname -a";
     
-    		// 构建RRPC请求
+    		//Construct an RRPC request
     		RRpcRequest request = new RRpcRequest();
     		request.setProductKey(productKey);
     		request.setDeviceName(deviceName);
     		request.setRequestBase64Byte(Base64.encodeBase64String(payload.getBytes()));
     		request.setTimeout(5000);
     
-    		// 获取服务端请求客户端
+    		//Obtain information about the client connected to the Raspberry Pi server
     		DefaultAcsClient client = OpenApiClient.getClient(accessKeyID, accessKeySecret);
     
-    		// 发起RRPC请求
+    		//Initiate an RRPC request
     		RRpcResponse response = (RRpcResponse) client.getAcsResponse(request);
     
-    		// RRPC响应处理
-    		// response.getSuccess()仅表明RRPC请求发送成功，不代表设备接收成功和响应成功
-    		// 需要根据RrpcCode来判定，参考文档https://help.aliyun.com/document_detail/69797.html
-    		if (response != null && "SUCCESS".equals(response.getRrpcCode())) {
-    			// 回显
+    		//Process an RRPC response
+    		//"response.getSuccess()" only indicates that the RRPC request has been sent. It does not indicate that the device has received the RRPC request and has returned a response.
+    		//Identify whether the message has been received and a response has been returned according to the RrpcCode value. For more information, see https://help.aliyun.com/document_detail/69797.html.
+    		if (response ! = null && "SUCCESS".equals(response.getRrpcCode())) {
+    			//Output the response
     			System.out.println(new String(Base64.decodeBase64(response.getPayloadBase64Byte()), "UTF-8"));
     		} else {
-    			// 回显失败，打印rrpc code
+    			//An error occurred while outputting the response and an RRPC code is displayed.
     			System.out.println(response.getRrpcCode());
     		}
     	}

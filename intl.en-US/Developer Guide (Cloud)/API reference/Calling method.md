@@ -44,9 +44,9 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=Pub
 
 ## Online debug for APIs {#section_iyj_mmq_bhb .section}
 
-Alibaba Cloud provides [OpenAPI Explore](https://api.aliyun.com) for you to debug APIs online. On OpenAPI Explore, you can query the APIs that you want to debug and enter parameters to call the APIs. The system will generate SDK demos according to the parameters that you have entered. You can view SDK demos under **Example Code** on the left side of the page. Select **Debugging Result**, you can view the real URL of the request and the response in JSON format.
+Alibaba Cloud provides [OpenAPI Explorer](https://api.aliyun.com) for you to debug APIs online. On OpenAPI Explorer, you can query the APIs that you want to debug and enter parameters to call the APIs. The system will generate SDK demos according to the parameters that you have entered. You can view SDK demos under **Example Code** on the left side of the page. Select **Debugging Result**, you can view the real URL of the request and the response in JSON format.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7563/155316742440697_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7563/155436269840697_en-US.png)
 
 ## API authorization {#section_qd5_fx5_ydb .section}
 

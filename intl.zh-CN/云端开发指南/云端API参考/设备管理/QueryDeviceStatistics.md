@@ -1,13 +1,16 @@
 # QueryDeviceStatistics {#reference_kgv_5rz_wdb .reference}
 
-调用该接口查询指定产品下的设备统计数据。
+调用该接口查询设备统计数据。
 
 ## 请求参数 {#section_mbr_gwt_xdb .section}
 
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：QueryDeviceStatistics。|
-|ProductKey|String|是|要查询的设备所隶属的产品Key，物联网平台将返回该产品下的设备统计数据。|
+|ProductKey|String|否|要查询的设备所隶属的产品Key。-   传入产品Key，将返回该产品下的设备统计数据。
+-   不传入该参数，则返回账号下所有设备统计数据。
+
+|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_cpd_5wt_xdb .section}
@@ -22,9 +25,9 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|DeviceCount|Integer|设备总数。|
-|OnlineCount|Integer|在线的设备数量。|
-|ActiveCount|Integer|已激活的设备数量。|
+|deviceCount|Integer|设备总数。|
+|onlineCount|Integer|在线的设备数量。|
+|activeCount|Integer|已激活的设备数量。|
 
 ## 示例 {#section_uvc_jxt_xdb .section}
 
@@ -45,9 +48,9 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceStatistics
       "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
       "Success": true，
       "Data": {
-        "DeviceCount": 100,
-        "OnlineCount": 10,
-        "ActiveCount": 50
+        "deviceCount": 100,
+        "onlineCount": 10,
+        "activeCount": 50
       }
     }
     
@@ -61,9 +64,9 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceStatistics
         <RequestId>57b144cf-09fc-4916-a272-a62902d5b207</RequestId>
         <Success>true</Success>
         <Data>
-            <DeviceCount>100</DeviceCount>
-            <OnlineCount>10</OnlineCount>
-            <ActiveCount>50</ActiveCount>
+            <deviceCount>100</deviceCount>
+            <onlineCount>10</onlineCount>
+            <activeCount>50</activeCount>
         </Data>
     </QueryDeviceStatisticsResponse>
     ```

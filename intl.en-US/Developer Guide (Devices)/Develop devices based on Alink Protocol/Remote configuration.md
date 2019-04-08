@@ -6,8 +6,8 @@ This article introduces Topics and Alink JSON format requests and responses for 
 
 Upstream
 
--   Topic: /sys/\{productKey\}/\{deviceName\}/thing/config/get
--   Reply topic: /sys/\{productKey\}/\{deviceName\}/thing/config/get\_reply
+-   Request topic: `/sys/{productKey}/{deviceName}/thing/config/get`
+-   Reply topic: `/sys/{productKey}/{deviceName}/thing/config/get_reply`
 
 Request message
 
@@ -45,10 +45,11 @@ Parameter description
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
 |version|String|Protocol version. Currently, the value is 1.0.|
 |configScope|String|Configuration scope. Currently, IoT Platform supports only product dimension configuration. Value: product.|
 |getType|String|Desired file type of the configuration. Currently, the supported type is file. Set the value to file.|
+|method|String|Request method. The value is thing.config.get.|
 |configId|String|ID of the configuration.|
 |configSize|Long|Size of the configuration file, in bytes.|
 |sign|String|Signature value.|
@@ -67,14 +68,14 @@ Error codes
 
 Downstream​
 
--   Topic: /sys/\{productKey\}/\{deviceName\}/thing/config/push
--   Reply topic: /sys/\{productKey\}/\{deviceName\}/thing/config/push\_reply
+-   Request topic: `/sys/{productKey}/{deviceName}/thing/config/push`
+-   Reply topic: `/sys/{productKey}/{deviceName}/thing/config/push_reply`
 
 Devices subscribe to this configuration push topic for configurations that is pushed by IoT Platform. After you have edited and submitted a configuration file in the IoT Platform console, IoT Platform pushes the configuration to the devices in an asynchronous method. IoT Platform subscribes to a data exchange topic for the result of asynchronous calls. The data exchange topic is `/{productKey}/{deviceName}/thing/downlink/reply/message`.
 
 You can use [Rules Engine](../../../../../reseller.en-US/User Guide/Rules/Data Forwarding/Overview.md#) to forward the results returned by the devices to another Alibaba Cloud product. The following figure shows an example of rule action configuration.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18885/154753329112171_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18885/155473621612171_en-US.png)
 
 Request message:
 
@@ -108,7 +109,7 @@ Parameter description
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. IoT Platform generates IDs for downstream messages.|
 |version|String|Protocol version. Currently, the value is 1.0.|
 |configScope|String|Configuration scope. Currently, IoT Platform supports only product dimension configuration. Value: product.|
 |getType|String|Desired file type of the configuration. Currently, the supported type is file. Set the value to file.|
@@ -117,5 +118,6 @@ Parameter description
 |sign|String|Signature value.|
 |signMethod|String|Signing method. The supported signing method is Sha256.|
 |url|String|The OSS address where the configuration file is stored.|
+|method|String|Request method. The value is thing.config.push.|
 |code|Integer|Result code. For more information, see Common codes on devices.|
 

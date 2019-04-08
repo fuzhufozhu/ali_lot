@@ -1,20 +1,22 @@
 # SetDevicesProperty {#reference_qmz_ctj_sfb .reference}
 
-调用该接口批量设置设备属性。
+调用该接口批量设置设备属性值。
 
 ## 使用限制 {#section_f1v_4vj_sfb .section}
 
-单租户的每秒请求数最大限制为50 QPS。
+单账号的每秒请求数最大限制为50 QPS。
+
+**说明：** 子账号共享主账号配额。
 
 ## 请求参数 {#section_jgt_v2t_xdb .section}
 
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：SetDevicesProperty。|
-|ProductKey|String|是| 要设置属性的设备所隶属的产品Key。
+|ProductKey|String|是| 要设置属性值的设备所隶属的产品Key。
 
  |
-|DeviceNames|List<String\>|是| 要设置属性的设备名称列表。目前，最多支持500个设备。
+|DeviceNames|List<String\>|是| 要设置属性值的设备名称列表。目前，最多支持500个设备。
 
  |
 |Items|String|是| 要设置的属性信息，组成为key:value，数据格式为JSON String。
@@ -28,7 +30,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|key|String| 要设置的属性的标识符（identifier）。高级版设备的属性Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。
+|key|String| 要设置的属性的标识符（identifier）。设备的属性Identifier，可在控制台中设备所属的产品的功能定义中查看。
 
  **说明：** 设置的属性必需是读写型。如果您指定了一个只读型的属性，设置将会失败。
 

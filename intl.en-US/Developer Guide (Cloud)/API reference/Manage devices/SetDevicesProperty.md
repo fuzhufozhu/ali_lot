@@ -1,6 +1,6 @@
 # SetDevicesProperty {#reference_qmz_ctj_sfb .reference}
 
-Call this operation to set properties for multiple Pro Edition devices.
+Call this operation to set properties for multiple devices.
 
 ## Limits {#section_f1v_4vj_sfb .section}
 

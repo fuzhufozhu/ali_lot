@@ -24,7 +24,7 @@ message: Error message
 
 ## Sub-device failed to go online {#section_ylf_4gw_vdb .section}
 
-The error message is sent to topic /ext/session/\{gw\_productKey\}/\{gw\_deviceName\}/combine/login\_reply.
+The error message is sent to topic `/ext/session/{gw_productKey}/{gw_deviceName}/combine/login_reply`.
 
 |Code|Message|Description|
 |----|-------|-----------|
@@ -40,7 +40,7 @@ The error message is sent to topic /ext/session/\{gw\_productKey\}/\{gw\_deviceN
 
 ## Sub-device automatically goes offline {#section_i4s_vhw_vdb .section}
 
-The error message is sent to topic /ext/session/\{gw\_productKey\}/\{gw\_deviceName\}/combine/logout\_reply.
+The error message is sent to topic `/ext/session/{gw_productKey}/{gw_deviceName}/combine/logout_reply`.
 
 |Code|Message|Description|
 |----|-------|-----------|
@@ -50,13 +50,14 @@ The error message is sent to topic /ext/session/\{gw\_productKey\}/\{gw\_deviceN
 
 ## Sub-device forced to go offline {#section_m3w_m3w_vdb .section}
 
-The error message is sent to topic /ext/session/\{gw\_productKey\}/\{gw\_deviceName\}/combine/logout\_reply.
+The error message is sent to topic `/ext/error/{gw_productKey}/{gw_deviceName}`.
 
 |Code|Message|Description|
 |----|-------|-----------|
 |427|device connect in elsewhere|Disconnection of current session. When another device uses the same device certificate of ProductKey, DeviceName, and DeviceSecret to connect to IoT Platform, the current device is forced offline.|
 |521|device deleted|The device has been deleted.|
 |522|device forbidden|The device has been disabled.|
+|6401|topo relation not exist|The topological relationship between the sub-device and the gateway has been deleted.|
 
 ## Sub-device failed to send message {#section_uzw_bjw_vdb .section}
 

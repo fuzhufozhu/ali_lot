@@ -6,7 +6,7 @@ For information about the firmware update, see [Develop OTA features](../../../.
 
 Upstream​
 
--   Topic: /ota/device/inform/\{productKey\}/\{deviceName\}
+-   Request topic: `/ota/device/inform/{productKey}/{deviceName}`
 
     The device publishes a message to this topic to report the current firmware version to IoT Platform.
 
@@ -26,14 +26,14 @@ Request message
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
 |version|String |Version information of the firmware.|
 
 ## Push firmware information​ {#section_jjq_4bx_y2b .section}
 
 Downstream
 
--   Topic: /ota/device/upgrade/\{productKey\}/\{deviceName\}
+-   Request topic: `/ota/device/upgrade/{productKey}/{deviceName}`
 
     IoT Platform publishes messages to this topic to push firmware information. The devices subscribe to this topic to obtain the firmware information.
 
@@ -60,7 +60,7 @@ Request message
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. IoT Platform generates IDs for downstream messages.|
 |message|String|Result information.​|
 |version|String|Version information of the firmware.|
 |size|Long|Firmware size in bytes.|
@@ -73,7 +73,7 @@ Request message
 
 Upstream
 
--   Topic: /ota/device/progress/\{productKey\}/\{deviceName\}
+-   Request topic: `/ota/device/progress/{productKey}/{deviceName}`
 
     A device subscribes to this topic to report the firmware update progress.
 
@@ -94,7 +94,7 @@ Request message
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
 |step|String | Firmware update progress information.
 
  Value range:
@@ -110,7 +110,7 @@ Request message
 
 ## Request firmware information from IoT Platform {#section_bk5_pbx_y2b .section}
 
--   Topic: /ota/device/request/\{productKey\}/\{deviceName\}
+-   Request topic: `/ota/device/request/{productKey}/{deviceName}`
 
 Request message
 
@@ -127,6 +127,6 @@ Request message
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|id|String|Message ID.|
+|id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
 |version|String|Version information of the firmware.|
 

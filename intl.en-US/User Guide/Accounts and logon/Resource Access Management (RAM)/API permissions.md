@@ -86,4 +86,8 @@ For more information about creating authentication policies for RAM users, see[C
 |UpdateDeviceShadow|iot:UpdateDeviceShadow|\*|Update the shadow information of a device.|
 |SetDeviceDesiredProperty|iot:SetDeviceDesiredProperty|\*|Set desired property values for a device.|
 |QueryDeviceDesiredProperty|iot:QueryDeviceDesiredProperty|\*|Query the desired property values of a specified device.|
+|BatchUpdateDeviceNickname|iot:BatchUpdateDeviceNickname|\*|Update nicknames for multiple devices.|
+|QueryDeviceFileList|iot:QueryDeviceFileList|\*|Query the files that a specified device has uploaded to IoT Platform.|
+|QueryDeviceFile|iot:QueryDeviceFile|\*|Query a specified file that a specified device has uploaded to IoT Platform.|
+|DeleteDeviceFile|iot:DeleteDeviceFile|\*|Delete a specified file that a specified device has uploaded to IoT Platform.|
 

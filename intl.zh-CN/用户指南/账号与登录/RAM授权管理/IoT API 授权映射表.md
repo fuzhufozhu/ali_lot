@@ -88,4 +88,8 @@
 |UpdateDeviceShadow|iot:UpdateDeviceShadow|\*|修改设备的影子信息。|
 |SetDeviceDesiredProperty|iot:SetDeviceDesiredProperty|\*|为指定设备批量设置期望属性值。|
 |QueryDeviceDesiredProperty|iot:QueryDeviceDesiredProperty|\*|查询指定设备的期望属性值。|
+|BatchUpdateDeviceNickname|iot:BatchUpdateDeviceNickname|\*|批量更新设备备注名称。|
+|QueryDeviceFileList|iot:QueryDeviceFileList|\*|查询指定设备上传到物联网平台的所有文件列表。|
+|QueryDeviceFile|iot:QueryDeviceFile|\*|查询指定设备上传到物联网平台的指定文件信息。|
+|DeleteDeviceFile|iot:DeleteDeviceFile|\*|删除指定设备上传到物联网平台的指定文件。|
 

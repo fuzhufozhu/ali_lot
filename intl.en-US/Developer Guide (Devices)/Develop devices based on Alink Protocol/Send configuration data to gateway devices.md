@@ -2,7 +2,9 @@
 
 Send extended configuration information of the TSL model and sub-device connection channel configuration that you configured on the cloud to the gateway device.
 
--   Topic: /sys/\{productKey\}/\{deviceName\}/thing/model/config/push
+## Send configuration data {#section_wnw_vsf_jhb .section}
+
+Request topic: `/sys/{productKey}/{deviceName}/thing/model/config/push`
 
 Request message
 
@@ -23,493 +25,644 @@ Request message
 
 |Parameter|Type |Description|
 |---------|-----|-----------|
-|id|String|The message ID.|
+|id|String|The message ID. IoT Platform generates a message ID for a downstream message.|
 |version|String|The protocol version number. Default value: 1.0.|
 |method|String|The method is `thing.model.config.push`.|
 |data|Object|Data|
 |digest|String|The signature that is used to verify the integrity of the data obtained from url.|
 |digestMethod|String|The signature method. The default method is sha256.|
-|url|String|The data url that you get from OSS.|
+|url|String|The URL where the configuration data is stored.|
 
-Response message
-
-```
-{
-  "id":123,
-  "code":200,
-  "message":"success",
-  "data":{
-    "digest":"",
-    "digestMethod":"",
-    "url":""
-  }
-}
-```
-
-url data
+Data from the URL:
 
 ```
 {
   "modelList": [
     {
       "profile": {
-        "productKey": "test01"
-      },
+        "productKey": "a1ZlGQv****"
+      }, 
       "services": [
         {
-          "outputData": "",
-          "identifier": "AngleSelfAdaption",
+          "outputData": "", 
+          "identifier": "AngleSelfAdaption", 
           "inputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "index": 0
             }
-          ],
+          ], 
           "displayName": "test01"
         }
-      ],
+      ], 
       "properties": [
         {
-          "identifier": "identifier",
+          "identifier": "identifier", 
           "displayName": "test02"
-        },
+        }, 
         {
-          "identifier": "identifier_01",
+          "identifier": "identifier_01", 
           "displayName": "identifier_01"
         }
-      ],
+      ], 
       "events": [
         {
           "outputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "index": 0
             }
-          ],
-          "identifier": "event1",
+          ], 
+          "identifier": "event1", 
           "displayName": "abc"
         }
       ]
-    },
+    }, 
     {
       "profile": {
-        "productKey": "test02"
-      },
+        "productKey": "a1ZlGQv****"
+      }, 
       "properties": [
         {
           "originalDataType": {
             "specs": {
-              "registerCount": 1,
-              "reverseRegister": 0,
+              "registerCount": 1, 
+              "reverseRegister": 0, 
               "swap16": 0
-            },
+            }, 
             "type": "bool"
-          },
-          "identifier": "test01",
-          "registerAddress": "0x03",
-          "scaling": 1,
-          "operateType": "inputStatus",
-          "pollingTime": 1000,
+          }, 
+          "identifier": "test01", 
+          "registerAddress": "0x03", 
+          "scaling": 1, 
+          "operateType": "inputStatus", 
+          "pollingTime": 1000, 
           "trigger": 1
-        },
+        }, 
         {
           "originalDataType": {
             "specs": {
-              "registerCount": 1,
-              "reverseRegister": 0,
+              "registerCount": 1, 
+              "reverseRegister": 0, 
               "swap16": 0
-            },
+            }, 
             "type": "bool"
-          },
-          "identifier": "test02",
-          "registerAddress": "0x05",
-          "scaling": 1,
-          "operateType": "coilStatus",
-          "pollingTime": 1000,
+          }, 
+          "identifier": "test02", 
+          "registerAddress": "0x05", 
+          "scaling": 1, 
+          "operateType": "coilStatus", 
+          "pollingTime": 1000, 
           "trigger": 2
         }
       ]
+    }, 
+    {
+      "profile": {
+        "productKey": "a1ZlGQv****"
+      }, 
+      "properties": [
+        {
+          "identifier": "test_02", 
+          "customize": {
+            "test_02": 123
+          }
+        }, 
+        {
+          "identifier": "test_01", 
+          "customize": {
+            "test01": 1
+          }
+        }
+      ]
     }
-  ],
+  ], 
   "serverList": [
     {
-      "baudRate": 1200,
-      "protocol": "RTU",
-      "byteSize": 8,
-      "stopBits": 2,
-      "parity": 1,
-      "name": "modbus01",
-      "serialPort": "0",
-      "serverId": "D73251B4277742"
-    },
+      "baudRate": 1200, 
+      "protocol": "RTU", 
+      "byteSize": 8, 
+      "stopBits": 2, 
+      "parity": 1, 
+      "name": "modbus01", 
+      "serialPort": "0", 
+      "serverId": "D73251B427****"
+    }, 
     {
-      "protocol": "TCP",
-      "port": 8000,
-      "ip": "192.168.0.1",
-      "name": "modbus02",
-      "serverId": "586CB066D6A34"
-    },
+      "protocol": "TCP", 
+      "port": 8000, 
+      "ip": "192.168.0.1", 
+      "name": "modbus02", 
+      "serverId": "586CB066D****"
+    }, 
     {
-      "password": "XIJTginONohPEUAyZxLB7Q==",
-      "secPolicy": "Basic128Rsa15",
-      "name": "server_01",
-      "secMode": "Sign",
-      "userName": "123",
-      "serverId": "55A9D276A7ED470",
-      "url": "tcp:00",
+      "password": "XIJTginONohPEUAyZ****==", 
+      "secPolicy": "Basic128Rsa15", 
+      "name": "server_01", 
+      "secMode": "Sign", 
+      "userName": "123", 
+      "serverId": "55A9D276A7E****", 
+      "url": "tcp:00", 
       "timeout": 10
-    },
+    }, 
     {
-      "password": "hAaX5s13gwX2JwyvUkOAfQ==",
-      "name": "service_09",
-      "secMode": "None",
-      "userName": "1234",
-      "serverId": "44895C63E3FF401",
-      "url": "tcp:00",
+      "password": "hAaX5s13gwX2JwyvUk****==", 
+      "name": "service_09", 
+      "secMode": "None", 
+      "userName": "1234", 
+      "serverId": "44895C63E3F****", 
+      "url": "tcp:00", 
       "timeout": 10
     }
-  ],
+  ], 
   "deviceList": [
     {
       "deviceConfig": {
-        "displayNamePath": "123",
-        "serverId": "44895C63E3FF4013924CEF31519ABE7B"
-      },
-      "productKey": "test01",
+        "displayNamePath": "123", 
+        "serverId": "44895C63E3FF4013924CEF31519A****"
+      }, 
+      "productKey": "a1ZlGQv****", 
       "deviceName": "test_02"
-    },
+    }, 
     {
       "deviceConfig": {
-        "displayNamePath": "1",
-        "serverId": "55A9D276A7ED47"
-      },
-      "productKey": "test01",
+        "displayNamePath": "1", 
+        "serverId": "55A9D276A7****"
+      }, 
+      "productKey": "a1ZlGQv****", 
       "deviceName": "test_03"
-    },
+    }, 
     {
       "deviceConfig": {
-        "slaveId": 1,
-        "serverId": "D73251B4277742D"
-      },
-      "productKey": "test02",
+        "slaveId": 1, 
+        "serverId": "D73251B4277****"
+      }, 
+      "productKey": "a1ZlGQv****", 
       "deviceName": "test01"
-    },
+    }, 
     {
       "deviceConfig": {
-        "slaveId": 2,
-        "serverId": "586CB066D6A34E"
-      },
-      "productKey": "test02",
+        "slaveId": 2, 
+        "serverId": "586CB066D6****"
+      }, 
+      "productKey": "a1ZlGQv****", 
       "deviceName": "test02"
     }
-  ],
+  ], 
   "tslList": [
     {
-      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json", 
       "profile": {
-        "productKey": "test02"
-      },
+        "productKey": "a1ZlGQv****"
+      }, 
       "services": [
         {
-          "outputData": [],
-          "identifier": "set",
+          "outputData": [ ], 
+          "identifier": "set", 
           "inputData": [
             {
-              "identifier": "test02",
+              "identifier": "test02", 
               "dataType": {
                 "specs": {
-                  "unit": "mm",
-                  "min": "0",
+                  "unit": "mm", 
+                  "min": "0", 
                   "max": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "FeatureTest02"
+              }, 
+              "name": "test02"
             }
-          ],
-          "method": "thing.service.property.set",
-          "name": "set",
-          "required": true,
-          "callType": "async",
-          "desc": "Set properties"
-        },
+          ], 
+          "method": "thing.service.property.set", 
+          "name": "set", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "set property"
+        }, 
         {
           "outputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "dataType": {
                 "specs": {
-                  "unit": "m",
-                  "min": "0",
+                  "unit": "m", 
+                  "min": "0", 
                   "max": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "FeatureTest01"
-            },
+              }, 
+              "name": "test01"
+            }, 
             {
-              "identifier": "test02",
+              "identifier": "test02", 
               "dataType": {
                 "specs": {
-                  "unit": "mm",
-                  "min": "0",
+                  "unit": "mm", 
+                  "min": "0", 
                   "max": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "FeatureTest02"
+              }, 
+              "name": "test02"
             }
-          ],
-          "identifier": "get",
+          ], 
+          "identifier": "get", 
           "inputData": [
-            "test01",
+            "test01", 
             "test02"
-          ],
-          "method": "thing.service.property.get",
-          "name": "get",
-          "required": true,
-          "callType": "async",
-          "desc": "Get properties"
+          ], 
+          "method": "thing.service.property.get", 
+          "name": "get", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "get property"
         }
-      ],
+      ], 
       "properties": [
         {
-          "identifier": "test01",
+          "identifier": "test01", 
           "dataType": {
             "specs": {
-              "unit": "m",
-              "min": "0",
+              "unit": "m", 
+              "min": "0", 
               "max": "1"
-            },
+            }, 
             "type": "int"
-          },
-          "name": "FeatureTest01",
-          "accessMode": "r",
+          }, 
+          "name": "test01", 
+          "accessMode": "r", 
           "required": false
-        },
+        }, 
         {
-          "identifier": "test02",
+          "identifier": "test02", 
           "dataType": {
             "specs": {
-              "unit": "mm",
-              "min": "0",
+              "unit": "mm", 
+              "min": "0", 
               "max": "1"
-            },
+            }, 
             "type": "int"
-          },
-          "name": "FeatureTest02",
-          "accessMode": "rw",
+          }, 
+          "name": "test02", 
+          "accessMode": "rw", 
           "required": false
         }
-      ],
+      ], 
       "events": [
         {
           "outputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "dataType": {
                 "specs": {
-                  "unit": "m",
-                  "min": "0",
+                  "unit": "m", 
+                  "min": "0", 
                   "max": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "FeatureTest01"
-            },
+              }, 
+              "name": "test01"
+            }, 
             {
-              "identifier": "test02",
+              "identifier": "test02", 
               "dataType": {
                 "specs": {
-                  "unit": "mm",
-                  "min": "0",
+                  "unit": "mm", 
+                  "min": "0", 
                   "max": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "FeatureTest02"
+              }, 
+              "name": "test02"
             }
-          ],
-          "identifier": "post",
-          "method": "thing.event.property.post",
-          "name": "post",
-          "type": "info",
-          "required": true,
-          "desc": "Report properties"
+          ], 
+          "identifier": "post", 
+          "method": "thing.event.property.post", 
+          "name": "post", 
+          "type": "info", 
+          "required": true, 
+          "desc": "report property"
         }
       ]
-    },
+    }, 
     {
-      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json", 
       "profile": {
-        "productKey": "test01"
-      },
+        "productKey": "a1ZlGQv****"
+      }, 
       "services": [
         {
-          "outputData": [],
-          "identifier": "set",
+          "outputData": [ ], 
+          "identifier": "set", 
           "inputData": [
             {
-              "identifier": "identifier",
+              "identifier": "identifier", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
+              }, 
               "name": "7614"
-            },
+            }, 
             {
-              "identifier": "identifier_01",
+              "identifier": "identifier_01", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
-              "name": "FeatureTest01"
+              }, 
+              "name": "test1"
             }
-          ],
-          "method": "thing.service.property.set",
-          "name": "set",
-          "required": true,
-          "callType": "async",
-          "desc": "Set properties",
-        },
+          ], 
+          "method": "thing.service.property.set", 
+          "name": "set", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "set property"
+        }, 
         {
           "outputData": [
             {
-              "identifier": "identifier",
+              "identifier": "identifier", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
+              }, 
               "name": "7614"
-            },
+            }, 
             {
-              "identifier": "identifier_01",
+              "identifier": "identifier_01", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
-              "name": "FeatureTest01"
+              }, 
+              "name": "test1"
             }
-          ],
-          "identifier": "get",
+          ], 
+          "identifier": "get", 
           "inputData": [
-            "identifier",
+            "identifier", 
             "identifier_01"
-          ],
-          "method": "thing.service.property.get",
-          "name": "get",
-          "required": true,
-          "callType": "async",
-          "desc": "Get properties",
-        },
+          ], 
+          "method": "thing.service.property.get", 
+          "name": "get", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "get property"
+        }, 
         {
-          "outputData": [],
-          "identifier": "AngleSelfAdaption",
+          "outputData": [ ], 
+          "identifier": "AngleSelfAdaption", 
           "inputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "dataType": {
                 "specs": {
-                  "min": "1",
-                  "max": "10",
+                  "min": "1", 
+                  "max": "10", 
                   "step": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "Parameter1",
+              }, 
+              "name": "param1"
             }
-          ],
-          "method": "thing.service.AngleSelfAdaption",
-          "name": "adaptive angle calibration",
-          "required": false,
+          ], 
+          "method": "thing.service.AngleSelfAdaption", 
+          "name": "angleadjust", 
+          "required": false, 
           "callType": "async"
         }
-      ],
+      ], 
       "properties": [
         {
-          "identifier": "identifier",
+          "identifier": "identifier", 
           "dataType": {
             "specs": {
               "length": "2048"
-            },
+            }, 
             "type": "text"
-          },
-          "name": "7614",
-          "accessMode": "rw",
+          }, 
+          "name": "7614", 
+          "accessMode": "rw", 
           "required": true
-        },
+        }, 
         {
-          "identifier": "identifier_01",
+          "identifier": "identifier_01", 
           "dataType": {
             "specs": {
               "length": "2048"
-            },
+            }, 
             "type": "text"
-          },
-          "name": "FeatureTest01",
-          "accessMode": "rw",
+          }, 
+          "name": "test1", 
+          "accessMode": "rw", 
           "required": false
         }
-      ],
+      ], 
       "events": [
         {
           "outputData": [
             {
-              "identifier": "identifier",
+              "identifier": "identifier", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
+              }, 
               "name": "7614"
-            },
+            }, 
             {
-              "identifier": "identifier_01",
+              "identifier": "identifier_01", 
               "dataType": {
                 "specs": {
                   "length": "2048"
-                },
+                }, 
                 "type": "text"
-              },
-              "name": "FeatureTest01"
+              }, 
+              "name": "test1"
             }
-          ],
-          "identifier": "post",
-          "method": "thing.event.property.post",
-          "name": "post",
-          "type": "info",
-          "required": true,
-          "desc": "Report properties."
-        },
+          ], 
+          "identifier": "post", 
+          "method": "thing.event.property.post", 
+          "name": "post", 
+          "type": "info", 
+          "required": true, 
+          "desc": "report property"
+        }, 
         {
           "outputData": [
             {
-              "identifier": "test01",
+              "identifier": "test01", 
               "dataType": {
                 "specs": {
-                  "min": "1",
-                  "max": "20",
+                  "min": "1", 
+                  "max": "20", 
                   "step": "1"
-                },
+                }, 
                 "type": "int"
-              },
-              "name": "ParameterTest1"
+              }, 
+              "name": "param1"
             }
-          ],
-          "identifier": "event1",
-          "method": "thing.event.event1.post",
-          "name": "event1",
-          "type": "info",
+          ], 
+          "identifier": "event1", 
+          "method": "thing.event.event1.post", 
+          "name": "event1", 
+          "type": "info", 
           "required": false
+        }
+      ]
+    }, 
+    {
+      "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json", 
+      "profile": {
+        "productKey": "a1ZlGQv****"
+      }, 
+      "services": [
+        {
+          "outputData": [ ], 
+          "identifier": "set", 
+          "inputData": [
+            {
+              "identifier": "test_01", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "1"
+                }, 
+                "type": "int"
+              }, 
+              "name": "param1"
+            }, 
+            {
+              "identifier": "test_02", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "10"
+                }, 
+                "type": "double"
+              }, 
+              "name": "param2"
+            }
+          ], 
+          "method": "thing.service.property.set", 
+          "name": "set", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "set property"
+        }, 
+        {
+          "outputData": [
+            {
+              "identifier": "test_01", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "1"
+                }, 
+                "type": "int"
+              }, 
+              "name": "param1"
+            }, 
+            {
+              "identifier": "test_02", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "10"
+                }, 
+                "type": "double"
+              }, 
+              "name": "param2"
+            }
+          ], 
+          "identifier": "get", 
+          "inputData": [
+            "test_01", 
+            "test_02"
+          ], 
+          "method": "thing.service.property.get", 
+          "name": "get", 
+          "required": true, 
+          "callType": "async", 
+          "desc": "get property"
+        }
+      ], 
+      "properties": [
+        {
+          "identifier": "test_01", 
+          "dataType": {
+            "specs": {
+              "min": "1", 
+              "max": "100", 
+              "step": "1"
+            }, 
+            "type": "int"
+          }, 
+          "name": "param1", 
+          "accessMode": "rw", 
+          "required": false
+        }, 
+        {
+          "identifier": "test_02", 
+          "dataType": {
+            "specs": {
+              "min": "1", 
+              "max": "100", 
+              "step": "10"
+            }, 
+            "type": "double"
+          }, 
+          "name": "param2", 
+          "accessMode": "rw", 
+          "required": false
+        }
+      ], 
+      "events": [
+        {
+          "outputData": [
+            {
+              "identifier": "test_01", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "1"
+                }, 
+                "type": "int"
+              }, 
+              "name": "param1"
+            }, 
+            {
+              "identifier": "test_02", 
+              "dataType": {
+                "specs": {
+                  "min": "1", 
+                  "max": "100", 
+                  "step": "10"
+                }, 
+                "type": "double"
+              }, 
+              "name": "param2"
+            }
+          ], 
+          "identifier": "post", 
+          "method": "thing.event.property.post", 
+          "name": "post", 
+          "type": "info", 
+          "required": true, 
+          "desc": "report property"
         }
       ]
     }
@@ -517,25 +670,25 @@ url data
 }
 ```
 
-Parameter description
+Parameters in the data:
 
 |Parameter|Type |Description|
 |---------|-----|-----------|
-|modelList|Object|The extended product information of all sub-devices that are mounted to the gateway.|
-|serverList|Object|The sub-device channels of the gateway.|
-|deviceList|Object|The connection configurations of all sub-devices that are mounted to the gateway.|
+|modelList|Object|The extended product information of all sub-devices that are mounted to the gateway. For more information, see the following section [modelList description](#).|
+|serverList|Object|The sub-device channels of the gateway. For more information, see the following section [serverList description](#).|
+|deviceList|Object|The connection configurations of all sub-devices that are mounted to the gateway. For more information, see the following section [deviceList description](#).|
 |tslList|Object|The TSL of all sub-devices that are mounted to the gateway.|
 
 ## modelList description {#section_ctm_tvs_2fb .section}
 
-Currently, the communication protocols Modbus and OPC UA are supported, but the extended information of the two protocols are different.
+Currently, the communication protocols Modbus and OPC UA, and custom protocol are supported. The extended information are different when using different protocols.
 
--   Modbus
+-   When the protocol is Modbus, the extended product information of sub-devices is as the following:
 
     ```
     {
       "profile": {
-        "productKey": "test02"
+        "productKey": "a1ZlGQv****"
       },
       "properties": [
         {
@@ -591,18 +744,24 @@ Currently, the communication protocols Modbus and OPC UA are supported, but the 
 |
     |specs|Object|The description.|
     |registerCount|Integer|The number of data in the register.|
-    |swap16|Integer|Swaps the first 8 bits and the last 8 bits of the 16-bit data in the register. 0: false; 1: true.|
-    |reverseRegister|Integer|Swaps the bits of the original 32-bit data. 0: false; 1: true.|
+    |swap16|Integer|Swaps the first 8 bits and the last 8 bits of the 16-bit data in the register.     -   0: false
+    -   1: true
+|
+    |reverseRegister|Integer|Swaps the bits of the original 32-bit data.     -   0: false
+    -   1: true
+|
     |scaling|Integer|The zoom factor.|
-    |pollingTime|Integer|The collection interval.|
-    |trigger|Integer|The data report method. 1: report at a specific time; 2: report when changes are detected.|
+    |pollingTime|Integer|The data collection interval.|
+    |trigger|Integer|The data report method.     -   1: report at a specific time
+    -   2: report when changes are detected
+|
 
--   OPC UA
+-   When the protocol is OPC UA, the extended product information of sub-devices is as the following:
 
     ```
     {
       "profile": {
-        "productKey": "test01"
+        "productKey": "a1ZlGQv****"
       },
       "services": [
         {
@@ -655,12 +814,45 @@ Currently, the communication protocols Modbus and OPC UA are supported, but the 
     |index|Integer|The index information.|
     |displayName|String|The name that is displayed.|
 
+-   When the protocol is a custom protocol, the extended product information of sub-devices is as the following:
+
+    ```
+    {
+      "profile": {
+        "productKey": "a1ZlGQv****"
+      },
+      "properties": [
+        {
+          "identifier": "test_02",
+          "customize": {
+            "test_02": 123
+          }
+        },
+        {
+          "identifier": "test_01",
+          "customize": {
+            "test01": 1
+          }
+        }
+      ]
+    }
+    ```
+
+    Parameter description
+
+    |Parameter|Type|Description|
+    |:--------|:---|:----------|
+    |productKey|String|The ProductKey of the product, which is the unique identifier issued by IoT Platform to the product.|
+    |properties|Object|Information of properties.|
+    |identifier|String|Identifier of a property.|
+    |customize|Object|Extended information of a property, which is the extended information you added when you were defining the property.|
+
 
 ## serverList description {#section_qck_bws_2fb .section}
 
-Two protocols \(Modbus and OPC UA\) are supported for channels.
+Two protocols \(Modbus and OPC UA\) are supported for sub-device channels.
 
--   Modbus protocol
+-   When the protocol is Modbus, sub-device channel data is as the following:
 
     ```
     [
@@ -672,20 +864,20 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
         "parity": 1,
         "name": "modbus01",
         "serialPort": "0",
-        "serverId": "D73251B4277742"
+        "serverId": "D73251B427****"
       },
       {
         "protocol": "TCP",
         "port": 8000,
         "ip": "192.168.0.1",
         "name": "modbus02",
-        "serverId": "586CB066D6A34"
+        "serverId": "586CB066D****"
       }
     ]
     ```
 
     |Parameter|Type |Description|
-    |---------|-----|-----------|
+    |:--------|:----|:----------|
     |protocol|String|The protocol type. It can be TCP or RTU.|
     |port|Integer|The port number.|
     |ip|String|The IP address.|
@@ -700,16 +892,16 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
 |
     |serialPort|String|The serial port number.|
 
--   OPC UA protocol
+-   When the protocol is OPC UA, sub-device channel data is as the following:
 
     ```
     {
-      "password": "XIJTginONohPEUAyZxLB7Q==",
+      "password": "XIJTginONohPEUAyZx****==",
       "secPolicy": "Basic128Rsa15",
       "name": "server_01",
       "secMode": "Sign",
       "userName": "123",
-      "serverId": "55A9D276A7ED470",
+      "serverId": "55A9D276A7E****",
       "url": "tcp:00",
       "timeout": 10
     }
@@ -718,13 +910,13 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
     Parameter description
 
     |Parameter|Type|Description|
-    |---------|----|-----------|
+    |:--------|:---|:----------|
     |password|String|The password that has been encrypted by the AES encryption algorithm. For information about password encryption for OPC UA, see the information at the end of this table.|
     |secPolicy|String|The encryption policy. Supported options include None, Basic128Rsa15, and Basic256.|
     |secMode|String|The encryption mode. Supported options include None, Sign, and SignAndEncrypt.|
-    |name|String|The server name.|
+    |name|String|The name of a sub-device channel.|
     |userName|String|The user name.|
-    |serverId|String|The server ID.|
+    |serverId|String|The ID of a sub-device channel.|
     |url|String|The server connection address.|
     |timeout|Integer|The timeout value.|
 
@@ -795,7 +987,7 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
 
 ## deviceList description {#section_rdk_bws_2fb .section}
 
--   Modbus protocol
+-   When the protocol is Modbus, the connection configuration data of sub-devices is as the following:
 
     ```
     {
@@ -815,10 +1007,10 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
     |deviceConfig|Object|The device information.|
     |slaveId|Integer|The slave station ID.|
     |serverId|String|The channel ID.|
-    |productKey|String|The product ID.|
-    |deviceName|String|The name of the device.|
+    |productKey|String|The ProductKey of the sub-device.|
+    |deviceName|String|The name of the sub-device.|
 
--   OPC UA protocol
+-   When the protocol is OPC UA, the connection configuration data of sub-devices is as the following:
 
     ```
     {
@@ -836,9 +1028,9 @@ Two protocols \(Modbus and OPC UA\) are supported for channels.
     |Parameter|Type |Description|
     |---------|-----|-----------|
     |deviceConfig|Object|The device connection configuration information.|
-    |productKey|String|The product ID.|
-    |deviceName|String|The name of the device.|
-    |displayNamePath|String|The name that is displayed.|
+    |productKey|String|The ProductKey of the sub-device.|
+    |deviceName|String|The name of the sub-device.|
+    |displayNamePath|String|The customized name of the channel.|
     |serverId|String|The associated channel ID.|
 
 

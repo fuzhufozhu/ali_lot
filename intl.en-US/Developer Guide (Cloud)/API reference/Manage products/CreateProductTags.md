@@ -20,8 +20,8 @@ Call this operation to create tags for a specified product.
 
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
-|TagKey|String|Yes|The key of the tag.|
-|TagValue|String|Yes|The value of the tag.|
+|TagKey|String|Yes|The key of the tag, which can contain English letters, numbers and dots \(.\), and cannot exceed 30 characters in length.|
+|TagValue|String|Yes|The value of the tag, which can contain Chinese characters, English letters, numbers, hyphens \(-\), underscores \(\_\), and dots \(.\), and cannot exceed 128 characters. A Chinese character is counted as two characters.|
 
 ## Response parameters {#section_hwv_5kk_3gb .section}
 

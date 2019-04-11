@@ -12,13 +12,13 @@ Specifically, this section details the development process of the service subscr
 4.  Click **Service Subscription** \> **Set Now**.
 5.  Select the types of notifications that you want to push to the SDK.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155316681612666_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155497276412666_en-US.png)
 
     -   Device Upstream Notification: Indicates the messages of the topics to which devices are allowed to publish messages. If this notification type is selected, the HTTP/2 SDK can receive messages reported by devices.
 
-        Pro Edition devices report custom data and TSL data of properties, events, responses to property setting requests, and responses to service calling requests. Basic Edition devices only report custom data.
+        Devices report custom data and TSL data of properties, events, responses to property setting requests, and responses to service calling requests.
 
-        For example, a Pro Edition product has three topic categories:
+        For example, a product has three topic categories:
 
         -   `/${YourProductKey}/${YourDeviceName}/user/get`, devices can subscribe to messages.
         -   `/${YourProductKey}/${YourDeviceName}/user/update`, devices can publish messages.
@@ -26,9 +26,11 @@ Specifically, this section details the development process of the service subscr
         Service Subscription can push messages of the topics `/${YourProductKey}/${YourDeviceName}/user/update` and `/sys/${YourProductKey}/${YourDeviceName}/thing/event/property/post`, to which devices can then publish messages. Additionally, the messages of `/sys/${YourProductKey}/${YourDeviceName}/thing/event/property/post` are processed by the system before being pushed.
 
     -   Device Status Change Notification: Indicates the notifications that are sent when the statuses of devices change, for example, notifications for when devices go online or go offline. The topic `/as/mqtt/status/${YourProductKey}/${YourDeviceName}` has device status change messages. After this notification type is selected, the HTTP/2 SDK can receive the device status change notifications.
-    -   Sub-Device Data Report Detected by Gateway: This is a specific notification type of Pro Edition products. Gateways can report the information of sub-devices that are discovered locally. To use this feature, make sure that the applications on the gateway support this feature.
-    -   Device Topological Relation Changes: This is a specific notification type of Pro Edition products. It includes notifications about creation and removal of the topological relation between a gateway and its sub-devices.
-    -   Device Changes Throughout Lifecycle: This is a specific notification type of Pro Edition products. It includes notifications about device creation, deletion, disabling, and enabling.
+    -   Sub-Device Data Report Detected by Gateway: Gateways can report the information of sub-devices that are discovered locally. To use this feature, make sure that the applications on the gateway support this feature.
+    -   Device Topological Relation Changes: Includes notifications about creation and removal of the topological relation between a gateway and its sub-devices.
+    -   Device Changes Throughout Lifecycle: Includes notifications about device creation, deletion, disabling, and enabling.
+
+**Note:** For messages of device properties, events, and services, Device Status Change Notification, Sub-Device Data Report Detected by Gateway, Device Topological Relation Changes, and Device Changes Throughout Lifecycle, the QoS is 0 by default. For other Device Upstream Notification messages \(except messages of device properties, events, and services\), you can set the OoS is 0 or 1 on your device SDK.
 
 ## Connect to the SDK {#section_v3d_gj5_42b .section}
 

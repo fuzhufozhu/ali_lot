@@ -8,7 +8,7 @@ When receiving raw data from a device, IoT Platform runs the parsing script to c
 
 Data parsing process:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/15535988787506_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/15549506907506_en-US.png)
 
 For more information about sending data upstream and downstream, see "Devices report properties or events" and "Call device services or set device properties" in [Communications over Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Communications over Alink protocol.md#).
 
@@ -41,10 +41,10 @@ Only JavaScript is supported to edit scripts. IoT Platform provides an online sc
 
 1.  Log on to the IoT Platform console.
 2.  From the left-side navigation pane, choose **Devices** \> **Product**.
-3.  Click **Create Product** to create a product and set the data type to **Do not parse/Custom**. For more information, see [Create a product \(Pro Edition\)](reseller.en-US/User Guide/Create products and devices/Create a product (Pro Edition).md#).
+3.  Click **Create Product** to create a product and set the data type to **Do not parse/Custom**. For more information, see [Create a product](reseller.en-US/User Guide/Create products and devices/Create a product.md#).
 4.  On the Product Details page, click the **Data Parsing** tab. Edit your data parsing script in the editor. Only JavaScript is supported. For more information, see [Example: Edit a script](#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/15535988787507_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/15549506907507_en-US.png)
 
     When you edit the script, you can perform the following operations:
 
@@ -58,11 +58,10 @@ Only JavaScript is supported to edit scripts. IoT Platform provides an online sc
 6.  If you confirm that the script is correct and can parse data correctly, click **Submit** to submit the script to the running platform. When data is exchanged between IoT Platform and the device, the system will automatically call the corresponding function in the script to convert data.
 7.  Perform a test by sending data to IoT Platform from a real device.
 
-    1.  Register a device.
-    2.  Burn the ProductKey, DeviceName, and DeviceSecret of the device into the [device SDK](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) that has been developed.
-    3.  Simulate device upstream data.
-    4.  In the IoT Platform console, go to the Device Details page of the device. Click the Status tab to view the running data that is received by IoT Platform.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155359887837537_en-US.png)
+    1.  Register a device, and develop the [device SDK](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#)
+    2.  The device connects to IoT Platform and reports data to IoT Platform.
+    3.  In the IoT Platform console, go to the Device Details page of the device. Click the Status tab to view the device property data.
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155495069037537_en-US.png)
 
 
 ## Example: Edit a script {#scriptexample .section}
@@ -121,9 +120,9 @@ The following describes the data parsing script format and content of a product.
     var COMMAND_REPORT_REPLY = 0x02; //Respond to the reported data
     var COMMAND_SET_REPLY = 0x03; //Respond to the property setting request
     var COMMAD_UNKOWN = 0xff;    //Other command
-    var ALINK_PROP_REPORT_METHOD = 'thing.event.property.post'; //This is a topic for standard Alink JSON formatted data for devices to report property data to IoT Platform.
-    var ALINK_PROP_SET_METHOD = 'thing.service.property.set'; //This is a topic for standard Alink JSON formatted data for IoT Platform to send property management commands to devices.
-    var ALINK_PROP_SET_REPLY_METHOD = 'thing.service.property.set'; //This is a topic for standard Alink JSON formatted data for devices to report property setting results to IoT Platform.
+    var ALINK_PROP_REPORT_METHOD = 'thing.event.property.post'; //This is a topic for devices to report property data to IoT Platform.
+    var ALINK_PROP_SET_METHOD = 'thing.service.property.set'; //This is a topic for for IoT Platform to send property management commands to devices.
+    var ALINK_PROP_SET_REPLY_METHOD = 'thing.service.property.set'; //This is a topic for devices to report property setting results to IoT Platform.
     /*
     Sample data:
     Upstream data
@@ -328,7 +327,7 @@ After you edit a sample script, you can verify the correctness of the script. En
 
 If the script is incorrect, an error message is displayed in the **Parsing Results** area. You must troubleshoot the error according to the error message and modify the script code accordingly.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155359887837533_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155495069037533_en-US.png)
 
 ## Debug a data parsing script in a local computer {#section_krw_cwk_ngb .section}
 
@@ -359,7 +358,7 @@ After a device is connected to IoT Platform and reports data, the reported data 
 
 In some occasions, after the device reports data, no data is displayed on the page, as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155359887837538_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155495069037538_en-US.png)
 
 To view device logs: From the left-side navigation pane, choose **Maintenance** \> **Device Log** and select the corresponding product. On the Device Log page, click the **TSL Data Analysis** tab. You can view the communication log between the device and IoT Platform.
 
@@ -375,13 +374,13 @@ The following lists some errors:
 
     As shown in the following figure, the error code is 6200. To check the description of the error, see [Device log](reseller.en-US/User Guide/Monitoring and Maintenance/Device log.md#). The error code of 6200 indicates that no script was found. Check whether the data parsing script has been submitted in the console.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155359887837539_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155495069037539_en-US.png)
 
 -   Alink method does not exist.
 
     The error code is 6450. This error code is described in [Device log](reseller.en-US/User Guide/Monitoring and Maintenance/Device log.md#) as follows: The method parameter is not found in Alink data. This error occurs if the method parameter is not found in the Alink data reported by the device or in the parsed result of Do not parse/Custom data.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155359887937540_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7527/155495069037540_en-US.png)
 
     You can check the raw data, for example:
 

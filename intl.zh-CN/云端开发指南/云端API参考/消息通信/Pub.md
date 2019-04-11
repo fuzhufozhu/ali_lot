@@ -8,16 +8,14 @@
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：Pub。|
 |ProductKey|String|是|要发送消息产品Key。|
-|TopicFullName|String|是| 要接收消息的Topic全称。可以是用户Topic类和您自定义的Topic类（不支持系统Topic类）。
+|TopicFullName|String|是| 要接收消息的Topic，如`/a1Q5XoY****/device1/user/update`。
 
- -   用户Topic类结构：`/$\{productKey\}/$\{deviceName\}/update`
+ **说明：** 
 
--   自定义Topic类结构：`$\{productKey\}/$\{deviceName\}/topicShortName`
+-   不支持系统Topic。
+-   指定Topic的操作权限须为发布或发布和订阅。
 
-其中，topicShortName是您创建Topic时自定义的类目。
-
-
- 您可以调用QueryProductTopic接口查询产品下所有的Topic列表。
+ 您可以调用[QueryProductTopic](intl.zh-CN/云端开发指南/云端API参考/Topic管理/QueryProductTopic.md#)接口查询产品下的Topic类列表，或在设备详情页的Topic列表页签下查看设备的具体Topic。
 
  |
 |MessageContent|String|是|要发送的消息主体。您需要将消息原文转换成二进制数据，并进行Base64编码，从而生成消息主体。|
@@ -29,7 +27,7 @@
 
  如果不传入此参数，则使用默认值0。
 
- **说明：** 一条消息在物联网平台中最多可以保存7天。
+ **说明：** QoS=1的消息在物联网平台中最多可以保存7天。物联网平台不保存QoS=0的消息。
 
  |
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
@@ -49,9 +47,9 @@
 **请求示例**
 
 ```
-https://iot.cn-shanghai.aliyuncs.com/?&Action=Pub
-&ProductKey=al*********
-&TopicFullName=%2FproductKey%2FdeviceName%2Fget
+https://iot.cn-shanghai.aliyuncs.com/?Action=Pub
+&ProductKey=a1Q5XoY****
+&TopicFullName=%2a1Q5XoY****%2Fdevice1%2Fuser%2Fget
 &MessageContent=aGVsbG8gd29ybGQ%3D
 &Qos=0
 &公共请求参数

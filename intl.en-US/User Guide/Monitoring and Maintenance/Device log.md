@@ -11,14 +11,12 @@ Device logs can be of the following four types:
 -   [Downstream data analysis logs](#)
 -   [TSL data analysis logs](#)
 
-Note that Basic Edition products only support the following three types of logs: device activity analysis logs, upstream data analysis logs, and downstream data analysis logs. Pro Edition products support all four types of logs.
-
 Query device logs:
 
 1.  In the left-side navigation pane of the IoT Platform console, click **Maintenance** \> **Device Log**.
 2.  Enter the target items to filter, such as product name, log type, device name, and time range, and then click **Search**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/154780940935438_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390235438_en-US.png)
 
     Filters for device logs:
 
@@ -45,7 +43,7 @@ Device activity analysis logs include logs of devices connecting to IoT Platform
 
 Device activity analysis logs can be queried by device names and time ranges as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15478094096524_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036524_en-US.png)
 
 **Device connection failures**
 
@@ -64,7 +62,7 @@ Upstream data analysis logs indicate logs of the following processes: devices se
 
 You can query the upstream data analysis logs by device names, message IDs, status, or time ranges, as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15478094106525_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036525_en-US.png)
 
 **Error log description**
 
@@ -109,7 +107,7 @@ Downstream data analysis logs are logs about messages sent from IoT Platform to 
 
 You can filter logs by device names, message IDs, status, and time ranges, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15478094106526_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036526_en-US.png)
 
 **Error log description**
 
@@ -133,11 +131,11 @@ TSL data analysis logs include logs of devices reporting properties and events, 
 
 You can filter logs by device names and time ranges. If the device data type is Alink JSON, the page is displayed as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/154780941014259_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390514259_en-US.png)
 
 If the device data type is Do not parse/Custom \(passthrough\), in addition to the log content, the hexadecimal raw data are also displayed. as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/154780941021256_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390521256_en-US.png)
 
 |Parameter|Description|
 |:--------|:----------|
@@ -173,7 +171,7 @@ When you call a service on the IoT Platform, the service parameters will be veri
 -   The format of the parsed result for Do not parse/Custom data is incorrect.
 -   The format of the input parameters is incorrect.
 
- |For data format in calling services, see [API documentations](../../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Overview.md#) and the TSL of the product. For the data format of Alink JSON, see [Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Alink protocol.md#).|
+ |For data format in calling services, see [API documentations](../../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Overview.md#) and the TSL of the product. For the data format of Alink JSON, see [Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Communications over Alink protocol.md#).|
 |**System exception codes**|
 |5159|Failed to obtain the property information from the TSL.|A system exception occurred.|Open a ticket in the console and submit information about the error in the ticket for further consultation.|
 |5160|Failed to obtain the event information from the TSL.|
@@ -195,7 +193,7 @@ When a device is reporting a property or an event, the parameters of the propert
 
  When devices report data to IoT Platform, this error may occur because the Alink data reported by devices is not in JSON format, or the parsed result of Do not parse/Custom is not in JSON format.
 
- |For data format, see [Alink protocol documentations](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Alink protocol.md#)|
+ |For data format, see [Alink protocol documentations](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Communications over Alink protocol.md#)|
 |**System exceptions**|
 |6452|Traffic limiting|Traffic throttling has been triggered because too many requests have been submitted.|Open a ticket in the console for troubleshooting.|
 |6760|The storage quota of the tenant is exceeded.|A system exception occurred.|Open a ticket in the console and submit information about the error in the ticket for further consultation.|
@@ -284,5 +282,5 @@ Search for payload contents by message IDs. Currently, only messages with QoS 1 
 
 You can select to display the original data or the Base64-encoded data.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/154780941021104_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390521104_en-US.png)
 

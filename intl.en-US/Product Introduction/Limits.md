@@ -8,9 +8,9 @@ IoT Platform has the following limits.
 |:---|:----------|:----|
 |Total tags|The maximum number of tags that a product, device, or device group can have.|100|
 |Total products|The maximum number of products that an account can have.|1,000|
-|Total devices|The maximum number of devices that a product can have.**Note:** If your business requires more devices, open a ticket in the Alibaba Cloud console and describe your requirements in the ticket.
+|Total devices|The maximum number of devices that a product can have. **Note:** If your business requires more devices, open a ticket in the Alibaba Cloud console and describe your requirements in the ticket.
 
-|500,000|
+ |500,000|
 |Gateways and sub-devices|The maximum number of sub-devices that a gateway can have.|1,500|
 |The maximum number of sub-device channels that a gateway can have.|1,000|
 |The frequency in which sub-device configurations can be sent to the gateway.|Once every ten minutes.|
@@ -36,26 +36,26 @@ IoT Platform has the following limits.
 |The maximum number of MQTT requests that each account can send per second.|500|
 |The maximum number of MQTT requests that each device can send per second.|1|
 |The maximum number of connection times that each device can try per minute.|5|
-|The maximum number of message subscriptions that each device can have. If the maximum number is reached, new subscription request will be rejected. The device client can get request results by verifying the SUBACK messages.|100|
+|The maximum number of message subscriptions that each device can have. If the maximum number is reached, new subscription request will be rejected. The device can get request results by verifying the SUBACK messages.|100|
 |The maximum number of requests that devices of an account can send to IoT Platform per second.|10,000|
 |The maximum number of requests that an account can send from IoT Platform to devices per second.|2,000|
 |The maximum number of messages that can be sent to the Rules Engine per second for an account.|1,000|
-|The maximum frequency in which a device can send messages to IoT Platform.|QoS 0: 30 messages per second.QoS 1: 10 messages per second.
+|The maximum frequency in which a device can send messages to IoT Platform.|QoS 0: 30 messages per second. QoS 1: 10 messages per second.
 
-|
-|A device can receive messages in a frequency of 50 messages per second, but the Internet condition affects the performance. If the TCP write buffer is blocked, an error is returned. For example, if you use the Pub operation to send requests to a device, but the device cannot handle all the requests, you will receive an error due to throttling.**Note:** If you use the MQTT protocol to connect your devices and IoT Platform, you cannot receive error messages resulting from throttling. However, you can view logs to detect which devices are being throttled.
+ |
+|A device can receive messages in a frequency of 50 messages per second, but the Internet condition affects the performance. If the TCP write buffer is blocked, an error is returned. For example, if you use the Pub operation to send requests to a device, but the device cannot handle all the requests, you will receive an error due to throttling. **Note:** If you use the MQTT protocol to connect your devices and IoT Platform, you cannot receive error messages resulting from throttling. However, you can view logs to detect which devices are being throttled.
 
-|50 messages per second|
+ |50 messages per second|
 |Bandwidth.|1,024 KB|
-|The maximum number of unconfirmed message publishing requests that a single client can have. When the limitation is reached, no new publishing request from the client will be accepted, unless the server returns PUBACK messages.|100|
-|The maximum storage time for messages that are sent with the sending method of QoS 1. If no PUBACK message from the client is received after the maximum storage time is used up, the request will be discarded.|7 days|
+|The maximum number of unconfirmed message publishing requests that a single device can have. When the limitation is reached, no new publishing request from the device will be accepted, unless the server returns PUBACK messages.|100|
+|The maximum storage time for messages that are sent with the sending method of QoS 1. If no PUBACK message from the device is received after the maximum storage time is used up, the request will be discarded.|7 days|
 |The maximum size of a single message that is sent using MQTT. Messages exceed the size limit will be rejected.|256 KB|
 |The maximum size of a single message that is sent using CoAP. Messages exceed the size limit will be rejected.|1 KB|
-|The heartbeat interval of an MQTT connection can be 30 to 1200 seconds. If the heartbeat time is not within this range, the server will refuse to connect.We recommend that you set a value larger than 300 seconds.
+|The heartbeat interval of an MQTT connection can be 30 to 1200 seconds. If the heartbeat time is not within this range, the server will refuse to connect. We recommend that you set a value larger than 300 seconds.
 
-A heartbeat interval begins at the time when IoT Platform sends a CONNACK message to respond to a CONNECT message. When a message of PUBLISH, SUBSCRIBE, PING or PUBACK is received, the timer is reset. If no message is received after an amount of time has passed that is equal to 1.5 times the specified heartbeat interval, the connection will be closed.
+ A heartbeat interval begins at the time when IoT Platform sends a CONNACK message to respond to a CONNECT message. When a message of PUBLISH, SUBSCRIBE, PING or PUBACK is received, the timer is reset. If no message is received after an amount of time has passed that is equal to 1.5 times the specified heartbeat interval, the connection will be closed.
 
-|30 to 1,200 seconds|
+ |30 to 1,200 seconds|
 
 ## Topics {#section_mmp_bdv_4fb .section}
 
@@ -67,9 +67,9 @@ A heartbeat interval begins at the time when IoT Platform sends a CONNACK messag
 |The maximum number of slashes \(/\) can be included in a single topic.|7|
 |The maximum number of messages to which servers of an account can subscribe per second.|1,000|
 |The maximum number of topics that can be included in a subscription request.|8|
-|After you subscribe to or unsubscribe from a topic, the change will take effect in 10 seconds. Subscriptions remain in effect until you unsubscribe from the topic. We recommend that you subscribe to topics in advance to avoid missing information.Example: A device sends a SUB request to topic A. After 10 seconds, the subscription takes effect and the device starts to receive messages in real time. The device will keep receiving messages from topic A.
+|After you subscribe to or unsubscribe from a topic, the change will take effect in 10 seconds. Subscriptions remain in effect until you unsubscribe from the topic. We recommend that you subscribe to topics in advance to avoid missing information. Example: A device sends a SUB request to topic A. After 10 seconds, the subscription takes effect and the device starts to receive messages in real time. The device will keep receiving messages from topic A.
 
-|10 seconds|
+ |10 seconds|
 |Broadcast topic. A maximum of 1,000 devices can subscribe to the same broadcast topic. The server SDK can only send one broadcast per second.|1,000|
 
 ## Device shadow {#section_cnm_ddv_4fb .section}

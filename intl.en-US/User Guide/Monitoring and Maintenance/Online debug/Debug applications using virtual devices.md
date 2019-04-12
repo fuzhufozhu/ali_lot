@@ -27,11 +27,11 @@ Limits:
 
         The following example shows the **Properties** page of a device, where the value 220 is entered for Voltage.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122865/155503456638447_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155503506642138_en-US.png)
 
     -   If the device data type is Do not parse/Custom, you can enter a Base64 string. The length of string cannot exceeds 4096 characters.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155503456643394_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155503506643394_en-US.png)
 
 6.  Select a data push method. 
     -   **Push**: Push the data immediately.

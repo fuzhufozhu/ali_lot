@@ -4,8 +4,8 @@ This article describes errors that may occur during sub-device development.
 
 ## Introduction {#section_ikc_fgw_vdb .section}
 
--   When an IoT Platform service error occurs on a directly-connected device, the user client is notified of the error when the TCP connection is closed.
--   In the case that a communication error occurs on a sub-device connected to IoT Platform through a gateway and the gateway is still physically connected to IoT Platform, the gateway must send an error message through the gateway connection to notify the user client of the error.
+-   When an IoT Platform service error occurs on a directly-connected device, the device is notified of the error when the TCP connection is closed.
+-   In the case that a communication error occurs on a sub-device connected to IoT Platform through a gateway and the gateway is still physically connected to IoT Platform, the gateway must send an error message through the gateway connection to notify the sub-device of the error.
 
 ## Response format {#section_q2j_ggw_vdb .section}
 
@@ -65,8 +65,8 @@ The error message is sent to topic /ext/error/\{gw\_productKey\}/\{gw\_deviceNam
 
 |Code|Message|Description|
 |----|-------|-----------|
-|520|device session error|Sub-device session error.-   The sub-device session does not exist. The sub-device is not connected to IoT Platform or has gone offline.
+|520|device session error|Sub-device session error. -   The sub-device session does not exist. The sub-device is not connected to IoT Platform or has gone offline.
 -   The sub-device session exists, however, the session is not established through the current gateway.
 
-|
+ |
 

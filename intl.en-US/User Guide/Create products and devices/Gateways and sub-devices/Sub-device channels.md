@@ -1,12 +1,12 @@
 # Sub-device channels {#concept_vlx_vvn_y2b .concept}
 
-You can create sub-device channels for Pro Edition gateway devices. Gateway devices can then use the management channels to manage sub-devices. Currently, IoT Platform supports three kinds of channels: Modbus protocol channels, OPC UA protocol channels, and custom protocol channels.
+You can create sub-device channels for gateway devices. Gateway devices can then use the management channels to manage sub-devices. Currently, IoT Platform supports three kinds of channels: Modbus protocol channels, OPC UA protocol channels, and custom protocol channels.
 
 1.  In the left-side navigation pane, click **Devices** \> **Device**.
 2.  On the Devices page, find the gateway device for which you want to create channels, and click **View** next to it. You are directed to the Device Details page.
 3.  Click **Sub-device Channels** and then create sub-device management channels according to your required protocol.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18798/154459797310890_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18798/155504057610890_en-US.png)
 
     -   Modbus
 

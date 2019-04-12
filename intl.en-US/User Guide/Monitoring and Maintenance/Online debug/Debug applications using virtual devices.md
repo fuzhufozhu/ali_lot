@@ -2,7 +2,7 @@
 
 IoT Platform provides virtual devices to help developers debug applications.
 
-A typical IoT development process is as follows: a device client is developed, the devices report data to IoT Platform, and the developers use the data to develop applications. However, this development process is time consuming. To resolve this issue, IoT Platform provides virtual devices that simulate the physical devices connecting to IoT Platform and reporting defined properties and events. You can then use the data reported by the virtual devices to debug your applications. After the physical devices connect to IoT Platform, the corresponding virtual devices will automatically become inactive.
+A typical IoT development process is as follows: a device SDK is developed, the devices report data to IoT Platform, and the developers use the data to develop applications. However, this development process is time consuming. To resolve this issue, IoT Platform provides virtual devices that simulate the physical devices connecting to IoT Platform and reporting defined properties and events. You can then use the data reported by the virtual devices to debug your applications. After the physical devices connect to IoT Platform, the corresponding virtual devices will automatically become inactive.
 
 Limits:
 
@@ -27,11 +27,11 @@ Limits:
 
         The following example shows the **Properties** page of a device, where the value 220 is entered for Voltage.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155503506642138_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155505536242138_en-US.png)
 
     -   If the device data type is Do not parse/Custom, you can enter a Base64 string. The length of string cannot exceeds 4096 characters.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155503506643394_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17811/155505536243394_en-US.png)
 
 6.  Select a data push method. 
     -   **Push**: Push the data immediately.

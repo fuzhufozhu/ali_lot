@@ -9,7 +9,7 @@ You can add sub-devices to a gateway device and send the TSL and the extended se
 2.  On the Devices page, find the gateway device for which you want to add sub-devices and click **View** corresponding to it. You are directed to the Device Details page. 
 3.  Click **Sub-device Management** \> **Add Sub-device**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/154467047210897_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155504886610897_en-US.png)
 
 4.  Enter the information of the sub-device in the dialog box. 
 
@@ -29,9 +29,9 @@ You can add sub-devices to a gateway device and send the TSL and the extended se
 
 5.  After you have added sub-devices to a gateway, go back to the details page of the gateway device and click **Send Configuration Data** to assign the TSLs and extended service information of the products \(to which the sub-devices belong\) and the gateway connection configurations to the gateway. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/154467047211200_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155504886711200_en-US.png)
 
 6.  On the details page of the sub-device, you can view the gateway device information. Click **Edit** to modify the configuration information. 
 
--   If you want to develop your own devices and assign the configurations between the gateway device and the sub-device to the device client, see [Alink protocol](../../../../reseller.en-US/Developer Guide (Devices)/Alink Protocol.md#).
+-   If you want to develop your own devices and assign the configurations between the gateway device and the sub-device to the device client, see [Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Connect sub-devices to the cloud/Alink Protocol.md#).
 

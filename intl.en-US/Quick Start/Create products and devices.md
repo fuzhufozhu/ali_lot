@@ -5,13 +5,9 @@ The first step in using IoT Platform is to create products and devices. A produc
 1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot). 
 2.  Create a product. 
     1.  In the left-side navigation pane, click **Devices** \> **Product**. On the Products page, click **Create Product**. 
-    2.  Select **Pro Edition**, and then click **Next**. 
+    2.  Enter all the required information and then click **OK**. 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016732081_en-US.png)
-
-    3.  Enter all the required information and then click **OK**. 
-
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/15450401671955_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/15550359791955_en-US.png)
 
         The parameters are described as follows:
 
@@ -45,30 +41,30 @@ The first step in using IoT Platform is to create products and devices. A produc
     3.  Click **Add Feature** corresponding to **Self-Defined Feature**. 
     4.  Define a property. In this example, a light switch property is defined. 0 indicates turning the light on and 1 indicates turning the light off. 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733073_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503597933073_en-US.png)
 
     5.  Define a service. For example, you can add an input parameter for adjusting the brightness of the bulb, and add an output parameter for the bulb to report the brightness contrast between the bulb and the room environment. 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733075_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503597933075_en-US.png)
 
         The following figure shows an example of input parameter.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733078_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033078_en-US.png)
 
         The following figure shows an example of output parameter.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733079_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033079_en-US.png)
 
     6.  Define an event. You can define an event for devices to report errors. 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733077_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033077_en-US.png)
 
         The following figure shows an example of output parameter.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733080_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033080_en-US.png)
 
 4.  Create a device. 
     1.  In the left-side navigation pane, click **Devices** \> **Device**. 
-    2.  On the device management page, click **Add Device**. Select a product to which the device to be created belongs, and then enter a name for the device \(DeviceName\). Click **OK**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016733082_en-US.png) 
-    3.  Save the device certificate information. The certificate information includes ProductKey, DeviceName, and DeviceSecret. Keep this information confidential, because it is the certificate that will be used for device authentication when the device is connecting to IoT Platform. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/154504016833085_en-US.png) 
+    2.  On the device management page, click **Add Device**. Select a product to which the device to be created belongs, and then enter a name for the device \(DeviceName\). Click **OK**. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033082_en-US.png) 
+    3.  Save the device certificate information. The certificate information includes ProductKey, DeviceName, and DeviceSecret. Keep this information confidential, because it is the certificate that will be used for device authentication when the device is connecting to IoT Platform. ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12786/155503598033085_en-US.png) 
 

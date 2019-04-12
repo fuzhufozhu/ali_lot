@@ -1,15 +1,15 @@
 # Sub-device management {#task_z1r_q1p_y2b .task}
 
-You can add sub-devices to a gateway device and send the TSL and the extended service information of the product \(to which the sub-device belongs\) to the gateway.
+You can add sub-devices to a gateway device, and send the TSL and the extended service information of the sub-devices to the gateway.
 
 -   If the gateway connection protocol of a device is Modbus or OPC UA, before you connect the device to a gateway, you must create a corresponding sub-device channel for the gateway. For information about how to create sub-device channels, see the documentation about sub-device channels.
 -   Products and devices created before September 4, 2018 can be added to gateways as sub-devices. You can then build their topological relationships, but you cannot use sub-device channels or other custom configurations.
 
-1.  In the left-side navigation pane, click **Devices** \> **Device** . 
-2.  On the Devices page, find the gateway device for which you want to add sub-devices and click **View** corresponding to it. You are directed to the Device Details page. 
+1.  In the left-side navigation pane, click **Devices** \> **Device** .
+2.  On the Devices page, find the gateway device for which you want to add sub-devices and click **View** corresponding to it. You are directed to the Device Details page.
 3.  Click **Sub-device Management** \> **Add Sub-device**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155504886610897_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155505337510897_en-US.png)
 
 4.  Enter the information of the sub-device in the dialog box. 
 
@@ -29,9 +29,9 @@ You can add sub-devices to a gateway device and send the TSL and the extended se
 
 5.  After you have added sub-devices to a gateway, go back to the details page of the gateway device and click **Send Configuration Data** to assign the TSLs and extended service information of the products \(to which the sub-devices belong\) and the gateway connection configurations to the gateway. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155504886711200_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18811/155505337511200_en-US.png)
 
-6.  On the details page of the sub-device, you can view the gateway device information. Click **Edit** to modify the configuration information. 
+6.  On the details page of the sub-device, you can view the gateway device information. Click **Edit** to modify the configuration information.
 
--   If you want to develop your own devices and assign the configurations between the gateway device and the sub-device to the device client, see [Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Connect sub-devices to the cloud/Alink Protocol.md#).
+-   If you want to develop your own device SDK and assign the configurations of sub-devices to the gateway device, see [Alink protocol](../../../../../reseller.en-US/Developer Guide (Devices)/Connect sub-devices to the cloud/Alink Protocol.md#).
 

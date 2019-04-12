@@ -1,13 +1,13 @@
 # Firmware update {#task_prw_fzz_xdb .task}
 
-IoT Platform provides the firmware update function. To update firmware, you need to configure your device client to support OTA updates. Then, in the IoT Platform console, you can upload a firmware file and push the firmware update file to devices. This topic describes how to configure firmware updates and manage firmware file versions.
+IoT Platform provides the firmware update function. To update firmware, you need to configure your device to support OTA updates. Then, in the IoT Platform console, you can upload a firmware file and push the firmware update file to devices. This topic describes how to configure firmware updates and manage firmware file versions.
 
-Before you use the firmware update function, make sure that you have developed your device client to support OTA updates.
+Before you use the firmware update function, make sure that you have developed your device to support OTA updates.
 
 -   If you use device SDKs, see [OTA updates](../../../../../reseller.en-US/Developer Guide (Devices)/OTA updates.md#).
 -   If you use AliOS Things, see [OTA tutorial for AliOS Things](https://github.com/alibaba/AliOS-Things/wiki).
 
-1.  Log on to the IoT Platform console. 
+1.  Log on to the IoT Platform console.
 2.  In the left-side navigation pane, click **Maintenance** \> **Firmware Update** 
 
     **Note:** To provide better services, IoT Platform now allows you to manage firmware versions by product. As such, when you use the new version of the firmware update function for the first time, you need to associate your previously uploaded firmware files with your products manually. You can only associate a firmware file to one product. After you associate your existing firmware files to products, you can add new firmware files.
@@ -18,7 +18,7 @@ Before you use the firmware update function, make sure that you have developed y
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15520298623946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15550552033946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -32,19 +32,19 @@ Before you use the firmware update function, make sure that you have developed y
 
     We recommend that you activate the secure update function to ensure the integrity and confidentiality of the firmware. The secure update function requires device information for firmware verification and firmware signature verification. If you use AliOS Things, see [OTA tutorial for AliOS Things](https://github.com/alibaba/AliOS-Things/wiki).
 
-    1.  On the Firmware Update page, click **Secure Update**. 
+    1.  On the Firmware Update page, click **Secure Update**.
     2.  In the Secure Update dialog box, turn the button of the secure update function to **Activated** for the products whose devices use AliOS Things. When the secure update function is **Activated**, you can click the corresponding **Copy** button to copy the key for device signature use.
 6.  In the firmware list, click the corresponding **Validate Firmware** button, and then verify whether the uploaded firmware file is available. 
 
     **Note:** After the firmware file is uploaded to IoT Platform, you need to test whether the firmware file is available on one or more devices. Only when you confirm that the test devices have been successfully updated can the firmware file be used for batch update. You can launch validations for a firmware to occur multiple times.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155202986210898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155505520310898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
-    |Pending Update Version|The drop-down box displays the current firmware versions of all devices of the product. Select one or more versions that you want to update to the new version.After you select the versions, the devices with these firmware versions will be displayed when you click the drop-down button of **DeviceName**.
+    |Pending Update Version|The drop-down box displays the current firmware versions of all devices of the product. Select one or more versions that you want to update to the new version. After you select the versions, the devices with these firmware versions will be displayed when you click the drop-down button of **DeviceName**.
 
-|
+ |
     |DeviceName|Select one or more devices to test the firmware file.|
 
     **Note:** 
@@ -57,7 +57,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155202986210902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155505520310902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -71,25 +71,25 @@ Before you use the firmware update function, make sure that you have developed y
 **Note:** You can select multiple pending versions if you select to update specified devices. The version that you previously selected for update is selected by default. If you have not specified any version, all versions are selected by default.
 
  |
-    |Update Time|Specify a time when the update performs.    -   Update Now: Update immediately after the request is submitted.
+    |Update Time|Specify a time when the update performs.     -   Update Now: Update immediately after the request is submitted.
     -   Scheduled Update: Manually specify a time for the system to push the update requests to devices. You can specify a time in the range of five minutes to seven days later.
 
 **Note:** Scheduled Update is available only when the update policy is Static Update.
 
 If you specify a scheduled update time, in the Pending tab page of Firmware Details, you can see the scheduled update time.
 
-|
-    |Retry After Failed Update|Configure that when the system retries to send update request again if the update fails. Options:    -   Do Not Retry
+ |
+    |Retry After Failed Update|Configure that when the system retries to send update request again if the update fails. Options:     -   Do Not Retry
     -   Retry Immediately
     -   Retry in 10 Minutes
     -   Retry in 30 Minutes
     -   Retry in 1 hour
     -   Retry in 24 hours
-|
-    |Max. Retry Times|Select how many times the system can retry. Options:    -   1
+ |
+    |Max. Retry Times|Select how many times the system can retry. Options:     -   1
     -   2
     -   5
-|
+ |
 
 
 Click **Update Details** to view the update status.

@@ -16,7 +16,7 @@ Query device logs:
 1.  In the left-side navigation pane of the IoT Platform console, click **Maintenance** \> **Device Log**.
 2.  Enter the target items to filter, such as product name, log type, device name, and time range, and then click **Search**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229735438_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155506048235438_en-US.png)
 
     Filters for device logs:
 
@@ -43,13 +43,15 @@ Device activity analysis logs include logs of devices connecting to IoT Platform
 
 Device activity analysis logs can be queried by device names and time ranges as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976524_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550604826524_en-US.png)
 
  **Device connection failures** 
 
 |Message|Description|
 |:------|:----------|
 |Kicked by the same device|Another device installed with the same device certificate as this device has connected to IoT Platform, and has brought this device offline.|
+|Kicked due to device deleted|The device has been deleted.|
+|Kicked due to device forbidden|The device has been disabled.|
 |Connection reset by peer|The TCP connection has been reset by the peer.|
 |Connection occurs exception|A connection exception has occurred, and the IoT Platform server has closed the connection.|
 |Device disconnect|The device sent a disconnection request.|
@@ -62,7 +64,7 @@ Upstream data analysis logs indicate logs of the following processes: devices se
 
 You can query the upstream data analysis logs by device names, message IDs, status, or time ranges, as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976525_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550604826525_en-US.png)
 
  **Error log description** 
 
@@ -107,7 +109,7 @@ Downstream data analysis logs are logs about messages sent from IoT Platform to 
 
 You can filter logs by device names, message IDs, status, and time ranges, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976526_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550604826526_en-US.png)
 
  **Error log description** 
 
@@ -131,11 +133,11 @@ TSL data analysis logs include logs of devices reporting properties and events, 
 
 You can filter logs by device names and time ranges. If the device data type is Alink JSON, the page is displayed as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229714259_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155506048414259_en-US.png)
 
 If the device data type is Do not parse/Custom \(passthrough\), in addition to the log content, the hexadecimal raw data are also displayed. as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229721256_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155506048421256_en-US.png)
 
 |Parameter|Description|
 |:--------|:----------|
@@ -282,5 +284,5 @@ Search for payload contents by message IDs. Currently, only messages with QoS 1 
 
 You can select to display the original data or the Base64-encoded data.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229721104_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155506048421104_en-US.png)
 

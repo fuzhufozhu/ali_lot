@@ -28,7 +28,7 @@ To create product tags in the console, follow these steps:
     |Tag Value|A tag value can contain Chinese characters, English letters, digits, underscores \(\_\), hyphens \(-\) and dots \(.\), and cannot exceed 128 characters. A Chinese character is counted as two characters.|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15520394722847_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15550353742847_en-US.png)
 
 ## Device tags {#section_igy_bvb_wdb .section}
 
@@ -50,7 +50,7 @@ To create device tags in the console, follow these steps:
     |Tag Value|A tag value can contain Chinese characters, English letters, digits, underscores \(\_\), hyphens \(-\) and dots \(.\), and cannot exceed 128 characters. A Chinese character is counted as 2 characters.|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15520394722849_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/15550353742849_en-US.png)
 
 ## Group tags {#section_szr_31j_wfb .section}
 
@@ -70,7 +70,7 @@ To create group tags, follow these steps:
     |Tag Value|A tag value can contain Chinese characters, English letters, digits, underscores \(\_\) and hyphens \(-\), and cannot exceed 128 characters. A Chinese character is counted as 2 characters.|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/155203947232634_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12823/155503537432634_en-US.png)
 
 ## Manage tags in batch {#section_bnf_gmb_ygb .section}
 

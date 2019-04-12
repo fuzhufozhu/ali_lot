@@ -7,7 +7,7 @@ After you complete the device client configuration, you can use the online debug
 
     After you select a device, you are automatically directed to the debugging page.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155497405334149_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155503453934149_en-US.png)
 
 3.  Select **Debug Physical Device**. 
 4.  Select the feature that you want to test. 
@@ -16,7 +16,7 @@ After you complete the device client configuration, you can use the online debug
     -   If you select an event, select **Get** as the operation method.
     **Note:** If you have not defined properties or events for the product, go to the Product Details page to define features for the product.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155497405534150_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155503453934150_en-US.png)
 
 5.  Dispatch the command. 
 

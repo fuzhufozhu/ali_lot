@@ -16,7 +16,7 @@ Query device logs:
 1.  In the left-side navigation pane of the IoT Platform console, click **Maintenance** \> **Device Log**.
 2.  Enter the target items to filter, such as product name, log type, device name, and time range, and then click **Search**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390235438_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229735438_en-US.png)
 
     Filters for device logs:
 
@@ -24,10 +24,10 @@ Query device logs:
     |:-----|:----------|
     |DeviceName|The device name, which is a unique identifier of a device in a product. You can query logs of a device by using the device name as the filter.|
     |MessageID|The message ID, which is the unique identifier of a message in IoT Platform. You can enter a message ID to search for the corresponding message forwarding process.|
-    |Status|The logs that display operation results. The value can be either successful or failed. Options:    -   All
+    |Status|The logs that display operation results. The value can be either successful or failed. Options:     -   All
     -   Successful
     -   Failed
-|
+ |
     |Time range|A specific time range you can specify for querying logs in that period.|
 
 
@@ -43,9 +43,9 @@ Device activity analysis logs include logs of devices connecting to IoT Platform
 
 Device activity analysis logs can be queried by device names and time ranges as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036524_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976524_en-US.png)
 
-**Device connection failures**
+ **Device connection failures** 
 
 |Message|Description|
 |:------|:----------|
@@ -62,9 +62,9 @@ Upstream data analysis logs indicate logs of the following processes: devices se
 
 You can query the upstream data analysis logs by device names, message IDs, status, or time ranges, as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036525_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976525_en-US.png)
 
-**Error log description**
+ **Error log description** 
 
 **Note:** Error logs include the log content, error messages, and error message descriptions.
 
@@ -107,9 +107,9 @@ Downstream data analysis logs are logs about messages sent from IoT Platform to 
 
 You can filter logs by device names, message IDs, status, and time ranges, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15549739036526_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/15550522976526_en-US.png)
 
-**Error log description**
+ **Error log description** 
 
 **Note:** The logs include the log contents, error messages, and error message descriptions.
 
@@ -117,13 +117,13 @@ You can filter logs by device names, message IDs, status, and time ranges, as sh
 |-------|-------------|-----------|
 |Publish message to topic:\{\},protocolMessageId:\{\}|No authorization|Not authorized.|
 |Publish message to device,QoS=\{\}|IoT Hub cannot publish messages|If the IoT Platform server does not receive PUBACK from the device, it continues to send messages. When the number of messages reaches 50, the throttling policy is triggered. Consequently, IoT Platform cannot send new messages to the device.|
-|Device cannot receive messages|The device client failed to receive messages. This error may be caused by slow network transmission speeds, or because the device client cannot handle any more messages.|
+|Device cannot receive messages|The device failed to receive messages. This error may be caused by slow network transmission speeds, or because the device cannot handle any more messages.|
 |Rate limit:\{maxQps\},current qps:\{\}|The frequency exceeds the upper limit.|
 |Publish RRPC message to device|IoT hub cannot publish messages|The device did not respond to the server, so the server continued to send messages until it reached the frequency limit. Consequently, the server cannot send new messages.|
 |Response timeout|The device has not responded to the server within the specified timeout period.|
 |System error|A system error occurred.|
 |Rrpc finished|\{e.g rrpcCode\}|Error messages such as UNKNOW, TIMEOUT, OFFLINE and HALFCONN are displayed.|
-|Publish offline message to device|Device cannot receive messages|The device cannot receive messages from IoT Platform. The reason may be that the network condition is not stable, or the device client cannot handle any more messages.|
+|Publish offline message to device|Device cannot receive messages|The device cannot receive messages from IoT Platform. The reason may be that the network condition is not stable, or the device cannot handle any more messages.|
 
 ## TSL data analysis logs {#section_jrk_wgz_nfb .section}
 
@@ -131,11 +131,11 @@ TSL data analysis logs include logs of devices reporting properties and events, 
 
 You can filter logs by device names and time ranges. If the device data type is Alink JSON, the page is displayed as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390514259_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229714259_en-US.png)
 
 If the device data type is Do not parse/Custom \(passthrough\), in addition to the log content, the hexadecimal raw data are also displayed. as shown in the following figure:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390521256_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229721256_en-US.png)
 
 |Parameter|Description|
 |:--------|:----------|
@@ -150,12 +150,12 @@ If the device data type is Do not parse/Custom \(passthrough\), in addition to t
 |upOriginalData|When the data type is Do not parse/Custom, the original upstream data to be parsed is displayed.|
 |upTransformedData|When the data type is Do not parse/Custom, the parsed upstream data is displayed.|
 
-**Error logs of service callings and property settings**
+ **Error logs of service callings and property settings** 
 
 When you call a service on the IoT Platform, the service parameters will be verified according to the definitions of the service in the TSL of the product.
 
-|Error code|Description |Cause|Troubleshooting method|
-|----------|------------|-----|----------------------|
+|Error code|Description|Cause|Troubleshooting method|
+|----------|-----------|-----|----------------------|
 |9201|The device is offline.|When the device is offline, this error is reported.|Check the device status in the IoT Platform console.|
 |9200|The device is not activated yet.|The device has not been activated. When a new device connects to and reports data to IoT Platform, it is activated in IoT Platform.|Check the status of the device in the IoT Platform console.|
 |6208|The device has been disabled.|The device has been disabled. You cannot call services of, or set properties for, a disabled device.|Check the status of the device in the IoT Platform console. If the device is disabled, enable the device and then try the operation again.|
@@ -179,12 +179,12 @@ When you call a service on the IoT Platform, the service parameters will be veri
 |6661|Failed to query the tenant information.|
 |6205|An error occurred when calling the service.|
 
-**Error logs for reporting properties and events**
+ **Error logs for reporting properties and events** 
 
 When a device is reporting a property or an event, the parameters of the property or event that you input will be verified based on the TSL of the device.
 
-|Error code|Description |Cause|Troubleshooting method|
-|----------|------------|-----|----------------------|
+|Error code|Description|Cause|Troubleshooting method|
+|----------|-----------|-----|----------------------|
 |6106|The number of properties reported exceeds the upper limit.|A device can only report up to 200 properties at a time.|View the logs of property reports and check the number of properties of the device on the IoT Platform. Or, view the local logs for the property number of the device.|
 |6300|The method parameter is not found when the system is verifying the parameters.|The method parameter, which is required by the Alink protocol, is not found in the Alink \(standard\) format data reported by the device or in the parsed data of the passthrough data reported by the device.|View the logs of property reports for the reported data on the IoT Platform. Or, view the local logs for the reported data.|
 |6320|The property information is not found when the system is verifying the property parameters.|The specified property is not found in the TSL of the device.|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs to determine whether the specified property has already been defined. If the property has not been defined in the TSL, define it.|
@@ -198,63 +198,63 @@ When a device is reporting a property or an event, the parameters of the propert
 |6452|Traffic limiting|Traffic throttling has been triggered because too many requests have been submitted.|Open a ticket in the console for troubleshooting.|
 |6760|The storage quota of the tenant is exceeded.|A system exception occurred.|Open a ticket in the console and submit information about the error in the ticket for further consultation.|
 
-**The reply messages of service callings and property settings**
+ **The reply messages of service callings and property settings** 
 
-|Error code|Description |Cause|Troubleshooting method|
-|----------|------------|-----|----------------------|
+|Error code|Description|Cause|Troubleshooting method|
+|----------|-----------|-----|----------------------|
 |**Common error codes**|
 |460|Invalid parameters.|The request parameters are invalid.|Open a ticket in the console for troubleshooting.|
 |500|A system exception occurred.|An unknown exception occurred in the system.|Open a ticket in the console for troubleshooting.|
 |400|An error occurred when calling the service.|An unknown exception occurred when calling the service.|Open a ticket in the console for troubleshooting.|
 |429|Too many requests in the specified time period.|Traffic throttling has been triggered because too many requests have been submitted.|Open a ticket in the console for troubleshooting.|
 |**System exception codes**|
-|6452|Traffic limiting|Traffic throttling has been triggered because too many requests have been submitted.**Note:** If the data type of the device is Do not parse/Custom, you may receive this error code. The input parameters will be verified again based on the TSL of the device.
+|6452|Traffic limiting|Traffic throttling has been triggered because too many requests have been submitted. **Note:** If the data type of the device is Do not parse/Custom, you may receive this error code. The input parameters will be verified again based on the TSL of the device.
 
-|Open a ticket in the console for troubleshooting.|
+ |Open a ticket in the console for troubleshooting.|
 
-**Common error codes about TSL**
+ **Common error codes about TSL** 
 
 When a service of a device is being called or a device is reporting a property or an event, the input parameters of the service, property, or event will be verified based on the TSL of the device.
 
-|Error code|Description |Cause|Troubleshooting method|
-|----------|------------|-----|----------------------|
+|Error code|Description|Cause|Troubleshooting method|
+|----------|-----------|-----|----------------------|
 |6321|The identifier of the property is not found in the TSL.|A system exception occurred.|Open a ticket in the console and submit information about the error in the ticket for further consultation.|
 |6317|The TSL of the device product is incorrect.|A system exception occurred.|Open a ticket in the console and submit information about the error in the ticket for further consultation.|
 |6302|Required parameters are not found.|When verifying the input parameters of the service, the system does not find one or more required parameters in the request.|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs for the required parameters. Check the parameters in the TSL and make sure that you have input all the required parameters.|
-|6306|The input parameter does not comply with the integer data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+|6306|The input parameter does not comply with the integer data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The input parameter value is not in the range defined in the TSL.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
-|6307|The input parameter does not comply with the 32-bit floating point data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
+|6307|The input parameter does not comply with the 32-bit floating point data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The input parameter value is not in the range defined in the TSL.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL, and the value is in the value range defined in the TSL.|
-|6322|The input parameter does not comply with the 64-bit floating point data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL, and the value is in the value range defined in the TSL.|
+|6322|The input parameter does not comply with the 64-bit floating point data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The input parameter value is not in the range defined in the TSL.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL and the value is in the value range defined in the TSL.|
-|6308|The input parameter does not comply with the boolean data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL and the value is in the value range defined in the TSL.|
+|6308|The input parameter does not comply with the boolean data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The input parameter value is not in the range defined in the TSL.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
 |6309|The input parameter does not comply with the enum data specification defined in the TSL.|The data type of the input parameter is different from the data type defined in the TSL.|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL.|
-|6310|The input parameter does not comply with the text data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+|6310|The input parameter does not comply with the text data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The length of the input data exceeds the length limit defined in the TSL.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL and the data length does not exceed the limit.|
-|6311|The input parameter does not comply with the date data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL and the data length does not exceed the limit.|
+|6311|The input parameter does not comply with the date data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The input data is not a UTC timestamp.
 
-|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL.|
-|6312|The input parameter does not comply with the struct data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The data type of the input parameter is different from the data type defined in the TSL.
+ |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type defined in the TSL.|
+|6312|The input parameter does not comply with the struct data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The data type of the input parameter is different from the data type defined in the TSL.
 -   The number of the struct data type parameters that you have input is different from the number of struct parameters defined in TSL.
 
  |On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
 |6304|The input parameter is not found in the defined struct parameters in the TSL.|When the parameters are verified according to the TSL, one or more input struct parameters are not found in the defined struct parameters in the TSL.|On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and make sure that the data type that you have input is the same as the data type in the TSL.|
-|6324|The input parameter does not comply with the array data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found:-   The element data type that you input is different from the element type defined in the TSL.
+|6324|The input parameter does not comply with the array data specification defined in the TSL.|When the parameters are verified according to the TSL, the following errors may be found: -   The element data type that you input is different from the element type defined in the TSL.
 -   The number of array type parameters that you have input exceeds the limit of array type parameters defined in the TSL.
 
-| -   On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and check the array type parameters.
+ | -   On the product details page in the IoT Platform console, view the TSL of the product to which the device belongs, and check the array type parameters.
 -   View the upstream logs of the device, and check the number of array type elements in the data reported by the device.
 
  |
@@ -282,5 +282,5 @@ Search for payload contents by message IDs. Currently, only messages with QoS 1 
 
 You can select to display the original data or the Base64-encoded data.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155497390521104_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7530/155505229721104_en-US.png)
 

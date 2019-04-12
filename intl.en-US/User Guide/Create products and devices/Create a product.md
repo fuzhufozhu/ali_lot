@@ -51,13 +51,13 @@ This topic describes how to create products in the IoT Platform console.
 3.  Develop your physical devices by referring to [Developer Guide \(Devices\)](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#).
 4.  To publish a product, go to the product details page and click **Publish**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155496423713396_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155503582713396_en-US.png)
 
     Note that before you publish a product, you must make sure that you have configured all the correct information for the product, have completed debugging the features, and have verified that it meets the criteria for being published.
 
     When the product status is **Published**, you can view the product information but cannot modify or delete the product.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155496423713395_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12827/155503582713395_en-US.png)
 
     To cancel the publishing of a product, click **Cancel Publishing**.
 

@@ -20,7 +20,7 @@ With the remote configuration function, you can perform the following operations
 
 Remote configuration flow chart:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523116235_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906235_en-US.png)
 
 The processes involved in remote configuration include the ability to:
 
@@ -41,7 +41,7 @@ In the IoT Platform console, you can push device configuration updates to all de
     1.  In the left-side navigation pane, click **Maintenance** \> **Remote Config.**.
     2.  Select the product for which you want to use the remote configuration function, and enable the function.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523116236_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906236_en-US.png)
 
         **Note:** 
 
@@ -50,7 +50,7 @@ In the IoT Platform console, you can push device configuration updates to all de
         -   A configuration template file that you edit here is used by all the devices of the product. Currently, you cannot push a configuration file to a specified device.
     3.  Click **Edit**, and then edit a configuration template in the area of **Configuration Template**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523126237_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906237_en-US.png)
 
         **Note:** 
 
@@ -58,13 +58,13 @@ In the IoT Platform console, you can push device configuration updates to all de
         -   The configuration file can be up to 64 KB. The file size is dynamically displayed in the upper-right corner of the editing area. Configuration files larger than 64 KB cannot be submitted.
     4.  After you have completed editing the configuration information, click **Save** to generate the configuration file. The system then allows devices to send requests for the configuration file.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523126238_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906238_en-US.png)
 
 3.  Push the configuration file to devices. Click **Batch Update** and then IoT Platform sends the configuration file to all the devices of the product.
 
     After you click **Batch Update**, the system may initiate SMS authentication to verify your account. If authentication is required, you need to first complete account verification, and then the system sends the configuration file to the devices.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523126239_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906239_en-US.png)
 
     **Note:** 
 
@@ -76,11 +76,11 @@ Configuration file management:
 
 The latest five configuration files are saved in the console by default. After you edit and save a new version of configuration file, the previous version is automatically displayed in the configuration version record list. You can view the update time and content of the displayed five versions.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523126240_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906240_en-US.png)
 
 Click **View** to view the configuration content of the version. Click **Recover to This Version**, and the configuration content of this version will be displayed in the editing box. You can edit the content and then save it as a new version.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15480523126241_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14736/15552922906241_en-US.png)
 
 **Scenario two: Devices send requests for configuration information.**
 

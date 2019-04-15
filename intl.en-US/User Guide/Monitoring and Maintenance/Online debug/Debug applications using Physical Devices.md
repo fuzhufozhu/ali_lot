@@ -7,7 +7,7 @@ After you complete the device configuration, you can use the online debugging fu
 
     After you select a device, you are automatically directed to the debugging page.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155505136334149_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155531302434149_en-US.png)
 
 3.  Select **Debug Physical Device**.
 4.  Select the feature that you want to test. 
@@ -16,12 +16,12 @@ After you complete the device configuration, you can use the online debugging fu
     -   If you select an event, select **Get** as the operation method.
     **Note:** If you have not defined properties or events for the product, go to the Product Details page to define features for the product.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155505136334150_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79816/155531302434150_en-US.png)
 
 5.  Dispatch the command. 
 
     -   Set a property: Enter a property in the format of `{"YourPropertyIdentifier": Value}`, and then click **Dispatch Command**. You can then see the operation result from the device log.
     -   Get a property: Click **Dispatch Command**. Then, the latest property information reported by the device is displayed in the box.
-    -   Call a service: Enter an input parameter in the format of `{"YourServiceInputParam": Value}`, and then click **Dispatch Command**. You can then see the operation result from the device log.
+    -   Call a service: Enter an input parameter in the format of `{"YourServiceInputParam": Value}`, and then click **Dispatch Command**. You can then see the operation result from the Real-time Logs.
     -   Get an event: Click **Dispatch Command**. Then, the latest event information reported by the device is displayed in the box.
 

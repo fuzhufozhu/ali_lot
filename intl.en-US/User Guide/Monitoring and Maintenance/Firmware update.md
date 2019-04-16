@@ -4,13 +4,13 @@ IoT Platform provides the firmware update function. To update firmware, you need
 
 Before you use the firmware update function, make sure that you have developed your device to support OTA updates.
 
--   If you use device SDKs, see [OTA updates](../../../../../reseller.en-US/Developer Guide (Devices)/OTA updates.md#).
+-   If you use device SDKs, see [OTA updates](../../../../reseller.en-US/Developer Guide (Devices)/OTA updates.md#).
 -   If you use AliOS Things, see [OTA tutorial for AliOS Things](https://github.com/alibaba/AliOS-Things/wiki).
 
 1.  Log on to the IoT Platform console.
 2.  In the left-side navigation pane, click **Maintenance** \> **Firmware Update** 
 
-    **Note:** To provide better services, IoT Platform now allows you to manage firmware versions by product. As such, when you use the new version of the firmware update function for the first time, you need to associate your previously uploaded firmware files with your products manually. You can only associate a firmware file to one product. After you associate your existing firmware files to products, you can add new firmware files.
+    **Note:** To provide better services, IoT Platform now allows you to manage firmware versions by product. When you use the new version of the firmware update function for the first time, please associate the previously uploaded firmware files with products manually. You can only associate a firmware file to one product. After you associate the existing firmware files to products, you can add new firmware files.
 
 3.  On the Firmware Update page, click **New Firmware**. 
 
@@ -18,7 +18,7 @@ Before you use the firmware update function, make sure that you have developed y
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15553087863946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15554002163946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -36,9 +36,9 @@ Before you use the firmware update function, make sure that you have developed y
     2.  In the Secure Update dialog box, turn the button of the secure update function to **Activated** for the products whose devices use AliOS Things. When the secure update function is **Activated**, you can click the corresponding **Copy** button to copy the key for device signature use.
 6.  In the firmware list, click the corresponding **Validate Firmware** button, and then test the uploaded firmware file on one or more devices. 
 
-    **Note:** After the firmware file is uploaded to IoT Platform, you must test whether the firmware file is available on one or more devices. Only when you confirm that the devices have been successfully updated can the firmware file be used for batch update. You can launch multiple validations for a firmware.
+    **Note:** After the firmware file is uploaded to IoT Platform, you must test the firmware file on one or more devices first. Only when you confirm that the devices have been successfully updated can the firmware file be used for batch update. You can launch multiple validations for a firmware.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155530878610898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155540021610898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -52,12 +52,12 @@ Before you use the firmware update function, make sure that you have developed y
     -   Devices receive the firmware update notifications:
         -   If the devices that connect to IoT Platform through MQTT are online, they will immediately receive the update notifications. If the devices are offline, the system will push the update notifications to the devices when they go online again.
         -   If the devices using other connection protocols \(such as CoAP or HTTPS\) are online, they will immediately receive the update notifications. If the devices are offline, they cannot receive the notifications.
-    -   Provided that you perform a firmware validation operation, the firmware status will change from **Unverified** to **Verified**. However, the status of the firmware does not indicate that the test devices have been updated successfully or that the firmware file is available. Click **Update Details** to see the update result.
+    -   Provided that you perform a firmware validation operation, the firmware status will change from **Unverified** to **Verified**. However, the status of the firmware does not indicate that the test devices have been updated successfully. Click **Update Details** to see the update result.
 7.  Click **Batch Update**, configure an update method, and then push update notifications to devices. 
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155530878610902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155540021610902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|

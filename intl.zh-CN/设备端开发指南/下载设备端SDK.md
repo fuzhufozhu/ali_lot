@@ -10,16 +10,9 @@
 
 您可以在设备中集成物联网平台提供的SDK，实现物联网平台接入。
 
-实际开发中，请根据开发时使用的语言、平台，选用合适的设备端SDK。Link Kit SDK包含：
+SDK下载连接：
 
--   [C SDK](https://help.aliyun.com/document_detail/96623.html)
--   [Android SDK](https://help.aliyun.com/document_detail/96607.html)
--   [NodeJS SDK](https://help.aliyun.com/document_detail/96618.html)
--   [Java SDK](https://help.aliyun.com/document_detail/97331.html)
--   [Python SDK](https://help.aliyun.com/document_detail/98292.html)
--   [iOS SDK](https://help.aliyun.com/document_detail/100534.html)
-
-**说明：** 不同语言、平台的SDK功能可能有所不同，具体请查询[各SDK支持的功能](https://help.aliyun.com/document_detail/100576.html)。
+-   [C SDK](https://www.alibabacloud.com/help/doc-detail/96623.htm)
 
 如果以上SDK不满足您的需求，可以按照以下模板发送邮件至`linkkitSDK-query@list.alibaba-inc.com`联系我们。
 

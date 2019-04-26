@@ -16,11 +16,13 @@
 
 3.  MQTT 连接。
 
-    |连接域名|`${YourProductKey}.iot-as-mqtt.${YourRegionId}.aliyuncs.com:1883`$\{YourProductKey\}请替换为您的产品key。
+    建议您使用设备端SDK接入物联网平台。如果您自行开发接入，连接参数如下，签名可参考[MQTT连接签名示例](intl.zh-CN/设备端开发指南/设备多协议连接/MQTT连接签名示例.md#)。
 
-$\{YourRegionId\}请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)替换为您的Region ID。
+    |连接域名|`${YourProductKey}.iot-as-mqtt.${YourRegionId}.aliyuncs.com:1883` $\{YourProductKey\}请替换为您的产品key。
 
-|
+ $\{YourRegionId\}请参考[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)替换为您的Region ID。
+
+ |
     |可变报头（variable header）：Keep Alive|Connect指令中需包含Keep Alive（保活时间）。保活心跳时间取值范围为30至1200秒。如果心跳时间不在此区间内，物联网平台会拒绝连接。建议取值300秒以上。如果网络不稳定，将心跳时间设置高一些。|
     |MQTT的Connect报文参数|     ```
 mqttClientId: clientId+"|securemode=3,signmethod=hmacsha1,timestamp=132323232|"
@@ -44,10 +46,10 @@ mqttPassword: sign_hmac(deviceSecret,content)
      ```
 mqttclientId=12345|securemode=3,signmethod=hmacsha1,timestamp=789|
 mqttUsername=device&pk
-mqttPassword=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString(); //最后是二进制转16制字符串，大小写不敏感。
+mqttPassword=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString(); 
     ```
 
- 加密后的Password结果为：
+ 加密后的Password为二进制转16制字符串，示例结果为：
 
      ```
 FAFD82A3D602B37FB0FA8B7892F24A477F851A14

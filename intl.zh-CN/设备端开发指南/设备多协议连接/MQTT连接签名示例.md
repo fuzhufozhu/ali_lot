@@ -19,15 +19,15 @@
 -   [sign\_mqtt.c](https://code.aliyun.com/edward.yangx/public-docs/raw/master/docs/sign_mqtt.c) : 实现签名函数的代码示例。
 -   [sign\_api.h](https://code.aliyun.com/edward.yangx/public-docs/raw/master/docs/sign_api.h)：定义签名函数用到的数据结构的代码示例。
 -   [sign\_sha256.c](https://code.aliyun.com/edward.yangx/public-docs/raw/master/docs/sign_sha256.c)：签名函数可能使用的算法实现代码示例。如果您自己的平台上有HMACSHA256的实现，可以不编译本文件，但是需要提供函数`utils_hmac_sha256()`给sign\_mqtt.c中的API调用。
--   [sign\_test.c](#section_6y8_98h_ayr)：用于测试签名函数的代码示例。
+-   用于测试签名函数的[代码示例](#section_6y8_98h_ayr)。
 
 ## 签名函数API接口说明 {#section_2xk_pmh_r6z .section}
 
-|函数原型| int32\_t IOT\_Sign\_MQTT\(iotx\_mqtt\_region\_types\_t
-
- region, iotx\_dev\_meta\_info\_t \*meta,
-
- iotx\_sign\_mqtt\_t \*signout\);
+|函数原型| ``` {#codeblock_1cy_egq_yo2}
+int32_t IOT_Sign_MQTT(iotx_mqtt_region_types_t region,
+		      iotx_dev_meta_info_t *meta,
+		      iotx_sign_mqtt_t *signout);
+```
 
  |
 |函数功能|根据输入的IoT设备身份认证信息, 输出连接到阿里云物联网平台时所需要的域名、MQTT ClientID、MQTT Username、MQTT Password。之后，您可以将这些信息提供给MQTT Client用于连接阿里云物联网平台。|

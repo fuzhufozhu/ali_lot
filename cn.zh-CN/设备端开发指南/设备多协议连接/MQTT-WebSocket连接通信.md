@@ -7,15 +7,15 @@
 -   使基于浏览器的应用程序可以像普通设备一样，具备与服务端建立MQTT长连接的能力。
 -   WebSocket方式使用443端口，消息可以顺利穿过大多数防火墙。
 
-1.   证书准备。 
+1.  证书准备。 
 
     WebSocket可以使用ws和wss两种方式，ws就是普通的WebSocket连接，wss就是增加了TLS加密。如果使用wss方式进行安全连接，需要使用和TLS直连一样的[根证书](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/cert_pub/root.crt?spm=5176.doc30539.2.4.aalCo6&file=root.crt)。
 
-2.   客户端选择。 
+2.  客户端选择。 
 
     直接使用[官方客户端](http://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/iotx-sdk-java/iotx-sdk-mqtt-java-20170526.zip?spm=5176.doc42648.2.18.7iyFfe&file=iotx-sdk-mqtt-java-20170526.zip)，只需要替换连接URL即可。其他语言版本客户端或者是自主接入，请参考[开源MQTT客户端](https://github.com/mqtt/mqtt.github.io/wiki/libraries?spm=5176.doc30539.2.5.aalCo6)参考，使用前请阅读相关客户端的说明，是否支持WebSocket方式。
 
-3.   连接说明。 
+3.  连接说明。 
 
     使用WebSocket方式进行连接，区别主要在MQTT连接URL的协议和端口号，MQTT连接参数和TCP直接连接方式完全相同，其中要注意securemode参数，使用wss方式连接时securemode=2，使用ws方式连接时securemode=3。
 
@@ -85,5 +85,7 @@
             mqttUsername=device&pk
             mqttPasswrod=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString();
             ```
+
+    建议您使用设备端SDK接入物联网平台。如果您自行开发接入，可参考[MQTT连接签名示例](intl.zh-CN/设备端开发指南/设备多协议连接/MQTT连接签名示例.md#)。
 
 

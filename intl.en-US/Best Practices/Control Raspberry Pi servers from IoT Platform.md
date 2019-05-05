@@ -4,15 +4,15 @@ Alibaba Cloud IoT Platform allows you to remotely control Raspberry Pi servers w
 
 ## Background information {#section_ckl_2wh_kgb .section}
 
-Assume that you use Raspberry Pi to build a server at your company or home to run some simple tasks, such as starting a script or downloading files. However, if the Raspberry Pi server does not have a public IP address, you cannot control the server when you are not in the company or at home. If you use other NAT traversal tools to contol the server, disconnection may occur frequently. To resolve these issues, you can combine the IoT Platform [RRPC](../../../../../reseller.en-US/User Guide/RRPC/What is RRPC?.md#) \(remote synchronous process call\) function with [JSch](http://www.jcraft.com/jsch/) to control the Raspberry Pi server from IoT Platform.
+Assume that you use Raspberry Pi to build a server at your company or home to run some simple tasks, such as starting a script or downloading files. However, if the Raspberry Pi server does not have a public IP address, you cannot control the server when you are not in the company or at home. If you use other NAT traversal tools to contol the server, disconnection may occur frequently. To resolve these issues, you can combine the IoT Platform [RRPC](../../../../reseller.en-US/User Guide/RRPC/What is RRPC?.md#) \(remote synchronous process call\) function with [JSch](http://www.jcraft.com/jsch/) to control the Raspberry Pi server from IoT Platform.
 
 ## Process {#section_thm_yq3_kgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155359899036953_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155703985236953_en-US.png)
 
 Use the following process to control a Raspberry Pi server from IoT Platform:
 
--   Call the IoT Platform [RRPC method](../../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Communications/RRpc.md#) from your computer to send an SSH command.
+-   Call the IoT Platform [RRPC method](../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Communications/RRpc.md#) from your computer to send an SSH command.
 -   After receiving the SSH command, IoT Platform sends the SSH command to the Raspberry Pi server by using MQTT.
 -   The server runs the SSH command.
 -   The server encapsulates the command output into an RRPC response and reports the response to IoT Platform by using MQTT.
@@ -24,8 +24,8 @@ Use the following process to control a Raspberry Pi server from IoT Platform:
 
 To remotely control Raspberry Pi servers, you must first develop the server SDK and device SDK.
 
--   Install the IoT Platform [server SDK](../../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#) on the computer. To develop the server, you can use the [server Java SDK demo](https://github.com/aliyun/iotx-api-demo).
--   Install the IoT Platform [device SDK](../../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) on the Raspberry Pi server. To develop the device, use the [device Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip).
+-   Install the IoT Platform [server SDK](../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#) on the computer. To develop the server, you can use the [server Java SDK demo](https://github.com/aliyun/iotx-api-demo).
+-   Install the IoT Platform [device SDK](../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) on the Raspberry Pi server. To develop the device, use the [device Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip).
 
 The following sections provide examples about how to develop the server SDK and device SDK.
 
@@ -442,49 +442,84 @@ After you have downloaded and installed the server SDK and SDK demo, add project
 
 3.  Add the SSHCommandSender.java file. The SSHCommandSender.java file contains the main method that is used to send SSH commands and receive responses to SSH commands. In the SSHCommandSender.java file, you must enter your Alibaba Cloud account information including AccessKey ID and AccessKey Secret, and device certificate information including ProductKey and DeviceName, and SSH command.
 
-    ```
+    ``` {#codeblock_zal_vkw_vhb}
     public class SSHCommandSender {
     
+    
     	//===================Start to Enter Required Parameters===========================
+    
     	//AccessKey ID of your Alibaba Cloud account
+    
     	private static String accessKeyID = "";
+    
     	//AccessKey Secret of your Alibaba Cloud account
+    
     	private static String accessKeySecret = "";
+    
     	//ProductKey
+    
     	private static String productKey = "";
+    
     	//DeviceName
+    
     	private static String deviceName = "";
+    
     	//===================End===========================
+    
     
     	public static void main(String[] args) throws ServerException, ClientException, UnsupportedEncodingException {
     
+    
     		//The Linux command
+    
     		String payload = "uname -a";
     
+    
     		//Construct an RRPC request
+    
     		RRpcRequest request = new RRpcRequest();
+    
     		request.setProductKey(productKey);
+    
     		request.setDeviceName(deviceName);
+    
     		request.setRequestBase64Byte(Base64.encodeBase64String(payload.getBytes()));
+    
     		request.setTimeout(5000);
     
+    
     		//Obtain information about the client connected to the Raspberry Pi server
+    
     		DefaultAcsClient client = OpenApiClient.getClient(accessKeyID, accessKeySecret);
     
+    
     		//Initiate an RRPC request
+    
     		RRpcResponse response = (RRpcResponse) client.getAcsResponse(request);
     
+    
     		//Process an RRPC response
+    
     		//"response.getSuccess()" only indicates that the RRPC request has been sent. It does not indicate that the device has received the RRPC request and has returned a response.
-    		//Identify whether the message has been received and a response has been returned according to the RrpcCode value. For more information, see https://help.aliyun.com/document_detail/69797.html.
+    
+    		//Identify whether the message has been received and a response has been returned according to the RrpcCode value. For more information, see the document of RRpc API.
+    
     		if (response ! = null && "SUCCESS".equals(response.getRrpcCode())) {
+    
     			//Output the response
+    
     			System.out.println(new String(Base64.decodeBase64(response.getPayloadBase64Byte()), "UTF-8"));
+    
     		} else {
+    
     			//An error occurred while outputting the response and an RRPC code is displayed.
+    
     			System.out.println(response.getRrpcCode());
+    
     		}
+    
     	}
+    
     
     }
     ```

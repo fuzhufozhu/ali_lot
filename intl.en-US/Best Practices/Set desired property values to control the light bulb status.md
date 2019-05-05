@@ -18,7 +18,7 @@ When the light bulb is connected to IoT Platform, it reads the desired property 
 
     For a newly created device, the latest value and the desired value of a property are both "null", and the desired value version is 0.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155489304839879_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703738139879_en-US.png)
 
 4.  Record the device certificate information, including ProductKey, DeviceName, and DeviceSecret, and the region information \(RegionId\).
 
@@ -26,7 +26,7 @@ When the light bulb is connected to IoT Platform, it reads the desired property 
 
 You call the related APIs to obtain the latest property values of a device and set desired property values to control the device.
 
-For more information, see [API reference \(cloud\)](../../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Overview.md#). This example uses the [Java SDK \(cloud\)](../../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Java SDK.md#).
+For more information, see [API reference \(cloud\)](../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Overview.md#). This example uses the [Java SDK \(cloud\)](../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Java SDK.md#).
 
 -   Call QueryDeviceDesiredProperty to query the desired property values of the device.
 
@@ -102,7 +102,7 @@ For more information, see [API reference \(cloud\)](../../../../../reseller.en-U
 
 When the light bulb is connected to IoT Platform, it requests the desired property values from IoT Platform. If a desired property value changes while the light bulb is on, IoT Platform pushes the change in real time to the light bulb.
 
-For more information, see [Developer Guide \(Devices\)](https://help.aliyun.com/document_detail/42648.html). This example uses the [Java SDK \(devices\)](https://help.aliyun.com/document_detail/97331.html).
+For more information, see [Developer Guide \(Devices\)](https://www.alibabacloud.com/help/product/93051.htm). This example uses the Java SDK.
 
 The last section of this topic provides a complete set of device demo code for your reference.
 
@@ -170,7 +170,7 @@ The last section of this topic provides a complete set of device demo code for y
 
 3.  When the light bulb is online, if a desired property value is set for the light bulb in IoT Platform, the value will be pushed to the light bulb. The light bulb then processes the message and changes the status accordingly.
 
-    If the device is offline when the desired value is set, use the `connectNotifyListener` method to register a function to respond to service calls and property settings. For information about the Alink protocol, see [Devices report properties](../../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device properties, events, and services.md#section_g4j_5zg_12b).
+    If the device is offline when the desired value is set, use the `connectNotifyListener` method to register a function to respond to service calls and property settings. For information about the Alink protocol, see [Devices report properties](../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device properties, events, and services.md#section_g4j_5zg_12b).
 
     After the device receives an asynchronous message from IoT Platform, the device calls the `mCommonHandler` method and then the `handlePropertySet` method to update the property value.
 
@@ -309,15 +309,15 @@ Verify that you can change the light bulb status by setting the desired value in
 
 -   When the light bulb is online, you change the light bulb status in IoT Platform and the light bulb responds to the change in real time.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155489304839883_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703738139883_en-US.png)
 
 -   When the light bulb is offline, you change the light bulb status in IoT Platform. As a result, the desired value and the latest property value displayed in IoT Platform console are different.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155489304939884_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703738139884_en-US.png)
 
 -   After the light bulb comes online again, the light bulb requests the desired property value. The latest property value will be immediately synchronized from the desired value.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155489304939885_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703738139885_en-US.png)
 
 
 Conslusion: To change the light bulb status, you can simply modify the desired property value. You can use the desired value to control the status of the light bulb that has no storage capability.

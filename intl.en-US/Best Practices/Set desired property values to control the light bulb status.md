@@ -18,7 +18,7 @@ When the light bulb is connected to IoT Platform, it reads the desired property 
 
     For a newly created device, the latest value and the desired value of a property are both "null", and the desired value version is 0.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703987139879_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155710888639879_en-US.png)
 
 4.  Record the device certificate information, including ProductKey, DeviceName, and DeviceSecret, and the region information \(RegionId\).
 
@@ -309,15 +309,15 @@ Verify that you can change the light bulb status by setting the desired value in
 
 -   When the light bulb is online, you change the light bulb status in IoT Platform and the light bulb responds to the change in real time.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703987139883_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155710888739883_en-US.png)
 
 -   When the light bulb is offline, you change the light bulb status in IoT Platform. As a result, the desired value and the latest property value displayed in IoT Platform console are different.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703987139884_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155710888739884_en-US.png)
 
 -   After the light bulb comes online again, the light bulb requests the desired property value. The latest property value will be immediately synchronized from the desired value.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155703987139885_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134519/155710888739885_en-US.png)
 
 
 Conslusion: To change the light bulb status, you can simply modify the desired property value. You can use the desired value to control the status of the light bulb that has no storage capability.

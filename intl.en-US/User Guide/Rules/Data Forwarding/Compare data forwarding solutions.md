@@ -4,7 +4,7 @@ In many scenarios, you must process the data that is reported by devices or use 
 
 ## Data forwarding solutions {#section_phg_l3c_kgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92223/155359891036895_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92223/155712256036895_en-US.png)
 
 IoT Platform supports the following functions for data forwarding:
 
@@ -32,7 +32,7 @@ The [Rules engine-based solutions](#) table briefly compares solutions that use 
 
  -   Complex to use. Users must write SQL expressions and configure forwarding rules.
 
- |See [Limits for data forwarding](../../../../../reseller.en-US/Product Introduction/Limits.md#).|
+ |See [Limits for data forwarding](../../../../reseller.en-US/Product Introduction/Limits.md#).|
 |Service subscription| -   Scenarios that simply involves data receiving.
 -   Scenarios that meet the following requirements:
     -   IoT Platform receives all device data.
@@ -52,9 +52,9 @@ The [Rules engine-based solutions](#) table briefly compares solutions that use 
 
 |Forwarding destination|Scenarios|Advantages|Disadvantages|
 |:---------------------|:--------|:---------|:------------|
-|Message Service \(MNS\)|Device data requires complex or refined processing.Scenarios where the transmit rate is slower than 1,000 QPS.
+|Message Service \(MNS\)|Device data requires complex or refined processing. Scenarios where the transmit rate is slower than 1,000 QPS.
 
-| -   Uses the HTTPS protocol.
+ | -   Uses the HTTPS protocol.
 -   Allows IoT Platform to forward data on the Internet with high performance.
 
  |Provides performance slightly lower than MQ for RocketMQ.|
@@ -85,7 +85,7 @@ Business servers can subscribe to all types of messages by using the SDK.
  | -   [What is service subscription](reseller.en-US/User Guide/Create products and devices/Service Subscription/What is Service Subscription?.md#)
 -   [Development guide for the Java SDK](reseller.en-US/User Guide/Create products and devices/Service Subscription/Development guide for Java HTTP__2 SDK.md#)
 -   [Development guide for the .NET SDK](reseller.en-US/User Guide/Create products and devices/Service Subscription/Development guide for .NET HTTP__2 SDK.md#)
--   [Best practices](../../../../../reseller.en-US/Best Practices/Configure service subscription.md#)
+-   [Best practices](../../../../reseller.en-US/Best Practices/Configure service subscription.md#)
 
  |
 
@@ -95,7 +95,7 @@ The rules engine enables IoT Platform to forward messages in specific topics to 
 
 |Restrictions|Guidelines|References|
 |:-----------|:---------|:---------|
-| |When a message is failed to be forwarded by using the rules engine after making the maximum retries, the message will be dropped. Message-oriented services may have delay issues. Make sure that you are fully aware of the impacts of data loss or delay on your business.| -   [Create and configure a rule](reseller.en-US/User Guide/Rules/Data Forwarding/Create and configure a rule.md#)
+| |When a message fails to be forwarded by using the rules engine after making the maximum retries, the message will be dropped. Message-oriented services may have delay issues. Make sure that you are fully aware of the impacts of data loss or delay on your business.| -   [Create and configure a rule](reseller.en-US/User Guide/Rules/Data Forwarding/Create and configure a rule.md#)
 -   [Forward data to Message Service](reseller.en-US/User Guide/Rules/Data Forwarding Examples/Forward data to Message Service.md#)
 -   
  |
@@ -107,7 +107,7 @@ The rules engine enables IoT Platform to forward messages in specific topics to 
 |Restrictions|Guidelines|References|
 |:-----------|:---------|:---------|
 |See [Function Compute limits](https://partners-intl.aliyun.com/help/doc-detail/51907.htm).| -   Applicable to scenarios where users can customize data processing or are required to simplify the development and operation processes.
--   When a message is failed to be forwarded by using the rules engine after making the maximum retries, the message will be dropped. Make sure that you are fully aware of any impacts of data loss or delay on your business.
+-   When a message fails to be forwarded by using the rules engine after making the maximum retries, the message will be dropped. Make sure that you are fully aware of any impacts of data loss or delay on your business.
 
  | -   [Create and configure a rule](reseller.en-US/User Guide/Rules/Data Forwarding/Create and configure a rule.md#)
 -   [Forward data to Function Compute](reseller.en-US/User Guide/Rules/Data Forwarding Examples/Forward data to Function Compute.md#)

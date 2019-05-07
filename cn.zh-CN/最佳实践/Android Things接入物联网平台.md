@@ -14,53 +14,47 @@
 
  开发板
 
- | ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777864_zh-CN.png)
+ |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197864_zh-CN.png)
 
- |Android things系统1.0**说明：** 该硬件可以用树莓派替代。
+| Android things系统1.0
 
-|
+ 如需更多帮助，请参见NXP Pico i.MX7D I/O官网接口文档：[https://developer.android.com/things/hardware/imx7d-pico-io](https://developer.android.com/things/hardware/imx7d-pico-io)。
+
+ **说明：** 该硬件可以用树莓派替代。请参见[远程控制树莓派服务器](intl.zh-CN/最佳实践/远程控制树莓派服务器.md#)。
+
+ |
     | DHT12
 
  温湿度传感器
 
- | ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777865_zh-CN.png)
+ |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197865_zh-CN.png)
 
- |采用I2C数据通信方式。|
+|采用I2C数据通信方式。|
     | ZE08-CH2O
 
  甲醛检测传感器
 
- | ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777866_zh-CN.png)
+ |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197866_zh-CN.png)
 
- |采用UART数据通信方式。|
-
--   NXP i.MX7D开发板引脚示意图
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777888_zh-CN.png)
-
-    如需更多帮助，请参见NXP Pico i.MX7D I/O官网接口文档：[https://developer.android.com/things/hardware/imx7d-pico-io](https://developer.android.com/things/hardware/imx7d-pico-io)。
+|采用UART数据通信方式。|
 
 -   设备接线示意图
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777908_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197908_zh-CN.png)
 
     -   将温湿度传感器（DHT12）的时钟信号线引脚SCL和数据线引脚SDA分别与开发板的I2C总线的SCL和SDA引脚相接。
     -   将甲醛检测传感器（ZE08-CH2O）的发送数据引脚TXD与开发板的接收数据引脚RXD相接；将ZE08-CH2O的接收数据引脚RXD与开发板的发送数据引脚TXD相接。
 
 ## 创建阿里云物联网平台产品和设备 {#section_pqg_qrk_q2b .section}
 
-如果您还未开通阿里云物联网平台服务，请先了解、开通[物联网平台](https://www.aliyun.com/product/iot)。
-
 1.  登录[阿里云物联网平台控制台](https://iot.console.aliyun.com)。
-2.  创建高级版产品。
+2.  创建产品。
 
-    在产品管理页面，单击**创建产品**进入产品创建流程。创建产品时，产品版本选择为**高级版**。如需帮助，请参见[创建产品\(高级版\)](../../../../intl.zh-CN/用户指南/产品与设备/创建产品(高级版).md#)。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162777969_zh-CN.png)
+    在产品管理页面，单击**创建产品**进入产品创建流程。如需帮助，请参见[创建产品](../../../../intl.zh-CN/用户指南/产品与设备/创建产品.md#)。
 
 3.  定义产品功能。
 
-    进入产品详情页面，单击**功能定义** \> **新增**，为产品添加属性定义。如需帮助，请参见[什么是物模型](../../../../intl.zh-CN/用户指南/产品与设备/物模型/什么是物模型.md#)。
+    进入产品详情页面，单击**功能定义** \> **添加功能**，为产品添加属性定义。如需帮助，请参见[新增物模型](../../../../intl.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)。
 
     |属性名称|标识符|数据类型|取值范围|描述|
     |:---|:--|:---|:---|:-|
@@ -68,13 +62,9 @@
     |湿度|humidity|float|0~100|DHT12温湿度传感器采集|
     |甲醛浓度|ch2o|double|0~3|ZE08甲醛检测传感器采集|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162787991_zh-CN.png)
-
 4.  创建设备。
 
     在设备管理页面，选择刚创建的产品名称，然后单击**添加设备**，在产品下创建设备。如需帮助，请参见[单个创建设备](../../../../intl.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162787994_zh-CN.png)
 
 
 ## 开发Android things设备端 {#section_cd4_d2l_q2b .section}
@@ -172,9 +162,11 @@
     ```
 
 
+请访问[GitHub阿里云IoT](https://github.com/iot-blog/aliyun-iot-android-things-nxp)，下载完整的示例工程代码。
+
 ## 查看实时数据 {#section_n34_g5l_q2b .section}
 
 设备启动后，您可以在阿里云物联网平台控制台，设备详情页，运行状态中查看设备当前的实时数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15367162788025_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929198025_zh-CN.png)
 

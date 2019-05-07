@@ -2,17 +2,17 @@
 
 Defining features for products is to define Thing Specification Language \(TSL\), including defining properties, services, and events. This article describes how to define features in the IoT Platform console.
 
-1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot). 
-2.  In the left-side navigation pane, click **Devices** \> **Product**. 
-3.  On the Products page, find the product for which you want to define features and click **View**. 
-4.  Click **Define Feature**. 
+1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
+2.  In the left-side navigation pane, click **Devices** \> **Product**.
+3.  On the Products page, find the product for which you want to define features and click **View**.
+4.  Click **Define Feature**.
 5.  Add self-defined features. Click the **Add Feature** button corresponding to Self-defined Feature to add custom features for the product. You can define properties, services and events for the product. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155227064010854_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844810854_en-US.png)
 
     -   Define a property. In the Add Self-defined Feature dialog box, select **Properties** as the feature type. Enter information for the property and then click**OK**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155227064010855_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910855_en-US.png)
 
         The parameters of properties are listed in the following table.
 
@@ -23,9 +23,9 @@ Defining features for products is to define Thing Specification Language \(TSL\)
  A feature name must start with a Chinese character, an English letter, or a digit, can contain Chinese characters, English letters, digits, dashes\(-\) and underscores \(\_\), and cannot exceed 30 characters in length.
 
  |
-        |Identifier|Identifies a property. It must be unique in the product. It is the parameter identifier in Alink JSON TSL, and is used as the key when a device is reporting data of this property. Specifically, IoT Platform uses this parameter to verify and determine whether or not to receive the data. An identifier can contain English letters, digits, and underscores \(\_\), and cannot exceed 50 characters in length. For example, PowerConsumption.**Note:** An identifier cannot be any one of the following words: set, get, post, time, and value, because they are system parameter names.
+        |Identifier|Identifies a property. It must be unique in the product. It is the parameter identifier in Alink JSON TSL, and is used as the key when a device is reporting data of this property. Specifically, IoT Platform uses this parameter to verify and determine whether or not to receive the data. An identifier can contain English letters, digits, and underscores \(\_\), and cannot exceed 50 characters in length. For example, PowerConsumption. **Note:** An identifier cannot be any one of the following words: set, get, post, time, and value, because they are system parameter names.
 
-|
+ |
         |Data Type|         -   int32: 32-bit integer. If you select int32, you are required to define the value range, step, and unit.
         -   float: Float. If you select float, you are required to define the value range, step, and unit.
         -   double: Double float. If you select double, you are required to define the value range, step, and unit.
@@ -77,7 +77,7 @@ Defining features for products is to define Thing Specification Language \(TSL\)
 
         **Note:** When the gateway connection protocol is Modbus, you cannot define any service for the product.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155227064010856_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910856_en-US.png)
 
         The parameters of services are as follows.
 
@@ -92,32 +92,32 @@ Defining features for products is to define Thing Specification Language \(TSL\)
  **Note:** When the gateway connection protocol is Modbus, you cannot define custom services for the product.
 
  |
-        |Identifier|Identifies a service. It must be unique within the product. The parameter identifier in Alink JSON TSL. It is used as the key when this service is called. An identifier can contain English letters, digits, and underscores \(\_\), and cannot exceed 30 characters in length.**Note:** Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
+        |Identifier|Identifies a service. It must be unique within the product. The parameter identifier in Alink JSON TSL. It is used as the key when this service is called. An identifier can contain English letters, digits, and underscores \(\_\), and cannot exceed 30 characters in length. **Note:** Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
 
-|
+ |
         |Invoke Method|         -   Asynchronous: For an asynchronous call, IoT Platform returns the result directly after the request is sent, and does not wait for a response from the device.
         -   Synchronous: For a synchronous call, IoT Platform waits for a response from the device. If no response is received, the call times out.
  |
-        |Input Parameters|\(Optional\) Set input parameters for the service.Click **Add Parameter**, and add an input parameter in the dialog box that appears.
+        |Input Parameters|\(Optional\) Set input parameters for the service. Click **Add Parameter**, and add an input parameter in the dialog box that appears.
 
-When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
+ When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
 
-**Note:** 
+ **Note:** 
 
         -   Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
         -   You can either use a property as an input parameter or define an input parameter. For example, you can specify the properties Sprinkling Interval and Sprinkling Amount as the input parameters of the Automatic Sprinkler service feature. Then, when Automatic Sprinkler is called, the sprinkler automatically starts irrigation according to the sprinkling interval and amount.
         -   You can add up to 20 input parameters for a service.
-|
-        |Output Parameters|\(Optional\) Set output parameters for the service.Click **Add Parameter**, and add an output parameter in the dialog box that appears.
+ |
+        |Output Parameters|\(Optional\) Set output parameters for the service. Click **Add Parameter**, and add an output parameter in the dialog box that appears.
 
-When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
+ When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
 
-**Note:** 
+ **Note:** 
 
         -   Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
         -   You can either use a property as an output parameter or define an output parameter. For example, you can specify the property SoilHumidity as an output parameter. Then, when the service Automatic Sprinkler is called, IoT Platform returns the data about soil humidity.
         -   You can add up to 20 output parameters for a service.
-|
+ |
         |Extended Information|When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the service.|
         |Description|Enter a description or remarks about the service. You can enter up to 100 characters.|
 
@@ -125,7 +125,7 @@ When the gateway connection protocol is OPC UA, you must set the parameter index
 
         **Note:** When the gateway connection protocol is Modbus, you cannot define any event for the product.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155227064110857_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910857_en-US.png)
 
         The parameters of events are as follows.
 
@@ -138,20 +138,20 @@ When the gateway connection protocol is OPC UA, you must set the parameter index
  **Note:** When the gateway connection protocol is Modbus, you cannot define events.
 
  |
-        |Identifier|Identifies an event. It must be unique in the product. It is the parameter identifier in Alink JSON TSL, and is used as the key when a device is reporting data of this event, for example, ErrorCode.**Note:** Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
+        |Identifier|Identifies an event. It must be unique in the product. It is the parameter identifier in Alink JSON TSL, and is used as the key when a device is reporting data of this event, for example, ErrorCode. **Note:** Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
 
-|
+ |
         |Event Type|         -   Info: Indicates general notifications reported by devices, such as the completion of a specific task.
         -   Alert: Indicates alerts that are reported by devices when unexpected or abnormal events occur. It has a high priority. You can perform logic processing or analytics depending on the event type.
         -   Error: Indicates errors that are reported by devices when unexpected or abnormal events occur. It has a high priority. You can perform logic processing or analytics depending on the event type.
  |
-        |Output Parameters|The output parameters of an event. Click **Add Parameter**, and add an output parameter in the dialog box that appears. You can either use a property as an output parameter or define an output parameter. For example, you can specify the property Voltage as an output parameter. Then, devices report errors with the current voltage value for further fault diagnosis.When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
+        |Output Parameters|The output parameters of an event. Click **Add Parameter**, and add an output parameter in the dialog box that appears. You can either use a property as an output parameter or define an output parameter. For example, you can specify the property Voltage as an output parameter. Then, devices report errors with the current voltage value for further fault diagnosis. When the gateway connection protocol is OPC UA, you must set the parameter index that is used to mark the order of the parameters.
 
-**Note:** 
+ **Note:** 
 
         -   Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
-        -   You can add up to 20 output parameters for an event.
-|
+        -   You can add up to 50 output parameters for an event.
+ |
         |Extended Information|When the gateway collection protocol is OPC UA, set a node name. Each node name must be unique under the event.|
         |Description|Enter a description or remarks about the event. You can enter up to 100 characters.|
 

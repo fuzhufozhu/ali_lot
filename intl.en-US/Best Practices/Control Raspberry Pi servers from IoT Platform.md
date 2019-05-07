@@ -4,15 +4,15 @@ Alibaba Cloud IoT Platform allows you to remotely control Raspberry Pi servers w
 
 ## Background information {#section_ckl_2wh_kgb .section}
 
-Assume that you use Raspberry Pi to build a server at your company or home to run some simple tasks, such as starting a script or downloading files. However, if the Raspberry Pi server does not have a public IP address, you cannot control the server when you are not in the company or at home. If you use other NAT traversal tools to contol the server, disconnection may occur frequently. To resolve these issues, you can combine the IoT Platform [RRPC](../../../../reseller.en-US/User Guide/RRPC/What is RRPC?.md#) \(remote synchronous process call\) function with [JSch](http://www.jcraft.com/jsch/) to control the Raspberry Pi server from IoT Platform.
+Assume that you use Raspberry Pi to build a server at your company or home to run some simple tasks, such as starting a script or downloading files. However, if the Raspberry Pi server does not have a public IP address, you cannot control the server when you are not in the company or at home. If you use other NAT traversal tools to contol the server, disconnection may occur frequently. To resolve these issues, you can combine the IoT Platform [RRPC](../../../../intl.en-US/User Guide/RRPC/What is RRPC?.md#) \(remote synchronous process call\) function with [JSch](http://www.jcraft.com/jsch/) to control the Raspberry Pi server from IoT Platform.
 
 ## Process {#section_thm_yq3_kgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155703985236953_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/89951/155719294036953_en-US.png)
 
 Use the following process to control a Raspberry Pi server from IoT Platform:
 
--   Call the IoT Platform [RRPC method](../../../../reseller.en-US/Developer Guide (Cloud)/API reference/Communications/RRpc.md#) from your computer to send an SSH command.
+-   Call the IoT Platform [RRPC method](../../../../intl.en-US/Developer Guide (Cloud)/API reference/Communications/RRpc.md#) from your computer to send an SSH command.
 -   After receiving the SSH command, IoT Platform sends the SSH command to the Raspberry Pi server by using MQTT.
 -   The server runs the SSH command.
 -   The server encapsulates the command output into an RRPC response and reports the response to IoT Platform by using MQTT.
@@ -24,8 +24,8 @@ Use the following process to control a Raspberry Pi server from IoT Platform:
 
 To remotely control Raspberry Pi servers, you must first develop the server SDK and device SDK.
 
--   Install the IoT Platform [server SDK](../../../../reseller.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#) on the computer. To develop the server, you can use the [server Java SDK demo](https://github.com/aliyun/iotx-api-demo).
--   Install the IoT Platform [device SDK](../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) on the Raspberry Pi server. To develop the device, use the [device Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip).
+-   Install the IoT Platform [server SDK](../../../../intl.en-US/Developer Guide (Cloud)/SDK reference/Download SDKs.md#) on the computer. To develop the server, you can use the [server Java SDK demo](https://github.com/aliyun/iotx-api-demo).
+-   Install the IoT Platform [device SDK](../../../../intl.en-US/Developer Guide (Devices)/Download device SDKs.md#) on the Raspberry Pi server. To develop the device, use the [device Java SDK Demo](http://gaic.alicdn.com/ztms/java-iot-device-sdk-demo-v1130/JavaLinkKitDemo.zip?spm=a2c4g.11186623.2.14.65ba10584QjwPu&file=JavaLinkKitDemo.zip).
 
 The following sections provide examples about how to develop the server SDK and device SDK.
 
@@ -42,30 +42,30 @@ The project can be exported as a JAR package and run on the Raspberry Pi server.
     ```
     <! -- Device SDK -->
     <dependency>
-    	<groupId>com.aliyun.alink.linksdk</groupId>
-    	<artifactId>iot-linkkit-java</artifactId>
-    	<version>1.1.0</version>
-    	<scope>compile</scope>
+        <groupId>com.aliyun.alink.linksdk</groupId>
+        <artifactId>iot-linkkit-java</artifactId>
+        <version>1.1.0</version>
+        <scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>com.google.code.gson</groupId>
-    	<artifactId>gson</artifactId>
-    	<version>2.8.1</version>
-    	<scope>compile</scope>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.1</version>
+        <scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>com.alibaba</groupId>
-    	<artifactId>fastjson</artifactId>
-    	<version>1.2.40</version>
-    	<scope>compile</scope>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.40</version>
+        <scope>compile</scope>
     </dependency>
     
     <! -- SSH client-->
     <! -- https://mvnrepository.com/artifact/com.jcraft/jsch -->
     <dependency>
-    	<groupId>com.jcraft</groupId>
-    	<artifactId>jsch</artifactId>
-    	<version>0.1.55</version>
+        <groupId>com.jcraft</groupId>
+        <artifactId>jsch</artifactId>
+        <version>0.1.55</version>
     </dependency>
     ```
 
@@ -74,70 +74,70 @@ The project can be exported as a JAR package and run on the Raspberry Pi server.
     ```
     public class SSHShell {
     
-    	private String host;
+        private String host;
     
-    	private String username;
+        private String username;
     
-    	private String password;
+        private String password;
     
-    	private int port;
+        private int port;
     
-    	private Vector<String> stdout;
+        private Vector<String> stdout;
     
-    	public SSHShell(final String ipAddress, final String username, final String password, final int port) {
-    		this.host = ipAddress;
-    		this.username = username;
-    		this.password = password;
-    		this.port = port;
-    		this.stdout = new Vector<String>();
-    	}
+        public SSHShell(final String ipAddress, final String username, final String password, final int port) {
+            this.host = ipAddress;
+            this.username = username;
+            this.password = password;
+            this.port = port;
+            this.stdout = new Vector<String>();
+        }
     
-    	public int execute(final String command) {
+        public int execute(final String command) {
     
-    		System.out.println("ssh command: " + command);
+            System.out.println("ssh command: " + command);
     
-    		int returnCode = 0;
-    		JSch jsch = new JSch();
-    		SSHUserInfo userInfo = new SSHUserInfo();
+            int returnCode = 0;
+            JSch jsch = new JSch();
+            SSHUserInfo userInfo = new SSHUserInfo();
     
-    		try {
-    			Session session = jsch.getSession(username, host, port);
-    			session.setPassword(password);
-    			session.setUserInfo(userInfo);
-    			session.connect();
+            try {
+                Session session = jsch.getSession(username, host, port);
+                session.setPassword(password);
+                session.setUserInfo(userInfo);
+                session.connect();
     
-    			Channel channel = session.openChannel("exec");
-    			((ChannelExec) channel).setCommand(command);
+                Channel channel = session.openChannel("exec");
+                ((ChannelExec) channel).setCommand(command);
     
-    			channel.setInputStream(null);
-    			BufferedReader input = new BufferedReader(new InputStreamReader(channel.getInputStream()));
+                channel.setInputStream(null);
+                BufferedReader input = new BufferedReader(new InputStreamReader(channel.getInputStream()));
     
-    			channel.connect();
+                channel.connect();
     
-    			String line = null;
-    			while ((line = input.readLine()) ! = null) {
-    				stdout.add(line);
-    			}
-    			input.close();
+                String line = null;
+                while ((line = input.readLine()) ! = null) {
+                    stdout.add(line);
+                }
+                input.close();
     
-    			if (channel.isClosed()) {
-    				returnCode = channel.getExitStatus();
-    			}
+                if (channel.isClosed()) {
+                    returnCode = channel.getExitStatus();
+                }
     
-    			channel.disconnect();
-    			session.disconnect();
-    		} catch (JSchException e) {
-    			e.printStackTrace();
-    		} catch (Exception e) {
-    			e.printStackTrace();
-    		}
+                channel.disconnect();
+                session.disconnect();
+            } catch (JSchException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     
-    		return returnCode;
-    	}
+            return returnCode;
+        }
     
-    	public Vector<String> getStdout() {
-    		return stdout;
-    	}
+        public Vector<String> getStdout() {
+            return stdout;
+        }
     
     }
     ```
@@ -147,37 +147,37 @@ The project can be exported as a JAR package and run on the Raspberry Pi server.
     ```
     public class SSHUserInfo implements UserInfo {
     
-    	@Override
-    	public String getPassphrase() {
-    		return null;
-    	}
+        @Override
+        public String getPassphrase() {
+            return null;
+        }
     
-    	@Override
-    	public String getPassword() {
-    		return null;
-    	}
+        @Override
+        public String getPassword() {
+            return null;
+        }
     
-    	@Override
-    	public boolean promptPassphrase(final String arg0) {
-    		return false;
-    	}
+        @Override
+        public boolean promptPassphrase(final String arg0) {
+            return false;
+        }
     
-    	@Override
-    	public boolean promptPassword(final String arg0) {
-    		return false;
-    	}
+        @Override
+        public boolean promptPassword(final String arg0) {
+            return false;
+        }
     
-    	@Override
-    	public boolean promptYesNo(final String arg0) {
-    		if (arg0.contains("The authenticity of host")) {
-    			return true;
-    		}
-    		return false;
-    	}
+        @Override
+        public boolean promptYesNo(final String arg0) {
+            if (arg0.contains("The authenticity of host")) {
+                return true;
+            }
+            return false;
+        }
     
-    	@Override
-    	public void showMessage(final String arg0) {
-    	}
+        @Override
+        public void showMessage(final String arg0) {
+        }
     
     }
     ```
@@ -187,118 +187,118 @@ The project can be exported as a JAR package and run on the Raspberry Pi server.
     ```
     public class Device {
     
-    	/**
-    	 * Establish a connection
-    	 * 
-    	 * @param productKey The product key
-    	 * @param deviceName The device name
-    	 * @param deviceSecret The device secret
-    	 * @throws InterruptedException
-    	 */
-    	public static void connect(String productKey, String deviceName, String deviceSecret) throws InterruptedException {
+        /**
+         * Establish a connection
+         * 
+         * @param productKey The product key
+         * @param deviceName The device name
+         * @param deviceSecret The device secret
+         * @throws InterruptedException
+         */
+        public static void connect(String productKey, String deviceName, String deviceSecret) throws InterruptedException {
     
-    		//Initialization parameters
-    		LinkKitInitParams params = new LinkKitInitParams();
+            //Initialization parameters
+            LinkKitInitParams params = new LinkKitInitParams();
     
-    		//Set MQTT initialization parameters
-    		IoTMqttClientConfig config = new IoTMqttClientConfig();
-    		config.productKey = productKey;
-    		config.deviceName = deviceName;
-    		config.deviceSecret = deviceSecret;
-    		params.mqttClientConfig = config;
+            //Set MQTT initialization parameters
+            IoTMqttClientConfig config = new IoTMqttClientConfig();
+            config.productKey = productKey;
+            config.deviceName = deviceName;
+            config.deviceSecret = deviceSecret;
+            params.mqttClientConfig = config;
     
-    		//Set device certificate information for initialization and import the certificate information
-    		DeviceInfo deviceInfo = new DeviceInfo();
-    		deviceInfo.productKey = productKey;
-    		deviceInfo.deviceName = deviceName;
-    		deviceInfo.deviceSecret = deviceSecret;
-    		params.deviceInfo = deviceInfo;
+            //Set device certificate information for initialization and import the certificate information
+            DeviceInfo deviceInfo = new DeviceInfo();
+            deviceInfo.productKey = productKey;
+            deviceInfo.deviceName = deviceName;
+            deviceInfo.deviceSecret = deviceSecret;
+            params.deviceInfo = deviceInfo;
     
-    		//Initialize the SDK
-    		LinkKit.getInstance().init(params, new ILinkKitConnectListener() {
-    			public void onError(AError aError) {
-    				System.out.println("init failed !! code=" + aError.getCode() + ",msg=" + aError.getMsg() + ",subCode="
-    						+ aError.getSubCode() + ",subMsg=" + aError.getSubMsg());
-    			}
+            //Initialize the SDK
+            LinkKit.getInstance().init(params, new ILinkKitConnectListener() {
+                public void onError(AError aError) {
+                    System.out.println("init failed !! code=" + aError.getCode() + ",msg=" + aError.getMsg() + ",subCode="
+                            + aError.getSubCode() + ",subMsg=" + aError.getSubMsg());
+                }
     
-    			public void onInitDone(InitResult initResult) {
-    				System.out.println("init success !!") ;
-    			}
-    		});
+                public void onInitDone(InitResult initResult) {
+                    System.out.println("init success !!") ;
+                }
+            });
     
-    		//Perform the subsequent operations only after the initialization is complete. You can increase the sleep time as needed.
-    		Thread.sleep(2000);
-    	}
+            //Perform the subsequent operations only after the initialization is complete. You can increase the sleep time as needed.
+            Thread.sleep(2000);
+        }
     
-    	/**
-    	 * Publish a message
-    	 * 
-    	 * @param topic The topic to which the message is published
-    	 * @param payload The message payload
-    	 */
-    	public static void publish(String topic, String payload) {
-    		MqttPublishRequest request = new MqttPublishRequest();
-    		request.topic = topic;
-    		request.payloadObj = payload;
-    		request.qos = 0;
-    		LinkKit.getInstance().getMqttClient().publish(request, new IConnectSendListener() {
-    			@Override
-    			public void onResponse(ARequest aRequest, AResponse aResponse) {
-    			}
+        /**
+         * Publish a message
+         * 
+         * @param topic The topic to which the message is published
+         * @param payload The message payload
+         */
+        public static void publish(String topic, String payload) {
+            MqttPublishRequest request = new MqttPublishRequest();
+            request.topic = topic;
+            request.payloadObj = payload;
+            request.qos = 0;
+            LinkKit.getInstance().getMqttClient().publish(request, new IConnectSendListener() {
+                @Override
+                public void onResponse(ARequest aRequest, AResponse aResponse) {
+                }
     
-    			@Override
-    			public void onFailure(ARequest aRequest, AError aError) {
-    			}
-    		});
-    	}
+                @Override
+                public void onFailure(ARequest aRequest, AError aError) {
+                }
+            });
+        }
     
-    	/**
-    	 * Subscribe to a topic
-    	 * 
-    	 * @param topic The topic of messages to subscribe to
-    	 */
-    	public static void subscribe(String topic) {
-    		MqttSubscribeRequest request = new MqttSubscribeRequest();
-    		request.topic = topic;
-    		request.isSubscribe = true;
-    		LinkKit.getInstance().getMqttClient().subscribe(request, new IConnectSubscribeListener() {
-    			@Override
-    			public void onSuccess() {
-    			}
+        /**
+         * Subscribe to a topic
+         * 
+         * @param topic The topic of messages to subscribe to
+         */
+        public static void subscribe(String topic) {
+            MqttSubscribeRequest request = new MqttSubscribeRequest();
+            request.topic = topic;
+            request.isSubscribe = true;
+            LinkKit.getInstance().getMqttClient().subscribe(request, new IConnectSubscribeListener() {
+                @Override
+                public void onSuccess() {
+                }
     
-    			@Override
-    			public void onFailure(AError aError) {
-    			}
-    		});
-    	}
+                @Override
+                public void onFailure(AError aError) {
+                }
+            });
+        }
     
-    	/**
-    	 * Unsubscribe from a topic
-    	 * 
-    	 * @param topic The topic of messages to unsubscribe from
-    	 */
-    	public static void unsubscribe(String topic) {
-    		MqttSubscribeRequest request = new MqttSubscribeRequest();
-    		request.topic = topic;
-    		request.isSubscribe = false;
-    		LinkKit.getInstance().getMqttClient().unsubscribe(request, new IConnectUnscribeListener() {
-    			@Override
-    			public void onSuccess() {
-    			}
+        /**
+         * Unsubscribe from a topic
+         * 
+         * @param topic The topic of messages to unsubscribe from
+         */
+        public static void unsubscribe(String topic) {
+            MqttSubscribeRequest request = new MqttSubscribeRequest();
+            request.topic = topic;
+            request.isSubscribe = false;
+            LinkKit.getInstance().getMqttClient().unsubscribe(request, new IConnectUnscribeListener() {
+                @Override
+                public void onSuccess() {
+                }
     
-    			@Override
-    			public void onFailure(AError aError) {
-    			}
-    		});
-    	}
+                @Override
+                public void onFailure(AError aError) {
+                }
+            });
+        }
     
-    	/**
-    	 * Terminate the connection
-    	 */
-    	public static void disconnect() {
-    		//Perform the deinitialization
-    		LinkKit.getInstance().deinit();
-    	}
+        /**
+         * Terminate the connection
+         */
+        public static void disconnect() {
+            //Perform the deinitialization
+            LinkKit.getInstance().deinit();
+        }
     
     }
     ```
@@ -308,79 +308,79 @@ The project can be exported as a JAR package and run on the Raspberry Pi server.
     ```
     public class SSHDevice {
     
-    	//===================Start to Enter Required Parameters===========================
-    	//ProductKey
-    	private static String productKey = "";
-    	// 
-    	private static String deviceName = "";
-    	//DeviceSecret
-    	private static String deviceSecret = "";
-    	//The message communication topic. You can directly use the topic without creating or defining the topic.
-    	private static String rrpcTopic = "/sys/" + productKey + "/" + deviceName + "/rrpc/request/+";
-    	//The domain name or IP address that you want to access by using SSH
-    	private static String host = "127.0.0.1";
-    	//The SSH username
-    	private static String username = "";
-    	//The SSH password
-    	private static String password = "";
-    	//The SSH port
-    	private static int port = 22;
-    	//===================End===========================
+        //===================Start to Enter Required Parameters===========================
+        //ProductKey
+        private static String productKey = "";
+        // 
+        private static String deviceName = "";
+        //DeviceSecret
+        private static String deviceSecret = "";
+        //The message communication topic. You can directly use the topic without creating or defining the topic.
+        private static String rrpcTopic = "/sys/" + productKey + "/" + deviceName + "/rrpc/request/+";
+        //The domain name or IP address that you want to access by using SSH
+        private static String host = "127.0.0.1";
+        //The SSH username
+        private static String username = "";
+        //The SSH password
+        private static String password = "";
+        //The SSH port
+        private static int port = 22;
+        //===================End===========================
     
-    	public static void main(String[] args) throws InterruptedException {
+        public static void main(String[] args) throws InterruptedException {
     
-    		//Listen to downstream data
-    		registerNotifyListener();
+            //Listen to downstream data
+            registerNotifyListener();
     
-    		//Establish the connection
-    		Device.connect(productKey, deviceName, deviceSecret);
+            //Establish the connection
+            Device.connect(productKey, deviceName, deviceSecret);
     
-    		//Subscribe to a topic
-    		Device.subscribe(rrpcTopic);
-    	}
+            //Subscribe to a topic
+            Device.subscribe(rrpcTopic);
+        }
     
-    	public static void registerNotifyListener() {
-    		LinkKit.getInstance().registerOnNotifyListener(new IConnectNotifyListener() {
-    			@Override
-    			public boolean shouldHandle(String connectId, String topic) {
-    				//Only process messages of the specified topic
-    				if (topic.contains("/rrpc/request/")) {
-    					return true;
-    				} else {
-    					return false;
-    				}
-    			}
+        public static void registerNotifyListener() {
+            LinkKit.getInstance().registerOnNotifyListener(new IConnectNotifyListener() {
+                @Override
+                public boolean shouldHandle(String connectId, String topic) {
+                    //Only process messages of the specified topic
+                    if (topic.contains("/rrpc/request/")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
     
-    			@Override
-    			public void onNotify(String connectId, String topic, AMessage aMessage) {
-    				//Receive RRPC requests and resturn RRPC responses
-    				try {
-    					//Run the SSH command
-    					String payload = new String((byte[]) aMessage.getData(), "UTF-8");
-    					SSHShell sshExecutor = new SSHShell(host, username, password, port);
-    					sshExecutor.execute(payload);
+                @Override
+                public void onNotify(String connectId, String topic, AMessage aMessage) {
+                    //Receive RRPC requests and resturn RRPC responses
+                    try {
+                        //Run the SSH command
+                        String payload = new String((byte[]) aMessage.getData(), "UTF-8");
+                        SSHShell sshExecutor = new SSHShell(host, username, password, port);
+                        sshExecutor.execute(payload);
     
-    					//Obtain the command output
-    					StringBuffer sb = new StringBuffer();
-    					Vector<String> stdout = sshExecutor.getStdout();
-    					for (String str : stdout) {
-    						sb.append(str);
-    						sb.append("\n");
-    					}
+                        //Obtain the command output
+                        StringBuffer sb = new StringBuffer();
+                        Vector<String> stdout = sshExecutor.getStdout();
+                        for (String str : stdout) {
+                            sb.append(str);
+                            sb.append("\n");
+                        }
     
-    					//Return command output to the server
-    					String response = topic.replace("/request/", "/response/");
-    					Device.publish(response, sb.toString());
-    				} catch (UnsupportedEncodingException e) {
-    					e.printStackTrace();
-    				}
-    			}
+                        //Return command output to the server
+                        String response = topic.replace("/request/", "/response/");
+                        Device.publish(response, sb.toString());
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
     
-    			@Override
-    			public void onConnectStateChange(String connectId, ConnectState connectState) {
-    			}
-    		});
-    	}
+                @Override
+                public void onConnectStateChange(String connectId, ConnectState connectState) {
+                }
+            });
+        }
     
     }
     ```
@@ -395,21 +395,21 @@ After you have downloaded and installed the server SDK and SDK demo, add project
     ```
     <! -- Server SDK -->
     <dependency>
-    	<groupId>com.aliyun</groupId>
-    	<artifactId>aliyun-java-sdk-iot</artifactId>
-    	<version>6.5.0</version>
+        <groupId>com.aliyun</groupId>
+        <artifactId>aliyun-java-sdk-iot</artifactId>
+        <version>6.5.0</version>
     </dependency>
     <dependency>
-    	<groupId>com.aliyun</groupId>
-    	<artifactId>aliyun-java-sdk-core</artifactId>
-    	<version>3.5.1</version>
+        <groupId>com.aliyun</groupId>
+        <artifactId>aliyun-java-sdk-core</artifactId>
+        <version>3.5.1</version>
     </dependency>
     
     <! -- commons-codec -->
     <dependency>
-    	<groupId>commons-codec</groupId>
-    	<artifactId>commons-codec</artifactId>
-    	<version>1.8</version>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.8</version>
     </dependency>
     ```
 
@@ -418,24 +418,24 @@ After you have downloaded and installed the server SDK and SDK demo, add project
     ```
     public class OpenApiClient {
     
-    	private static DefaultAcsClient client = null;
+        private static DefaultAcsClient client = null;
     
-    	public static DefaultAcsClient getClient(String accessKeyID, String accessKeySecret) {
+        public static DefaultAcsClient getClient(String accessKeyID, String accessKeySecret) {
     
-    		if (client ! = null) {
-    			return client;
-    		}
+            if (client ! = null) {
+                return client;
+            }
     
-    		try {
-    			IClientProfile profile = DefaultProfile.getProfile("cn-shanghai", accessKeyID, accessKeySecret);
-    			DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
-    			client = new DefaultAcsClient(profile);
-    		} catch (Exception e) {
-    			System.out.println("create Open API Client failed !! exception:" + e.getMessage());
-    		}
+            try {
+                IClientProfile profile = DefaultProfile.getProfile("cn-shanghai", accessKeyID, accessKeySecret);
+                DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
+                client = new DefaultAcsClient(profile);
+            } catch (Exception e) {
+                System.out.println("create Open API Client failed !! exception:" + e.getMessage());
+            }
     
-    		return client;
-    	}
+            return client;
+        }
     
     }
     ```
@@ -446,79 +446,79 @@ After you have downloaded and installed the server SDK and SDK demo, add project
     public class SSHCommandSender {
     
     
-    	//===================Start to Enter Required Parameters===========================
+        //===================Start to Enter Required Parameters===========================
     
-    	//AccessKey ID of your Alibaba Cloud account
+        //AccessKey ID of your Alibaba Cloud account
     
-    	private static String accessKeyID = "";
+        private static String accessKeyID = "";
     
-    	//AccessKey Secret of your Alibaba Cloud account
+        //AccessKey Secret of your Alibaba Cloud account
     
-    	private static String accessKeySecret = "";
+        private static String accessKeySecret = "";
     
-    	//ProductKey
+        //ProductKey
     
-    	private static String productKey = "";
+        private static String productKey = "";
     
-    	//DeviceName
+        //DeviceName
     
-    	private static String deviceName = "";
+        private static String deviceName = "";
     
-    	//===================End===========================
-    
-    
-    	public static void main(String[] args) throws ServerException, ClientException, UnsupportedEncodingException {
+        //===================End===========================
     
     
-    		//The Linux command
-    
-    		String payload = "uname -a";
+        public static void main(String[] args) throws ServerException, ClientException, UnsupportedEncodingException {
     
     
-    		//Construct an RRPC request
+            //The Linux command
     
-    		RRpcRequest request = new RRpcRequest();
-    
-    		request.setProductKey(productKey);
-    
-    		request.setDeviceName(deviceName);
-    
-    		request.setRequestBase64Byte(Base64.encodeBase64String(payload.getBytes()));
-    
-    		request.setTimeout(5000);
+            String payload = "uname -a";
     
     
-    		//Obtain information about the client connected to the Raspberry Pi server
+            //Construct an RRPC request
     
-    		DefaultAcsClient client = OpenApiClient.getClient(accessKeyID, accessKeySecret);
+            RRpcRequest request = new RRpcRequest();
+    
+            request.setProductKey(productKey);
+    
+            request.setDeviceName(deviceName);
+    
+            request.setRequestBase64Byte(Base64.encodeBase64String(payload.getBytes()));
+    
+            request.setTimeout(5000);
     
     
-    		//Initiate an RRPC request
+            //Obtain information about the client connected to the Raspberry Pi server
     
-    		RRpcResponse response = (RRpcResponse) client.getAcsResponse(request);
+            DefaultAcsClient client = OpenApiClient.getClient(accessKeyID, accessKeySecret);
     
     
-    		//Process an RRPC response
+            //Initiate an RRPC request
     
-    		//"response.getSuccess()" only indicates that the RRPC request has been sent. It does not indicate that the device has received the RRPC request and has returned a response.
+            RRpcResponse response = (RRpcResponse) client.getAcsResponse(request);
     
-    		//Identify whether the message has been received and a response has been returned according to the RrpcCode value. For more information, see the document of RRpc API.
     
-    		if (response ! = null && "SUCCESS".equals(response.getRrpcCode())) {
+            //Process an RRPC response
     
-    			//Output the response
+            //"response.getSuccess()" only indicates that the RRPC request has been sent. It does not indicate that the device has received the RRPC request and has returned a response.
     
-    			System.out.println(new String(Base64.decodeBase64(response.getPayloadBase64Byte()), "UTF-8"));
+            //Identify whether the message has been received and a response has been returned according to the RrpcCode value. For more information, see the document of RRpc API https://www.alibabacloud.com/help/doc-detail/69797.htm.
     
-    		} else {
+            if (response ! = null && "SUCCESS".equals(response.getRrpcCode())) {
     
-    			//An error occurred while outputting the response and an RRPC code is displayed.
+                //Output the response
     
-    			System.out.println(response.getRrpcCode());
+                System.out.println(new String(Base64.decodeBase64(response.getPayloadBase64Byte()), "UTF-8"));
     
-    		}
+            } else {
     
-    	}
+                //An error occurred while outputting the response and an RRPC code is displayed.
+    
+                System.out.println(response.getRrpcCode());
+    
+            }
+    
+        }
     
     
     }

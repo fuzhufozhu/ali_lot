@@ -18,7 +18,7 @@ Before you use the firmware update function, make sure that you have developed y
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15554002163946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15572084923946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -26,7 +26,7 @@ Before you use the firmware update function, make sure that you have developed y
     |Firmware Version|Enter a version for the firmware. The version must be 1 to 64 characters in length and can contain letters, numbers, periods \(.\), hyphens \(-\), and underscores \(\_\).|
     |Product|Select the product to which the firmware belongs.|
     |Signature Algorithm|Supported signature algorithms are MD5 and SHA256.|
-    |Upload Firmware|Upload a firmware file. Only files in BIN, TAR, GZ, and Zip format are supported. The size of a firmware file cannot exceed 10 MB.|
+    |Upload Firmware|Upload a firmware file. Only files in BIN, TAR, GZ, and Zip format are supported. The size of a firmware file cannot exceed 1,000 MB.|
 
 5.  \(Optional\) if your devices use chips with AliOS Things, you can use the secure update function. 
 
@@ -38,7 +38,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** After the firmware file is uploaded to IoT Platform, you must test the firmware file on one or more devices first. Only when you confirm that the devices have been successfully updated can the firmware file be used for batch update. You can launch multiple validations for a firmware.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155540021610898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155720849210898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -57,7 +57,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155540021610902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155720849210902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|

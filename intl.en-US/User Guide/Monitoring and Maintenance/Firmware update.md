@@ -18,7 +18,7 @@ Before you use the firmware update function, make sure that you have developed y
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15572084923946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15573680933946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -38,7 +38,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** After the firmware file is uploaded to IoT Platform, you must test the firmware file on one or more devices first. Only when you confirm that the devices have been successfully updated can the firmware file be used for batch update. You can launch multiple validations for a firmware.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155720849210898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155736809310898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -57,7 +57,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155720849210902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155736809310902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -65,8 +65,8 @@ Before you use the firmware update function, make sure that you have developed y
     |Update Policy|     -   Static Update: Only update activated devices that meet the specified criteria.
     -   Dynamic Update: All devices that meets the specified criteria receive an update notification. If you select Dynamic Update, the system maintains the scope of devices that need to be updated, including devices that have reported the current versions and newly activated devices.
  |
-    |Update Region|     -   All Devices: All devices that belong to the product will be updated.
-    -   Directional Upgrade: If you select Directional Upgrade, Device Range field will appear. You then need to select devices to be updated. Only selected devices will be updated.
+    |Apply Update to|     -   All Devices: All devices that belong to the product will be updated.
+    -   Selected Devices: If you select Selected Devices, Device Range field will appear. You then need to select devices to be updated. Only selected devices will be updated.
 
 **Note:** You can select multiple pending versions if you select to update specified devices. The version that you previously selected for update is selected by default. If you have not specified any version, all versions are selected by default.
 

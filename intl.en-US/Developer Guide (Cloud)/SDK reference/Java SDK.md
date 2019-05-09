@@ -1,6 +1,6 @@
 # Java SDK {#reference_ukn_xwb_zdb .reference}
 
-The IoT Java SDK allows you to create Java applications to interact with IoT platform easily.   
+The IoT Java SDK allows you to create Java applications to interact with IoT platform easily.
 
 ## Install the IoT Java SDK {#section_o4t_hgd_zdb .section}
 
@@ -12,14 +12,14 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
     1.  Visit [Apache Maven official website](http://maven.apache.org/) to download a Maven installation package.
     2.  Add a Maven dependency.
 
-          Maven coordinates of the IoT Java SDK dependency
+        Maven coordinates of the IoT Java SDK dependency
 
         ```
         <! -- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-iot -->
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.6.2</version>
+            <version>6.9.0</version>
         </dependency>
         ```
 

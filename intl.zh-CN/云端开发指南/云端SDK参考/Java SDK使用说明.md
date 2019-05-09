@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.6.2</version>
+            <version>6.9.0</version>
         </dependency>
         ```
 

@@ -7,7 +7,7 @@
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作，取值：GetLoraNodesTask。|
-|TaskId|String|是|注册LoRaWAN设备任务的ID，即调用[SubmitNodesAddingTask](cn.zh-CN/云端开发指南/云端API参考/设备管理/CreateLoRaNodesTask.md#)创建任务后，返回的TaskId。|
+|TaskId|String|是|注册LoRaWAN设备任务的ID，即调用[CreateLoRaNodesTask](cn.zh-CN/云端开发指南/云端API参考/设备管理/CreateLoRaNodesTask.md#)创建任务后，返回的TaskId。|
 |公共请求参数|-|是|公共请求参数，请参见[公共参数](cn.zh-CN/云端开发指南/云端API参考/公共参数.md#) 。|
 
 ## 返回参数 {#section_azr_kzf_xdb .section}
@@ -64,16 +64,16 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=GetLoraNodesTask
     ```
     <?xml version="1.0" encoding="UTF-8" ?>
     <GetLoraNodesTask>
-    	<TotalCount>2</TotalCount>
-    	<SuccessCount>2</SuccessCount>
-    	<RequestId>D5C7AC10-97A4-42EA-8F92-CDBCCC02DDAC</RequestId>
-    	<SuccessDevEuis>
-    		<SuccessDevEui>d896e0ffff01****</SuccessDevEui>
-    		<SuccessDevEui>d896e0ffff01****</SuccessDevEui>
-    	</SuccessDevEuis>
-    	<TaskId>62146</TaskId>
-    	<TaskState>FINISH</TaskState>
-    	<Success>true</Success>
+        <TotalCount>2</TotalCount>
+        <SuccessCount>2</SuccessCount>
+        <RequestId>D5C7AC10-97A4-42EA-8F92-CDBCCC02DDAC</RequestId>
+        <SuccessDevEuis>
+            <SuccessDevEui>d896e0ffff01****</SuccessDevEui>
+            <SuccessDevEui>d896e0ffff01****</SuccessDevEui>
+        </SuccessDevEuis>
+        <TaskId>62146</TaskId>
+        <TaskState>FINISH</TaskState>
+        <Success>true</Success>
     </GetLoraNodesTask>
     ```
 

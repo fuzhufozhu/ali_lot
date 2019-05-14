@@ -102,7 +102,7 @@
 
             This SQL is to obtain the temperature and humidity values from the payload of the messages that are sent from the temperature and humidity sensor.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15574791924798_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15578128494798_en-US.png)
 
             The SQL statements are as follows:
 
@@ -121,11 +121,11 @@
 
         2.  Configure the data forwarding action.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15574791924799_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15578128494799_en-US.png)
 
             The complete rule is as follows:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15574791924805_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15578128494805_en-US.png)
 
     7.  On the rules page, click **Enable** to enable the rule.
 4.  Temperature and humidity sensor. 
@@ -157,7 +157,7 @@
         $ node demo.js
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15574791924806_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7645/15578128494806_en-US.png)
 
     2.  DingTalk robot receives the data, and sends a message to the DintTalk group.
 

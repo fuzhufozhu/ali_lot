@@ -91,7 +91,7 @@ FAFD82A3D602B37FB0FA8B7892F24A477F851A14
         Host: iot-auth.cn-shanghai.aliyuncs.com
         Content-Type: application/x-www-form-urlencoded
         Content-Length: 123
-        productKey=123&sign=123&timestamp=123&version=default&clientId=123&resouces=mqtt&deviceName=test
+        productKey=123&sign=123&timestamp=123&version=default&clientId=123&resources=mqtt&deviceName=test
         sign = hmac_md5(deviceSecret, clientId123deviceNametestproductKey123timestamp123)
         ```
 
@@ -106,8 +106,8 @@ FAFD82A3D602B37FB0FA8B7892F24A477F851A14
         {
              "code" : 200,
              "data" : {
-                "iotId" : "42Ze0mk3556498a1AlTP",
-                "iotToken" : "0d7fdeb9dc1f4344a2cc0d45edcb0bcb",
+                "iotId" : "42Ze0mkxxxxxxxx1AlTP",
+                "iotToken" : "0d7fdeb9dc1f4344a2xxxxxxxxcb0bcb",
                 "resources" : {
                     "mqtt" : {
                        "host" : "xxx.iot-as-mqtt.cn-shanghai.aliyuncs.com",

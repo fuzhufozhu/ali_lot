@@ -14,11 +14,11 @@ Before you use the firmware update function, make sure that you have developed y
 
 3.  On the Firmware Update page, click **New Firmware**. 
 
-    **Note:** Each Alibaba Cloud account can have up to 100 firmware files.
+    **Note:** Each Alibaba Cloud account can have up to 500 firmware files.
 
 4.  In the Add Firmware dialog box, enter the firmware information and upload the firmware file. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15573680933946_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/15579217863946_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -38,7 +38,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** After the firmware file is uploaded to IoT Platform, you must test the firmware file on one or more devices first. Only when you confirm that the devices have been successfully updated can the firmware file be used for batch update. You can launch multiple validations for a firmware.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155736809310898_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155792178610898_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|
@@ -57,7 +57,7 @@ Before you use the firmware update function, make sure that you have developed y
 
     **Note:** Make sure that the firmware file has successfully passed the verification before you perform a batch update.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155736809310902_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7553/155792178710902_en-US.png)
 
     |Parameter|Description|
     |:--------|:----------|

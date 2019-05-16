@@ -2,6 +2,12 @@
 
 Call this operation to query the property records of a specified device.
 
+## Limits {#section_whh_qlh_tgb .section}
+
+You can query property data that was generated within the last 30 days.
+
+**Note:** The data of a property is stored from the day the property data was generated. Data that was generated more than 30 days ago is no longer stored.
+
 ## Request parameters {#section_s1v_mss_xdb .section}
 
 |Parameter|Type|Required|Description|
@@ -32,12 +38,13 @@ Call this operation to query the property records of a specified device.
 |PageSize|Integer|Yes|The number of records per page in the response. The maximum limit is 50.|
 |Asc|Integer|Yes| The sorting order of the property records in returned results. Value options:
 
- 0: Descending.
+ -   0: In reverse chronological order.
 
- 1: Ascending.
+-   1: In chronological order.
+
 
  |
-|Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
+|Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_pyc_l5s_xdb .section}
 

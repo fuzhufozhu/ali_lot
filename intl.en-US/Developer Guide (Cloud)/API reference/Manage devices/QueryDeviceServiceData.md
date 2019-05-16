@@ -2,6 +2,12 @@
 
 Use this operation to query service records of a specified device.
 
+## Limits {#section_whh_qlh_tgb .section}
+
+You can query service data that was generated within the last 30 days.
+
+**Note:** The data of a service is stored from the day the service data was generated. Data that was generated more than 30 days ago is no longer stored.
+
 ## Request Parameters {#section_i1h_sws_xdb .section}
 
 |Parameter|Type|Required|Description|
@@ -28,9 +34,12 @@ Use this operation to query service records of a specified device.
 |PageSize|Integer|No|The number of records per page in the response. The maximum limit is 50.|
 |Asc|Integer|No| The sorting order of service records in returned results. Value options:
 
- 0: Descending.
+ -   0: In reverse chronological order.
 
- 1: Ascending.
+-   1: In chronological order.
+
+
+ The default value is 1.
 
  |
 |Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|

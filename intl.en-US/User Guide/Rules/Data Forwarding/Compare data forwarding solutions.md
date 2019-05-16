@@ -4,7 +4,7 @@ In many scenarios, you must process the data that is reported by devices or use 
 
 ## Data forwarding solutions {#section_phg_l3c_kgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92223/155712283036895_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/92223/155799994736895_en-US.png)
 
 IoT Platform supports the following functions for data forwarding:
 
@@ -25,7 +25,7 @@ IoT Platform supports the following functions for data forwarding:
 -   Supports data filtering and processing.
 -   Allows you to forward data to other Alibaba Cloud services.
 
-The [Rules engine-based solutions](#) table briefly compares solutions that use the rules engine for forwarding data to different Alibaba Cloud services.
+The following table "Rules engine-based solutions" briefly compares solutions that use the rules engine for forwarding data to different Alibaba Cloud services.
 
 
  Disadvantages:
@@ -82,7 +82,7 @@ Business servers can subscribe to all types of messages by using the SDK.
 -   Make sure that you are fully aware of any impacts of data loss and data delay on your business. Protect important data in the business layer.
 -   Service subscription does not apply to scenarios where data filtering and fine-grained processing are required. We recommend that you use the rules engine data forwarding for these scenarios.
 
- | -   [What is service subscription](intl.en-US/User Guide/Create products and devices/Service Subscription/What is Service Subscription?.md#)
+ | -   [What is service subscription](intl.en-US/User Guide/Create products and devices/Service Subscription/What is service subscription?.md#)
 -   [Development guide for the Java SDK](intl.en-US/User Guide/Create products and devices/Service Subscription/Development guide for Java HTTP__2 SDK.md#)
 -   [Development guide for the .NET SDK](intl.en-US/User Guide/Create products and devices/Service Subscription/Development guide for .NET HTTP__2 SDK.md#)
 -   [Best practices](../../../../intl.en-US/Best Practices/Configure service subscription.md#)

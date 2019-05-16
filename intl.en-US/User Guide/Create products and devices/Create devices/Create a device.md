@@ -1,25 +1,35 @@
 # Create a device {#task_yk1_rnl_vdb .task}
 
-A product is a collection of devices. After you have created products, you can create devices of the product models. You can create one device or multiple devices at a time. This article introduces how to create a single device.
+A product is a collection of devices. After you have created a product, you must register devices under the product with IoT Platform. You can create devices individually or create multiple devices at one time. This topic describes how to create devices individually.
 
 1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot). 
-2.  In the left-side navigation pane, click **Devices** \> **Device**, and then click **Add Device** 
-3.  Select a product that you have created. The device to be created will be assigned with the features of the selected product. 
-4.  \(Optional\) Enter a name for the device. If you do not enter a device name for the device, the system will automatically generate one for the device. 
+2.  In the left-side navigation pane, choose **Devices** \> **Device**, and then click **Add Device**. 
+3.  In the Add Device dialog box, enter the device information and click **OK**. 
 
-    **Note:** A DeviceName \(device name\) must be unique within a product. It is used as a device identifier when the device communicates with IoT Platform.
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12828/15579887462540_en-US.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12828/15501132122540_en-US.png)
+    |Parameter|Description|
+    |:--------|:----------|
+    |Product|Select a product. The device to be created will be assigned the features and properties of the selected product.**Note:** If the product is associated with another platform, make sure that your account has sufficient activation codes to create the device.
 
-5.  Click **OK** to create the device. After the device has been successfully created, the View Device Certificate box is displayed. There, you can view and copy the device certificate information. A device certificate is the authentication certificate of a device when the device is communicating with IoT Platform. It contains three key fields: ProductKey, DeviceName, and DeviceSecret.
+|
+    |DeviceName|Set the device name. If you left this parameter empty, the system automatically generates a device name that contains numbers and letters.    -   The device name is unique within the product.
+    -   The device name must be 4 to 32 characters in length and can contain letters, numbers, and special characters. The supported special characters are hyphens \(-\), underscores \(\_\), at signs \(@\), periods \(.\) , and colons \(:\).
+|
+    |Note name|Set the alias. The alias must be 4 to 32 characters in length and can contain Chinese characters, letters, numbers, and underscores \(\_\). One Chinese character is counted as two characters.|
 
-    -   ProductKey: The globally unique identifier issued by IoT Platform for a product.
-    -   DeviceName: The identifier of a device. It must be unique within a product and is used for device authentication and message communication.
-    -   DeviceSecret: The secret key issued by IoT Platform for a device. It is used for authentication encryption and must be used in pairs with the DeviceName.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12828/15501132122569_en-US.jpg)
 
-6.  On the device list page, find the device and click **View**. On the Device Details page, you can view the information of this device. On the Device Details page, click **Test** to text the network latency for the device.
+After the device is created, the View Device Certificate dialog box appears automatically. You can view and copy the device certificate information. A device certificate is the authentication certificate of a device when the device is communicating with IoT Platform. It contains three key fields: ProductKey, DeviceName, and DeviceSecret.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12828/155011321233334_en-US.png)
+|Parameter|Description|
+|:--------|:----------|
+|ProductKey|The key of the product to which the device belongs. It is the GUID that is issued by IoT Platform to the product.|
+|DeviceName|The unique identifier of the device within the product. A device uses the DeviceName and the ProductKey as the device identifier to authenticate to and communicate with IoT Platform.|
+|DeviceSecret|The device key issued by IoT Platform for device authentication and encryption. It must be used in pairs with the DeviceName.|
 
+You can also click **View** next to the newly created device on the Device List page. On the Device Details page, click the Device Information tab to view device information.
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12828/155798874633334_en-US.png)
+
+Follow instructions in [Device development documentation](../../../../reseller.en-US/Developer Guide (Devices)/Download device SDKs.md#) to develop the device SDK.
 

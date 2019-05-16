@@ -4,19 +4,17 @@ This article uses MQTT.fx as an example to describe the method for using a third
 
 ## Prerequisites {#section_dhm_qz3_p2b .section}
 
-You have created products and devices in the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot), and have got the ProductKey, DeviceName, and DeviceSecret of the devices. When you set the connection parameters for MQTT.fx, you will use the values of the ProductKey, DeviceName, and DeviceSecret. See [Create a product](../../../../../reseller.en-US/User Guide/Create products and devices/Create a product.md#), [Create a device](../../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create a device.md#), and [Create multiple devices at a time](../../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create multiple devices at a time.md#)for help when creating products and devices.
+You have created products and devices in the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot), and have got the ProductKey, DeviceName, and DeviceSecret of the devices. When you set the connection parameters for MQTT.fx, you will use the values of the ProductKey, DeviceName, and DeviceSecret. See [Create a product](../../../../reseller.en-US/User Guide/Create products and devices/Create a product.md#), [Create a device](../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create a device.md#), and [Create multiple devices at a time](../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create multiple devices at a time.md#)for help when creating products and devices.
 
 ## Procedure {#section_whq_1bj_p2b .section}
 
 1.  Download and install the MQTT.fx software.
 
-    Download the MQTT.fx software for Windows from [http://mqtt-fx.software.informer.com/download/](http://mqtt-fx.software.informer.com/download/).
-
-    Download the MQTT.fx software for Mac from [http://macdownload.informer.com/mqtt-fx/](http://macdownload.informer.com/mqtt-fx/).
+    Download the MQTT.fx software for Windows from [MQTT.fx website](https://mqttfx.jensd.de/index.php/download).
 
 2.  Open MQTT.fx, and click the settings icon.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857694_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992757694_en-US.png)
 
 3.  Set the connection parameters.
 
@@ -28,7 +26,7 @@ You have created products and devices in the [IoT Platform console](https://part
 
         You can keep the default parameters for General, or set the values according to your needs.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857698_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992757698_en-US.png)
 
         |Parameter|Description|
         |:--------|:----------|
@@ -36,16 +34,16 @@ You have created products and devices in the [IoT Platform console](https://part
         |Profile Type|Select **MQTT Broker**.|
         |Broker Address|Enter the connection domain in the format of $\{YourProductKey\}.iot-as-mqtt.$\{region\}.aliyuncs.com. In this format, variable $\{region\} indicates the region ID of your IoT Platform service region. For region IDs, see [Regions and zones](https://partners-intl.aliyun.com/help/doc-detail/40654.htm). Example: alPUPCoxxxx.iot-as-mqtt.cn-shanghai.aliyuncs.com.|
         |Broker Port|Set to 1883.|
-        |Client ID|Enter a value in the format of $\{clientId\}|securemode=3,signmethod=hmacsha1|. Example: `12345|securemode=3,signmethod=hmacsha1|`. The parameters are described as follows:        -   $\{clientId\} is a custom client ID. It can be any value within 64 characters. We recommend that you use the MAC address or SN code of the device as the value of clientId.
+        |Client ID|Enter a value in the format of $\{clientId\}|securemode=3,signmethod=hmacsha1|. Example: `12345|securemode=3,signmethod=hmacsha1|`. The parameters are described as follows:         -   $\{clientId\} is a custom client ID. It can be any value within 64 characters. We recommend that you use the MAC address or SN code of the device as the value of clientId.
         -   securemode is the security mode of the connection. If you use the TCP mode, set it as securemode=3; if you use the TLS mode, set it as securemode=2.
         -   signmethod is the signature method that you want to use. IoT Platform supports hmacmd5 and hmacsha1.
-**Note:** Do not click **Generate** after you enter the Client ID information.
+ **Note:** Do not click **Generate** after you enter the Client ID information.
 
-|
+ |
 
     2.  Click **User Credentials**, and enter your **User Name** and **Password**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857699_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992757699_en-US.png)
 
         |Parameter|Description|
         |:--------|:----------|
@@ -74,18 +72,18 @@ Use the deviceSecret of the device as the secret key to encrypt the joint string
 
 Suppose the deviceSecret of the device is abc123, the encryption format is `hmacsha1(abc123,clientId12345deviceNamedeviceproductKeyfOAt5H5TOWF)`.
 
-|
+ |
 
     3.  If you use TLS connection mode, you are required to set information for SSL/TLS. SSL/TLS settings are not required when the connection mode is TCP.
 
         Check the box for **Enable SSL/TLS**, and select **TLSv1** as the protocol.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857734_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992757734_en-US.png)
 
     4.  Enter all the required information, and then click **OK**.
 4.  Click **Connect** to connect to IoT Platform.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857735_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992757735_en-US.png)
 
 
 ## Message communication test {#section_rmt_vgk_p2b .section}
@@ -95,25 +93,25 @@ Test whether MQTT.fx and IoT Platform are successfully connected.
 1.  In MQTT.fx, click **Subscribe**.
 2.  Enter a topic of the device, and then click **Subscribe**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857736_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992767736_en-US.png)
 
     After you have successfully subscribed to a topic, it is displayed in the topic list.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857737_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992767737_en-US.png)
 
 3.  In the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot), in the **Topic List** of the Device Details page, click the **Publish** button of the topic that you have subscribed to.
 4.  Enter message content, and click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857738_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992767738_en-US.png)
 
 5.  Go back to MQTT.fx to check if the message has been received.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857739_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992767739_en-US.png)
 
 
 ## View logs {#section_lnm_nkk_p2b .section}
 
 In MQTT.fx, click **Log** to view the operation logs and error logs.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15547365857740_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992767740_en-US.png)
 

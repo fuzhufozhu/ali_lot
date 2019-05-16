@@ -11,11 +11,11 @@
 |[QueryProductList](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProductList.md#)|查询产品列表。|
 |[QueryProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/QueryProduct.md#)|查询产品详细信息。|
 |[DeleteProduct](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProduct.md#)|删除指定产品。|
-|[ZH-CN\_TP\_86955\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/产品管理/CreateProductTags.md#)|创建产品标签。|
-|[ZH-CN\_TP\_87228\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/产品管理/UpdateProductTags.md#)|更新产品标签。|
-|[ZH-CN\_TP\_87234\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProductTags.md#)|删除产品标签。|
-|[ZH-CN\_TP\_87242\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductTags.md#)|查询产品的所有标签。|
-|[ZH-CN\_TP\_87248\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductByTags.md#)|根据标签查询产品。|
+|[CreateProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/CreateProductTags.md#)|创建产品标签。|
+|[UpdateProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/UpdateProductTags.md#)|更新产品标签。|
+|[DeleteProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/DeleteProductTags.md#)|删除产品标签。|
+|[ListProductTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductTags.md#)|查询产品的所有标签。|
+|[ListProductByTags](cn.zh-CN/云端开发指南/云端API参考/产品管理/ListProductByTags.md#)|根据标签查询产品。|
 
 ## 设备管理相关 API {#section_dcj_qzc_xdb .section}
 
@@ -36,7 +36,7 @@
 |[QueryPageByApplyId](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryPageByApplyId.md#)|查询批次设备列表。|
 |[QueryDeviceEventData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceEventData.md#)|查询设备的事件历史数据。|
 |[QueryDevicePropertyData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyData.md#)|查询设备的属性历史数据。|
-|[ZH-CN\_TP\_77565\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertiesData.md#)|批量查询指定设备的多个属性的历史数据。|
+|[QueryDevicePropertiesData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertiesData.md#)|批量查询指定设备的多个属性的历史数据。|
 |[QueryDeviceServiceData](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceServiceData.md#)|获取设备的服务记录历史数据。|
 |[InvokeThingService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingService.md#)|调用设备的服务。|
 |[InvokeThingsService](cn.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingsService.md#)|批量调用设备的服务。|
@@ -54,24 +54,31 @@
 |[QueryDeviceByTags](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceByTags.md#)|根据标签查询设备。|
 |[SetDeviceDesiredProperty](cn.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|为指定设备批量设置期望属性值。|
 |[QueryDeviceDesiredProperty](cn.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|查询指定设备的期望属性值。|
+|[QueryDeviceFileList](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFileList.md#)|查询指定设备上传到物联网平台的所有文件。|
+|[QueryDeviceFile](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFile.md#)|查询指定设备上传到物联网平台的指定文件信息。|
+|[DeleteDeviceFile](cn.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDeviceFile.md#)|删除指定设备上传到物联网平台的指定文件。|
+|[BatchUpdateDeviceNickname](cn.zh-CN/云端开发指南/云端API参考/设备管理/BatchUpdateDeviceNickname.md#)|批量更新设备备注名称。|
+|[QueryLoRaJoinPermissions](cn.zh-CN/云端开发指南/云端API参考/设备管理/QueryLoRaJoinPermissions.md#)|查询账号下的LoRaWAN入网凭证列表。|
+|[CreateLoRaNodesTask](cn.zh-CN/云端开发指南/云端API参考/设备管理/CreateLoRaNodesTask.md#)|创建批量注册LoRaWAN设备的任务。|
+|[GetLoraNodesTask](cn.zh-CN/云端开发指南/云端API参考/设备管理/GetLoraNodesTask.md#)|查询批量注册LoRaWAN设备任务的状态。|
 
 ## 分组管理相关API {#section_atx_lcg_mfb .section}
 
 |API|描述|
 |:--|:-|
-|[ZH-CN\_TP\_23495.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/CreateDeviceGroup.md#)|创建分组。|
-|[ZH-CN\_TP\_23498.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/DeleteDeviceGroup.md#)|删除分组。|
-|[ZH-CN\_TP\_23508.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/UpdateDeviceGroup.md#)|修改分组信息。|
-|[ZH-CN\_TP\_23500.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupInfo.md#)|查询分组详情。|
-|[ZH-CN\_TP\_23501.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupList.md#)|分页查询分组列表。|
-|[ZH-CN\_TP\_23502.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchAddDeviceGroupRelations.md#)|添加设备到分组。|
-|[ZH-CN\_TP\_23651.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchDeleteDeviceGroupRelations.md#)|删除分组中已添加的指定设备。|
-|[ZH-CN\_TP\_23504.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/SetDeviceGroupTags.md#)|添加或更新分组标签。|
-|[ZH-CN\_TP\_23503.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupTagList.md#)|查询分组标签列表。|
+|[CreateDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/CreateDeviceGroup.md#)|创建分组。|
+|[DeleteDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/DeleteDeviceGroup.md#)|删除分组。|
+|[UpdateDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/UpdateDeviceGroup.md#)|修改分组信息。|
+|[QueryDeviceGroupInfo](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupInfo.md#)|查询分组详情。|
+|[QueryDeviceGroupList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupList.md#)|分页查询分组列表。|
+|[BatchAddDeviceGroupRelations](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchAddDeviceGroupRelations.md#)|添加设备到分组。|
+|[BatchDeleteDeviceGroupRelations](cn.zh-CN/云端开发指南/云端API参考/分组管理/BatchDeleteDeviceGroupRelations.md#)|删除分组中已添加的指定设备。|
+|[SetDeviceGroupTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/SetDeviceGroupTags.md#)|添加或更新分组标签。|
+|[QueryDeviceGroupTagList](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupTagList.md#)|查询分组标签列表。|
 |[QueryDeviceGroupByDevice](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByDevice.md#)|查询指定设备所在的分组列表。|
-|[ZH-CN\_TP\_77504.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QuerySuperDeviceGroup.md#)|根据子分组ID查询父分组信息。|
-|[ZH-CN\_TP\_78503.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceListByDeviceGroup.md#)|查询分组中的设备列表。|
-|[ZH-CN\_TP\_91986\_V1.md\#](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByTags.md#)|根据标签查询设备分组。|
+|[QuerySuperDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QuerySuperDeviceGroup.md#)|根据子分组ID查询父分组信息。|
+|[QueryDeviceListByDeviceGroup](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceListByDeviceGroup.md#)|查询分组中的设备列表。|
+|[QueryDeviceGroupByTags](cn.zh-CN/云端开发指南/云端API参考/分组管理/QueryDeviceGroupByTags.md#)|根据标签查询设备分组。|
 
 ## 规则引擎相关 API {#section_enr_vbd_xdb .section}
 

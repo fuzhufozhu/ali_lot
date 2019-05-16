@@ -1,35 +1,49 @@
 # What is a topic? {#concept_mny_tnl_vdb .concept}
 
-Servers and devices communicate with each other in IoT Platform through topics. Topics are associated with devices, and topic categories are associated with products.
+A server and a device communicate with each other in IoT Platform through topics. Topics are associated with devices, and topic categories are associated with products. A topic category of a product is automatically applied to all devices under the product to generate device-specific topics for message communication.
 
-## What is a topic category? {#section_exz_xv5_vdb .section}
+## Topic category {#section_exz_xv5_vdb .section}
 
-To simplify authorization operations and facilitate communication between devices and IoT Platform, topic categories were introduced. When you create a product, IoT Platform will create a default topic category  for the product. In addition, when you create a device, the topic category will be automatically assigned to the device. You do not need to authorize each individual device to publish or subscribe to a topic.
+To simplify authorization and facilitate communication between devices and IoT Platform, topic categories were introduced. A topic category is a set of topics within the same product. For example, topic category `/${YourProductKey}/$ {YourDeviceName}/user/update` is a set that contains the following two topics: `/${YourProductKey}/device1/user/update` and `/${YourProductKey}/device2/user/update`.
 
-![](images/35287_en-US.png "The process of automatically creating a topic")
+After a device is created, all topic categories of the product are automatically applied to the device. You do not need to assign topics to each individual device.
 
-When you create a product, IoT Platform automatically creates standard topic categories for the product. You can view all topic categories of the product on the Topic Categories  tab page.
+![](images/35287_en-US.png "Automatically create a topic")
 
-Description of topic categories:
+Descriptions for topic categories:
 
--   A topic category is a set of topics within the same product. For example,  the topic category `/${productKey}/${deviceName}/update` is a collection of the specific topics:  `/${productKey}/device1/update` and `/${productKey}/device2/update`.
--   The topic category must use a forward slash \(/\) to delimit the topic hierarchy. Two of the category levels are reserved: `${productKey}` represents the product identifier, and `${deviceName}` represents the device name.
--   Each category level can only contain letters, numbers, and underscores \(\_\). Topic category levels cannot be left empty.
--   Operations available for devices: **Publish** indicate that the device can publish messages to a topic. **Subscribe** indicates that the device can subscribe to messages of a topic.
--   IoT Platform Basic supports customized topic categories. Customizing topic categories allows for flexible communication to suit your business needs. Customizing topic categories and modifying category level names is not supported  in IoT Platform Pro.
--   The system-defined topic categories are pre-defined by IoT Platform Pro,  do not support customization, and do not begin with `/${productKey}`. For example, in IoT Platform Pro, topic categories provided for the Thing Special Language \(TSL\)  begin with `/sys/`, topic categories provided for firmware upgrades begin with `/ota/`, and topic categories provided for device shadows  begin with `/shadow/`.
+-   A topic category uses a forward slash \(/\) to separate elements in different hierarchical levels. A topic category contains the following fixed elements: `${YourProductKey}` indicates the product identifier; `${YourDeviceName}` indicates the device name.
+-   Each element name can contain only letters, numbers, and underscores \(\_\). An element in each level cannot be left empty.
+-   A device can have Pub and Sub permissions to a topic. **Pub** indicates that the device can publish messages to the topic. **Sub** indicates that the device can subscribe to the topic.
 
-## What is a topic? {#section_ozb_bw5_vdb .section}
+## Topic {#section_ozb_bw5_vdb .section}
 
-A topic category is used for topic definition rather than communication. A topic is used for communication.
+A topic category is used for topic definition rather than communication. Only topics can be used for communication.
 
--   Topics and topic categories use the same format. The difference is that in a topic category, the `${deviceName}` is a variable, but in a topic  it represents a specific device name.
--   A topic is automatically derived from the device name and the topic category of the product. A topic contains a device name \(`deviceName`\), which can only be used in Pub/Sub  communication. For example, the topic `/${productKey}/device1/update` is owned by the device with name device1 . Therefore, you can only publish or subscribe to messages to this topic for the device  with name device1, and cannot use it for device with name device2 to publish or subscribe to messages.
--   When you configure the rules engine, the topic that you configure can contain one wildcard character.
+-   Topics use the same format as topic categories. The difference is that variable `${YourDeviceName}` in the topic category is replaced by a specific device name in the topic.
+-   A topic is automatically derived from the topic category of the product based on the corresponding device name. A topic contains the device name \(`DeviceName`\) and can be used for data communication only by the specified device. For example, topic `/${YourProductKey}/device1/user/update` belongs to the device named device1. Only device1 can publish messages and subscribe to this topic. Other devices cannot use this topic.
 
-    |Wildcard character|Description|
-    |:-----------------|:----------|
-    |\#|Must be the last character in the topic, and works as a wildcard by matching all topics in the current tree and all sub-trees of the topic hierarchy. For example, the topic `/productKey/device1/#` can represent `/productKey/device1/update` and `productKey/device1/update/error`.|
-    |+|Matches all topics in the current tree of the topic hierarchy. For example, the topic `/productKey/+/update`  can represent `/${productKey}/device1/update`  and `/${productKey}/device2/update`.|
+## Supported wildcards {#section_uns_lkw_hhb .section}
 
+To use the rules engine data forwarding function to forward device data, you must specify the source topic of the messages when writing an SQL statement. When you specify a topic in [setting a forwarding rule](reseller.en-US/User Guide/Rules/Data Forwarding/Create and configure a rule.md#), you can use the following wildcards. One element can contain only one wildcard.
+
+|Wildcard|Description|
+|:-------|:----------|
+|\#|Must be set as the last element in the topic. This wildcard can match any element in the current level and sub-levels. For example, in topic `/${YourProductKey}/device1/user /#`, wildcard `#` is added next to the `/user` element to represent all elements after `/user`. This topic can represent `/${YourProductKey}/device1/user/update` and `/${YourProductKey}/device1/user/update/error`.|
+|+|Matches all elements in the current level. For example, in topic `/${YourProductKey}/+/user/update`, the device name element is replaced by wildcard `+` to represent all devices under the product. This topic can represent `/${YourProductKey}/device1/user/update` and `/${YourProductKey}/device2/user/update`.|
+
+## System topics and custom topics {#section_oth_5lw_hhb .section}
+
+IoT Platform supports the following types of topics:
+
+|Type|Description|
+|:---|:----------|
+|System topics| The system-defined topics. System topics cannot be modified and deleted. System topics include topics used by IoT Platform functions, such as TSL model-related functions and firmware upgrade.
+
+ For example, topics related to TSL models generally start with`/sys/`. Topics related to firmware upgrade start with `/ota/`. Topics for the device shadow function start with `/shadow/`.
+
+ **Note:** System topics are not completely displayed in the Topic Categories list and the Topic List. For more information about function-specific topics, see related function documentation.
+
+ |
+|Custom topics|You can [customize a topic category](reseller.en-US/User Guide/Create products and devices/Topics/Create a topic category.md#) on the Topic Categories tab page according to your business requirements. The topic categories you have customized for the product will be automatically applied to all devices under the product.|
 

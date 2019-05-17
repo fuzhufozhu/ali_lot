@@ -1,8 +1,8 @@
 # Advanced guide to STS {#concept_axc_sw4_tdb .concept}
 
-Security Token Service \(STS\) enables more strict permission management than Resource Access Management \(RAM\). Using STS to implement resource access control involves a complicated authorization process. You can use STS to grant RAM users temporary permissions to access resources.
+Security Token Service \(STS\) enables more strict permission management than Resource Access Management \(RAM\). Using STS to implement resource access control involves a complicated authorization process.You can use STS to grant RAM users temporary permissions to access resources.
 
-RAM users and the permissions granted to RAM users have long-term validity. You need to manually delete a RAM user or revoke permissions from RAM users. After the account information of a RAM user has been leaked, if you fail to timely delete this user or revoke related permissions, your Alibaba Cloud resources and important information may be compromised. Therefore, we recommend that you use STS to manage key permissions or permissions that do not require long-term validity.  
+RAM users and the permissions granted to RAM users have long-term validity. You need to manually delete a RAM user or revoke permissions from RAM users. After the account information of a RAM user has been leaked, if you fail to timely delete this user or revoke related permissions, your Alibaba Cloud resources and important information may be compromised. Therefore, we recommend that you use STS to manage key permissions or permissions that do not require long-term validity.
 
 ![](images/5054_en-US.jpg "Process for granting temporary permissions to RAM users.")
 
@@ -11,13 +11,13 @@ RAM users and the permissions granted to RAM users have long-term validity. You 
 A role is a virtual entity that represents a virtual user with a group of permissions.
 
 1.  Log on to the [RAM console](https://ram.console.aliyun.com/).
-2.  Select** Roles** \> **Create Role** to create a role.
+2.  Select**Roles** \> **Create Role** to create a role.
 3.  Select **User Role**.
 4.  Use the default account information, and click **Next**.
 5.  Specify the role name and description, and click **Create**.
 6.  Click **Close** or **Authorize**.
 
-    If you have created the authorization policy that is to be granted to this role, click **Authorize** to authorize this user.
+    If you have created the authorization policy that is to be granted to this role, click**Authorize** to authorize this user.
 
     If you have not created the authorization policy, click **Close**. You can create an authorization policy for this role by clicking Policies.
 
@@ -26,13 +26,13 @@ A role is a virtual entity that represents a virtual user with a group of permis
 
 An authorization policy defines the resource permissions that are to be granted to roles.
 
-1.  In the [RAM console](https://ram.console.aliyun.com/), click** Policies** \> **Create Authorization Policy** .
+1.  In the [RAM console](https://ram.console.aliyun.com/), click**Policies** \> **Create Authorization Policy** .
 2.  Select the blank template.
 3.  Specify the authorization policy name and policy content, and click **Create Authorization Policy**.
 
     For more information about writing the policy content, click **Authorization Policy Format**.
 
-    Authorization policy example: Read-only permission of IoT resources.
+    Authorization policy example:Read-only permission of IoT resources.
 
     ```
     
@@ -102,7 +102,7 @@ An authorization policy defines the resource permissions that are to be granted 
     }
     ```
 
-    Authorization policy example: Read-write permission of IoT resources.
+    Authorization policy example:Read-write permission of IoT resources.
 
     ```
     
@@ -178,7 +178,7 @@ A role can only have resource access permissions after it has been authorized.
 2.  Select the role that you want to authorize, and click **Authorize**.
 3.  In the dialog box that appears, select the custom authorization policy that you want to apply to the specified role, click the right arrow in the middle to move the specified authorization policy to the **Selected Authorization Policy Name** list, and then click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15404597424853_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15580739494853_en-US.jpg)
 
 
 The role will have the permissions defined in the selected authorization policy after authorization is complete. You can click **Manage** to go to the Role Details page, and view basic information about this role and the permissions it has been granted.
@@ -191,11 +191,11 @@ After authorization is complete, the role obtains the permissions that are defin
 
 To grant a RAM user the permission to play this role, you need to create a custom authorization policy where the Resource parameter of this policy is set to the ID of the role. You then authorize the RAM user with this authorization policy.
 
-1.  In the [RAM console](https://ram.console.aliyun.com/), click** Policies** \> **Create Authorization Policy** .
+1.  In the [RAM console](https://ram.console.aliyun.com/), click**Policies** \> **Create Authorization Policy** .
 2.  Select the blank template.
 3.  Specify the authorization policy name and policy content, and click **Create Authorization Policy**.
 
-    **Note:** In the policy content, set the Resource parameter to the Arn of the role.     On the **Roles** page, find the specified role, click **Manage** to go to the Role Details page, and then view the Arn of the role   .
+    **Note:** In the policy content, set the Resource parameter to the Arn of the role. On the **Roles** page, find the specified role, click **Manage** to go to the Role Details page, and then view the Arn of the role .
 
     Role authorization policy example:
 
@@ -222,7 +222,7 @@ After authorization is complete, the RAM user obtains the permission to play thi
 
 ## Step 5: The RAM user obtains temporary identity credentials {#section_lwx_nxk_5db .section}
 
-Authorized RAM users can call the STS API operations or use the STS SDKs to obtain the temporary identity credentials for role play. The temporary credentials include an AccessKeyId, AccessKeySecret, and SecurityToken. For more information about the STS API and STS SDKs, see [API Reference \(STS\)](https://www.alibabacloud.com/help/zh/doc-detail/28756.htm) and [SDK Reference \(STS\)](https://www.alibabacloud.com/help/zh/doc-detail/28786.htm).
+Authorized RAM users can call the STS API operations or use the STS SDKs to obtain the temporary identity credentials for role play. The temporary credentials include an AccessKeyId, AccessKeySecret, and SecurityToken. For more information about the STS API and STS SDKs, see [API Reference \(STS\)](https://www.alibabacloud.com/help/doc-detail/28756.htm)and [SDK Reference \(STS\)](https://www.alibabacloud.com/help/doc-detail/28786.htm).
 
 You need to specify the following parameters when using an STS API or SDK to obtain temporary identity credentials:
 
@@ -237,6 +237,7 @@ You need to specify the following parameters when using an STS API or SDK to obt
 API example: The RAM user calls the STS AssumeRole operation to obtain the temporary identity credentials for role play.
 
 ```
+
 
 https://sts.aliyuncs.com?Action=AssumeRole
 &RoleArn=acs:ram::1234567890123456:role/iotstsrole
@@ -258,7 +259,7 @@ After the request has been received, the temporary identity credentials that are
 
 After obtaining the temporary identity credentials, the RAM user can pass in the credentials in the SDK requests to play the specified role.
 
-Java SDK example: The RAM user passes in the AccessKeyId, AccessKeySecret, and SecurityToken parameters that are contained in the temporary identity credentials in the request and creates the IAcsClient object.  
+Java SDK example: The RAM user passes in the AccessKeyId, AccessKeySecret, and SecurityToken parameters that are contained in the temporary identity credentials in the request and creates the IAcsClient object.
 
 ```
 IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", AccessKeyId,AccessSecret);

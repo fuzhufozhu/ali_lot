@@ -6,7 +6,7 @@ OTA（Over-the-Air Technology）即空中下载技术。物联网平台支持通
 
 MQTT协议下固件升级流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155140397411336_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155859385911336_zh-CN.png)
 
 固件升级Topic：
 
@@ -64,7 +64,7 @@ MQTT协议下固件升级流程如下图所示：
     -   version：设备当前固件版本号。
 2.  在物联网平台控制台上，逐步添加固件、验证固件和发起批量升级固件。
 
-    具体操作，请参见[固件升级](../../../../../intl.zh-CN/用户指南/监控运维/固件升级.md#)。
+    具体操作，请参见[固件升级](../../../../intl.zh-CN/用户指南/监控运维/固件升级.md#)。
 
 3.  您在控制台触发升级操作之后，设备会收到物联网平台OTA服务推送的固件的URL地址。
 
@@ -98,7 +98,7 @@ MQTT协议下固件升级流程如下图所示：
     ```
     
     {
-      "id": 1
+      "id": 1,
       "params": {
         "step":"1", 
         "desc":" xxxxxxxx "
@@ -123,10 +123,10 @@ MQTT协议下固件升级流程如下图所示：
 
 -   签名错误。如果设备端获取的固件的URL不全或者手动修改了URL内容，就会出现如下错误：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15514039743964_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15585938593964_zh-CN.png)
 
 -   拒绝访问。URL过期导致。目前，URL有效期为24小时。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15514039743967_zh-CN.PNG)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15585938593967_zh-CN.PNG)
 
 

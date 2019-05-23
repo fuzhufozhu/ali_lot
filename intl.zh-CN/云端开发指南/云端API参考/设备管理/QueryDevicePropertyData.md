@@ -30,12 +30,12 @@
  |
 |Identifier|String|是| 要查询的属性标识符。
 
- 高级版设备的属性Identifier，可在控制台中设备所属的高级版产品的功能定义中查看。若设备有多个属性，您可以多次调用该接口进行查询，一次输入一个Identifier。
+ 设备的属性Identifier，可在控制台中设备所属的产品的功能定义中查看。若设备有多个属性，您可以多次调用该接口进行查询，一次输入一个Identifier。
 
  |
-|StartTime|Long|是|要查询的属性记录的开始时间。取值为毫秒值时间戳。**说明：** 只能查询最近30天内的属性数据记录。
+|StartTime|Long|是|要查询的属性记录的开始时间。取值为毫秒值时间戳。 **说明：** 只能查询最近30天内的属性数据记录。
 
-|
+ |
 |EndTime|Long|是|要查询的属性记录的结束时间。取值为毫秒值时间戳。|
 |PageSize|Integer|是|返回结果中每页显示的记录数。数量限制：每页最多可显示50条。|
 |Asc|Integer|是| 返回结果中属性记录的排序方式，取值：
@@ -54,16 +54,20 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
-|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
-|Data|[Data](#table_sdc_7592_xdb)|调用成功时，返回的设备属性记录。详情参见下表。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见本文错误码章节。|
+|Data|Data|调用成功时，返回的设备属性记录。详情参见下表Data。|
 
 |名称|类型|描述|
 |:-|:-|:-|
-|List|List<PropertyList\>|属性集合。每个元素代表一个属性。元素的结构参见[PropertyInfo](#table_z2b_7593_xdb)。**说明：** 返回的属性信息按照属性生成时间倒序排列。
+|List|List<PropertyList\>|属性集合。每个元素代表一个属性。元素的结构参见下表PropertyInfo。 **说明：** 返回的属性信息按照属性生成时间倒序排列。
 
-|
-|NextValid|Boolean|表示下一页面是否可用。true表示可用，false表示不可用。|
-|NextTime|Long|下一页面中的属性记录的起始时间。|
+ |
+|NextValid|Boolean|是否有下一页属性记录。true表示有，false表示没有。 返回NextValid为true时，可以将NextTime的值作为下次查询的StartTime，查询下一页数据。
+
+ |
+|NextTime|Long|下一页面中的属性记录的起始时间。 调用本接口查询下一页属性记录时，该值可作为入参StartTime的值。
+
+ |
 
 |名称|类型|描述|
 |:-|:-|:-|

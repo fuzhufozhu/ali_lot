@@ -1,6 +1,6 @@
 # PHP SDK使用说明 {#reference_y3b_zwb_zdb .reference}
 
-使用物联网平台的PHP SDK便捷地对物联网平台进行操作。
+物联网平台提供PHP语言的云端SDK供开发人员使用。本文介绍云端PHP SDK的安装和配置，及使用PHP SDK调用云端API的示例。
 
 ## 安装IoT PHP SDK {#section_vxf_kb2_zdb .section}
 
@@ -31,6 +31,8 @@ $client = new DefaultAcsClient($iClientProfile);
 accessKeyId即您的账号的AccessKeyId，accessSecret即AccessKeyId对应的AccessKeySecret。您可在[阿里云官网控制台AccessKey管理](https://ak-console.aliyun.com)中创建或查看您的AccessKey。
 
 ## 发起调用 {#section_fcq_qd2_zdb .section}
+
+物联网平台云端API，请参见[API列表](intl.zh-CN/云端开发指南/云端API参考/API列表.md#)。
 
 以调用Pub接口发布数据到设备为例。
 

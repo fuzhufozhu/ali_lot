@@ -1,8 +1,8 @@
 # 进阶使用 STS {#concept_axc_sw4_tdb .concept}
 
-STS 权限管理系统是比访问控制（RAM）更为严格的权限管理系统。使用 STS 权限管理系统进行资源访问控制，需通过复杂的授权流程，授予子账号用户临时访问资源的权限。
+STS 权限管理系统是比访问控制（RAM）更为严格的权限管理系统。使用 STS权限管理系统进行资源访问控制，需通过复杂的授权流程，授予子账号用户临时访问资源的权限。
 
-子账号和授予子账号的权限均长期有效。删除子账号或解除子账号权限，均需手动操作。发生子账号信息泄露后，如果无法及时删除该子账号或解除权限，可能给您的阿里云资源和重要信息带来危险。所以，对于关键性权限或子账号无需长期使用的权限，您可以通过 STS 权限管理系统来进行控制。
+子账号和授予子账号的权限均长期有效。删除子账号或解除子账号权限，均需手动操作。发生子账号信息泄露后，如果无法及时删除该子账号或解除权限，可能给您的阿里云资源和重要信息带来危险。所以，对于关键性权限或子账号无需长期使用的权限，您可以通过STS 权限管理系统来进行控制。
 
 ![](images/5054_zh-CN.jpg "子账号获得临时访问权限的操作流程")
 
@@ -17,7 +17,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 5.  输入角色名称和备注后，单击**创建**。
 6.  单击**关闭**或**授权**。
 
-    如果您已创建要授予该角色的授权策略，则单击 **授权**，并对角色进行授权。
+    如果您已创建要授予该角色的授权策略，则单击**授权**，并对角色进行授权。
 
     如果您还没有创建授权策略，则单击**关闭**。然后，在策略管理中为该角色新建授权策略。
 
@@ -176,7 +176,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 2.  找到要授权的角色，单击**授权**。
 3.  在授权对话框中，选择要授予角色的自定义授权策略，单击中间的向右箭头，将选中的授权策略移至**已选授权策略名称**下，再单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15402781034853_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15586035904853_zh-CN.jpg)
 
 
 授权完成后，该角色就具有了授权策略定义的权限。您可以单击该角色对应的**管理**操作按钮，进入角色详情页，查看该角色的基本信息和权限信息。
@@ -219,7 +219,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
 ## 步骤五：子账号获取临时身份凭证 {#section_lwx_nxk_5db .section}
 
-获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[API 参考（STS）](https://www.alibabacloud.com/help/zh/doc-detail/28756.htm)和[SDK 参考（STS）](https://www.alibabacloud.com/help/zh/doc-detail/28786.htm)。
+获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[STS API参考](../../../../intl.zh-CN/API 参考（STS）/简介.md#)和[STS SDK参考](../../../../intl.zh-CN/SDK参考/SDK参考（STS）/Java SDK/前言.md#)。
 
 使用 API 和 SDK 获取扮演角色的临时身份凭证需传入以下参数：
 
@@ -234,6 +234,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 API 示例：子账号用户通过调用 STS 的AssumeRole接口获得扮演该角色的临时身份凭证。
 
 ```
+
 
 https://sts.aliyuncs.com?Action=AssumeRole
 &RoleArn=acs:ram::1234567890123456:role/iotstsrole
@@ -255,7 +256,7 @@ $python ./sts.py AssumeRole RoleArn=acs:ram::1234567890123456:role/iotstsrole Ro
 
 获得扮演角色的临时身份凭证后，子账号用户便可以在调用 SDK 的请求中传入该临时身份凭证信息，扮演角色。
 
-Java SDK 示例：子账号用户在调用请求中，传入临时身份凭证的 AccessKeyId、AccessKeySecret 和 SecurityToken 参数，创建 IAcsClient 对象。
+Java SDK 示例：子账号用户在调用请求中，传入临时身份凭证的 AccessKeyId、AccessKeySecret 和 SecurityToken 参数，创建 IAcsClient对象。
 
 ```
 IClientProfile  profile = DefaultProfile.getProfile("cn-hangzhou", AccessKeyId,AccessSecret）;

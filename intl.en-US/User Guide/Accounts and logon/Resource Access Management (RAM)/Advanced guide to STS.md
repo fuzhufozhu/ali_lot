@@ -178,7 +178,7 @@ A role can only have resource access permissions after it has been authorized.
 2.  Select the role that you want to authorize, and click **Authorize**.
 3.  In the dialog box that appears, select the custom authorization policy that you want to apply to the specified role, click the right arrow in the middle to move the specified authorization policy to the **Selected Authorization Policy Name** list, and then click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15580739494853_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15586035914853_en-US.jpg)
 
 
 The role will have the permissions defined in the selected authorization policy after authorization is complete. You can click **Manage** to go to the Role Details page, and view basic information about this role and the permissions it has been granted.

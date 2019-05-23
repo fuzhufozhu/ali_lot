@@ -50,6 +50,8 @@ accessKey即您的账号的AccessKeyId，accessSecret即AccessKeyId对应的Acce
 
 ## 发起调用 {#section_ins_yrd_zdb .section}
 
+物联网平台云端API，请参见[API列表](intl.zh-CN/云端开发指南/云端API参考/API列表.md#)。
+
 以调用Pub接口发布消息到Topic为例。
 
 ```

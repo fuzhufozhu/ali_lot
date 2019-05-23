@@ -1,12 +1,12 @@
 # Firmware update {#concept_swx_ttw_y2b .concept}
 
-For information about the firmware update, see [Develop OTA features](../../../../../reseller.en-US//Develop OTA features.md#) and [Firmware update](../../../../../reseller.en-US/User Guide/Monitoring and Maintenance/Firmware update.md#).
+For information about the firmware update, see [OTA updates](reseller.en-US/Developer Guide (Devices)/OTA updates.md#) and [Firmware update](../../../../reseller.en-US/User Guide/Monitoring and Maintenance/Firmware update.md#).
 
 ## Report the firmware version {#section_ivm_fbh_12b .section}
 
 Upstream​
 
--   Request topic: `/ota/device/inform/{productKey}/{deviceName}`
+-   Request topic: `/ota/device/inform/{productKey}/{deviceName}` 
 
     The device publishes a message to this topic to report the current firmware version to IoT Platform.
 
@@ -27,13 +27,13 @@ Request message
 |Parameter|Type|Description|
 |:--------|:---|:----------|
 |id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
-|version|String |Version information of the firmware.|
+|version|String|Version information of the firmware.|
 
 ## Push firmware information​ {#section_jjq_4bx_y2b .section}
 
 Downstream
 
--   Request topic: `/ota/device/upgrade/{productKey}/{deviceName}`
+-   Request topic: `/ota/device/upgrade/{productKey}/{deviceName}` 
 
     IoT Platform publishes messages to this topic to push firmware information. The devices subscribe to this topic to obtain the firmware information.
 
@@ -64,16 +64,16 @@ Request message
 |message|String|Result information.​|
 |version|String|Version information of the firmware.|
 |size|Long|Firmware size in bytes.|
-|url|String |OSS address of the firmware.|
+|url|String|OSS address of the firmware.|
 |sign|String|​Firmware signature.​|
 |signMethod|String|Signing method. Currently, the supported methods are MD5 and sha256.|
-|md5|String |This parameter is reserved. This parameter is used to be compatible with old device information. When the signing method is MD5, IoT Platform will assign values to both the sign and md5 parameters.|
+|md5|String|This parameter is reserved. This parameter is used to be compatible with old device information. When the signing method is MD5, IoT Platform will assign values to both the sign and md5 parameters.|
 
 ## Report update progress {#section_nrg_pbx_y2b .section}
 
 Upstream
 
--   Request topic: `/ota/device/progress/{productKey}/{deviceName}`
+-   Request topic: `/ota/device/progress/{productKey}/{deviceName}` 
 
     A device subscribes to this topic to report the firmware update progress.
 
@@ -95,7 +95,7 @@ Request message
 |Parameter|Type|Description|
 |:--------|:---|:----------|
 |id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
-|step|String | Firmware update progress information.
+|step|String| Firmware update progress information.
 
  Value range:
 
@@ -106,7 +106,7 @@ Request message
 -   A value of -4 indicates that the firmware installation has failed.
 
  |
-|desc|String |Description of the current step. If an exception occurs, this parameter displays an error message.|
+|desc|String|Description of the current step. If an exception occurs, this parameter displays an error message.|
 
 ## Request firmware information from IoT Platform {#section_bk5_pbx_y2b .section}
 

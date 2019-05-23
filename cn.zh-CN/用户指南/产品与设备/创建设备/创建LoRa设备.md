@@ -13,13 +13,13 @@
 
     -   DevEUI 是LoRa设备的唯一标识符，采用LoRaWAN协议标准规范，不可为空。请确保DevEUI产品下唯一，且已烧录到设备中。
     -   DevEUI和PIN Code一般印刷在设备外显标签上。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155488893339864_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155858361839864_zh-CN.png)
 
 5.  单击**确认**。完成设备创建。
 
     设备创建完成后，将自动弹出**查看设备证书**弹框。您可以查看、复制LoRa设备的证书信息，包括JoinEUI和DevEUI。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155488893339872_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155858361839872_zh-CN.png)
 
 
 ## 批量创建 {#section_kp4_cfd_zgb .section}
@@ -35,7 +35,7 @@
 
 ## 下一步 {#section_fpg_dfd_zgb .section}
 
-设备创建成功后，您可以在使用其他功能和配置时，通过设备名称元素模糊搜索设备。例如，输入test，可搜索出名称中含有test的设备，如test1、test2、test3等。
+您可以参考[物联网络管理平台文档](https://help.aliyun.com/document_detail/96549.html)搭建物联网所需的网络服务和开发设备端（即网关开发和节点开发）。
 
-您可以参考[物联网络管理平台文档](https://help.aliyun.com/document_detail/96549.html)完成设备开发使用。
+**说明：** 在物联网平台创建LoRa设备后，您无需再在物联网络管理平台录入节点（即设备）信息和配置数据流转。
 

@@ -8,7 +8,7 @@ IoT Platform allows devices to upload files over HTTP/2 channels to the Alibaba 
 1.  Log on to the [IoT Platform console](http://iot.console.aliyun.com/).
 2.  In the left-side navigation pane, choose **Devices** \> **Device**, and then click **View** next to the corresponding device. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/61448/155797671631465_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/61448/155860381731465_en-US.png)
 
 3.  On the Device Details page, click the **Manage Files** tab. 
 
@@ -16,7 +16,7 @@ IoT Platform allows devices to upload files over HTTP/2 channels to the Alibaba 
 
     **Note:** The maximum file size that can be stored on the IoT Platform server for each Alibaba Cloud account is 1 GB. The maximum number of files that can be stored for each device is 1,000.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/61448/155797671631618_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/61448/155860381731618_en-US.png)
 
     You can perform the following operations on an uploaded file:
 

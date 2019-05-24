@@ -21,8 +21,6 @@
  |
 |Items|String|是| 要设置的属性信息，组成为key:value，数据格式为JSON String。
 
- 若此参数为空时，需传入Items=\{\} 。
-
  Items数据详情，参见下表Items。
 
  |
@@ -44,7 +42,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
-|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见本文错误码章节。|
 
 ## 示例 {#section_vmf_1wj_sfb .section}
 

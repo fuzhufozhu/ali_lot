@@ -14,27 +14,29 @@
 4.  单击**服务端订阅** \> **设置**。
 5.  选择推送的消息类型。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155203592612666_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155896034812666_zh-CN.png)
 
-    -   设备上报消息：指产品下所有设备 Topic 列表中，具有发布权限的 Topic 中的消息。勾选后，可以通过 HTTP/2 SDK 接收这些消息。
+    -   **设备上报消息**：指产品下所有设备 Topic 列表中，具有发布权限的 Topic 中的消息。勾选后，可以通过 HTTP/2 SDK 接收这些消息。
 
-        高级版产品的设备上报消息，包括设备上报的自定义数据和属性、事件、属性设置响应、服务调用响应的物模型数据。而基础版产品只包括设备上报的自定义数据。
+        设备上报消息，包括设备上报的自定义数据和物模型数据（属性上报、事件上报、属性设置响应和服务调用响应）。
 
-        例如，有一个高级版产品，有3个Topic类，分别是：
+        例如，一个产品有3个Topic类，分别是：
 
-        -   `/${YourProductKey}/${YourDeviceName}/user/get`，具有订阅权限。
-        -   `/${YourProductKey}/${YourDeviceName}/user/update`，具有发布权限。
-        -   `/sys/${YourProductKey}/${YourDeviceName}/thing/event/property/post`，具有发布权限。
-        那么，服务端订阅会推送具有发布权限的Topic类中的消息，即`/${YourProductKey}/${YourDeviceName}/user/update`和`/sys/${YourProductKey}/${YourDeviceName}/thing/event/property/post`中的消息。其中，`/sys/${YourProductKey}/${YourDeviceName}/thing/event/property/post`中的数据已经过系统处理。
+        -   /$\{YourProductKey\}/$\{YourDeviceName\}/user/get，具有订阅权限。
+        -   /$\{YourProductKey\}/$\{YourDeviceName\}/user/update，具有发布权限。
+        -   /sys/$\{YourProductKey\}/$\{YourDeviceName\}/thing/event/property/post，具有发布权限。
+        那么，服务端订阅会推送具有发布权限的Topic类中的消息，即/$\{YourProductKey\}/$\{YourDeviceName\}/user/update和/sys/$\{YourProductKey\}/$\{YourDeviceName\}/thing/event/property/post中的消息。其中，/sys/$\{YourProductKey\}/$\{YourDeviceName\}/thing/event/property/post中的数据已经过系统处理。
 
-    -   设备状态变化通知：指一旦该产品下的设备状态变化时通知的消息，例如设备上线、下线的消息。设备状态消息的发送 Topic 为 `/as/mqtt/status/${YourProductKey}/${YourDeviceName}`。勾选后，可以通过 HTTP/2 SDK 接收设备状态变化的通知消息。
-    -   网关发现子设备上报：高级版产品特有的消息类型，网关可以将发现的子设备上报，需要网关上的应用程序支持。
-    -   设备拓扑关系变更：高级版产品特有的消息类型，指的是子设备和网关之间的拓扑关系建立和解除。
-    -   设备生命周期变更：高级版产品特有的消息类型，包括设备创建、删除、禁用、启用等消息的订阅。
+    -   **设备状态变化通知**：指一旦该产品下的设备状态变化时通知的消息，例如设备上线、下线的消息。设备状态消息的发送 Topic 为 /as/mqtt/status/$\{YourProductKey\}/$\{YourDeviceName\}。勾选后，可以通过 HTTP/2 SDK 接收设备状态变化的通知消息。
+    -   **网关发现子设备上报**：网关可以将发现的子设备信息上报给物联网平台。需要网关上的应用程序支持。网关产品特有消息类型。
+    -   **设备拓扑关系变更**：指子设备和网关之间的拓扑关系建立和解除消息。网关产品特有消息类型。
+    -   **设备生命周期变更**：包括设备创建、删除、禁用、启用等消息。
+    **说明：** 设备上报物模型消息、设备状态变化通知、网关发现子设备上报消息、设备拓扑关系变更消息和设备生命周期变更消息均默认为QoS=0；设备上报消息（除物模型相关消息外），您可以在设备端上设置为QoS=0或QoS=1。
+
 
 ## 接入 SDK {#section_v3d_gj5_42b .section}
 
-在工程中添加 maven 依赖接入 SDK。
+在Maven工程项目中添加以下依赖，安装阿里云IoT SDK。
 
 ```
 <dependency>
@@ -54,45 +56,55 @@
 
 使用服务端订阅功能，需要基于您的阿里云 AccessKey 进行身份认证并建立连接。
 
-建立链接示例如下：
+建立连接示例如下：
 
 ```
 // 阿里云accessKey
-        String accessKey = "xxxxxxxxxxxxxxx";
-        // 阿里云accessSecret
-        String accessSecret = "xxxxxxxxxxxxxxx";
-        // regionId
-        String regionId = "cn-shanghai";
-        // 阿里云uid
-        String uid = "xxxxxxxxxxxx";
-        // endPoint:  https://${uid}.iot-as-http2.${region}.aliyuncs.com
-        String endPoint = "https://" + uid + ".iot-as-http2." + regionId + ".aliyuncs.com";
+String accessKey = "xxxxxxxxxxxxxxx";
+// 阿里云accessSecret
+String accessSecret = "xxxxxxxxxxxxxxx";
+// regionId
+String regionId = "cn-shanghai";
+// 阿里云uid
+String uid = "xxxxxxxxxxxx";
+// endPoint:  https://${uid}.iot-as-http2.${region}.aliyuncs.com
+String endPoint = "https://" + uid + ".iot-as-http2." + regionId + ".aliyuncs.com";
 
-        // 连接配置
-        Profile profile = Profile.getAccessKeyProfile(endPoint, regionId, accessKey, accessSecret);
+// 连接配置
+Profile profile = Profile.getAccessKeyProfile(endPoint, regionId, accessKey, accessSecret);
 
-        // 构造客户端
-        MessageClient client = MessageClientFactory.messageClient(profile);
-
-        // 数据接收
-        client.connect(messageToken -> {
-            Message m = messageToken.getMessage();
-            System.out.println("receive message from " + m);
-            return MessageCallback.Action.CommitSuccess;
-        });
+// 构造客户端
+MessageClient client = MessageClientFactory.messageClient(profile);
+// 数据接收
+client.connect(messageToken -> {
+    Message m = messageToken.getMessage();
+    System.out.println("receive message from " + m);
+    return MessageCallback.Action.CommitSuccess;
+});
 ```
 
-accessKey 即您的账号的 AccessKey ID， accessSecret 即 AccessKey ID对应的 AccessKey Secret。请登录[阿里云控制台](https://home.console.aliyun.com/new#/)，将光标移至您的账号头像上，在选项框中选择 **accesskeys** 查看您的 AccessKey ID 和 AccessKey Secret；选择**安全设置**查看您的账号 ID。
+以上示例中账号相关信息的获取方法：
 
-regionId为您的物联网平台服务地域。
+|参数|获取途径|
+|:-|:---|
+|accessKey|您的账号AccessKey ID。 登录阿里云控制台，将光标移至账号头像上，然后单击**accesskeys**，跳转至用户信息管理页，即可获取。
+
+ |
+|accessSecret|您的账号AccessKey Secret。获取方式同accessKey。|
+|uid|您的账号ID。 用主账号登录阿里云控制台，单击账号头像，跳转至账号管理控制台，即可获取账号UID。
+
+ |
+|regionId|您的物联网平台服务所在地域代码。 在物联网平台控制台页，右上方即可查看地域（Region）。RegionId 的表达方法，请参见文档[地域和可用区](../../../../intl.zh-CN/通用参考/地域和可用区.md#)。
+
+ |
 
 ## 设置消息接收接口 {#section_fnd_3x5_42b .section}
 
-连接建立后，服务端会立即向 SDK 推送已订阅的消息。因此，建立链接时，需要提供消息接收接口，用于处理未设置回调的消息。建议在`connect`之前，调用 setMessageListener 设置消息回调。
+连接建立后，服务端会立即向 SDK 推送已订阅的消息。因此，建立连接时，需要提供消息接收接口，用于处理未设置回调的消息。建议在连接之前，调用 setMessageListener 设置消息回调。
 
-您需要通过 MessageCallback接口的`consume`方法，和调用 `messageClient` 的`setMessageListener()`方法来设置消息接收接口。
+您需要通过 MessageCallback接口的consume方法，和调用 messageClient的setMessageListener\(\)方法来设置消息接收接口。
 
-`consume` 方法的返回值决定 SDK 是否发送 ACK。
+consume 方法的返回值决定 SDK 是否发送 ACK（acknowledgement，即回复确认消息）。
 
 设置消息接收接口的方法如下：
 
@@ -110,7 +122,7 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
 
 其中，
 
--   参数 MessageToken 指消息回执的消息体。通过`MessageToken.getMessage()`可获取消息体。MessageToken可以用于手动回复 ACK 。
+-   参数 MessageToken 指消息回执的消息体。通过MessageToken.getMessage\(\)可获取消息体。MessageToken可以用于手动回复 ACK 。
 
     消息体包含的内容如下：
 
@@ -127,7 +139,10 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
     }
     ```
 
--   具体请参考[数据格式](intl.zh-CN/用户指南/规则引擎/数据流转/数据格式.md#)。
+    各类型消息的具体格式，请参考[数据格式](intl.zh-CN/用户指南/规则引擎/数据流转/数据格式.md#)。
+
+    **说明：** 关于设备上下线状态，为避免消息时序紊乱造成影响，建议您根据消息中的lastTime字段来判断最终设备状态。
+
 -   `messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);`用于设置回调。本示例中，设置为指定 Topic 回调。
 
     您可以设置为指定 Topic 回调，也可以设置为通用回调。
@@ -136,7 +151,7 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
 
         指定 Topic 回调的优先级高于通用回调。一条消息匹配到多个 Topic 时，按字典顺序优先调用，并且仅回调一次。
 
-        设置回调时，可以指定带通配符的 Topic，如 `/${YourProductKey}/${YourDeviceName}/#`。
+        设置回调时，可以指定带通配符的 Topic，如/$\{YourProductKey\}/$\{YourDeviceName\}/\# 。
 
         示例：
 
@@ -160,10 +175,10 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
 
     对于 QOS\>0 的消息，消费后需要回复 ACK。SDK 支持自动回复 ACK 和手动回复 ACK。默认为自动回复 ACK。本示例中未设置回复 ACK，则默认为自动回复。
 
-    -   自动回复 ACK：设置为自动回复 ACK 后，若 `MessageCallback.consume` 的返回值为 true 则 SDK 会发送 ACK；返回 false 或抛出异常，则不会返回 ACK。对于 QOS\>0 且未回复 ACK 的消息，服务端会重新发送。
-    -   手动回复 ACK：通过`MessageClient.setManualAcks`设置手动回复 ACK。
+    -   自动回复 ACK：设置为自动回复 ACK 后，若 MessageCallback.consume的返回值为 true 则 SDK 会发送 ACK；返回 false 或抛出异常，则不会返回 ACK。对于 QOS\>0 且未回复 ACK 的消息，服务端会重新发送。
+    -   手动回复 ACK：通过MessageClient.setManualAcks设置手动回复 ACK。
 
-        设置为手动回复 ACK 后，需要调用`MessageClient.ack()`方法回复 ACK，参数为 MessageToken。MessageToken 参数值可在接收消息中获取。
+        设置为手动回复 ACK 后，需要调用MessageClient.ack\(\)方法回复 ACK，参数为 MessageToken。MessageToken 参数值可在接收消息中获取。
 
         手动回复 ACK 的方法：
 
@@ -171,4 +186,9 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
         messageClient.ack(messageToken);
         ```
 
+
+## 相关文档 {#section_xh3_hmg_dyk .section}
+
+-   服务端订阅使用限制说明，请参见[使用限制](intl.zh-CN/用户指南/产品与设备/服务端订阅/使用限制.md#)
+-   查看各类型消息的具体格式，请参见[数据格式](intl.zh-CN/用户指南/规则引擎/数据流转/数据格式.md#)。
 

@@ -2,7 +2,7 @@
 
 LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此需要使用数据解析脚本，解析上下行数据。本文以LoRaWAN温湿度传感器为例，介绍LoRaWAN设备数据解析脚本的编辑和调试方法。
 
-## 步骤1. 编辑脚本 {#section_bq9_ruk_eey .section}
+## 步骤一：编辑脚本 {#section_bq9_ruk_eey .section}
 
 1.  在[物联网平台控制台](https://iot.console.aliyun.com/lk/summary)，创建连网方式为LoRaWAN的产品。
 2.  为该产品定义功能。功能定义具体方法，请参见[新增物模型](cn.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)。
@@ -50,7 +50,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
     完整的脚本示例Demo，请参见本文附录章节。
 
 
-## 步骤2. 在线测试脚本 {#section_b8k_hle_bi0 .section}
+## 步骤二： 在线测试脚本 {#section_b8k_hle_bi0 .section}
 
 在数据解析编辑器中，使用模拟数据测试脚本。
 
@@ -58,7 +58,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
     在**模拟输入**框中，输入模拟数据，如000102，选择模拟类型为**设备上报数据**，单击**运行**。右侧运行结果中将显示数据解析是否成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155866214947845_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247845_zh-CN.png)
 
 -   设备接收数据模拟解析
 
@@ -78,18 +78,18 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
     }
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155866214947846_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247846_zh-CN.png)
 
 
-## 步骤3. 提交脚本 {#section_ntl_8fm_mzi .section}
+## 步骤三：提交脚本 {#section_ntl_8fm_mzi .section}
 
 确认脚本可以正确解析数据后，单击**提交**，将该脚本提交到物联网平台系统，以供数据上下行时，物联网平台调用该脚本解析数据。
 
 **说明：** 仅提交后的脚本才能被物联网平台调用；草稿状态的脚本不能被调用。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155866215047848_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247848_zh-CN.png)
 
-## 步骤4. 使用真实设备调试 {#section_ufx_8d8_9nv .section}
+## 步骤四：使用真实设备调试 {#section_ufx_8d8_9nv .section}
 
 脚本提交后，正式使用之前，请使用真实设备进行测试。LoRaWAN节点设备如何发送和接收数据，请参考模组厂商的相关手册。
 
@@ -127,7 +127,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
 查看设备属性、事件和服务调用数据的路径如下图：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155866215047847_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247847_zh-CN.png)
 
 ## 附录：示例脚本 {#section_k9w_9id_mrb .section}
 

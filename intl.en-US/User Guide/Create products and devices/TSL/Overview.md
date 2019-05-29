@@ -4,7 +4,7 @@ Thing Specification Language \(TSL\) is a data model that digitizes a physical e
 
 A TSL model is a file in JSON format. TSL files are the digitized expressions of physical entities, such as sensors, vehicle-mounted devices, buildings and factories. A TSL file describes an entity in three dimensions: property \(what the entity is\), service \(what the entity can do\), and event \(what event information the entity reports\). Defining these three dimensions is to define the product features.
 
-Therefore, the feature types of a product are Properties, Services and Events. You can define these three types of features in the console or by using APIs.
+Therefore, the feature types of a product are Properties, Services and Events. You can define these three types of features in the console.
 
 |Feature type|Description|
 |:-----------|:----------|

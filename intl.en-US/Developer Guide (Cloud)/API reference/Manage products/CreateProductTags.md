@@ -13,9 +13,9 @@ Call this operation to create tags for a specified product.
 |:--------|:---|:-------|:----------|
 |Action|String|Yes|The operation that you want to perform. Value: CreateProductTags.|
 |ProductKey|String|Yes|The unique identifier of the product.|
-|ProductTags|List<String\>|Yes|The list of tags to be created. A tag is represented by a pair of TagKey and TagValue, which correspond to the key and value of the tag, respectively. For more information, see [ProductTag](#).**Note:** The tag keys must be unique within the product.
+|ProductTags|List<ProductTag\>|Yes|The list of tags to be created. A tag is represented by a pair of TagKey and TagValue, which correspond to the key and value of the tag, respectively. For more information, see [ProductTag](#). **Note:** The tag keys must be unique within the product.
 
-|
+ |
 |Common request parameters|N/A|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 |Parameter|Type|Required|Description|

@@ -12,18 +12,18 @@
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作。取值UpdateProductTags。|
 |ProductKey|String|是|产品Key，物联网平台为产品颁发的唯一标识。|
-|ProductTags|List<String\>|是|要更新的标签。标签包括TagKey和TagValue，分别对应标签的key和value。请参见下表[ProductTag](#)。|
+|ProductTags|List<ProductTag\>|是|要更新的标签。标签包括TagKey和TagValue，分别对应标签的key和value。请参见下表ProductTag。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 |名称|类型|是否必需|描述|
 |:-|:-|:---|:-|
-|TagKey|String|是|产品标签键\(key\)。可包含英文大小写字母，数字和点号\(.\)，长度不能超过30个字符。**说明：** 
+|TagKey|String|是|产品标签键（key）。可包含英文大小写字母，数字和点号（.），长度不可超过30个字符。 **说明：** 
 
 -   传入标签的TagKey不能重复。
 -   传入标签的TagKey必须是已存在的标签key。
 
-|
-|TagValue|String|是|产品标签值\(value\)。可包含中文、英文字母、数字、下划线\(\_\)和连字符\(-\)。长度不可超过128字符。一个中文汉字算2字符。|
+ |
+|TagValue|String|是|产品标签值（value）。可包含中文、英文字母、数字、下划线（\_）和连接号（-）。长度不可超过128字符。一个中文汉字算2字符。|
 
 ## 返回参数 {#section_hwv_5kk_3gb .section}
 

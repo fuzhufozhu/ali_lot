@@ -12,12 +12,12 @@ You can update a maximum of 10 tags each time you call this operation.
 |:---|:---|:-------|:----------|
 |Action|String|Yes|The operation that you want to perform. Set the value to UpdateProductTags.|
 |ProductKey|String|Yes|The unique identifier of the product.|
-|ProductTags|List<String\>|Yes|The tags that you want to update. A tag consists of a TagKey and a TagValue, which correspond to the key and value of the tag respectively. For more information, see the table [ProductInfo](#).**Note:** 
+|ProductTags|List<ProductTag\>|Yes|The tags that you want to update. A tag consists of a TagKey and a TagValue, which correspond to the key and value of the tag respectively. For more information, see the table ProductTag. **Note:** 
 
 -   The TagKey must be unique.
 -   The TagKey must already exists.
 
-|
+ |
 |Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 |Name|Type|Required|Description|

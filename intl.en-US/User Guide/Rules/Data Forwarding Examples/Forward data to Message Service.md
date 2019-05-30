@@ -15,7 +15,7 @@ By using rules engine to forward data from IoT Platform to [Message Service \(MN
     The application server calls the relevant APIs of IoT Platform to publish messages to IoT Platform, and devices subscribe to related topics for messages from the server.
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15487573714797_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15591875144797_en-US.png)
 
 ## Procedure {#section_ogz_4m1_1gb .section}
 
@@ -29,7 +29,7 @@ By using rules engine to forward data from IoT Platform to [Message Service \(MN
     1.  Click **Topics** \> **Create Topic**.
     2.  In the Create Topic dialog box, enter a name for the topic, and then click **OK**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/154875737133812_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155918751433812_en-US.png)
 
     3.  On the Topic List page, find the topic and click **Subscription List** in the Actions column.
     4.  On the Subscription List page, click **Subscribe**.
@@ -37,14 +37,17 @@ By using rules engine to forward data from IoT Platform to [Message Service \(MN
 
         An MNS topic can have multiple subscribers.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/154875737133815_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155918751433815_en-US.png)
 
         For more information, see the [MNS documentations](https://partners-intl.aliyun.com/help/product/27412.htm).
 
 3.  Go to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot) and, on the Rules page, click **Create Rule**and then create a rule
 4.  Go back to the Rules page, find the newly created rule and click **Manage** on the right.
 5.  On the Data Flow Details page, write the SQL statement that is used to process and filter messages. For more information, see [Create and configure a rule](reseller.en-US/User Guide/Rules/Data Forwarding/Create and configure a rule.md#) and [SQL statements](reseller.en-US/User Guide/Rules/Data Forwarding/SQL statements.md#).
-6.  On the Data Flow Details page, click **Add Operation** next to **Data Forwarding**.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15487573713029_en-US.png)
+6.  On the Data Flow Details page, click **Add Operation** next to **Data Forwarding**.
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15591875143029_en-US.png)
+
 7.  In the Add Operation dialog box, enter information of the MNS topic.
 
     Parameter description:

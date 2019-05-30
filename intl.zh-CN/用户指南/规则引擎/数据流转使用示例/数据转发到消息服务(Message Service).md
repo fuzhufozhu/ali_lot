@@ -15,7 +15,7 @@
     您的应用服务器调用物联网平台的OpenAPI发布数据到物联网平台中，然后设备从物联网平台中订阅消息。
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15534982394797_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15591875104797_zh-CN.png)
 
 ## 操作步骤 {#section_ogz_4m1_1gb .section}
 
@@ -29,7 +29,7 @@
     1.  在消息服务控制台中，单击**主题** \> **创建主题**。
     2.  在创建主题对话框中，输入主题信息，然后单击**确定**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155349824033812_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155918751033812_zh-CN.png)
 
     3.  在主题列表，找到创建的主题，单击其对应的**订阅详情**操作按钮。
     4.  在订阅详情页，单击**创建订阅**。
@@ -37,14 +37,14 @@
 
         您可以根据自己的业务需求创建多个订阅者。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155349824033815_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/155918751033815_zh-CN.png)
 
         关于消息服务的使用方法，请参见[消息服务产品文档](https://www.alibabacloud.com/help/product/27412.htm)
 
 3.  在[物联网平台控制台](https://iot.console.aliyun.com/rule/)规则引擎页，单击**创建规则**，然后创建一个规则。
 4.  在规则引擎页，单击新建规则对应的**管理**操作按钮。
 5.  在规则详情页，为该规则编写用于处理数据的SQL。如需帮助，请参见[设置规则引擎](intl.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)和[SQL表达式](intl.zh-CN/用户指南/规则引擎/数据流转/SQL表达式.md#)。
-6.  在规则详情页，单击**数据转发**栏对应的**添加操作**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15534982403029_zh-CN.png)
+6.  在规则详情页，单击**数据转发**栏对应的**添加操作**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7548/15591875103029_zh-CN.png)
 7.  在添加操作对话框中，输入数据转发目标的消息服务主题信息。
 
     参数说明：

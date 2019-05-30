@@ -8,7 +8,7 @@
 
 ## .NET SDK的开发步骤 {#section_hnx_ch1_hgb .section}
 
-1.  下载[HTTP/2 .NET SDK](https://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/iotx-sdk-net/iotx-as-http2-net-sdk.zip)。
+1.  下载[HTTP/2 .NET SDK](https://iot-demos.oss-cn-shanghai.aliyuncs.com/h2/iotx-as-http2-net-sdk.zip)。
 2.  单击[iot-http2-net-sdk-demo](https://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/net-http2-sdk-demo/iot-http2-net-sdk-demo.zip)下载.NET SDK Demo。
 3.  使用Visual Studio，将该Demo导入到工程里。
 4.  从控制台设备详情页获取设备的证书信息（ProductKey、DeviceName和DeviceSecret）。
@@ -79,8 +79,8 @@
         {
             Console.WriteLine("publish topic message, messageId: " + msg.Message.MessageId 
                               + "|| topic:" + msg.Message.Topic
-        		      + "|| code: " + msg.Code
-        		      + "|| body: " + Encoding.ASCII.GetString(msg.Body));
+                      + "|| code: " + msg.Code
+                      + "|| body: " + Encoding.ASCII.GetString(msg.Body));
         });
         ```
 
@@ -121,18 +121,18 @@
     |ProductKey|String|是|设备所隶属产品的Key。可从控制台设备详情页获取。|
     |DeviceName|String|是|设备的名称。可从控制台设备详情页获取。|
     |DeviceSecret|String|是|设备的密钥。可从控制台设备详情页获取。|
-    |Url|String|是|接入点地址。格式为`https://${productKey}.iot-as-http2.${regionId}.aliyuncs.com`。    -   变量$\{productKey\}替换为您的产品Key。
+    |Url|String|是|接入点地址。格式为`https://${productKey}.iot-as-http2.${regionId}.aliyuncs.com`。     -   变量$\{productKey\}替换为您的产品Key。
     -   变量$\{regionId\}替换为您的服务地域代码。地域代码表达方法，请参见[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)文档。
-|
+ |
     |ClientId|String|是|客户端设备的唯一标识。建议使用设备的MAC地址或序列码作为ClientId。长度限制为64字节。|
-    |CleanSession|Bool|否|是否清除缓存的离线消息。可选：    -   true：清除。
+    |CleanSession|Bool|否|是否清除缓存的离线消息。可选：     -   true：清除。
     -   false：不清除。
-|
+ |
     |RetryIntervalTime|Integer|否|QoS=1消息发送失败后的重试间隔时间。|
     |RetryPubCount|Integer|否|QoS=1消息发送失败后的重试次数。|
-    |IsMultiConnection|Bool|否|是否使用多连接。**说明：** 若使用设备的productKey和deivceName接入时，请将此参数值设置为false。
+    |IsMultiConnection|Bool|否|是否使用多连接。 **说明：** 若使用设备的productKey和deivceName接入时，请将此参数值设置为false。
 
-|
+ |
     |AuthParams|Dictionary|是|自定义认证参数。|
 
 -   建立连接接口

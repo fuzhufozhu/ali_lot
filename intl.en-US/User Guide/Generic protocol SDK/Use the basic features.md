@@ -8,7 +8,7 @@ See [generic protocol SDK demo](https://github.com/aliyun/alibabacloud-iot-bridg
 
 The following flow diagram shows the overall process for how to use the generic protocol SDK to connect a device to IoT Platform.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16157/155928792945089_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16157/155928812045089_en-US.png)
 
 ## Import the SDK {#section_d2z_rji_a7t .section}
 
@@ -54,7 +54,7 @@ bridgeBootstrap.bootstrap(new DownlinkChannelHandler() {
 
 By default, a bridge is configured based on a configuration file. By default, the configuration file is read from application.conf under the default resource file path of the Java project \(generally src/main/resources/\). The file is in the format of [HOCON](https://github.com/lightbend/config/blob/master/HOCON.md) \(JSON superset\). The generic protocol SDK uses typesafe.config to parse the configuration file.
 
-You can configure a bridge device either by specifying a bridge device or dynamically registering a bridge device. This topic only describes how to specify a bridge device. For more information about how to dynamically register a bridge device, see [Dynamically register a bridge device](intl.en-US/User Guide/Generic protocol SDK/Use the advanced features.md#section_xmx_dyi_nok) in [Use the advanced features](intl.en-US/User Guide/Generic protocol SDK/Use the advanced features.md#).
+You can configure a bridge device either by specifying a bridge device or dynamically registering a bridge device. This topic only describes how to specify a bridge device. For more information about how to dynamically register a bridge device, see [Dynamically register a bridge device](reseller.en-US/User Guide/Generic protocol SDK/Use the advanced features.md#section_xmx_dyi_nok).
 
 |Parameter|Required|Description|
 |:--------|--------|:----------|
@@ -71,19 +71,19 @@ You can configure a bridge device either by specifying a bridge device or dynami
 
  Replace $\{ProductKey\} with the ProductKey of the product to which your bridge device belongs.
 
- Replace $\{RegionId\} with the ID of the region where your service is located. For more information about regions, see [Regions and zones](https://www.alibabacloud.com/help/doc-detail/40654.htm).
+ Replace $\{RegionId\} with the ID of the region where your service is located. For more information about regions, see [Regions and zones](https://partners-intl.aliyun.com/help/doc-detail/40654.htm).
 
  For example, if the ProductKey of the bridge device is alabcabc123, the region is China \(Shanghai\), then the HTTP/2 gateway service endpoint is `alabcabc123.iot-as-http2.cn-shanghai.aliyuncs.com:443`.
 
  |
 |authEndpoint|Yes| The service URL for device authentication. The device authentication service URL is in the format of `https://iot-auth .${RegionId}.aliyuncs.com/auth/bridge`.
 
- Replace $\{RegionId\} with the ID of the region where your service is located. For more information about regions, see [Regions and zones](https://www.alibabacloud.com/help/doc-detail/40654.htm).
+ Replace $\{RegionId\} with the ID of the region where your service is located. For more information about regions, see [Regions and zones](https://partners-intl.aliyun.com/help/doc-detail/40654.htm).
 
  For example, if the region is China \(Shanghai\), then the device authentication service address is `https://iot-auth.cn-shanghai.aliyuncs.com/auth/bridge`.
 
  |
-|popClientProfile|No|This parameter must be provided if you use the MAC address of the bridge server to dynamically register the bridge device. For more information, see [Use the advanced features](intl.en-US/User Guide/Generic protocol SDK/Use the advanced features.md#).
+|popClientProfile|No|This parameter must be provided if you use the MAC address of the bridge server to dynamically register the bridge device. For more information, see [Dynamically register a bridge device](reseller.en-US/User Guide/Generic protocol SDK/Use the advanced features.md#section_xmx_dyi_nok).
 
  |
 

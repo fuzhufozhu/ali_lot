@@ -6,7 +6,7 @@
 
 基于CoAP协议将NB-IoT设备接入物联网平台的流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15512388793114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15595342803114_zh-CN.png)
 
 基础流程说明如下：
 
@@ -34,7 +34,7 @@
     Port: 5682
     Accept: application/json or application/cbor
     Content-Format: application/json or application/cbor
-    payload: {"productKey":"a1NUjcVkHZS","deviceName":"ff1a11e7c08d4b3db2b1500d8e0e55","clientId":"a1NUjcVkHZS&ff1a11e7c08d4b3db2b1500d8e0e55","sign":"F9FD53EE0CD010FCA40D14A9FEAB81E0", "seq":"10"}
+    payload: {"productKey":"a1NUjcV****","deviceName":"ff1a11e7c08d4b3db2b1500d8e0e55","clientId":"a1NUjcV****&ff1a11e7c08d4b3db2b1500d8e0e55","sign":"F9FD53EE0CD010FCA40D14A9FE******", "seq":"10"}
     ```
 
     |参数|说明|
@@ -45,36 +45,38 @@
     |Port|端口，取值：5682。|
     |Accept|设备接收的数据编码方式。目前，支持两种方式：application/json和application/cbor。|
     |Content-Format|设备发送给物联网平台的上行数据的编码格式，目前，支持两种方式： application/json和application/cbor。|
-    |payload|设备认证信息内容，JSON数据格式。具体参数，请参见下表[payload 说明](#)。|
+    |payload|设备认证信息内容，JSON数据格式。具体参数，请参见下表payload说明。|
 
     |字段名称|是否必需|说明|
     |:---|:---|:-|
     |productKey|是|设备三元组信息中ProductKey的值，是物联网平台为产品颁发的全局唯一标识。从物联网平台的控制台获取。|
     |deviceName|是|设备三元组信息中DeviceName的值，在注册设备时自定义的或自动生成的设备名称。从物联网平台的控制台获取。|
-    |ackMode|否|通信模式。取值：    -   0：request/response 是携带模式，即客户端发送请求到服务端后，服务端处理完业务，回复业务数据和ACK。
+    |ackMode|否|通信模式。取值：     -   0：request/response 是携带模式，即客户端发送请求到服务端后，服务端处理完业务，回复业务数据和ACK。
     -   1：request/response 是分离模式，即客户端发送请求到服务端后，服务端先回复一个确认ACK，然后再处理业务后，回复业务数据。
-若不传入此参数，则默认为携带模式。
+ 若不传入此参数，则默认为携带模式。
 
-|
-    |sign|是|签名。签名计算格式为`hmacmd5(DeviceSecret,content)`。
+ |
+    |sign|是|签名。 签名计算格式为`hmacmd5(DeviceSecret,content)`。
 
-其中，content为将所有提交给服务器的参数（除version、sign、resources和signmethod外），按照英文字母升序，依次拼接排序（无拼接符号）。
+ 其中，content为将所有提交给服务器的参数（除version、sign、resources和signmethod外），按照英文字母升序，依次拼接排序（无拼接符号）。
 
-签名计算示例：
+ **说明：** 用于签名计算的参数值需与设备认证请求中提交的参数值一致。
 
-    ```
-sign= hmac_md5(deviceSecret, clientId123deviceNametestproductKey123seq123timestamp1524448722000)
+ 签名计算示例：
+
+     ```
+sign= hmac_md5(mRPVdzSMu2nVBxzK77ERPIMxSYIv****, clientIda1NUjcV****&ff1a11e7c08d4b3db2b1500d8e0e55deviceNameff1a11e7c08d4b3db2b1500d8e0e55productKeya1NUjcV****seq10timestamp1524448722000)
     ```
 
  |
-    |signmethod|否|算法类型，支持hmacmd5和hmacsha1。|
+    |signmethod|否|算法类型，支持hmacmd5和hmacsha1。默认是hmacmd5。|
     |clientId|是|客户端ID，长度需在64字符内。建议使用设备的的MAC地址或SN码作为clientId的值。|
     |timestamp|否|时间戳。目前，时间戳不做时间窗口校验。|
 
     返回结果示例：
 
     ```
-    {"random":"ad2b3a5eb51d64f7","seqOffset":1,"token":"MZ8m37hp01w1SSqoDFzo0010500d00.ad2b"}
+    {"random":"ad2b3a5eb51d6****","seqOffset":1,"token":"MZ8m37hp01w1SSqoDFzo001050****.ad2b"}
     ```
 
     |字段名称|说明|
@@ -106,18 +108,18 @@ sign= hmac_md5(deviceSecret, clientId123deviceNametestproductKey123seq123timesta
     |Accept|是|设备接收的数据编码方式。目前，支持两种方式：application/json和application/cbor。|
     |Content-Format|是|上行数据的编码格式，服务端对此不做校验。目前，支持两种方式：application/json和application/cbor。|
     |payload|是|待上传的数据经高级加密标准（AES）加密后的数据。|
-    |CustomOptions|是|option值有2088和2089两种类型，说明如下：    -   2088：表示token，取值为设备认证后返回的token值。
+    |CustomOptions|是|option值有2088和2089两种类型，说明如下：     -   2088：表示token，取值为设备认证后返回的token值。
 
 **说明：** 每次上报数据都需要携带token信息。如果token失效，需重新认证获取token。
 
     -   2089：表示seq，取值需比设备认证后返回的seqOffset值更大，且在认证生效周期内不重复的随机值。使用AES加密该值。
-option返回示例：
+ option返回示例：
 
     ```
 number:2090(云端消息ID)
     ```
 
-|
+ |
 
     消息上行成功后，返回成功状态码，同时返回物联网平台生成的消息ID。
 
@@ -141,15 +143,15 @@ number:2090(云端消息ID)
     Port: 5684
     Accept: application/json or application/cbor
     Content-Format: application/json or application/cbor
-    payload: {"productKey":"ZG1EvTEa7NN","deviceName":"NlwaSPXsCpTQuh8FxBGH","clientId":"mylight1000002","sign":"bccb3d2618afe74b3eab12b94042f87b"}
+    payload: {"productKey":"ZG1EvTE****","deviceName":"NlwaSPXsCpTQuh8FxBGH","clientId":"mylight1000002","sign":"bccb3d2618afe74b3eab12b94042****"}
     ```
 
-    参数（除 Port参数外。使用DTLS时的Port为 5684）及payload内容说明，可参见[参数说明](#)中。
+    参数（除 Port参数外。使用DTLS时的Port为 5684）及payload内容说明，可参见上一章节的[参数说明](#)。
 
     返回结果示例：
 
     ```
-    response：{"token":"f13102810756432e85dfd351eeb41c04"}
+    response：{"token":"f13102810756432e85dfd351eeb4****"}
     ```
 
     |Code|描述|Payload|备注|
@@ -170,7 +172,7 @@ number:2090(云端消息ID)
 
     自定义Topic，在物联网平台的控制台，设备所属产品的产品详情页的Topic类列表栏中进行创建。
 
-    目前，只支持发布权限的Topic用于数据上报，如`/${YourProductKey}/${YourDeviceName}/pub`。假设当前设备名称为device，产品Key为a1GFjLP3xxC，那么您可以调用 `a1GFjLP3xxC.coap.cn-shanghai.link.aliyuncs.com:5684/topic/a1GFjLP3xxC/device/pub`地址来上报数据。
+    目前，只支持发布权限的Topic用于数据上报，如`/${YourProductKey}/${YourDeviceName}/pub`。假设当前设备名称为device，产品Key为a1GFjLP\*\*\*\*，那么您可以调用 `a1GFjLP****.coap.cn-shanghai.link.aliyuncs.com:5684/topic/a1GFjLP****/device/pub`地址来上报数据。
 
     上报数据请求：
 

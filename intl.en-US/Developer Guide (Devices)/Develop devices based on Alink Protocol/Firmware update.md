@@ -13,7 +13,7 @@ Upstream​
 
 Request message
 
-```
+``` {#codeblock_52z_i0g_mh8}
 {
   "id": 1,
   "params": {
@@ -40,7 +40,7 @@ Downstream
 
 Request message
 
-```
+``` {#codeblock_70f_7bi_n1q}
 {
   "code": "1000",
   "data": {
@@ -80,7 +80,7 @@ Upstream
 
 Request message
 
-```
+``` {#codeblock_ehm_0yr_3q0}
 {
   "id": 1,
   "params": {
@@ -114,7 +114,7 @@ Request message
 
 Request message
 
-```
+``` {#codeblock_jhh_5iy_r9s}
 {
   "id": 1,
   "params": {
@@ -129,4 +129,34 @@ Request message
 |:--------|:---|:----------|
 |id|String|Message ID. You need to define IDs for upstream messages using numbers, and the message IDs must be unique within the device.|
 |version|String|Version information of the firmware.|
+
+Response message:
+
+-   Message with firmware information:
+
+    ``` {#codeblock_cig_bou_tz4}
+    {
+      "code": "1000", 
+      "data": {
+        "size": 93796291, 
+        "sign": "f8d85b250d4d787a9f483d89a9747348", 
+        "version": "1.0.1.9.20171112.1432", 
+        "url": "https://the_firmware_url", 
+        "signMethod": "Md5", 
+        "md5": "f8d85b250d4d787a9f483d89a9747348"
+      }, 
+      "id": 8758548588458, 
+      "message": "success"
+    }
+    ```
+
+-   No firmware file for update
+
+    ``` {#codeblock_pah_vpu_x7v}
+    {
+      "code": 500, 
+      "message": "none upgrade operation of the device."
+    }
+    ```
+
 

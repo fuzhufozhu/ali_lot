@@ -8,50 +8,52 @@
 -   只支持专有网络（VPC）下TSDB实例。
 -   只支持数据在同地域内转发。例如：华东2地域的设备数据只能转发到华东2的TSDB实例中。
 -   只支持JSON格式数据转发。
+-   不支持时序数据库InfluxDB版。
+-   不支持时空数据库。
 -   转发的消息中，除了配置为timestamp和tag值的字段外，其他字段都将作为metric写入时序时空数据库。metric的值只能为**数值**类型，否则会导致写入数据库失败。
 
 更多TSDB相关信息，请参见[时序时空数据库（TSDB）使用指南](https://help.aliyun.com/product/54825.html)。
 
-## 准备工作 { .section}
+## 准备工作 {#section_tj9_c8d_sl1 .section}
 
-在设置转发之前，您需要参考[设置数据流转规则](cn.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)，创建数据转发规则和编写处理数据的SQL。
+在设置转发之前，请参见[设置数据流转规则](cn.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)，创建数据转发规则和编写处理数据的SQL。
 
 ## 操作步骤 {#procedure .section}
 
 1.  在规则详情页，单击**数据转发**一栏的**添加操作**。
 2.  按照界面提示，设置参数。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15536500963031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7549/15597532413031_zh-CN.png)
 
     |参数|描述|
     |:-|:-|
     |选择操作|选择**存储到时序时空数据库（TSDB）中**。|
     |VPC实例|选择数据转发目标为您已创建的专有网络（VPC）中的TSDB实例。|
-    |timestamp|时间戳。支持：    -   使用转义符`${}`表达式，如`${time}`，表示timestamp的值为规则SQL中指定Topic对应数据包中time字段对应的值。
+    |timestamp|时间戳。支持：     -   使用转义符`${}`表达式，如`${time}`，表示timestamp的值为规则SQL中指定Topic对应数据包中time字段对应的值。
     -   使用数据流转函数`timestamp()`，表示timestamp的值为数据流转服务器的时间戳。
     -   输入值，必须为Unix时间戳，如1404955893000。
-|
+ |
     |tag|设置标记数据的标签名。支持中文汉字、英文字母、数字、和特殊字符包括：半角冒号（:）、逗号（,）、点号 （.）、单引号（'）、正斜线（/）、连字符（-）、下划线（\_）、小括号\(\)、中括号\[\]。|
-    |值|设置标签值。支持：    -   使用转义符`${}`表达式，如`${city}`，表示标签值为规则SQL中指定Topic对应数据包中city字段对应的值。建议使用此方式。
+    |值|设置标签值。支持：     -   使用转义符`${}`表达式，如`${city}`，表示标签值为规则SQL中指定Topic对应数据包中city字段对应的值。建议使用此方式。
     -   使用数据流转函数规定的一些函数，如`deviceName()`，表示标签值为设备名称。
     -   输入常量，例如beijing。支持输入中文汉字、英文字母、数字、和特殊字符包括：半角冒号（:）、逗号（,）、点号 （.）、单引号（'）、正斜线（/）、连字符（-）、下划线（\_）、小括号\(\)、中括号\[\]。
-**说明：** 
+ **说明：** 
 
     -   最多可添加8个tag键-值对。
     -   需保证TSDB能够获取到配置的tag键-值对，如果获取不到任意一个tag键-值对，会导致写入数据库失败。
-|
-    |角色|授予物联网平台向TSDB写数据的权限。物联网平台会向TSDB实例中添加网络白名单，用于物联网平台访问您的TSDB数据库， 请勿删除这些IP段。
+ |
+    |角色|授予物联网平台向TSDB写数据的权限。 物联网平台会向TSDB实例中添加网络白名单，用于物联网平台访问您的TSDB数据库， 请勿删除这些IP段。
 
-若TSDB实例白名单中未出现物联网平台IP：100.104.76.0/24，请手动添加。
+ 若TSDB实例白名单中未出现物联网平台IP：100.104.76.0/24，请手动添加。
 
-|
+ |
 
 
 ## 示例 {#section_j3r_tqj_wdb .section}
 
 -   规则的SQL如下：
 
-    ```
+    ``` {#codeblock_bbt_txm_nnf}
     SELECT time,city,power,distance, FROM "/myproduct/myDevice/update"`；
     ```
 
@@ -59,7 +61,9 @@
 
 -   通过以上SQL处理后的转发消息示例如下：
 
-    ```
+    ``` {#codeblock_0dd_2k4_d26}
+    
+    
     
     {
     "time": 1513677897,
@@ -73,13 +77,17 @@
 
 -   根据数据转发规则，向TSDB中写入的两条数据：
 
-    ```
+    ``` {#codeblock_qsg_tq8_bke}
+    
+    
     
     数据: timestamp:1513677897, [metric:power value:93.0]
     tag: cityName=beijing
     ```
 
-    ```
+    ``` {#codeblock_lzm_xa4_y9x}
+    
+    
     
     数据: timestamp:1513677897, [metric:distance value:8545]
     tag: cityName=beijing

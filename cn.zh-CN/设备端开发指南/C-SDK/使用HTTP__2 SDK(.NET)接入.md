@@ -9,13 +9,13 @@
 ## .NET SDK的开发步骤 {#section_hnx_ch1_hgb .section}
 
 1.  下载[HTTP/2 .NET SDK](https://iot-demos.oss-cn-shanghai.aliyuncs.com/h2/iotx-as-http2-net-sdk.zip)。
-2.  单击[iot-http2-net-sdk-demo](https://aliyun-iot.oss-cn-hangzhou.aliyuncs.com/net-http2-sdk-demo/iot-http2-net-sdk-demo.zip)下载.NET SDK Demo。
+2.  单击[iot-http2-net-sdk-demo](https://iot-demos.oss-cn-shanghai.aliyuncs.com/h2/iot-http2-server-side-net-demo.zip)下载.NET SDK Demo。
 3.  使用Visual Studio，将该Demo导入到工程里。
 4.  从控制台设备详情页获取设备的证书信息（ProductKey、DeviceName和DeviceSecret）。
 5.  根据您的设备信息和业务需求修改Demo中的配置信息。
     1.  配置设备信息。
 
-        ```
+        ``` {#codeblock_9t0_wu9_o4l}
         //从控制台获取productKey、deviceName、deviceSecret信息
         string productKey = "";
         string deviceName = "";
@@ -27,7 +27,7 @@
 
     2.  连接HTTP/2服务器，并设置数据接收。
 
-        ```
+        ``` {#codeblock_og7_yja_gsh}
         IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
         // 客户端设备唯一标记
         string clientId = host.AddressList.FirstOrDefault(
@@ -60,7 +60,7 @@
 
     3.  订阅Topic。
 
-        ```
+        ``` {#codeblock_pzk_c1s_5eb}
         //topic订阅
         client.DoSubscribe(topic, msg =>
         {
@@ -70,7 +70,7 @@
 
     4.  配置数据发送。
 
-        ```
+        ``` {#codeblock_y37_ydd_6nj}
         //发消息
         Message message = new Message();
         message.Payload = Encoding.ASCII.GetBytes("hello, iot");
@@ -93,7 +93,7 @@
 
     设备连接物联网平台时，需要使用Profile配置设备身份及相关参数。配置接口参数如下：
 
-    ```
+    ``` {#codeblock_7lr_wxy_3qk}
     //连接服务配置项
     Profile profile = new Profile();
     profile.ProductKey = productKey;
@@ -139,13 +139,13 @@
 
     获取MessageClient之后，设备需要与物联网平台建立连接。设备身份认证成功后才可收发消息。连接建立成功，服务端会立即向SDK推送已订阅的消息，因此建连时需要提供默认消息接收接口，用于处理未设置回调的消息。建连接口如下：
 
-    ```
+    ``` {#codeblock_idg_2at_722}
     void DoConnection(IHttp2MessageCallback callback);
     ```
 
 -   消息订阅接口
 
-    ```
+    ``` {#codeblock_qdn_74t_rpe}
     /// <summary>
     /// 订阅topic
     /// </summary>
@@ -172,7 +172,7 @@
 
     消息接收需要实现IHttp2MessageCallback接口，并在连接或订阅Topic时传入MessageClient。具体接口如下：
 
-    ```
+    ``` {#codeblock_8mg_4a1_nqh}
     ConsumeAction Consume(Http2ConsumeMessage http2ConsumeMessage);
     ```
 
@@ -185,7 +185,7 @@
 
 -   消息发送接口
 
-    ```
+    ``` {#codeblock_mir_5xv_syf}
     /// <summary>
     /// 发送消息到指定topic
     /// </summary>

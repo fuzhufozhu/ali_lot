@@ -8,7 +8,7 @@ In SQL statement, you can use functions to get or handle data.
 
 For example, in the following example, the functions: deviceName\(\), abs\(number\), and topic\(number\) are used.
 
-```
+``` {#codeblock_0jq_flt_6cw}
 SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag，deviceName(),abs(temperature) tmr FROM "/topic/#" WHERE temperature>10 and topic(2)='123'
 ```
 
@@ -69,9 +69,9 @@ SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag
  The value of format is optional. If you do not specify the format, the 13-digit timestamp of the current system time will be returned. Examples: timestamp\(\) = 1543373798943, timestamp\('yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\''\) = 2018-11-28T10:56:38Z.
 
  |
-|timestamp\_utc\(format\)|Returns the formatted UTC timestamp of the current system time.The value of format is optional. If you do not specify the format, the 13-digit timestamp of the current system time will be returned. Examples: timestamp\_utc\(\) = 1543373798943，timestamp\_utc\('yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\''\) = 2018-11-28T02:56:38Z
+|timestamp\_utc\(format\)|Returns the formatted UTC timestamp of the current system time. The value of format is optional. If you do not specify the format, the 13-digit timestamp of the current system time will be returned. Examples: timestamp\_utc\(\) = 1543373798943，timestamp\_utc\('yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\''\) = 2018-11-28T02:56:38Z
 
-|
+ |
 |topic\(number\)| Returns a segment of a topic.
 
  For example, for topic /abcdef/ghi, if you use the function topic\(\), “ /abcdef/ghi” will be returned; If you use the function topic\(1\), “ abcdef” will be returned; If you use the function topic\(2\), “ghi” will be returned.
@@ -79,4 +79,19 @@ SELECT case flag when 1 then 'Light On' when 2 then 'Light Off' else '' end flag
  |
 |upper\(string\)|Returns an upper-case string.|
 |to\_base64\(\*\)|If the original payload data is binary data, you can call this function to convert the binary data to a base64String data.|
+|substring\(target, start, end\)|Returns the part of the target string between the start index \(included\) and end index \(not included\). The data type of the target must be String or Integer, and Integer data will be parsed to String data.
+
+ Examples:
+
+ -   substring\('012345', 0\) = "012345"
+-   substring\('012345', 2\) = "2345"
+-   substring\('012345', 2.745\) = "2345"
+-   substring\(123, 2\) = "3"
+-   substring\('012345', -1\) = "012345"
+-   substring\(true, 1.2\) error
+-   substring\('012345', 1, 3\) = "12"
+-   substring\('012345', -50, 50\) = "012345"
+-   substring\('012345', 3, 1\) = ""
+
+ |
 

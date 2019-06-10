@@ -14,7 +14,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
 
         Maven coordinates of the IoT Java SDK dependency
 
-        ```
+        ``` {#codeblock_4y3_d71_ig5}
         <! -- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-iot -->
         <dependency>
             <groupId>com.aliyun</groupId>
@@ -25,7 +25,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
 
         Public libraries
 
-        ```
+        ``` {#codeblock_tv9_qym_07f}
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
@@ -38,7 +38,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
 
 **Note:** The following example uses the China \(Shanghai\) region and the corresponding endpoint. You must specify the region of your IoT Platform and the endpoint of your service to use the SDK.
 
-```
+``` {#codeblock_p1a_fhv_sbn}
 String accessKey = "<your accessKey>";
 String accessSecret = "<your accessSecret>";
 DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
@@ -52,7 +52,25 @@ accessKeyId is the AccessKeyId of your account, andaccessSecret is the AccessKey
 
 The following example demonstrates how to call the Pub operation to publish messages to a topic.
 
-```
-
+``` {#codeblock_fgb_v89_w1i}
+PubRequest request = new PubRequest(); 
+request.setProductKey("productKey"); 
+request.setMessageContent(Base64.encodeBase64String("hello world".getBytes())); 
+request.setTopicFullName("/productKey/deviceName/get"); 
+request.setQos(0); //support QoS0 and QoS1 
+try 
+{ 
+   PubResponse response = client.getAcsResponse(request); 
+   System.out.println(response.getSuccess()); 
+   System.out.println(response.getErrorMessage());
+} 
+catch (ServerException e) 
+{
+   e.printStackTrace();
+}
+ catch (ClientException e)
+{
+   e.printStackTrace();
+}
 ```
 

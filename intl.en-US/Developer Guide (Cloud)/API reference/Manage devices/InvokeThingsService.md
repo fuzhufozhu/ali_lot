@@ -1,6 +1,6 @@
 # InvokeThingsService {#reference_ckd_zsj_sfb .reference}
 
-Call this operation to run a service on multiple Pro Edition devices.
+Call this operation to run a service on multiple devices.
 
 ## Limits {#section_f1v_4vj_sfb .section}
 
@@ -15,17 +15,17 @@ Call this operation to run a service on multiple Pro Edition devices.
 |ProductKey|String|Yes| The ProductKey of the specified devices.
 
  |
-|DeviceNames|List<String\>|Yes| The names of the devices on which you want to run the service. Supports up to 500 devices.
+|DeviceNames|List<String\>|Yes| The names of the devices on which you want to run the service. Supports up to 100 devices.
 
  |
-|Identifier|String|Yes|The identifier of the service.To view the service identifier of the devices, go to the Define Feature page of the Pro Edition product that the devices belong to in the console.
+|Identifier|String|Yes|The identifier of the service. To view the service identifier of the devices, go to the Define Feature page of the product that the devices belong to in the console.
 
-|
+ |
 |Args|String|Yes| Specify input parameter values of the service. The value of this parameter is a JSON string. Example: Args=\{"param1": 1\}.
 
  If you do not want to specify any input parameter, pass in this parameter as Args=\{\}.
 
- For more information about arguments, see the following table [Args](reseller.en-US/Developer Guide (Cloud)/API reference/Manage devices/InvokeThingService.md#table_gzl_z1t_xdb).
+ For more information about arguments, see the following table Args.
 
  |
 |Common request parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
@@ -52,7 +52,7 @@ Call this operation to run a service on multiple Pro Edition devices.
 
 **Request example**
 
-```
+``` {#codeblock_bpp_uha_k6d}
 https://iot.cn-shanghai.aliyuncs.com/&Action=InvokeThingsService
 &Args=%7B%20%20%20%20%20%22walk%22%3A%22a~z%22%2C%20%20%20%20%20%22city%22%3A%22shanghai%22%20%7D
 &DeviceName. 1=1102andriod02
@@ -66,7 +66,7 @@ https://iot.cn-shanghai.aliyuncs.com/&Action=InvokeThingsService
 
 JSON format
 
-```
+``` {#codeblock_ua7_xfi_6oo}
 {
   "RequestId": "059C3274-6197-4BEC-95E4-49A076330E57",
   "Success": true
@@ -75,7 +75,7 @@ JSON format
 
 XML format
 
-```
+``` {#codeblock_8ca_jvj_sgm}
 <? xml version='1.0' encoding='utf-8'? >
 <InvokeThingsServiceResponse>
     <RequestId>"059C3274-6197-4BEC-95E4-49A076330E57</RequestId>

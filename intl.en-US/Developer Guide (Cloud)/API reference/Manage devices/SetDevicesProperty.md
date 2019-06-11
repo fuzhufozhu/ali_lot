@@ -14,7 +14,7 @@ The maximum number of requests per second for a tenant is 50 QPS.
 |ProductKey|String|Yes| The ProductKey of the specified devices.
 
  |
-|DeviceNames|List<String\>|Yes| List of devices for which you want to set properties. Currently, up to 500 devices are supported.
+|DeviceNames|List<String\>|Yes| List of devices for which you want to set properties. Currently, up to 100 devices are supported.
 
  |
 |Items|String|Yes| The properties to be set. The value of this parameter is a JSON string with key-value pairs \(key: value\).
@@ -48,7 +48,7 @@ The maximum number of requests per second for a tenant is 50 QPS.
 
 **Request example**
 
-```
+``` {#codeblock_bs1_gkp_g0t}
 https://iot.cn-shanghai.aliyuncs.com/&Action=SetDevicesProperty
 &DeviceName. 1=1102andriod02
 &DeviceName. 2=1102android01
@@ -61,7 +61,7 @@ https://iot.cn-shanghai.aliyuncs.com/&Action=SetDevicesProperty
 
 JSON format
 
-```
+``` {#codeblock_pql_rlu_yt7}
 {
   "RequestId": "2E19BDAF-0FD0-4608-9F41-82D230CFEE38",
   "Success": true
@@ -70,7 +70,7 @@ JSON format
 
 XML format
 
-```
+``` {#codeblock_vhj_1u3_y0h}
 <? xml version='1.0' encoding='utf-8'? >
 <SetDevicesPropertyResponse>
     <RequestId>"2E19BDAF-0FD0-4608-9F41-82D230CFEE3</RequestId>

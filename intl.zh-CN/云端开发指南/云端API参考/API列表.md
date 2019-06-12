@@ -21,46 +21,6 @@
 
 |API|描述|
 |:--|:-|
-|[RegisterDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/RegisterDevice.md#)|注册设备。|
-|[QueryDeviceDetail](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceDetail.md#)|查询设备详情。|
-|[QueryDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevice.md#)|查询产品的设备列表。|
-|[DeleteDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDevice.md#)|删除设备。|
-|[GetDeviceStatus](intl.zh-CN/云端开发指南/云端API参考/设备管理/GetDeviceStatus.md#)|获取设备的运行状态。|
-|[BatchGetDeviceState](intl.zh-CN/云端开发指南/云端API参考/设备管理/BatchGetDeviceState.md#)|批量获取设备状态。|
-|[DisableThing](intl.zh-CN/云端开发指南/云端API参考/设备管理/DisableThing.md#)|禁用设备。|
-|[EnableThing](intl.zh-CN/云端开发指南/云端API参考/设备管理/EnableThing.md#)|解禁设备。|
-|[BatchCheckDeviceNames](intl.zh-CN/云端开发指南/云端API参考/设备管理/BatchCheckDeviceNames.md#)|批量检查设备名称。|
-|[BatchRegisterDeviceWithApplyId](intl.zh-CN/云端开发指南/云端API参考/设备管理/BatchRegisterDeviceWithApplyId.md#)|根据 ApplyId 批量申请设备。|
-|[BatchRegisterDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/BatchRegisterDevice.md#)|批次申请特定数量设备。|
-|[QueryBatchRegisterDeviceStatus](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryBatchRegisterDeviceStatus.md#)|查询批量注册设备状态。|
-|[QueryPageByApplyId](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryPageByApplyId.md#)|查询批次设备列表。|
-|[QueryDeviceEventData](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceEventData.md#)|查询设备的事件历史数据。|
-|[QueryDevicePropertyData](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyData.md#)|查询设备的属性历史数据。|
-|[QueryDevicePropertiesData](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertiesData.md#)|批量查询指定设备的多个属性的历史数据。|
-|[QueryDeviceServiceData](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceServiceData.md#)|获取设备的服务记录历史数据。|
-|[InvokeThingService](intl.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingService.md#)|调用设备的服务。|
-|[InvokeThingsService](intl.zh-CN/云端开发指南/云端API参考/设备管理/InvokeThingsService.md#)|批量调用设备的服务。|
-|[QueryDevicePropertyStatus](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDevicePropertyStatus.md#)|查询设备的属性快照。|
-|[SetDeviceProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceProperty.md#)|设置设备的属性。|
-|[SetDevicesProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDevicesProperty.md#)|批量设置设备属性。|
-|[SaveDeviceProp](intl.zh-CN/云端开发指南/云端API参考/设备管理/SaveDeviceProp.md#)|设置设备标签。|
-|[QueryDeviceProp](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceProp.md#)|查询设备标签列表。|
-|[DeleteDeviceProp](intl.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDeviceProp.md#)|删除设备标签。|
-|[GetThingTopo](intl.zh-CN/云端开发指南/云端API参考/设备管理/GetThingTopo.md#)|查询网关设备或子设备所具有的拓扑关系。|
-|[NotifyAddThingTopo](intl.zh-CN/云端开发指南/云端API参考/设备管理/NotifyAddThingTopo.md#)|通知云端增加设备拓扑关系。|
-|[RemoveThingTopo](intl.zh-CN/云端开发指南/云端API参考/设备管理/RemoveThingTopo.md#)|移除网关设备或子设备所具有的拓扑关系。|
-|[QueryDeviceStatistics](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceStatistics.md#)|获取设备的统计数量。|
-|[GetGatewayBySubDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/GetGatewayBySubDevice.md#)|根据挂载的子设备信息查询对应的网关设备信息。|
-|[QueryDeviceByTags](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceByTags.md#)|根据标签查询设备。|
-|[SetDeviceDesiredProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|为指定设备批量设置期望属性值。|
-|[QueryDeviceDesiredProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|查询指定设备的期望属性值。|
-|[QueryDeviceFileList](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFileList.md#)|查询指定设备上传到物联网平台的所有文件。|
-|[QueryDeviceFile](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFile.md#)|查询指定设备上传到物联网平台的指定文件信息。|
-|[DeleteDeviceFile](intl.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDeviceFile.md#)|删除指定设备上传到物联网平台的指定文件。|
-|[BatchUpdateDeviceNickname](intl.zh-CN/云端开发指南/云端API参考/设备管理/BatchUpdateDeviceNickname.md#)|批量更新设备备注名称。|
-|[QueryLoRaJoinPermissions](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryLoRaJoinPermissions.md#)|查询账号下的LoRaWAN入网凭证列表。|
-|[CreateLoRaNodesTask](intl.zh-CN/云端开发指南/云端API参考/设备管理/CreateLoRaNodesTask.md#)|创建批量注册LoRaWAN设备的任务。|
-|[GetLoraNodesTask](intl.zh-CN/云端开发指南/云端API参考/设备管理/GetLoraNodesTask.md#)|查询批量注册LoRaWAN设备任务的状态。|
 
 ## 分组管理相关API {#section_atx_lcg_mfb .section}
 

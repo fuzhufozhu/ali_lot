@@ -7,7 +7,13 @@
 |参数|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作。取值InvokeDataAPIService。|
-|ApiSrn|String|是|API资源标识符，API的全局唯一标识。 调用[CreateDataAPIService](cn.zh-CN/云端开发指南/云端API参考/数据开发API管理/CreateDataAPIService.md#)成功创建API，返回的ApiSrn值。 示例：`acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2`。其中，
+|ApiSrn|String|是|API资源标识符，API的全局唯一标识。 调用[CreateDataAPIService](cn.zh-CN/云端开发指南/云端API参考/数据开发API管理/CreateDataAPIService.md#)成功创建API，返回的ApiSrn值。 示例：
+
+ ``` {#codeblock_dmr_tah_43q}
+acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2
+```
+
+ 以上示例中，
 
  -   `127103983461****`是阿里云主账号ID。
 -   `/device/getDeviceCountByStatus`是请求参数ApiPath的值，即API调用地址的自定义部分。
@@ -43,7 +49,13 @@
 
 |参数|类型|描述|
 |:-|:-|:-|
-|ApiSrn|String|API资源标识符，API的全局唯一标识。 示例：`acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2`。其中，
+|ApiSrn|String|API资源标识符，API的全局唯一标识。 示例：
+
+ ``` {#codeblock_c60_pvm_7qs}
+acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2
+```
+
+ 以上示例中，
 
  -   `127103983461****`是阿里云主账号ID。
 -   `/device/getDeviceCountByStatus`是请求参数ApiPath的值，即API调用地址的自定义部分。

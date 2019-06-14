@@ -93,7 +93,13 @@
 
 |参数|类型|描述|
 |:-|:-|:-|
-|ApiSrn|String|API资源标识符，API的全局唯一标识。 示例：`acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2`。本示例中，
+|ApiSrn|String|API资源标识符，API的全局唯一标识。 示例：
+
+ ``` {#codeblock_i6q_nhh_9r2}
+acs:iot:*:127103983461****:serveapi/device/getDeviceCountByStatus2
+```
+
+ 以上示例中，
 
  -   `127103983461****`是阿里云主账号ID。
 -   `/device/getDeviceCountByStatus`是请求参数ApiPath的值，即API调用地址的自定义部分。

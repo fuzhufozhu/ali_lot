@@ -7,7 +7,7 @@
 |参数|类型|是否必需|描述|
 |:-|:-|:---|:-|
 |Action|String|是|要执行的操作。取值：GetDataAPIServiceDetail。|
-|ApiSrn|String|是|API资源标识符，API的全局唯一标识。 调用[CreateDataAPIService](cn.zh-CN/云端开发指南/云端API参考/数据开发API管理/CreateDataAPIService.md#)成功创建API，返回的ApiSrn值。 格式：``
+|ApiSrn|String|是|API资源标识符，API的全局唯一标识。 调用[CreateDataAPIService](cn.zh-CN/云端开发指南/云端API参考/数据开发API管理/CreateDataAPIService.md#)成功创建API，返回的ApiSrn值。 格式：
 
  ``` {#codeblock_391_wf7_y8j}
 acs:iot:*:${aliyunuserID}:serveapi/${ApiPath}

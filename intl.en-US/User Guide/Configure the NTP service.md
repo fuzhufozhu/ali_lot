@@ -12,16 +12,16 @@ An embedded device, which does not have an accurate time after it is powered, ca
 
 ## NTP service procedure {#section_btf_by3_kgb .section}
 
-Request topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/request`
+Request topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/request` 
 
-Response topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/response`
+Response topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/response` 
 
 **Note:** ProductKey and DeviceName are part of the device certificate, which can be obtained from the IoT Platform console.
 
 1.  The device subscribes to the topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/response`.
-2.  The device publishes a message with the current timestamp of the device in the payload to the topic `/ext/ntp/${YourProductKey}/${YourDeviceName}/request`. For example:
+2.  The device publishes a QoS 0 message with the current timestamp of the device in the payload to the topic `/ext/ntp/${YourProductKey}/${YourDeviceName}/request`. For example:
 
-    ```
+    ``` {#codeblock_sr8_yzf_bcq}
     {
         "deviceSendTime":"100"
     }
@@ -29,9 +29,11 @@ Response topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/response`
 
     **Note:** The data type of the timestamp, which supports Long and String.
 
+    Only QoS 0 messages are supported for this feature.
+
 3.  The device receives a response from the NTP server. The payload includes the following information:
 
-    ```
+    ``` {#codeblock_740_bgu_t1p}
     {
         "deviceSendTime":"100",
         "serverRecvTime":"1010",
@@ -41,7 +43,7 @@ Response topic: `/ext/ntp/${YourProductKey}/${YourDeviceName}/response`
 
 4.  The device calculates the current exact Unix time.
 
-    The time when the device receives the message from the server is recorded as $ \{devicerecvtime\}, and the exact time on the device is: `($ {Serverrecvtime} + $ {serversendtime} + $ {devicerecvtime}-$ {devicesendtime})/2`
+    The time when the device receives the message from the server is recorded as $ \{devicerecvtime\}, and the exact time on the device is: `($ {Serverrecvtime} + $ {serversendtime} + $ {devicerecvtime}-$ {devicesendtime})/2` 
 
 
 ## Example {#section_iwy_nmj_kgb .section}

@@ -37,9 +37,6 @@ SDK下载连接：
 
 您可以使用[泛化协议SDK](../../../../intl.zh-CN/用户指南/泛化协议/概览.md#)，快速构建桥接服务，搭建设备或平台与阿里云物联网平台的双向数据通道。
 
--   [核心SDK](../../../../intl.zh-CN/用户指南/泛化协议/核心SDK开发.md#)
--   [Server SDK](../../../../intl.zh-CN/用户指南/泛化协议/Server SDK开发/Server SDK开发.md#)
-
 ## HTTP/2 SDK {#section_fd3_rvj_wgb .section}
 
 您可以使用HTTP/2 SDK，建立设备端与阿里云物联网平台的数据通道。例如，将HTTP/2 SDK嵌入您的服务器，直接接受设备上报的消息。

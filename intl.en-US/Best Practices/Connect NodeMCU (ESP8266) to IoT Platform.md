@@ -10,7 +10,7 @@ The following section illustrates how to use NodeMCU to control a light bulb dev
 
 **Note:** Connect the data cable of the sensor to the D7 pin, which corresponds to GPIO 13, on the NodeMCU development board.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155497338138110_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204753438110_en-US.png)
 
 ## Prerequisites {#section_lzp_ddy_ngb .section}
 
@@ -21,14 +21,14 @@ Before you begin, you must see the official NodeMCU IDE Tutorial for development
 After the NodeMCU development environment is ready, you can connect NodeMCU to IoT Platform.
 
 1.  Log on to the [IoT Platform console](https://partners-intl.console.aliyun.com/#/iot).
-2.  Create a product, as shown in [Create a product](../../../../../reseller.en-US/User Guide/Create products and devices/Create a product.md#).
-3.  Define features for the product, as shown in [Define features](../../../../../reseller.en-US/User Guide/Create products and devices/TSL/Define features.md#).
+2.  Create a product, as shown in [Create a product](../../../../reseller.en-US/User Guide/Create products and devices/Create a product.md#).
+3.  Define features for the product, as shown in [Define features](../../../../reseller.en-US/User Guide/Create products and devices/TSL/Define features.md#).
 
     This example uses the following properties:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155497338137986_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204753437986_en-US.png)
 
-4.  Create a device, and obtain the device certificate information, including ProductKey, DeviceName, and DeviceSecret. For more information, see [Create a device](../../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create a device.md#).
+4.  Create a device, and obtain the device certificate information, including ProductKey, DeviceName, and DeviceSecret. For more information, see [Create a device](../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create a device.md#).
 5.  Write code.
 
     1.  Connect your computer to the NodeMCU development board by using a USB cable.
@@ -36,9 +36,9 @@ After the NodeMCU development environment is ready, you can connect NodeMCU to I
     3.  Upload code.
     The sample code is as follows:
 
-    **Note:** You can use the [password generator](https://files.alicdn.com/tpsservice/471c155376d6a88a29c9ad66784e94f0.zip) tool to automatically generate the value for MQTT\_PASSWD. You can also manually generate the value by using the mqttPassword encryption method described in [Establish MQTT connections over TCP](../../../../../reseller.en-US/Developer Guide (Devices)/Protocols for connecting devices/Establish MQTT connections over TCP.md#).
+    **Note:** You can generate the value of MQTT\_PASSWDby using the mqttPassword encryption method described in [Establish MQTT connections over TCP](../../../../reseller.en-US/Developer Guide (Devices)/Protocols for connecting devices/Establish MQTT connections over TCP.md#).
 
-    ```
+    ``` {#codeblock_gxh_5q2_onv}
     #include <ESP8266WiFi.h>
     /*The PubSubClient 2.4.0 dependency */
     #include <PubSubClient.h>
@@ -64,7 +64,7 @@ After the NodeMCU development environment is ready, you can connect NodeMCU to I
     #define MQTT_USRNAME      DEVICE_NAME "&" PRODUCT_KEY
     
     #define CLIENT_ID         "esp8266|securemode=3,timestamp=1234567890,signmethod=hmacsha1|"
-    //Use the encryption tool mentioned previously or follow the instructions in "Establish MQTT connections over TCP" to generate a password.
+    //See "Establish MQTT connections over TCP" (https://www.alibabacloud.com/help/doc-detail/73742.html) to generate a password.
     //The plain text for encryption is a combination of parameter-value pairs in lexicographical order. For example, clientIdesp8266deviceName${deviceName}productKey${productKey}timestamp1234567890.
     //The encryption key is the DeviceSecret.
     #define MQTT_PASSWD       "f1ef80ee8add322c519a5a6bec326dc499f854b8"
@@ -102,7 +102,7 @@ After the NodeMCU development environment is ready, you can connect NodeMCU to I
         Serial.println("IP address: ");
         Serial.println(WiFi.localIP());
     
-        
+    
     Serial.print("espClient [");
     
     
@@ -188,8 +188,8 @@ After the NodeMCU development environment is ready, you can connect NodeMCU to I
 
     1.  Locate PubSubClient in the library manager of Arduino IDE.
     2.  Open the PubSubClient.h file under src.
-    3.  Modify the MQTT\_MAX\_PACKET\_SIZE and MQTT\_KEEPALIVE parameters. To set the MQTT\_MAX\_PACKET\_SIZE and MQTT\_KEEPALIVE parameters, see [Limits](../../../../../reseller.en-US/Product Introduction/Limits.md#).
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155497338138000_en-US.png)
+    3.  Modify the MQTT\_MAX\_PACKET\_SIZE and MQTT\_KEEPALIVE parameters. To set the MQTT\_MAX\_PACKET\_SIZE and MQTT\_KEEPALIVE parameters, see [Limits](../../../../reseller.en-US/Product Introduction/Limits.md#).
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204753538000_en-US.png)
 
 
 ## Perform a test {#section_mwz_pj1_4gb .section}
@@ -202,10 +202,10 @@ After the device reports properties, you can view the running status of the devi
 
     You can view the running status of the program, as shown in the following figure:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155497338138009_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204753538009_en-US.png)
 
 -   In the IoT Platform console, go to the Device Details page of the corresponding device. On the Status tab page , view the reported properties and property history, as shown in the following figure:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/155497338138010_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204753538010_en-US.png)
 
 

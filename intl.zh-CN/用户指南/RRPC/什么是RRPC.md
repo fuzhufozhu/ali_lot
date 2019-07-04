@@ -4,19 +4,19 @@ MQTT协议是基于PUB/SUB的异步通信模式，不适用于服务端同步控
 
 ## 名词解释 {#section_lkn_qsl_cfb .section}
 
--   RRPC：远程同步调用。
+-   RRPC：Revert-RPC。RPC（Remote Procedure Call）采用客户机/服务器模式，用户不需要了解底层技术协议，即可远程请求服务。RRPC则可以实现由服务端请求设备端并能够使设备端响应的功能。
 -   RRPC 请求消息：云端下发给设备端的消息。
 -   RRPC 响应消息：设备端回复给云端的消息。
--   RRPC 消息id：云端为每次RRPC调用生成的唯一消息id。
+-   RRPC 消息ID：云端为每次RRPC调用生成的唯一消息ID。
 -   RRPC 订阅Topic：设备端订阅RRPC消息时传递的Topic，含有通配符。
 
 ## RRPC原理 {#section_yf1_rsl_cfb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21225/155175346611774_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21225/156220524011774_zh-CN.png)
 
 1.  物联网平台收到来自用户服务器的RRPC调用，下发一条RRPC请求消息给设备。消息体为用户传入的数据，Topic为物联网平台定义的Topic，其中含有唯一的RRPC消息ID。
-2.  设备收到下行消息后，按照指定Topic格式（包含之前云端下发的唯一的RRPC消息id）回复一条RRPC响应消息给云端，云端提取出Topic中的消息ID，和之前的RRPC请求消息匹配上，然后回复给用户服务器。
-3.  如果调用时设备不在线，云端会给用户服务器返回设备离线的错误；如果设备没有在超时时间内（5秒内）回复RRPC响应消息，云端会给用户服务器返回超时错误。
+2.  设备收到下行消息后，按照指定Topic格式（包含之前云端下发的唯一的RRPC消息ID）回复一条RRPC响应消息给云端，云端提取出Topic中的消息ID，和之前的RRPC请求消息匹配上，然后回复给用户服务器。
+3.  如果调用时设备不在线，云端会给用户服务器返回设备离线的错误；如果设备没有在超时时间内（8秒内）回复RRPC响应消息，云端会给用户服务器返回超时错误。
 
 ## Topic格式 {#section_zpj_tsl_cfb .section}
 

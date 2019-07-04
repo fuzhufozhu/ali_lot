@@ -19,7 +19,7 @@ The IoT Java SDK allows you to create Java applications to interact with IoT pla
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.9.0</version>
+            <version>6.11.0</version>
         </dependency>
         ```
 

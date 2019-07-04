@@ -14,18 +14,18 @@
 
         IoT Java SDK的Maven依赖坐标
 
-        ```
+        ``` {#codeblock_bhn_y6h_hcb}
         <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-iot -->
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.9.0</version>
+            <version>6.11.0</version>
         </dependency>
         ```
 
         依赖公共包
 
-        ```
+        ``` {#codeblock_45w_ys4_opv}
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
@@ -38,7 +38,7 @@
 
 **说明：** 以下示例以华东2地域及其服务接入地址为例。您在设置时，需使用您的物联网平台地域和对应的服务接入地址。
 
-```
+``` {#codeblock_36w_2ug_tu7}
 String accessKey = "<your accessKey>";
 String accessSecret = "<your accessSecret>";
 DefaultProfile.addEndpoint("cn-shanghai", "cn-shanghai", "Iot", "iot.cn-shanghai.aliyuncs.com");
@@ -54,7 +54,7 @@ accessKey即您的账号的AccessKeyId，accessSecret即AccessKeyId对应的Acce
 
 以调用Pub接口发布消息到Topic为例。
 
-```
+``` {#codeblock_zp2_3dy_7kv}
 PubRequest request = new PubRequest(); 
 request.setProductKey("productKey"); 
 request.setMessageContent(Base64.encodeBase64String("hello world".getBytes())); 
@@ -75,4 +75,10 @@ catch (ServerException e)
    e.printStackTrace();
 }
 ```
+
+## 附录：Demo {#section_tlh_nst_wkh .section}
+
+点击下载[SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)。Demo中包含Java、Python、PHP、.NET版本SDK示例。
+
+另外，阿里云提供API在线调试工具 [OpenAPI Explorer](https://api.aliyun.com)。在OpenAPI Explorer页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下供您参考。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
 

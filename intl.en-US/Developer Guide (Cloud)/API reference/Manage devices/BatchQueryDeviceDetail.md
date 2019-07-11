@@ -74,7 +74,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
 &ProductKey=a1fce6J****
 &DeviceName.1=firstDeviceName
 &DeviceName.2=secondDeviceName
-&Public request parameters
+&Common request parameters
 ```
 
 **Sample response**

@@ -1,13 +1,13 @@
 # TSL模板 {#concept_dcp_stw_y2b .concept}
 
-设备可以通过上行请求获取设备的[TSL模板](../../../../../intl.zh-CN/用户指南/产品与设备/物模型/概述.md#)。
+设备可以通过上行请求获取设备的[TSL模板](../../../../intl.zh-CN/用户指南/产品与设备/物模型/概述.md#)。
 
 -   请求Topic：`/sys/{productKey}/{deviceName}/thing/dsltemplate/get`
 -   响应Topic：`/sys/{productKey}/{deviceName}/thing/dsltemplate/get_reply`
 
 Alink请求数据格式
 
-```
+``` {#codeblock_5ud_6he_3gd}
 {
   "id": "123",
   "version": "1.0",
@@ -18,7 +18,7 @@ Alink请求数据格式
 
 Alink响应数据格式
 
-```
+``` {#codeblock_zl8_vp5_l5s}
 {
   "id": "123",
   "code": 200,
@@ -172,7 +172,7 @@ Alink响应数据格式
 |method|String|请求方法，取值thing.dsltemplate.get。|
 |productKey|String|产品的Key，示例中取值为1234556554。|
 |deviceName|String|设备名称，示例中取值为airCondition。|
-|data|Object|物的TSL描述，具体参考[物模型文档](../../../../../intl.zh-CN/用户指南/产品与设备/物模型/概述.md#)。|
+|data|Object|物的TSL描述，具体参考[物模型文档](../../../../intl.zh-CN/用户指南/产品与设备/物模型/概述.md#)。|
 
 错误码
 

@@ -72,8 +72,9 @@ You can call this operation to query details of multiple devices at a time.
 ``` {#codeblock_vo4_07c_uaf}
 https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
 &ProductKey=a1fce6J****
-&DeviceName. 1=firstDeviceName
-&DeviceName.
+&DeviceName.1=firstDeviceName
+&DeviceName.2=secondDeviceName
+&Public request parameters
 ```
 
 **Sample response**
@@ -81,8 +82,6 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
 -   JSON format
 
     ``` {#codeblock_kna_r5a_t16}
-    {
-      "RequestId": "57b144cf-09fc-4916-a272-a62902d5b787", 
     {
       "RequestId": "57b144cf-09fc-4916-a272-a62902d5b787", 
       "Success": true, 
@@ -115,13 +114,14 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
           "Status": "UNACTIVE",
           "UtcCreate": "2019-06-21T12:31:42.000Z"
         }
-    					
+      ]
+    }        
     ```
 
 -   XML format
 
     ``` {#codeblock_iug_512_r8y}
-    <? xml version="1.0" encoding="UTF-8" ? <? xml version="1.0" encoding="UTF-8" ? >
+    <?xml version="1.0" encoding="UTF-8" ?>
     <BatchQueryDeviceDetailResponse>
         <RequestId>57b144cf-09fc-4916-a272-a62902d5b787</RequestId>
         <Success>true</Success>
@@ -152,7 +152,8 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
             <Region>cn-shanghai</Region>
             <Status>UNACTIVE</Status>
             <UtcCreate>2019-06-21T12:31:42.000Z</UtcCreate>
-    					
+        </Data>
+    </BatchQueryDeviceDetailResponse>
     ```
 
 

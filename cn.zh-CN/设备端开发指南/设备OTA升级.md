@@ -6,25 +6,25 @@ OTA（Over-the-Air Technology）即空中下载技术。物联网平台支持通
 
 MQTT协议下固件升级流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/155859385911336_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/14288/156281012550127_zh-CN.png)
 
 固件升级Topic：
 
 -   设备端上报固件版本给物联网平台
 
-    ```
+    ``` {#codeblock_xjd_bxu_da0}
     /ota/device/inform/${YourProductKey}/${YourDeviceName}
     ```
 
 -   设备端订阅该topic接收物联网平台的固件升级通知
 
-    ```
+    ``` {#codeblock_c1n_y34_nl5}
     /ota/device/upgrade/${YourProductKey}/${YourDeviceName}
     ```
 
 -   设备端上报固件升级进度
 
-    ```
+    ``` {#codeblock_yfw_tws_c54}
     /ota/device/progress/${YourProductKey}/${YourDeviceName}
     ```
 
@@ -50,7 +50,7 @@ MQTT协议下固件升级流程如下图所示：
 
     设备端通过MQTT协议推送当前设备固件版本号到Topic：`/ota/device/inform/${YourProductKey}/${YourDeviceName}`。消息内容格式如下：
 
-    ```
+    ``` {#codeblock_1e7_sfg_yve}
     
     {
       "id": 1,
@@ -70,7 +70,7 @@ MQTT协议下固件升级流程如下图所示：
 
     设备端订阅Topic： `/ota/device/upgrade/${YourProductKey}/${YourDeviceName}`。控制台对设备发起固件升级请求后，设备端会通过该Topic收到固件的URL。消息格式如下：
 
-    ```
+    ``` {#codeblock_ezb_dzy_3xu}
     
     {
       "code": "1000",
@@ -95,7 +95,7 @@ MQTT协议下固件升级流程如下图所示：
 
     下载固件过程中，设备端向服务端推送升级进度到Topic： `/ota/device/progress/${YourProductKey}/${YourDeviceName}`。消息格式如下：
 
-    ```
+    ``` {#codeblock_egh_f0w_3u1}
     
     {
       "id": 1,
@@ -123,10 +123,10 @@ MQTT协议下固件升级流程如下图所示：
 
 -   签名错误。如果设备端获取的固件的URL不全或者手动修改了URL内容，就会出现如下错误：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15585938593964_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15628101263964_zh-CN.png)
 
 -   拒绝访问。URL过期导致。目前，URL有效期为24小时。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15585938593967_zh-CN.PNG)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13905/15628101263967_zh-CN.PNG)
 
 

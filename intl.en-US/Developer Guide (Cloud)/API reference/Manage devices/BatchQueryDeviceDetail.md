@@ -76,9 +76,9 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
 &DeviceName.
 ```
 
-**返回示例**
+**Sample response**
 
--   JSON格式
+-   JSON format
 
     ``` {#codeblock_kna_r5a_t16}
     {
@@ -115,10 +115,10 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
           "Status": "UNACTIVE",
           "UtcCreate": "2019-06-21T12:31:42.000Z"
         }
-    
+    					
     ```
 
--   XML格式
+-   XML format
 
     ``` {#codeblock_iug_512_r8y}
     <? xml version="1.0" encoding="UTF-8" ? <? xml version="1.0" encoding="UTF-8" ? >
@@ -152,7 +152,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchQueryDeviceDetail
             <Region>cn-shanghai</Region>
             <Status>UNACTIVE</Status>
             <UtcCreate>2019-06-21T12:31:42.000Z</UtcCreate>
-    
+    					
     ```
 
 

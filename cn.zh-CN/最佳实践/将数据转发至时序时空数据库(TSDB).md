@@ -18,7 +18,7 @@
 -   数据上报Topic：`/${productKey}/${deviceName}/user/data`
 -   payload格式：
 
-    ```
+    ``` {#codeblock_ayx_xcc_agg}
     {"temperature":25,"humidity":24,"pm25":11,"hcho":0.02}
     ```
 
@@ -29,7 +29,7 @@
 2.  选择**规则引擎**，单击**创建规则**，创建JSON数据格式规则。
 3.  请参考[设置数据流转规则](../../../../cn.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)，编写处理数据的SQL。本示例中的SQL如下：
 
-    ```
+    ``` {#codeblock_na5_cod_q9t}
     SELECT deviceName() as deviceName, timestamp() as time, attribute('floor') as floor, attribute('building') as building, temperature, humidity, pm25, hcho FROM "/${productKey}/+/user/data"
     ```
 
@@ -37,7 +37,7 @@
 
     设置将数据转发到一个TSDB的VPC实例中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/155539748413340_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/156291757313340_zh-CN.png)
 
 
 ## 时序数据使用 {#section_n4f_2g1_kfb .section}
@@ -55,22 +55,22 @@
 
         数据查询结果如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/155539748413341_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/156291757313341_zh-CN.png)
 
     -   按大厦聚合avg，降采样1分钟查询数据，根据如下表格设置查询参数：
 
         |参数|取值|
         |--|--|
         |空间聚合函数|选择avg|
-        |标签|此处添加如下两个标签：        -   building=No-1
+        |标签|此处添加如下两个标签：         -   building=No-1
         -   floor=f1/f2
-|
+ |
         |降采样|打开开关|
         |降采样聚合函数|选择max|
         |采样时间间隔|选择1分钟|
 
         数据查询结果如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/155539748413342_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21860/156291757413342_zh-CN.png)
 
 

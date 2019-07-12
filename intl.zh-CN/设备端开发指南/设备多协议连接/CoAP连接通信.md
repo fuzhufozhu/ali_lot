@@ -6,7 +6,7 @@
 
 基于CoAP协议将NB-IoT设备接入物联网平台的流程如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15595342803114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7504/15628944293114_zh-CN.png)
 
 基础流程说明如下：
 
@@ -28,7 +28,7 @@
 
     设备认证请求：
 
-    ```
+    ``` {#codeblock_yml_58v_py4}
     POST /auth
     Host: ${YourProductKey}.coap.cn-shanghai.link.aliyuncs.com
     Port: 5682
@@ -49,8 +49,8 @@
 
     |字段名称|是否必需|说明|
     |:---|:---|:-|
-    |productKey|是|设备三元组信息中ProductKey的值，是物联网平台为产品颁发的全局唯一标识。从物联网平台的控制台获取。|
-    |deviceName|是|设备三元组信息中DeviceName的值，在注册设备时自定义的或自动生成的设备名称。从物联网平台的控制台获取。|
+    |productKey|是|设备证书信息中ProductKey的值，是物联网平台为产品颁发的全局唯一标识。从物联网平台的控制台获取。|
+    |deviceName|是|设备证书信息中DeviceName的值，在注册设备时自定义的或自动生成的设备名称。从物联网平台的控制台获取。|
     |ackMode|否|通信模式。取值：     -   0：request/response 是携带模式，即客户端发送请求到服务端后，服务端处理完业务，回复业务数据和ACK。
     -   1：request/response 是分离模式，即客户端发送请求到服务端后，服务端先回复一个确认ACK，然后再处理业务后，回复业务数据。
  若不传入此参数，则默认为携带模式。
@@ -64,7 +64,7 @@
 
  签名计算示例：
 
-     ```
+     ``` {#codeblock_87l_pbv_o12}
 sign= hmac_md5(mRPVdzSMu2nVBxzK77ERPIMxSYIv****, clientIda1NUjcV****&ff1a11e7c08d4b3db2b1500d8e0e55deviceNameff1a11e7c08d4b3db2b1500d8e0e55productKeya1NUjcV****seq10timestamp1524448722000)
     ```
 
@@ -75,7 +75,7 @@ sign= hmac_md5(mRPVdzSMu2nVBxzK77ERPIMxSYIv****, clientIda1NUjcV****&ff1a11e7c08
 
     返回结果示例：
 
-    ```
+    ``` {#codeblock_aqa_ej0_hbb}
     {"random":"ad2b3a5eb51d6****","seqOffset":1,"token":"MZ8m37hp01w1SSqoDFzo001050****.ad2b"}
     ```
 
@@ -89,7 +89,7 @@ sign= hmac_md5(mRPVdzSMu2nVBxzK77ERPIMxSYIv****, clientIda1NUjcV****&ff1a11e7c08
 
     上报数据请求:
 
-    ```
+    ``` {#codeblock_iia_ie2_aib}
     POST /topic/${topic}
     Host: ${YourProductKey}.coap.cn-shanghai.link.aliyuncs.com
     Port: 5682
@@ -115,7 +115,7 @@ sign= hmac_md5(mRPVdzSMu2nVBxzK77ERPIMxSYIv****, clientIda1NUjcV****&ff1a11e7c08
     -   2089：表示seq，取值需比设备认证后返回的seqOffset值更大，且在认证生效周期内不重复的随机值。使用AES加密该值。
  option返回示例：
 
-    ```
+    ``` {#codeblock_oyb_vzq_q28}
 number:2090(云端消息ID)
     ```
 
@@ -137,7 +137,7 @@ number:2090(云端消息ID)
 
     设备认证请求：
 
-    ```
+    ``` {#codeblock_cnv_ri9_ytq}
     POST /auth
     Host: ${YourProductKey}.coap.cn-shanghai.link.aliyuncs.com
     Port: 5684
@@ -150,7 +150,7 @@ number:2090(云端消息ID)
 
     返回结果示例：
 
-    ```
+    ``` {#codeblock_clp_gyq_hrp}
     response：{"token":"f13102810756432e85dfd351eeb4****"}
     ```
 
@@ -176,7 +176,7 @@ number:2090(云端消息ID)
 
     上报数据请求：
 
-    ```
+    ``` {#codeblock_w0g_o27_p40}
     POST /topic/${topic}
     Host: ${YourProductKey}.coap.cn-shanghai.link.aliyuncs.com
     Port: 5684

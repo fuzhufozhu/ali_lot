@@ -1,6 +1,8 @@
 # RAM 和 STS 介绍 {#concept_gsv_kw4_tdb .concept}
 
-RAM 和 STS 是阿里云提供的权限管理系统。了解 RAM 和 STS 的详情，请参见[访问控制产品文档](https://www.alibabacloud.com/help/product/28625.htm)。
+RAM 和 STS 是阿里云提供的权限管理系统。
+
+了解 RAM 和 STS 的详情，请参见[访问控制产品文档](https://www.alibabacloud.com/help/product/28625.htm)。
 
 RAM 的主要作用是控制账号系统的权限。通过使用 RAM，创建、管理子账号，并通过给子账号授予不同的权限，控制子账号对资源的操作权限。
 

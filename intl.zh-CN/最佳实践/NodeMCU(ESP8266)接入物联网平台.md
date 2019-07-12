@@ -10,7 +10,7 @@ NodeMCU是基于ESP8266芯片的开发板。ESP8266芯片集成了Wifi功能，�
 
 **说明：** 将传感器数据线连接NodeMCU开发板上的D7引脚（对应GPIO 13）。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204750838110_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156291751038110_zh-CN.png)
 
 ## 前提条件 {#section_lzp_ddy_ngb .section}
 
@@ -26,7 +26,7 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
 
     本文以如下属性为例：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204750937986_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156291751137986_zh-CN.png)
 
 4.  创建设备，并获取设备证书信息（ProductKey、DeviceName和DeviceSecret）。请参见[单个创建设备](../../../../intl.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)。
 5.  编写代码。
@@ -36,7 +36,7 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
     3.  上传代码。
     esp8266.ino代码示例：
 
-    **说明：** MQTT连接参数，可参见[MQTT-TCP连接通信](../../../../intl.zh-CN/设备端开发指南/设备多协议连接/MQTT-TCP连接通信.md#)。
+    **说明：** MQTT连接参数，可参见[MQTT接入——MQTT-TCP连接通信](../../../../intl.zh-CN/设备端开发指南/设备多协议连接/MQTT接入——MQTT-TCP连接通信.md#)。
 
     ``` {#codeblock_rxk_emm_re3}
     #include <ESP8266WiFi.h>
@@ -189,7 +189,7 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
     1.  在Arduino IDE的库管理器中找到PubSubClient。
     2.  打开src下的PubSubClient.h文件。
     3.  修改消息长度限制和MQTT连接保活时长。设置消息长度限制和MQTT连接保活时长，请参见[使用限制](../../../../intl.zh-CN/产品简介/使用限制.md#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204750938000_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156291751138000_zh-CN.png)
 
 
 ## 测试 {#section_mwz_pj1_4gb .section}
@@ -202,10 +202,10 @@ NodeMCU开发环境准备好后，您便可以开始接入物联网平台的操�
 
     运行效果如下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204750938009_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156291751138009_zh-CN.png)
 
 -   在物联网平台控制台，对应的设备详情页运行状态页签栏下查看设备上报的属性值和历史属性数据。如下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156204750938010_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117120/156291751138010_zh-CN.png)
 
 

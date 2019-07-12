@@ -4,28 +4,28 @@
 
 示例流程如下图：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973033_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155623033_zh-CN.png)
 
 ## 操作步骤 {#section_pgq_g5j_wdb .section}
 
 1.  登录函数计算控制台，创建服务与函数。
     1.  创建服务。其中，服务名称必须填写，其余参数请根据您的需求设置。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973039_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155623039_zh-CN.png)
 
     2.  创建服务成功后，创建函数。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973036_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155623036_zh-CN.png)
 
     3.  选择函数模板，此处以空白函数模板为示例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973037_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155623037_zh-CN.png)
 
     4.  设置函数参数。
 
         此示例设置函数的逻辑为直接在函数计算中显示获取的数据。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973038_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155633038_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
@@ -43,14 +43,14 @@
 
         函数成功创建后，可以直接在函数计算的控制台执行，以验证函数执行情况。函数计算会直接将函数的输出和请求的相关信息打印在控制台上。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973040_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155633040_zh-CN.png)
 
 2.  在物联网平台控制台，创建规则，编写筛选消息数据的SQL。请参见[设置规则引擎](intl.zh-CN/用户指南/规则引擎/数据流转/设置数据流转规则.md#)。
 3.  在规则的数据流转详情页，单击**数据转发**一栏的**添加操作**，并在弹出的添加操作页面中设置参数。
 
     **说明：** JSON格式和二进制格式都支持转发到函数计算中
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973034_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155633034_zh-CN.png)
 
     |参数|说明|
     |:-|:-|
@@ -74,6 +74,12 @@
 
     函数计算控制台针对函数的执行情况有监控统计。统计有大概5分钟的延时，可以通过云监控大盘查询函数的执行情况。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15586918973035_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7550/15629155633035_zh-CN.png)
 
+
+## 实践案例 {#section_0v0_jqg_zlt .section}
+
+[物联网平台对接第三方服务-天气查询](../../../../intl.zh-CN/最佳实践/物联网平台对接第三方服务-天气查询.md#)
+
+[温湿度计上报数据到钉钉群机器人](../../../../intl.zh-CN/最佳实践/温湿度计上报数据到钉钉群机器人.md#)
 

@@ -33,7 +33,7 @@
 
     -   MQTT的Connect报文参数如下：
 
-        ```
+        ``` {#codeblock_ikw_2j6_gk3}
         
         mqttClientId: clientId+"|securemode=3,signmethod=hmacsha1,timestamp=132323232|"
         mqttUsername: deviceName+"&"+productKey
@@ -50,20 +50,20 @@
         -   securemode：表示目前安全模式，可选值有2 （wss协议）和3（ws协议）。
     参考示例，如果预置前提如下：
 
-    ```
+    ``` {#codeblock_4pm_htl_a0q}
     clientId = 12345，deviceName = device， productKey = pk， timestamp = 789，signmethod=hmacsha1，deviceSecret=secret
     ```
 
     -   使用ws方式
         -   连接域名
 
-            ```
+            ``` {#codeblock_rqo_buz_8e7}
             ws://pk.iot-as-mqtt.cn-shanghai.aliyuncs.com:443
             ```
 
         -   连接参数
 
-            ```
+            ``` {#codeblock_92c_zvq_oyj}
             
             mqttclientId=12345|securemode=3,signmethod=hmacsha1,timestamp=789|
             mqttUsername=device&pk
@@ -73,13 +73,13 @@
     -   使用wss方式
         -   连接域名
 
-            ```
+            ``` {#codeblock_lv4_69d_jba}
             wss://pk.iot-as-mqtt.cn-shanghai.aliyuncs.com:443
             ```
 
         -   连接参数
 
-            ```
+            ``` {#codeblock_g7o_oyb_82d}
             
             mqttclientId=12345|securemode=2,signmethod=hmacsha1,timestamp=789|
             mqttUsername=device&pk

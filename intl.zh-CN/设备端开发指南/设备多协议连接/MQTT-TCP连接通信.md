@@ -24,7 +24,7 @@
 
  |
     |可变报头（variable header）：Keep Alive|Connect指令中需包含Keep Alive（保活时间）。保活心跳时间取值范围为30至1200秒。如果心跳时间不在此区间内，物联网平台会拒绝连接。建议取值300秒以上。如果网络不稳定，将心跳时间设置高一些。|
-    |MQTT的Connect报文参数|     ```
+    |MQTT的Connect报文参数|     ``` {#codeblock_8kf_jz9_9sd}
 mqttClientId: clientId+"|securemode=3,signmethod=hmacsha1,timestamp=132323232|"
 mqttUsername: deviceName+"&"+productKey
 mqttPassword: sign_hmac(deviceSecret,content)
@@ -43,7 +43,7 @@ mqttPassword: sign_hmac(deviceSecret,content)
 
  假设`clientId = 12345，deviceName = device， productKey = pk， timestamp = 789，signmethod=hmacsha1，deviceSecret=secret`，那么使用TCP方式提交给MQTT的参数如下：
 
-     ```
+     ``` {#codeblock_86w_ibq_txu}
 mqttclientId=12345|securemode=3,signmethod=hmacsha1,timestamp=789|
 mqttUsername=device&pk
 mqttPassword=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimestamp789").toHexString(); 
@@ -51,7 +51,7 @@ mqttPassword=hmacsha1("secret","clientId12345deviceNamedeviceproductKeypktimesta
 
  加密后的Password为二进制转16制字符串，示例结果为：
 
-     ```
+     ``` {#codeblock_0dz_m98_okh}
 FAFD82A3D602B37FB0FA8B7892F24A477F851A14
     ```
 
@@ -86,7 +86,7 @@ FAFD82A3D602B37FB0FA8B7892F24A477F851A14
 
     -   x-www-form-urlencoded请求示例：
 
-        ```
+        ``` {#codeblock_k0s_j80_iro}
         POST /auth/devicename HTTP/1.1
         Host: iot-auth.cn-shanghai.aliyuncs.com
         Content-Type: application/x-www-form-urlencoded
@@ -97,7 +97,7 @@ FAFD82A3D602B37FB0FA8B7892F24A477F851A14
 
     -   请求响应：
 
-        ```
+        ``` {#codeblock_cql_2h7_0jr}
         HTTP/1.1 200 OK
         Server: Tengine
         Date: Wed, 29 Mar 2017 13:08:36 GMT

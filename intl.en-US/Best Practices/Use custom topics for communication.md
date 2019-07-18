@@ -6,7 +6,7 @@ You can define custom topic categories in IoT Platform. Then, a device can send 
 
 In this example, an electronic thermometer periodically exchanges data with a server. The thermometer sends the current temperature to the server, and the server sends the precision setting command to the thermometer.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156341764748433_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156342071148433_en-US.png)
 
 ## Prepare the development environment {#section_1bq_xtz_3q6 .section}
 
@@ -63,7 +63,7 @@ First, you need to create a product, define custom topic categories, define the 
 
     For more information, see [Development guide for Java HTTP/2 SDK](../../../../intl.en-US/User Guide/Create products and devices/Service Subscription/Development guide for Java HTTP__2 SDK.md#).
 
-    ![](images/50122_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156342071150122_en-US.png)
 
 7.  In the left-side navigation pane, choose **Devices** and add a thermometer device under the thermometer product that has been created. For more information, see [Create a device](../../../../intl.en-US/User Guide/Create products and devices/Create devices/Create a device.md#).
 
@@ -71,7 +71,7 @@ First, you need to create a product, define custom topic categories, define the 
 
 The following figure shows how the device sends a message to the server.
 
-![](images/48448_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156342071248448_en-US.png)
 
 -   Configure the HTTP/2 SDK, which will be installed in the server, and set a callback for the specified topic.
 
@@ -224,7 +224,7 @@ The following figure shows how the device sends a message to the server.
 
 The following figure shows how the server sends a message to the device.
 
-![](images/48453_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156342071248453_en-US.png)
 
 -   Configure the device SDK to subscribe to a topic.
 

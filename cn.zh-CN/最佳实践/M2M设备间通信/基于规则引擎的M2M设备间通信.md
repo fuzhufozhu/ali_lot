@@ -4,7 +4,7 @@
 
 使用手机App控制智能灯的流程：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/15585837304208_zh-CN.PNG)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/15637792364208_zh-CN.PNG)
 
 1.  在物联网平台，为智能灯设备创建产品和设备，定义功能等。请参见文档[创建产品](../../../../cn.zh-CN/用户指南/产品与设备/创建产品.md#)、[批量创建设备](../../../../cn.zh-CN/用户指南/产品与设备/创建设备/批量创建设备.md#)、[新增物模型](../../../../cn.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)。 本示例中，智能灯的ProductKey为al123456789；DeviceName为light。
 2.  开发智能灯设备端。 本示例中，设备与物联网平台间的通信协议为MQTT。 设备端SDK开发详情，请参见[设备端Link Kit SDK文档](https://help.aliyun.com/product/93051.html)。
@@ -16,7 +16,7 @@
 
         本示例中，SQL将筛选出App设备的名称deviceName，消息时间戳timestamp和属性switch三个字段的消息。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/155858373047216_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/156377923747216_zh-CN.png)
 
     3.  设置转发消息目的地。将智能灯设备具有订阅权限的Topic作为接收手机App指令的Topic。 
 
@@ -24,7 +24,7 @@
 
         -   选择**发布到另一个Topic中**。
         -   指定设备时，需使用转义符`${deviceName}`通配所有目标智能灯。如本示例中`${deviceName}`会被转义成智能灯设备名称`light`。
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/155858373047218_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/156377923747218_zh-CN.png)
 
 6.  手机App用户通过扫码将App与智能灯绑定。 当App向您的服务器发送绑定某设备的请求后，您的服务器将返回绑定成功的智能灯设备名称deviceName。本示例中，智能灯设备名称为light。
 7.  手机App用户通过App发送控制指令。 

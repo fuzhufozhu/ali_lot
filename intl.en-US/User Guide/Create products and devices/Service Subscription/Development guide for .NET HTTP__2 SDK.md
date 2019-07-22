@@ -12,7 +12,7 @@ The following process describes how to develop service subscription. Download th
 4.  Click **Service Subscription** \> **Set**.
 5.  Select the types of notifications that you want to push.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/155496720912666_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/156376164812666_en-US.png)
 
     -   Device Upstream Notification: Indicates the messages in the topics to which devices are allowed to publish messages. If this notification type is selected, the HTTP/2 SDK can receive messages reported by devices.
 

@@ -13,13 +13,13 @@
 
     -   DevEUI 是LoRa设备的唯一标识符，采用LoRaWAN协议标准规范，不可为空。请确保DevEUI产品下唯一，且已烧录到设备中。
     -   DevEUI和PIN Code一般印刷在设备外显标签上。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155858361839864_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/156376637939864_zh-CN.png)
 
 5.  单击**确认**。完成设备创建。
 
     设备创建完成后，将自动弹出**查看设备证书**弹框。您可以查看、复制LoRa设备的证书信息，包括JoinEUI和DevEUI。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/155858361839872_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134336/156376638039872_zh-CN.png)
 
 
 ## 批量创建 {#section_kp4_cfd_zgb .section}

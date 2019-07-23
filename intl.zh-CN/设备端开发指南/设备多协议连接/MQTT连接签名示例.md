@@ -23,10 +23,10 @@
 
 ## 签名函数API接口说明 {#section_2xk_pmh_r6z .section}
 
-|函数原型| ``` {#codeblock_1cy_egq_yo2}
+|函数原型| ``` {#codeblock_1cy_egq_yo2 .lanuage-c}
 int32_t IOT_Sign_MQTT(iotx_mqtt_region_types_t region,
-		      iotx_dev_meta_info_t *meta,
-		      iotx_sign_mqtt_t *signout);
+              iotx_dev_meta_info_t *meta,
+              iotx_sign_mqtt_t *signout);
 ```
 
  |
@@ -35,7 +35,7 @@ int32_t IOT_Sign_MQTT(iotx_mqtt_region_types_t region,
 
 代码示例：
 
-    ``` {#codeblock_yni_mle_9u5}
+    ``` {#codeblock_yni_mle_9u5 .lanuage-c}
 typedef enum {
     IOTX_CLOUD_REGION_SHANGHAI,   /* Shanghai */
     IOTX_CLOUD_REGION_SINGAPORE,  /* Singapore */
@@ -53,14 +53,14 @@ typedef enum {
 
 代码示例：
 
-    ``` {#codeblock_056_v1s_h9h}
+    ``` {#codeblock_056_v1s_h9h .lanuage-c}
 typedef struct _iotx_dev_meta_info {
     char product_key[IOTX_PRODUCT_KEY_LEN + 1];
     char product_secret[IOTX_PRODUCT_SECRET_LEN + 1];
     char device_name[IOTX_DEVICE_NAME_LEN + 1];
     char device_secret[IOTX_DEVICE_SECRET_LEN + 1];
 } iotx_dev_meta_info_t;
-								
+										
     ```
 
 其中包含的参数：
@@ -73,7 +73,7 @@ typedef struct _iotx_dev_meta_info {
  |
 |输出参数|signout：输出的数据，该数据将用于MQTT连接。 代码示例：
 
- ``` {#codeblock_1si_8r9_qld}
+ ``` {#codeblock_1si_8r9_qld .lanuage-c}
 typedef struct {
     char hostname[DEV_SIGN_HOSTNAME_MAXLEN];
     uint16_t port;
@@ -88,9 +88,11 @@ typedef struct {
 
  -   hostname：完整的阿里云物联网站点域名。
 -   port：阿里云站点的端口号。
--   clientid：MQTT建立连接时需要指定的ClientID。
--   username：MQTT建立连接时需要指定的Username。
--   password：MQTT建立连接时需要指定的Password。
+-   clientid：MQTT建立连接时需要指定的ClientID。建议使用设备的MAC地址或SN码，64字符内。
+-   username：MQTT建立连接时需要指定的Username。由设备名DeviceName、符号（&）和产品ProductKey组成，格式：`deviceName+"&"+productKey`。示例：`Device1&alSseIs****`。
+-   password：MQTT建立连接时需要指定的Password。把提交给服务器的参数按字典排序并拼接后，使用hmacsha256方法和设备的DeviceSecret，加签生成Password。
+
+ 具体参数说明，请参见[MQTT-TCP连接通信](intl.zh-CN/设备端开发指南/设备多协议连接/MQTT-TCP连接通信.md#)。
 
  |
 |返回值| -   0：表示成功。
@@ -102,7 +104,7 @@ typedef struct {
 
 以下以sign\_test.c中的测试代码为例。
 
-``` {#codeblock_ngf_2ng_las}
+``` {#codeblock_ngf_2ng_las .lanuage-c}
 #include <stdio.h>
 #include <string.h>
 #include "sign_api.h"  //包含签名所需的各种数据结构定义
@@ -129,9 +131,9 @@ int main(int argc, char *argv[])
 
     //调用签名函数，生成MQTT连接时需要的各种数据
     IOT_Sign_MQTT(IOTX_CLOUD_REGION_SHANGHAI, &meta_info, &sign_mqtt);
-    
+
     ...
-    
+
 }
 			
 ```

@@ -34,7 +34,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
     授权策略内容示例：IoT 资源只读权限。
 
-    ```
+    ``` {#codeblock_ii2_6a9_mc7}
     {
         "Version":"1",
         "Statement":[
@@ -103,7 +103,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
     授权策略内容示例：IoT 资源读写权限。
 
-    ```
+    ``` {#codeblock_c7f_ddt_mbl}
     {
         "Version":"1",
         "Statement":[
@@ -176,7 +176,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 2.  找到要授权的角色，单击**授权**。
 3.  在授权对话框中，选择要授予角色的自定义授权策略，单击中间的向右箭头，将选中的授权策略移至**已选授权策略名称**下，再单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15586035904853_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15638460554853_zh-CN.jpg)
 
 
 授权完成后，该角色就具有了授权策略定义的权限。您可以单击该角色对应的**管理**操作按钮，进入角色详情页，查看该角色的基本信息和权限信息。
@@ -197,7 +197,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
     角色授权策略示例：
 
-    ```
+    ``` {#codeblock_p49_4xo_242}
     {
         "Version":"1",
         "Statement":[
@@ -219,7 +219,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
 ## 步骤五：子账号获取临时身份凭证 {#section_lwx_nxk_5db .section}
 
-获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[STS API参考](../../../../intl.zh-CN/API 参考（STS）/简介.md#)和[STS SDK参考](../../../../intl.zh-CN/SDK参考/SDK参考（STS）/Java SDK/前言.md#)。
+获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[STS API参考](../../../../cn.zh-CN/API 参考（STS）/什么是STS.md#)和[STS SDK参考](../../../../cn.zh-CN/SDK参考/SDK参考（STS）/Java SDK.md#)。
 
 使用 API 和 SDK 获取扮演角色的临时身份凭证需传入以下参数：
 
@@ -233,7 +233,13 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
 API 示例：子账号用户通过调用 STS 的AssumeRole接口获得扮演该角色的临时身份凭证。
 
-```
+``` {#codeblock_v6h_e07_h5q}
+
+
+
+
+
+
 
 
 https://sts.aliyuncs.com?Action=AssumeRole
@@ -246,7 +252,7 @@ https://sts.aliyuncs.com?Action=AssumeRole
 
 SDK 示例：子账号用户使用 STS 的 Python 命令行工具接口获得扮演该角色的临时身份凭证。
 
-```
+``` {#codeblock_6ak_gmv_era}
 $python ./sts.py AssumeRole RoleArn=acs:ram::1234567890123456:role/iotstsrole RoleSessionName=iotreadonlyrole Policy='{"Version":"1","Statement":[{"Effect":"Allow","Action":"iot:*","Resource":"*"}]}' DurationSeconds=3600 --id=id --secret=secret
 ```
 
@@ -258,7 +264,7 @@ $python ./sts.py AssumeRole RoleArn=acs:ram::1234567890123456:role/iotstsrole Ro
 
 Java SDK 示例：子账号用户在调用请求中，传入临时身份凭证的 AccessKeyId、AccessKeySecret 和 SecurityToken 参数，创建 IAcsClient对象。
 
-```
+``` {#codeblock_k63_6fa_vqx}
 IClientProfile  profile = DefaultProfile.getProfile("cn-hangzhou", AccessKeyId,AccessSecret）;
 RpcAcsRequest request.putQueryParameter("SecurityToken", Token);
 IAcsClient client = new DefaultAcsClient(profile);

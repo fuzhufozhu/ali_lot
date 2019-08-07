@@ -10,9 +10,7 @@
 
 您可以在设备中集成物联网平台提供的SDK，实现物联网平台接入。
 
-SDK下载连接：
-
--   [C SDK](https://www.alibabacloud.com/help/doc-detail/96623.htm)
+SDK下载连接： [C SDK](https://www.alibabacloud.com/help/doc-detail/96623.htm)
 
 如果以上SDK不满足您的需求，可以按照以下模板发送邮件至`linkkitSDK-query@list.alibaba-inc.com`联系我们。
 
@@ -35,12 +33,5 @@ SDK下载连接：
 
 ## 泛化协议SDK {#section_czd_vn1_mgb .section}
 
-您可以使用[泛化协议SDK](../../../../intl.zh-CN/用户指南/泛化协议/概览.md#)，快速构建桥接服务，搭建设备或平台与阿里云物联网平台的双向数据通道。
-
-## HTTP/2 SDK {#section_fd3_rvj_wgb .section}
-
-您可以使用HTTP/2 SDK，建立设备端与阿里云物联网平台的数据通道。例如，将HTTP/2 SDK嵌入您的服务器，直接接受设备上报的消息。
-
--   [HTTP/2 SDK \(Java\)](intl.zh-CN/设备端开发指南/C-SDK/使用HTTP__2 SDK(Java)建连.md#)
--   [HTTP/2 SDK \(.NET\)](intl.zh-CN/设备端开发指南/C-SDK/使用HTTP__2 SDK(.NET)接入.md#)
+您可以使用[泛化协议SDK](../../../../intl.zh-CN/用户指南/泛化协议/什么是泛化协议SDK.md#)，快速构建桥接服务，搭建设备或平台与阿里云物联网平台的双向数据通道。
 

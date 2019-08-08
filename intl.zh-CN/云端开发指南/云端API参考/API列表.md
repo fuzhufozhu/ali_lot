@@ -85,3 +85,11 @@
 |[GetDeviceShadow](intl.zh-CN/云端开发指南/云端API参考/设备影子/GetDeviceShadow.md#)|查询设备影子。|
 |[UpdateDeviceShadow](intl.zh-CN/云端开发指南/云端API参考/设备影子/UpdateDeviceShadow.md#)|更新设备影子。|
 
+## 数据开发API管理 {#section_0yx_8d7_fkm .section}
+
+|API|描述|
+|---|--|
+|[CreateDataAPIService](intl.zh-CN/云端开发指南/云端API参考/数据开发API管理/CreateDataAPIService.md#)|创建数据算法服务API。|
+|[GetDataAPIServiceDetail](intl.zh-CN/云端开发指南/云端API参考/数据开发API管理/GetDataAPIServiceDetail.md#)|获取数据算法服务API详情。|
+|[InvokeDataAPIService](intl.zh-CN/云端开发指南/云端API参考/数据开发API管理/InvokeDataAPIService.md#)|调用数据算法服务API，获取SQL查询结果。|
+

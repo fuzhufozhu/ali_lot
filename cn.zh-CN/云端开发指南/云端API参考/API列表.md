@@ -54,7 +54,7 @@
 |[GetGatewayBySubDevice](intl.zh-CN/云端开发指南/云端API参考/设备管理/GetGatewayBySubDevice.md#)|根据挂载的子设备信息查询对应的网关设备信息。|
 |[QueryDeviceByTags](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceByTags.md#)|根据标签查询设备。|
 |[SetDeviceDesiredProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|为指定设备批量设置期望属性值。|
-|[QueryDeviceDesiredProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/SetDeviceDesiredProperty.md#)|查询指定设备的期望属性值。|
+|[QueryDeviceDesiredProperty](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceDesiredProperty.md#)|查询指定设备的期望属性值。|
 |[QueryDeviceFileList](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFileList.md#)|查询指定设备上传到物联网平台的所有文件。|
 |[QueryDeviceFile](intl.zh-CN/云端开发指南/云端API参考/设备管理/QueryDeviceFile.md#)|查询指定设备上传到物联网平台的指定文件信息。|
 |[DeleteDeviceFile](intl.zh-CN/云端开发指南/云端API参考/设备管理/DeleteDeviceFile.md#)|删除指定设备上传到物联网平台的指定文件。|

@@ -11,23 +11,23 @@
 1.  下载并安装MQTT.fx软件。请访问[MQTT.fx官网](https://mqttfx.jensd.de/index.php/download)。
 2.  打开MQTT.fx软件，单击设置图标。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992687694_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447694_zh-CN.png)
 
 3.  设置连接参数。物联网平台目前支持两种连接模式，不同模式设置参数不同。
     -   TCP直连：Client ID中securemode=3，无需设置SSL/TLS信息。
     -   TLS直连：Client ID中securemode=2，需要设置SSL/TLS信息。
     1.  设置基本信息。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992687698_zh-CN.png)
+        ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447698_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
         |Profile Name|输入您的自定义名称。|
         |Profile Type|选择为 **MQTT Broker**。|
-        |**MQTT Broker Profile Settings**|
+        |MQTT Broker Profile Settings|
         |Broker Address|连接域名。 格式：$\{YourProductKey\}.iot-as-mqtt.$\{region\}.aliyuncs.com。
 
- 其中，$\{region\}需替换为您物联网平台服务所在地域的代码。地域代码，请参见[地域和可用区](https://www.alibabacloud.com/help/doc-detail/40654.htm)。如：alxxxxxxxxxx.iot-as-mqtt.cn-shanghai.aliyuncs.com。
+ 其中，$\{region\}需替换为您物联网平台服务所在地域的代码。地域代码，请参见[地域和可用区](../../../../intl.zh-CN/通用参考/地域和可用区.md#)。如：alxxxxxxxxxx.iot-as-mqtt.cn-shanghai.aliyuncs.com。
 
  |
         |Broker Port|设置为1883。|
@@ -43,13 +43,13 @@
  **说明：** 输入Client ID信息后，请勿单击**Generate**。
 
  |
-        |**General** General栏目下的设置项可保持系统默认，也可以根据您的具体需求设置。
+        |General General栏目下的设置项可保持系统默认，也可以根据您的具体需求设置。
 
  |
 
     2.  单击**User Credentials**，设置User Name和Password。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992687699_zh-CN.png)
+        ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447699_zh-CN.png)
 
         |参数|说明|
         |:-|:-|
@@ -85,16 +85,16 @@
 
  |
 
-    3.  （可选）TCP直连模式下，无需设置SSL/TLS信息，直接进入下一步。
+    3.  （可选）TCP直连模式（即securemode=3）下，无需设置SSL/TLS信息，直接进入下一步。
 
-        TLS直连模式下，需要单击SSL/TLS，勾选 **Enable SSL/TLS**，并将Protocol选择为**TLSv1**。
+        TLS直连模式（即securemode=2）下，需要选择SSL/TLS，勾选 **Enable SSL/TLS**，设置Protocol。建议Protocol选择为**TLSv1.2**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992687734_zh-CN.png)
+        ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447734_zh-CN.png)
 
     4.  填写完成后，单击**OK**。
 4.  设置完成后，单击 **Connect**进行连接。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697735_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447735_zh-CN.png)
 
 
 ## 下行通信测试 {#section_rmt_vgk_p2b .section}
@@ -104,20 +104,20 @@
 1.  在MQTT.fx上，单击**Subscribe**。
 2.  输入一个设备具有订阅权限的Topic，单击**Subscribe**，订阅这个Topic。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697736_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447736_zh-CN.png)
 
     订阅成功后，该Topic将显示在列表中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697737_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447737_zh-CN.png)
 
-3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的设备详情页，**Topic列表**下，单击已订****阅的Topic对应的**发布消息**操作按钮。
+3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的设备详情页，**Topic列表**下，单击已订阅的Topic对应的**发布消息**操作按钮。
 4.  输入消息内容，单击**确认**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697738_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447738_zh-CN.png)
 
 5.  回到MQTT.fx上，查看是否接收到消息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697739_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816447739_zh-CN.png)
 
 
 ## 上行通信测试 {#section_ysm_bxt_lgb .section}
@@ -127,18 +127,18 @@
 1.  在MQTT.fx上，单击**Publish**。
 2.  输入一个设备具有发布权限的Topic，和要发送的消息内容，单击**Publish**，向这个Topic推送一条消息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/155799926937281_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/156578164437281_zh-CN.png)
 
 3.  在[物联网平台控制台](https://iot.console.aliyun.com)中，该设备的**设备详情** \> **日志服务** \> **上行消息分析**栏下，查看上行消息。
 
     您还可以复制MessageID，在**消息内容查询**中，选择**原始数据**查看具体消息内容。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/155799926937288_zh-CN.png)
+    ![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/156578164537288_zh-CN.png)
 
 
 ## 查看日志 {#section_lnm_nkk_p2b .section}
 
 在MQTT.fx上，单击**Log**查看操作日志和错误提示日志。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15579992697740_zh-CN.png)
+![MQTT.fx](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16788/15657816457740_zh-CN.png)
 

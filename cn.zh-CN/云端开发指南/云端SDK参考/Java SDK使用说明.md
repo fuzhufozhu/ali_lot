@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.11.0</version>
+            <version>7.0.0</version>
         </dependency>
         ```
 
@@ -50,7 +50,7 @@ accessKey即您的账号的AccessKeyId，accessSecret即AccessKeyId对应的Acce
 
 ## 发起调用 {#section_ins_yrd_zdb .section}
 
-物联网平台云端API，请参见[API列表](intl.zh-CN/云端开发指南/云端API参考/API列表.md#)。
+物联网平台云端API，请参见[API列表](cn.zh-CN/云端开发指南/云端API参考/API列表.md#)。
 
 以调用Pub接口发布消息到Topic为例。
 
@@ -78,7 +78,7 @@ catch (ServerException e)
 
 ## 附录：Demo {#section_tlh_nst_wkh .section}
 
-点击下载[SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)。Demo中包含Java、Python、PHP、.NET版本SDK示例。
+单击下载[SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)。Demo中包含Java、Python、PHP、.NET版本SDK示例。
 
-另外，阿里云提供API在线调试工具 [OpenAPI Explorer](https://api.aliyun.com)。在OpenAPI Explorer页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下供您参考。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
+另外，阿里云提供API在线调试工具 [OpenAPI Explorer](https://api.aliyun.com)。在OpenAPI Explorer页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
 

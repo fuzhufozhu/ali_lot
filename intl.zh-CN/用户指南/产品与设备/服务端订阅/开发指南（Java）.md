@@ -14,7 +14,7 @@
 4.  单击**服务端订阅** \> **设置**。
 5.  选择推送的消息类型。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/156507077412666_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18850/156593488612666_zh-CN.png)
 
     -   **设备上报消息**：指产品下所有设备 Topic 列表中，具有发布权限的 Topic 中的消息。勾选后，可以通过 HTTP/2 SDK 接收这些消息。
 
@@ -181,7 +181,7 @@ messageClient.setMessageListener("/${YourProductKey}/#",messageCallback);
     }
     ```
 
-    各类型消息的具体格式，请参考[数据格式](intl.zh-CN/用户指南/规则引擎/数据流转/数据格式.md#)。
+    各类型消息的具体格式，请参见[数据格式](intl.zh-CN/用户指南/规则引擎/数据流转/数据格式.md#)。
 
     **说明：** 关于设备上下线状态，为避免消息时序紊乱造成影响，建议您根据消息中的lastTime字段来判断最终设备状态。
 

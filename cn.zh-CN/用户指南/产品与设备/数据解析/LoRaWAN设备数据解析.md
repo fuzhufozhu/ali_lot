@@ -37,8 +37,8 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
     -   将设备自定义数据格式转Alink JSON格式数据：rawDataToProtocol。
     脚本中，解析下行数据的函数`protocolToRawData`中，需设定输出结果的起始三个字节，用于指定下行端口号和下行消息类型。否则，系统会丢掉下行帧。 设备实际接收的数据中不会包含这三个字节。
 
-    |LoRa Downlink|Size \(bytes\)|说明|
-    |-------------|--------------|--|
+    |LoRa Downlink|字节数|说明|
+    |-------------|---|--|
     |DFlag|1|固定为0x5D。|
     |FPort|1|下行端口号。|
     |DHDR|1|可选：     -   0：表示 “Unconfirmed Data Down”数据帧。
@@ -58,7 +58,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
     在**模拟输入**框中，输入模拟数据，如000102，选择模拟类型为**设备上报数据**，单击**运行**。右侧运行结果中将显示数据解析是否成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247845_zh-CN.png)
+    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626347845_zh-CN.png)
 
 -   设备接收数据模拟解析
 
@@ -78,7 +78,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
     }
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247846_zh-CN.png)
+    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626347846_zh-CN.png)
 
 
 ## 步骤三：提交脚本 {#section_ntl_8fm_mzi .section}
@@ -87,11 +87,11 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
 **说明：** 仅提交后的脚本才能被物联网平台调用；草稿状态的脚本不能被调用。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247848_zh-CN.png)
+![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626447848_zh-CN.png)
 
 ## 步骤四：使用真实设备调试 {#section_ufx_8d8_9nv .section}
 
-脚本提交后，正式使用之前，请使用真实设备进行测试。LoRaWAN节点设备如何发送和接收数据，请参考模组厂商的相关手册。
+脚本提交后，正式使用之前，请使用真实设备进行测试。LoRaWAN节点设备如何发送和接收数据，请参见模组厂商的相关手册。
 
 -   测试LoRaWAN设备上报温湿度属性。
 
@@ -127,7 +127,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
 查看设备属性、事件和服务调用数据的路径如下图：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/155896044247847_zh-CN.png)
+![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626447847_zh-CN.png)
 
 ## 附录：示例脚本 {#section_k9w_9id_mrb .section}
 
@@ -267,7 +267,7 @@ function buffer_float32(value)
 }
 ```
 
-## 相关文档 { .section}
+## 相关文档 {#section_3l5_3k5_bhf .section}
 
 -   了解数据解析流程和脚本格式等基本信息，请参见[什么是数据解析](cn.zh-CN/用户指南/产品与设备/数据解析/什么是数据解析.md#)。
 -   关于脚本解析问题排查，请参见[问题排查](cn.zh-CN/用户指南/产品与设备/数据解析/问题排查.md#)。

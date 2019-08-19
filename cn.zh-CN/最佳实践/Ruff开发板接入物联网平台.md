@@ -6,14 +6,14 @@
 
 阿里云物联网平台支持多种开发板服务器接入，以实现对应用服务器的远程控制。应用服务器将设备数据传入物联网平台后，可通过规则引擎的数据流传功能将设备数据流转至其他支持的阿里云服务中进行存储、分析、计算等处理。如下图所示。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/155781280339148_zh-CN.png)
+![ruff开发版](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/156621434239148_zh-CN.png)
 
 本文档中，只介绍开发Ruff应用服务器，并连接物联网平台；在物联网平台上，设置数据流传规则将服务器上报的设备数据流转至表格存储。
 
 上图中，其他操作流程请参见：
 
 -   [Android Things接入物联网平台](cn.zh-CN/最佳实践/Android Things接入物联网平台.md#)
--   [数据转发至函数计算](../../../../cn.zh-CN/用户指南/规则引擎/数据流转使用示例/转发数据到函数计算(FC).md#)
+-   [数据转发至函数计算](../../../../cn.zh-CN/用户指南/规则引擎/数据流转使用示例/数据转发到函数计算.md#)
 -   [上报数据到钉钉群机器人](cn.zh-CN/最佳实践/温湿度计上报数据到钉钉群机器人.md#)
 -   [DataV数据可视化](https://help.aliyun.com/document_detail/30360.html)
 
@@ -54,19 +54,19 @@
 
         本示例中SQL如下：
 
-        ```
+        ``` {#codeblock_ji1_220_jmh}
         SELECT deviceName() as deviceName , timestamp('yyyy-MM-dd HH:mm:ss') as time, pm25, pm10 FROM "/a1jhoQasrGY/+/user/pm25data"
         ```
 
         其中，函数 `deviceName()`代表设备名称，`timestamp('yyyy-MM-dd HH:mm:ss')`代表数据上报的时间；数据来源为Topic `/a1jhoQasrGY/+/user/pm25data`，即该产品下所有设备通过这个Topic上报的消息。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/155781280339155_zh-CN.png)
+        ![ruff开发版](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/156621434239155_zh-CN.png)
 
     3.  单击转发数据对应的**添加操作**，并设置将设备数据转发到表格存储数据表中。
 
         如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/155781280339156_zh-CN.png)
+        ![ruff开发版](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/156621434239156_zh-CN.png)
 
     4.  返回规则列表页，单击该规则对应的**启动**按钮启动规则。
     数据流转规则设置并启动后，设备上报的对应数据将会被流转到设置的表格存储数据表中。
@@ -81,7 +81,7 @@
     4.  输入rap device add air \(SDS011\)添加硬件驱动。
     5.  在package.json中增加物联网平台SDK包 `aliyun-iot-device-mqtt`。
 
-        ```
+        ``` {#codeblock_gc5_ll8_qrg}
         {
             "name": "apsarascampusair",
             "version": "0.1.0",
@@ -98,10 +98,10 @@
         }
         ```
 
-    6.  使用`$npm install`命令，安装阿里云物联网平台设备端SDK。物联网平台SDK下载地址，请参见[下载设备端SDK](../../../../cn.zh-CN/设备端开发指南/下载设备端SDK.md#)。
+    6.  使用`$rap install`命令，安装阿里云物联网平台设备端SDK。物联网平台SDK下载地址，请参见[下载设备端SDK](../../../../cn.zh-CN/设备端开发指南/下载设备端SDK.md#)。
     7.  修改`index.js`主程序。
 
-        ```
+        ``` {#codeblock_wo9_yze_d6d}
         // 引入aliyun-iot-sdk
         var MQTT = require('aliyun-iot-device-mqtt');
         
@@ -158,7 +158,7 @@
 
         完整的SDK文件目录结构：
 
-         ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/155781280339157_zh-CN.png)
+         ![ruff开发板](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/127995/156621434239157_zh-CN.png)
 
 5.  使用`$rap deploy -s`命令，将SDK发布到Ruff开发板。
 

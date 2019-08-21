@@ -4,7 +4,7 @@
 
 ## 前提条件 {#section_j13_sxr_52b .section}
 
-在设备端开发之前，您需要首先完成控制台所需操作，以获取设备开发阶段的必要信息，包括设备信息、Topic信息等。具体内容请参考用户指南。
+在设备端开发之前，您需要首先完成控制台所需操作，以获取设备开发阶段的必要信息，包括设备信息、Topic信息等。具体操作指导，请参见用户指南。
 
 ## 基于设备端SDK开发 {#section_e4x_yxr_52b .section}
 
@@ -29,7 +29,7 @@ SDK下载连接： [C SDK](https://www.alibabacloud.com/help/doc-detail/96623.ht
 
 ## 基于Alink协议开发 {#section_uyv_bm1_mgb .section}
 
-如果提供的设备端SDK无法满足您的需求，可以参考[Alink协议文档](intl.zh-CN/设备端开发指南/基于Alink协议开发/Alink协议.md#)自行开发。
+如果提供的设备端SDK无法满足您的需求，可以参见[Alink协议文档](intl.zh-CN/设备端开发指南/基于Alink协议开发/Alink协议.md#)自行开发。
 
 ## 泛化协议SDK {#section_czd_vn1_mgb .section}
 

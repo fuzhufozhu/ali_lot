@@ -12,9 +12,9 @@
 
 ## 接入流程 {#section_btf_by3_kgb .section}
 
-请求Topic：`/ext/ntp/${YourProductKey}/${YourDeviceName}/request` 
+请求Topic：`/ext/ntp/${YourProductKey}/${YourDeviceName}/request`
 
-响应Topic：`/ext/ntp/${YourProductKey}/${YourDeviceName}/response` 
+响应Topic：`/ext/ntp/${YourProductKey}/${YourDeviceName}/response`
 
 **说明：** ProductKey和DeviceName是设备证书的一部分，可以从控制台获取。
 
@@ -43,14 +43,14 @@
 
 4.  设备端计算出当前精确的unix时间。
 
-    设备端收到服务端的时间记为$\{deviceRecvTime\}，则设备上的精确时间为：`(${serverRecvTime} + ${serverSendTime} + ${deviceRecvTime} - ${deviceSendTime}) / 2` 
+    设备端收到服务端的时间记为$\{deviceRecvTime\}，则设备上的精确时间为：`(${serverRecvTime} + ${serverSendTime} + ${deviceRecvTime} - ${deviceSendTime}) / 2`
 
 
 ## 使用示例 {#section_iwy_nmj_kgb .section}
 
-比如设备上时间是100，服务端时间是1000，链路延时是10，服务端从接收到发送经过了5。
+例如，设备上时间是100，服务端时间是1000，链路延时是10，服务端从接收到发送经过了5。
 
-| |设备端时间|服务端时间|
+|-|设备端时间|服务端时间|
 |:-|:----|-----|
 |设备发送|100（deviceSendTime）|1000|
 |服务端接收|110|1010（serverRecvTime）|

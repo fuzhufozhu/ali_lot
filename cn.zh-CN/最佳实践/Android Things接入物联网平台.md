@@ -14,11 +14,11 @@
 
  开发板
 
- |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197864_zh-CN.png)
+ |![Android Things](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15663671407864_zh-CN.png)
 
 | Android things系统1.0
 
- 如需更多帮助，请参见NXP Pico i.MX7D I/O官网接口文档：[https://developer.android.com/things/hardware/imx7d-pico-io](https://developer.android.com/things/hardware/imx7d-pico-io)。
+ 如需更多帮助，请参见NXP Pico i.MX7D I/O官网接口文档：[开发者指南](https://developer.android.com/things/hardware/imx7d-pico-io)。
 
  **说明：** 该硬件可以用树莓派替代。请参见[远程控制树莓派服务器](intl.zh-CN/最佳实践/远程控制树莓派服务器.md#)。
 
@@ -27,20 +27,20 @@
 
  温湿度传感器
 
- |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197865_zh-CN.png)
+ |![Android Things](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15663671407865_zh-CN.png)
 
 |采用I2C数据通信方式。|
     | ZE08-CH2O
 
  甲醛检测传感器
 
- |![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197866_zh-CN.png)
+ |![Android Things](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15663671417866_zh-CN.png)
 
 |采用UART数据通信方式。|
 
 -   设备接线示意图
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929197908_zh-CN.png)
+    ![Android Things](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15663671417908_zh-CN.png)
 
     -   将温湿度传感器（DHT12）的时钟信号线引脚SCL和数据线引脚SDA分别与开发板的I2C总线的SCL和SDA引脚相接。
     -   将甲醛检测传感器（ZE08-CH2O）的发送数据引脚TXD与开发板的接收数据引脚RXD相接；将ZE08-CH2O的接收数据引脚RXD与开发板的发送数据引脚TXD相接。
@@ -54,7 +54,7 @@
 
 3.  定义产品功能。
 
-    进入产品详情页面，单击**功能定义** \> **添加功能**，为产品添加属性定义。如需帮助，请参见[新增物模型](../../../../intl.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)。
+    进入产品详情页面，单击**功能定义** \> **添加功能**，为产品添加属性定义。如需帮助，请参见[单个添加物模型](../../../../intl.zh-CN/用户指南/产品与设备/物模型/单个添加物模型.md#)。
 
     |属性名称|标识符|数据类型|取值范围|描述|
     |:---|:--|:---|:---|:-|
@@ -71,19 +71,19 @@
 
 1.  使用Android Studio创建Android things工程，添加网络权限。
 
-    ```
+    ``` {#codeblock_55l_27w_q17}
     <uses-permission android:name="android.permission.INTERNET" />
     ```
 
 2.  在gradle中添加eclipse.paho.mqtt。
 
-    ```
+    ``` {#codeblock_9yz_7y4_qbm}
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     ```
 
 3.  配置通过I2C读取温湿度传感器DHT12的数据。
 
-    ```
+    ``` {#codeblock_3cq_4ws_s1i}
     private void readDataFromI2C() {
     
             try {
@@ -117,7 +117,7 @@
 
 4.  配置通过UART获取甲醛检测传感器Ze08-CH2O的数据。
 
-    ```
+    ``` {#codeblock_1gs_g3u_evu}
     try {
                     // data buffer
                     byte[] buffer = new byte[9];
@@ -140,7 +140,7 @@
 
 5.  创建阿里云物联网平台与设备端的连接，上报数据。
 
-    ```
+    ``` {#codeblock_hfu_pq7_oik}
     /*
     payload格式
     {
@@ -168,5 +168,5 @@
 
 设备启动后，您可以在阿里云物联网平台控制台，设备详情页，运行状态中查看设备当前的实时数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15571929198025_zh-CN.png)
+![Android Things](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16822/15663671418025_zh-CN.png)
 

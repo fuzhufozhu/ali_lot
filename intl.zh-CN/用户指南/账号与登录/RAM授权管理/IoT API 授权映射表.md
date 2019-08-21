@@ -92,4 +92,7 @@
 |QueryDeviceFileList|iot:QueryDeviceFileList|\*|查询指定设备上传到物联网平台的所有文件列表。|
 |QueryDeviceFile|iot:QueryDeviceFile|\*|查询指定设备上传到物联网平台的指定文件信息。|
 |DeleteDeviceFile|iot:DeleteDeviceFile|\*|删除指定设备上传到物联网平台的指定文件。|
+|QueryLoRaJoinPermissions|iot:QueryLoRaJoinPermissions|\*|查询LoRaWAN入网凭证列表。|
+|CreateLoRaNodesTask|iot:CreateLoRaNodesTask|\*|生成批量注册LoRaWAN设备的任务。|
+|GetLoraNodesTask|iot:GetLoraNodesTask|\*|查询批量注册LoRaWAN设备任务的状态。|
 

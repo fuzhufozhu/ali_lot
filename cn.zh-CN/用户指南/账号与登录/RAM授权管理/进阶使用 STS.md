@@ -4,7 +4,7 @@ STS 权限管理系统是比访问控制（RAM）更为严格的权限管理系�
 
 子账号和授予子账号的权限均长期有效。删除子账号或解除子账号权限，均需手动操作。发生子账号信息泄露后，如果无法及时删除该子账号或解除权限，可能给您的阿里云资源和重要信息带来危险。所以，对于关键性权限或子账号无需长期使用的权限，您可以通过STS 权限管理系统来进行控制。
 
-![](images/5054_zh-CN.jpg "子账号获得临时访问权限的操作流程")
+![STS](images/5054_zh-CN.jpg "子账号获得临时访问权限的操作流程")
 
 ## 步骤一：创建角色 {#section_aqw_zqd_5db .section}
 
@@ -30,7 +30,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 2.  选择空白模板。
 3.  输入授权策略名称和策略内容，再单击**新建授权策略**。
 
-    授权策略内容的编写方法参考，请单击**授权策略格式定义**查看。
+    授权策略内容的编写方法，请单击**授权策略格式定义**查看。
 
     授权策略内容示例：IoT 资源只读权限。
 
@@ -176,7 +176,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 2.  找到要授权的角色，单击**授权**。
 3.  在授权对话框中，选择要授予角色的自定义授权策略，单击中间的向右箭头，将选中的授权策略移至**已选授权策略名称**下，再单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15638460554853_zh-CN.jpg)
+    ![STS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7494/15663670504853_zh-CN.jpg)
 
 
 授权完成后，该角色就具有了授权策略定义的权限。您可以单击该角色对应的**管理**操作按钮，进入角色详情页，查看该角色的基本信息和权限信息。
@@ -219,7 +219,7 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 
 ## 步骤五：子账号获取临时身份凭证 {#section_lwx_nxk_5db .section}
 
-获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[STS API参考](../../../../cn.zh-CN/API 参考（STS）/什么是STS.md#)和[STS SDK参考](../../../../cn.zh-CN/SDK参考/SDK参考（STS）/Java SDK.md#)。
+获得角色授权的子账号用户，可以通过直接调用 API 或使用 SDK 来获取扮演角色的临时身份凭证：AccessKeyId、AccessKeySecret、和 SecurityToken。STS API 和 STS SDK 详情，请参见访问控制文档中[STS API](../../../../intl.zh-CN/API 参考（STS）/什么是STS.md#)和[STS SDK](../../../../intl.zh-CN/SDK参考/SDK参考（STS）/Java SDK.md#)。
 
 使用 API 和 SDK 获取扮演角色的临时身份凭证需传入以下参数：
 
@@ -229,19 +229,11 @@ RAM 角色是一种虚拟用户，是承载操作权限的虚拟概念。
 -   DurationSeconds：临时凭证的有效期。单位是秒，最小为 900，最大为 3600，默认值是 3600。
 -   id 和 secret：指需要扮演该角色的子账号的 AccessKeyId 和 AccessKeySecret。
 
-**获取临时身份凭证示例**
+获取临时身份凭证示例
 
 API 示例：子账号用户通过调用 STS 的AssumeRole接口获得扮演该角色的临时身份凭证。
 
 ``` {#codeblock_v6h_e07_h5q}
-
-
-
-
-
-
-
-
 https://sts.aliyuncs.com?Action=AssumeRole
 &RoleArn=acs:ram::1234567890123456:role/iotstsrole
 &RoleSessionName=iotreadonlyrole

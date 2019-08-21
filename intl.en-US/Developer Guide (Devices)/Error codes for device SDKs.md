@@ -116,20 +116,6 @@ The following table lists the causes and solutions of errors that may occur when
 |6600|An error occurred while verifying the signature.|Use the supported algorithms to calculate and verify the signature, as described in [Device identity registration](reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device identity registration.md#).|
 |6289|The device has already been activated.|Log on to the console and check the status of the device.|
 
-**Dynamically register a sub-device based on unique-certificate-per-product authentication**
-
-Request topic: /sys/\{productKey\}/\{deviceName\}/thing/proxy/provisioning/product\_register.
-
-Error codes: 460, 400, 6250, 6288, 6600, 6292, and 6203.
-
-The following table lists the causes and solutions of errors that may occur when you dynamically register a sub-device based on unique-certificate-per-product authentication. For more information about the other error codes, see the Common error codes section in this topic.
-
-|Error code|Cause|Solution|
-|:---------|:----|:-------|
-|6288|Dynamic registration is disabled for the sub-device.|Log on to the console and enable dynamic registration for the sub-device on the Product Details page.|
-|6292|The algorithm for calculating the signature is not supported by IoT Platform.|Use algorithms that are supported by the signMethod parameter, as described in [Device identity registration](reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device identity registration.md#).|
-|6600|An error occurred while verifying the signature.|Use the supported algorithms to calculate and verify the signature, as described in [Device identity registration](reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device identity registration.md#).|
-
 ## Topology error codes {#section_mys_8f8_vfa .section}
 
 **Add topological relationships**

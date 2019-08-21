@@ -17,7 +17,7 @@ Upstream​
 
 Request message
 
-```
+``` {#codeblock_2nv_zz4_msd}
 {
   "id": "123",
   "params": {
@@ -36,7 +36,7 @@ Request message
 
 Response message:
 
-```
+``` {#codeblock_cib_fa6_330}
 {
   "id":"123",
   "code":200,
@@ -62,7 +62,7 @@ Request Parameters
 
  Example:
 
- ```
+ ``` {#codeblock_dmf_fl2_rtf}
 sign= hmac_md5(deviceSecret, clientId123deviceNametestproductKey123timestamp123)
 ```
 
@@ -108,7 +108,7 @@ Upstream
 
 Request message:
 
-```
+``` {#codeblock_nkt_l5b_sp6}
 {
   "id": 123,
   "params": {
@@ -122,7 +122,7 @@ Request message:
 
 Response message:
 
-```
+``` {#codeblock_h4h_p2a_6bq}
 {
   "id": "123",
   "code": 200,
@@ -156,5 +156,5 @@ Error messages
 |460|request parameter error|The request parameters are incorrect.|
 |520|device no session|The sub-device session does not exist.|
 
-For more information about sub-device connections, see [Device identity registration](reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device identity registration.md#). For more information about error codes, see [Error codes](../../../../../reseller.en-US/Developer Guide (Devices)/Error codes for sub-device development.md#).
+For more information about sub-device connections, see [Device identity registration](reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Device identity registration.md#). For more information about error codes, see [Error codes for device SDKs](reseller.en-US/Developer Guide (Devices)/Error codes for device SDKs.md#).
 

@@ -4,7 +4,7 @@ This topic describes how to use the data forwarding feature of the rules engine 
 
 The following figure shows the procedure to control the smart lamp through the mobile app.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/15665276014208_en-US.PNG)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/15665290314208_en-US.PNG)
 
 1.  In the IoT Platform console, create a product and device for the smart lamp and define the features of the product. For more information, see [Create a product](../../../../reseller.en-US/User Guide/Create products and devices/Create a product.md#), [Create multiple devices at a time](../../../../reseller.en-US/User Guide/Create products and devices/Create devices/Create multiple devices at a time.md#), and [Define features](../../../../reseller.en-US/User Guide/Create products and devices/TSL/Define features.md#). In this example, the ProductKey and DeviceName parameters for the smart lamp are set to al123456789 and light respectively.
 2.  Develop a device SDK for the smart lamp. In this example, the device and IoT Platform use MQTT to communicate with each other.
@@ -16,7 +16,7 @@ The following figure shows the procedure to control the smart lamp through the m
 
         In this example, the SQL statement retrieves the deviceName, timestamp, and switch fields of the app device.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/156652760147216_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/156652903247216_en-US.png)
 
     3.  Configure the destination to which you want to forward processed data. Subscribe the smart lamp to the device topic to receive commands from the app. 
 
@@ -24,7 +24,7 @@ The following figure shows the procedure to control the smart lamp through the m
 
         -   Select **Publish to Another Topic**.
         -   When specifying a device, use `${deviceName}` to match all target smart lamp devices. In this example, `${deviceName}` is converted to the name of the smart lamp device. The name is `light`.
-        ![](images/47218_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13908/156652903247218_en-US.png)
 
 6.  The user scans the QR code to bind the app to the smart lamp. After the app sends a request to the server to bind a device, the server binds the smart lamp and returns the device name. The returned name is specified by the deviceName parameter. In this example, the smart lamp device is named light.
 7.  The user sends control commands through the app. 

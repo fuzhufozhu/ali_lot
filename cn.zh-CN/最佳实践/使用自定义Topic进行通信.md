@@ -1,12 +1,12 @@
 # 使用自定义Topic进行通信 {#concept_423001 .concept}
 
-您可以在物联网平台上自定义Topic类，设备将消息发送到自定义Topic中，服务端通过HTTP/2 SDK获取设备上报消息；服务端通过调用云端API Pub向设备发布指令。
+您可以在物联网平台上自定义Topic类，设备将消息发送到自定义Topic中，服务端通过HTTP/2 SDK获取设备上报消息；服务端通过调用云端API Pub向设备发布指令。自定义Topic通信不使用物模型，消息的数据结构由您自定义。
 
 ## 背景信息 {#section_ict_9m2_51s .section}
 
 本示例中，电子温度计定期与服务器进行数据的交互，传递温度和指令等信息。温度计向服务器上行发送当前的温度；服务器向温度计下行发送精度设置指令。
 
-![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156636736148433_zh-CN.png)
+![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156706525748433_zh-CN.png)
 
 ## 准备开发环境 {#section_1bq_xtz_3q6 .section}
 
@@ -63,7 +63,7 @@
 
     详细操作指导，请参见服务端订阅[开发指南\(Java\)](../../../../intl.zh-CN/用户指南/产品与设备/服务端订阅/开发指南（Java）.md#)。
 
-    ![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156636736250122_zh-CN.png)
+    ![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156706525750122_zh-CN.png)
 
 7.  在左侧导航栏，单击**设备**，然后在刚创建的温度计产品下，添加设备。详细操作指导，请参见[单个创建设备](../../../../intl.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)。
 
@@ -71,7 +71,7 @@
 
 流程图：
 
-![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156636736448448_zh-CN.png)
+![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156706525748448_zh-CN.png)
 
 -   配置服务端HTTP/2 SDK，设置Topic回调。
 
@@ -224,7 +224,7 @@
 
 流程图：
 
-![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156636736448453_zh-CN.png)
+![自定义Topic通信](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/341841/156706525748453_zh-CN.png)
 
 -   配置设备端SDK订阅Topic。
 

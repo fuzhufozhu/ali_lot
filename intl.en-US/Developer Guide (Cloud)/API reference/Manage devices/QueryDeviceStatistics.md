@@ -10,7 +10,7 @@ Call this operation to query device statistics of a specified product.
 |ProductKey|String|No|The unique identifier of the product. -   If you specify this parameter, IoT platform will return the device statistics of the specified product.
 -   If you do not specify this parameter, IoT Platform will return the device statistics of this account.
 
-|
+ |
 |Common Request Parameters|-|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 ## Response parameters {#section_cpd_5wt_xdb .section}
@@ -25,15 +25,15 @@ Call this operation to query device statistics of a specified product.
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|DeviceCount|Integer|The total number of devices.|
-|OnlineCount|Integer|The number of online devices.|
-|ActiveCount|Integer|The number of activated devices.|
+|DeviceCount|Long|The total number of devices.|
+|OnlineCount|Long|The number of online devices.|
+|ActiveCount|Long|The number of activated devices.|
 
 ## Examples {#section_uvc_jxt_xdb .section}
 
 **Request example**
 
-```
+``` {#codeblock_jdy_z3b_fra}
 https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceStatistics
 &ProductKey=al**********
 &Public Request Parameters
@@ -43,7 +43,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceStatistics
 
 -   JSON format
 
-    ```
+    ``` {#codeblock_isn_yz2_xjk}
     {
       "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
       "Success": true,
@@ -53,12 +53,12 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=QueryDeviceStatistics
         "ActiveCount": 50
       }
     }
-    
+    					
     ```
 
 -   XML format
 
-    ```
+    ``` {#codeblock_bnb_5zh_4w0}
     <? xml version='1.0' encoding='utf-8'? >
     <QueryDeviceStatisticsResponse>
         <RequestId>57b144cf-09fc-4916-a272-a62902d5b207</RequestId>

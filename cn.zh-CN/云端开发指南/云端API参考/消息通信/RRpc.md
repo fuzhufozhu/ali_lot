@@ -2,6 +2,14 @@
 
 调用该接口向指定设备发送请求消息，并同步返回响应。
 
+## 限制说明 {#section_7x9_81c_kfx .section}
+
+-   单阿里云账号调用该接口的每秒请求数（QPS）最大限制为1,000。
+
+    **说明：** 子账号共享主账号配额。
+
+-   单客户端出口IP的最大QPS限制为100，即来自单个客户端出口IP，调用阿里云接口的每秒请求总数不能超过100。
+
 ## 请求参数 {#section_wws_dhb_ydb .section}
 
 |名称|类型|是否必需|描述|
@@ -10,10 +18,11 @@
 |ProductKey|String|是|要发送消息的产品Key。|
 |DeviceName|String|是|要接收消息的设备名称。|
 |RequestBase64Byte|String|是|要发送的请求消息内容经过Base64编码得到的字符串格式数据。|
-|Timeout|Integer|是|等待设备回复消息的时间，单位是毫秒，取值范围是1,000 ~5,000。|
-|Topic|String|否|使用自定义的RRPC相关Topic。需要设备端配合使用，请参见设备端开发[自定义Topic](../../../../intl.zh-CN/用户指南/RRPC/自定义Topic.md#)。 不传入此参数，则使用系统默认的RRPC Topic。
+|Timeout|Integer|是|等待设备回复消息的时间，单位是毫秒，取值范围是1,000 ~8,000。|
+|Topic|String|否|使用自定义的RRPC相关Topic。需要设备端配合使用，请参见设备端开发[自定义Topic](../../../../intl.zh-CN/用户指南/RRPC/调用自定义Topic.md#)。 不传入此参数，则使用系统默认的RRPC Topic。
 
  |
+|IotInstanceId|String|否|共享实例用户不传此参数；仅独享实例用户需传入实例ID。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 ## 返回参数 {#section_wbr_qhb_ydb .section}
@@ -23,7 +32,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
-|Code|String|调用失败时，返回的错误码。错误码详情，请参见本文错误码。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |MessageId|String|成功发送请求消息后，云端生成的消息ID，用于标识该消息。|
 |RrpcCode|String| 调用成功时，生成的调用返回码，标识请求状态。取值：
 
@@ -42,9 +51,9 @@
 
 ## 示例 {#section_g4c_33b_ydb .section}
 
-**请求示例**
+请求示例
 
-```
+``` {#codeblock_8i5_vvc_ufh}
 https://iot.cn-shanghai.aliyuncs.com/?Action=RRpc
 &ProductKey=al*******
 &DeviceName=device1
@@ -53,11 +62,11 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=RRpc
 &公共请求参数
 ```
 
-**返回示例**
+返回示例
 
 -   JSON格式
 
-    ```
+    ``` {#codeblock_b3a_ahw_x1o}
     {
           "RequestId":"41C4265E-F05D-4E2E-AB09-E031F501AF7F",
           "Success":true,
@@ -69,7 +78,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=RRpc
 
 -   XML格式
 
-    ```
+    ``` {#codeblock_noc_hyk_932}
     <?xml version='1.0' encoding='UTF-8'?>
       <RRpcResponse>
           <RequestId>41C4265E-F05D-4E2E-AB09-E031F501AF7F<RequestId/>

@@ -2,9 +2,10 @@
 
 Call this operation to notify a specified gateway to build topological relationships with sub-devices.
 
-## Limits {#section_apv_g1c_dfb .section}
+## Notes {#section_apv_g1c_dfb .section}
 
-The successful result returned only indicates that the request to build topological relationships was successfully sent to the gateway, however, it does not mean that the gateway has successfully built the topological relationships.
+-   The successful result returned only indicates that the request to build topological relationships was successfully sent to the gateway, however, it does not mean that the gateway has successfully built the topological relationships.
+-   When you develop the device SDK of the gateway, configure it to subscribe to the topic for topologicalrelationship building notifications. For more information about the topic and data format, see [Notify the gateway to add topological relationships of the connected sub-devices](../../../../reseller.en-US/Developer Guide (Devices)/Develop devices based on Alink Protocol/Add a topological relationship.md#section_cn4_zzw_y2b).
 
 ## Request parameters {#section_zl1_wqt_xdb .section}
 
@@ -31,13 +32,13 @@ The successful result returned only indicates that the request to build topologi
 
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
-|ProductKey|String|No|The ProductKey of a sub-device.**Note:** If you use this parameter, DeviceName is required.
+|ProductKey|String|No|The ProductKey of a sub-device. **Note:** If you use this parameter, DeviceName is required.
 
-|
-|DeviceName|String|No|The name of a sub-device.**Note:** If you specify this parameter, you must also specify ProductKey.
+ |
+|DeviceName|String|No|The name of a sub-device. **Note:** If you specify this parameter, you must also specify ProductKey.
 
-|
-|IotId| String| No| The identifier of a sub-device.
+ |
+|IotId|String|No| The identifier of a sub-device.
 
  **Note:** If you specify this parameter, ProductKey and DeviceName are not required. IotId is the globally unique identifier \(GUID\) of a device, and corresponds to the combination of ProductKey and DeviceName. If you specify both IotId and the combination of ProductKeyand DeviceName, the system follows IotId.
 
@@ -59,9 +60,9 @@ The successful result returned only indicates that the request to build topologi
 
 ## Examples {#section_zl2_jst_xdb .section}
 
-**Request example**
+Request example
 
-```
+``` {#codeblock_4pj_czt_wu6}
 https://iot.cn-shanghai.aliyuncs.com/?Action=NotifyAddThingTopo
 &GwProductKey=al34634xvd
 &GwDeviceName=test
@@ -69,29 +70,29 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=NotifyAddThingTopo
 &Public Request Parameters
 ```
 
-**Response example**
+Response example
 
 -   JSON format
 
-    ```
+    ``` {#codeblock_gv8_sy4_83n}
     {
       "RequestId":"419A3FC1-B517-4958-9414-5546765FA51F",
-      "Success": true,
-      "Data"：{
-    	 "MessageId": "abcabc123"
+      "Success":true,
+      "Data":{
+         "MessageId":"abcabc123"
       }
     }
     ```
 
 -   XML format
 
-    ```
+    ``` {#codeblock_pc5_o40_ja9}
     <? xml version='1.0' encoding='UTF-8'? >
     <NotifyAddThingTopoResponse>
         <RequestId>419A3FC1-B517-4958-9414-5546765FA51F</RequestId>
         <Success>true</Success>
         <Data>
-    	<MessageId>abcabc123</MessageId>
+        <MessageId>abcabc123</MessageId>
         </Data>
     </NotifyAddThingTopoResponse>
     ```

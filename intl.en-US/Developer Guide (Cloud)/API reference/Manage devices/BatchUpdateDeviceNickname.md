@@ -6,13 +6,13 @@ You can call this operation to modify the aliases of multiple devices.
 
 |Parameter|Type|Required|Description|
 |:--------|:---|:-------|:----------|
-|Action|String |Yes|The operation that you want to perform. Set the value to BatchUpdateDeviceNickname.|
-|DeviceNicknameInfo|String |Yes|Includes the device identifier parameters and the Nickname parameter. The device identifier parameters include the combination of ProductKey and DeviceName and the IotId parameter.**Note:** 
+|Action|String|Yes|The operation that you want to perform. Set the value to BatchUpdateDeviceNickname.|
+|DeviceNicknameInfo|List<String\>|Yes|Includes the device identifier parameters and the Nickname parameter. The device identifier parameters include the combination of ProductKey and DeviceName and the IotId parameter. **Note:** 
 
 -   The device identifier parameters are required to identify a device.
 -   The Nickname parameter is optional. If you do not provide this parameter, the original alias of the specified device will be deleted.
 
-For more information, see the following table: Parameters in DeviceNicknameInfo.|
+ For more information, see the following table: Parameters in DeviceNicknameInfo.|
 |Common request parameters|N/A|Yes|See [Common parameters](reseller.en-US/Developer Guide (Cloud)/API reference/Common parameters.md#).|
 
 |Parameter|Type|Required|Description|
@@ -32,9 +32,9 @@ For more information, see the following table: Parameters in DeviceNicknameInfo.
  **Note:** If you provide this parameter, you must also provide ProductKey.
 
  |
-|Nickname|String|No|The new alias for the device. An alias must be 4 to 32 characters in length and can contain Chinese characters, letters, numbers, and underscores \(\_\). One Chinese character is counted as two characters.**Note:** If you do not provide this parameter, the original alias of the device will be deleted.
+|Nickname|String|No|The new alias for the device. An alias must be 4 to 32 characters in length and can contain Chinese characters, letters, numbers, and underscores \(\_\). One Chinese character is counted as two characters. **Note:** If you do not provide this parameter, the original alias of the device will be deleted.
 
-|
+ |
 
 ## Response parameters {#section_cqf_l2m_xdb .section}
 
@@ -49,7 +49,7 @@ For more information, see the following table: Parameters in DeviceNicknameInfo.
 
 **Sample request**
 
-```
+``` {#codeblock_kk3_fm5_32o}
 https://iot.cn-shanghai.aliyuncs.com/?Action=BatchUpdateDeviceNickname
 &DeviceNicknameInfo. 1. ProductKey=a1rYuVF****
 &DeviceNicknameInfo. 1. DeviceName=SR8FiTu1R9tlUR2V1bmi
@@ -64,7 +64,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchUpdateDeviceNickname
 
 -   JSON format
 
-    ```
+    ``` {#codeblock_x5k_98i_nuu}
     {
       "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
       "Success": true
@@ -73,7 +73,7 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=BatchUpdateDeviceNickname
 
 -   XML format
 
-    ```
+    ``` {#codeblock_37c_br0_j4q}
     <? xml version="1.0" encoding="UTF-8"? >
     <BatchUpdateDeviceNicknameResponse>
         <RequestId>57b144cf-09fc-4916-a272-a62902d5b207</RequestId>

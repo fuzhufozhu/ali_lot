@@ -1,6 +1,6 @@
 # Java SDK使用说明 {#reference_ukn_xwb_zdb .reference}
 
-物联网平台的 Java SDK 让开发人员可以方便地使用 Java 程序操作物联网平台。开发者可以使用Maven依赖添加SDK，也可以下载安装包到本地直接安装。
+物联网平台的Java SDK让开发人员可以方便地使用Java程序操作物联网平台。开发者可以使用Maven依赖添加SDK，也可以下载安装包到本地直接安装。
 
 ## 安装 SDK {#section_o4t_hgd_zdb .section}
 
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-iot</artifactId>
-            <version>6.11.0</version>
+            <version>7.0.0</version>
         </dependency>
         ```
 
@@ -78,7 +78,7 @@ catch (ServerException e)
 
 ## 附录：Demo {#section_tlh_nst_wkh .section}
 
-点击下载[SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/98270/cn_zh/1552272193375/iotx-api-demo.zip)。Demo中包含Java、Python、PHP、.NET版本SDK示例。
+单击下载[云端SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/44229/intl_en/1568085719729/iotx-api-demo.tar.gz)。Demo中包含Java、Python、PHP、.NET版本SDK示例。
 
-另外，阿里云提供API在线调试工具 [OpenAPI Explorer](https://api.aliyun.com)。在OpenAPI Explorer页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下供您参考。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
+另外，阿里云提供API在线调试工具 [OpenAPI Explorer](https://api.aliyun.com)。在OpenAPI Explorer页，您可以快速检索和试验调用API。系统会根据您输入的参数同步生成各语言SDK的Demo代码。各语言SDK Demo显示在页面右侧**示例代码**页签下。在**调试结果**页签下，查看API调用的真实请求URL和JSON格式的返回结果。
 

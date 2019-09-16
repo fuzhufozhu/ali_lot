@@ -6,8 +6,8 @@
 
 下表中列举的物联网平台 API 名称，即您在创建物联网平台相关授权策略时，参数 Action 的可选值。
 
-|IoT API|RAM 授权操作（Action\)|资源 （Resource）|接 口 说 明|
-|:------|:----------------|:------------|:------|
+|IoT API|RAM 授权操作（Action）|资源 （Resource）|接 口 说 明|
+|:------|:---------------|:------------|:------|
 |CreateProduct|iot:CreateProduct|\*|创建产品。|
 |UpdateProduct|iot:UpdateProduct|\*|修改产品。|
 |QueryProduct|iot:QueryProduct|\*|查询产品信息。|

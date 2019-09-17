@@ -7,9 +7,9 @@
 IoT PHP SDK是[Alibaba Cloud SDK for PHP](https://github.com/aliyun/openapi-sdk-php)的一部分。如果您已安装Alibaba Cloud SDK for PHP ，则无需安装IoT PHP SDK。
 
 1.  安装PHP开发环境。 需安装PHP 5.5.0或更高版本。访问[PHP官网](http://www.php.net/)下载PHP安装包，并完成安装。
-2.  安装Composer。 目前，IoT PHP SDK通过Composer管理，因此需在系统中安装Composer。
-    -   Windows系统用户，请访问[getcomposer.org](https://getcomposer.org/)，下载、安装[Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
-    -   使用cURL命令安装：
+2.  安装Composer。 目前，通过Composer管理IoT PHP SDK，因此需在系统中安装Composer。
+    -   Windows系统用户，请访问[getcomposer.org](https://getcomposer.org/)，下载、安装[Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)。
+    -   使用cURL命令安装Composer。
 
         ``` {#codeblock_atc_xsa_2lp}
         curl -sS https://getcomposer.org/installer | php
@@ -26,7 +26,7 @@ IoT PHP SDK是[Alibaba Cloud SDK for PHP](https://github.com/aliyun/openapi-sdk-
 
 ## 初始化SDK {#section_48e_nip_ws0 .section}
 
-初始化SDK示例
+初始化SDK示例代码如下：
 
 ``` {#codeblock_w3o_bfz_9eu}
 <?php

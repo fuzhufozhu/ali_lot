@@ -8,7 +8,7 @@
 
     访问[Python官网](https://www.python.org/downloads/)下载Python安装包，并完成安装。目前，支持2.6.5及以上版本。
 
-2.  安装Python的包管理工具 pip。（如果您已安装pip，请忽略此步骤。）
+2.  安装Python的包管理工具pip。（如果您已安装pip，请忽略此步骤。）
 
     访问 [pip 官网](https://pip.pypa.io/en/stable/installing/)下载pip安装包，并完成安装。
 

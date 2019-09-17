@@ -12,7 +12,7 @@ MQTT协议是基于PUB/SUB的异步通信模式，不适用于服务端同步控
 
 ## RRPC原理 {#section_yf1_rsl_cfb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21225/156220524011774_zh-CN.png)
+![RRPC](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21225/156870515211774_zh-CN.png)
 
 1.  物联网平台收到来自用户服务器的RRPC调用，下发一条RRPC请求消息给设备。消息体为用户传入的数据，Topic为物联网平台定义的Topic，其中含有唯一的RRPC消息ID。
 2.  设备收到下行消息后，按照指定Topic格式（包含之前云端下发的唯一的RRPC消息ID）回复一条RRPC响应消息给云端，云端提取出Topic中的消息ID，和之前的RRPC请求消息匹配上，然后回复给用户服务器。
@@ -22,6 +22,8 @@ MQTT协议是基于PUB/SUB的异步通信模式，不适用于服务端同步控
 
 不同Topic格式使用方法不同。
 
--   系统Topic使用方法参见[系统Topic](intl.zh-CN/用户指南/RRPC/系统Topic.md#)。
--   自定义Topic使用方法参见[自定义Topic](intl.zh-CN/用户指南/RRPC/自定义Topic.md#)。
+-   系统Topic使用方法参见[系统Topic](intl.zh-CN/用户指南/RRPC/调用系统Topic.md#)。
+-   自定义Topic使用方法参见[自定义Topic](intl.zh-CN/用户指南/RRPC/调用自定义Topic.md#)。
+
+RRPC调用实践示例，请参见[远程控制树莓派服务器](../../../../intl.zh-CN/最佳实践/远程控制树莓派服务器.md#)。
 

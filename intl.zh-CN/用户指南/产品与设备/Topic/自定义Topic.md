@@ -10,23 +10,33 @@
 4.  在产品详情页面，单击**Topic类列表** \> **定义Topic类**。
 5.  定义Topic类。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15469117387118_zh-CN.png)
+    ![自定义Topic](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15450/15687046117118_zh-CN.png)
 
-    -   **设备操作权限**：设备对该Topic的操作权限，可设置为发布、订阅、发布和订阅。
-    -   **Topic类**：根据页面上方的Topic规则设置Topic类的自定义类目名称。
-    -   **描述**：对自定义的Topic类进行描述，可以为空。
+    |参数|描述|
+    |--|--|
+    |设备操作权限|设备对该Topic的操作权限，可设置为**发布**、**订阅**、**发布和订阅**。|
+    |Topic类|将Topic类填充完整。 **说明：** 只有设备操作权限为**订阅**时，才可以使用通配符+和\#自定义Topic类。
+
++代表本级所有类目。
+
+\#代表本级及下级所有类目。它只能出现在Topic类的最后一个类目。
+
+ |
+    |描述|写一些话描述该Topic类，可以为空。|
+
 6.  单击**确认**。
 
-## Topic类中的通配符 {#section_ytf_qjy_w2b .section}
+## 带通配符的自定义Topic {#section_ayy_1us_99o .section}
 
-自定义Topic类时，您可以使用通配符。通配符内容请参考[什么是Topic](intl.zh-CN/用户指南/产品与设备/Topic/什么是Topic.md#)。其中：
+带通配符的Topic不支持在设备的**Topic列表**页面执行**发布消息**操作，仅支持订阅操作。
 
--   `#`代表本级及下级所有类目。
--   `+`代表本级所有类目。
+例如，某产品有一个自定义Topic类：`/a1aycMA****/${deviceName}/user/#`。DeviceName为Light的设备订阅`/a1aycMA****/Light/user/#`表示批量订阅了以/a1aycMA\*\*\*\*/Light/user/为开头的全部Topic，包含`/a1aycMA****/Light/user/get`，`/a1aycMA****/Light/user/data`等。
 
-**说明：** 创建带通配符的Topic类时，需注意：
+例如，某产品有一个自定义Topic类：`/a1aycMA****/${deviceName}/user/+/error`。DeviceName为Robot的设备订阅`/a1aycMA****/Robot/user/+/error`，表示批量订阅了 `/a1aycMA****/Robot/user/get/error`、`/a1aycMA****/Robot/user/update/error`等Topic。
 
--   只有设备操作权限为订阅的产品，才支持使用通配符。
--   通配符`#`只能在Topic类的最后一个类目。
--   带通配符的Topic不支持在设备的**Topic列表**页面执行**发布消息**操作。
+## 自定义Topic通信 {#section_qwx_k6f_sli .section}
+
+服务端调用[Pub](../../../../intl.zh-CN/云端开发指南/云端API参考/消息通信/Pub.md#)，可向指定的自定义Topic发布消息；设备通过订阅该Topic，接收来自服务端的消息。
+
+使用自定义Topic通信的示例，请参见[使用自定义Topic进行通信](../../../../intl.zh-CN/最佳实践/使用自定义Topic进行通信.md#)。
 

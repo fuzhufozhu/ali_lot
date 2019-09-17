@@ -8,11 +8,11 @@ Defining features for products is to define Thing Specification Language \(TSL\)
 4.  Click **Define Feature**.
 5.  Add self-defined features. Click the **Add Feature** button corresponding to Self-defined Feature to add custom features for the product. You can define properties, services and events for the product. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844810854_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/156869095410854_en-US.png)
 
     -   Define a property. In the Add Self-defined Feature dialog box, select **Properties** as the feature type. Enter information for the property and then click**OK**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910855_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/156869095410855_en-US.png)
 
         The parameters of properties are listed in the following table.
 
@@ -46,10 +46,11 @@ Defining features for products is to define Thing Specification Language \(TSL\)
 
  |
         |Description|Enter a description or remarks about the property. You can enter up to 100 characters.|
-        |Extended Information| When the gateway connection protocol is Modbus or OPC UA, you can configure extended parameters.
+        |Extended Information| When the gateway connection protocol is Custom, Modbus, or OPC UA, you can configure extended information.
 
-         -   When the gateway connection protocol is Modbus, configure the following parameters.
-
+         -   When the gateway connection protocol is Custom, add custom configurations. The custom configurations must be written in JSON format, and can contain up to 1,024 characters.
+        -   When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the property.
+        -   When the gateway connection protocol is Modbus, configure the following parameters.
             -   Operation Type:
                 -   Coil Status \(read-only, 01\)
                 -   Coil Status \(read and write, 01-read, 05-write\)
@@ -70,14 +71,13 @@ Defining features for products is to define Thing Specification Language \(TSL\)
             -   Zoom Factor: The zoom factor is set to 1 by default. It can be set to negative numbers, but cannot be set to 0.
             -   Collection Interval: The time interval of data collection. It is in milliseconds and the value cannot be lower than 10.
             -   Data Report: The trigger of data report. It can be either At Specific Time or Report Changes.
-        -   When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the property.
  |
 
     -   Define a service. In the Add Self-defined Feature dialog box, select **Services** as the feature type. Enter information for the service and then click **OK**.
 
         **Note:** When the gateway connection protocol is Modbus, you cannot define any service for the product.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910856_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/156869095410856_en-US.png)
 
         The parameters of services are as follows.
 
@@ -118,14 +118,16 @@ Defining features for products is to define Thing Specification Language \(TSL\)
         -   You can either use a property as an output parameter or define an output parameter. For example, you can specify the property SoilHumidity as an output parameter. Then, when the service Automatic Sprinkler is called, IoT Platform returns the data about soil humidity.
         -   You can add up to 20 output parameters for a service.
  |
-        |Extended Information|When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the service.|
+        |Extended Information|         -   When the gateway connection protocol is Custom, add custom configurations. The custom configurations must be written in JSON format, and can contain up to 1,024 characters.
+        -   When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the service.
+ |
         |Description|Enter a description or remarks about the service. You can enter up to 100 characters.|
 
     -   Define an event. In the Add Self-defined Feature dialog box, select **Events** as the feature type. Enter information for the parameter and then click **OK**.
 
         **Note:** When the gateway connection protocol is Modbus, you cannot define any event for the product.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/155720844910857_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17782/156869095510857_en-US.png)
 
         The parameters of events are as follows.
 
@@ -152,7 +154,9 @@ Defining features for products is to define Thing Specification Language \(TSL\)
         -   Identifiers of input parameters cannot be any one of the following words: set, get, post, time, and value.
         -   You can add up to 50 output parameters for an event.
  |
-        |Extended Information|When the gateway collection protocol is OPC UA, set a node name. Each node name must be unique under the event.|
+        |Extended Information|         -   When the gateway connection protocol is Custom, add custom configurations. The custom configurations must be written in JSON format, and can contain up to 1,024 characters.
+        -   When the gateway connection protocol is OPC UA, set a node name. Each node name must be unique under the event.
+ |
         |Description|Enter a description or remarks about the event. You can enter up to 100 characters.|
 
 

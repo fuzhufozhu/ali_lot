@@ -6,7 +6,7 @@
 
 ## 云端SDK下载地址 {#section_fgm_vzc_zdb .section}
 
-物联网平台提供的云端SDK语言版本有：Java、Python、PHP、.NET。
+物联网平台提供的云端SDK语言版本有：Java、Python、PHP和.NET。
 
 单击以下链接，进入相应的云端SDK源码下载地址。
 
@@ -19,7 +19,7 @@
 
 阿里云物联网平台提供云端SDK使用Demo。Demo中包含Java、Python、PHP、.NET版本SDK。
 
-点击下载[云端SDK Demo](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/44229/intl_en/1568085719729/iotx-api-demo.tar.gz)。
+单击[这里](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/44229/intl_en/1568085719729/iotx-api-demo.tar.gz)下载云端SDK Demo。
 
 ## SDK使用说明 {#section_0w9_mh8_pg3 .section}
 

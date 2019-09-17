@@ -5,7 +5,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 ## 步骤一：编辑脚本 {#section_bq9_ruk_eey .section}
 
 1.  在[物联网平台控制台](https://iot.console.aliyun.com/lk/summary)，创建连网方式为LoRaWAN的产品。
-2.  为该产品定义功能。功能定义具体方法，请参见[新增物模型](cn.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)。
+2.  为该产品定义功能。功能定义具体方法，请参见[新增物模型](cn.zh-CN/用户指南/产品与设备/物模型/单个添加物模型.md#)。
 
     本示例中，定义了以下属性、事件和服务。
 
@@ -58,7 +58,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
     在**模拟输入**框中，输入模拟数据，如000102，选择模拟类型为**设备上报数据**，单击**运行**。右侧运行结果中将显示数据解析是否成功。
 
-    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626347845_zh-CN.png)
+    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156870431147845_zh-CN.png)
 
 -   设备接收数据模拟解析
 
@@ -78,7 +78,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
     }
     ```
 
-    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626347846_zh-CN.png)
+    ![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156870431147846_zh-CN.png)
 
 
 ## 步骤三：提交脚本 {#section_ntl_8fm_mzi .section}
@@ -87,7 +87,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
 **说明：** 仅提交后的脚本才能被物联网平台调用；草稿状态的脚本不能被调用。
 
-![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626447848_zh-CN.png)
+![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156870431147848_zh-CN.png)
 
 ## 步骤四：使用真实设备调试 {#section_ufx_8d8_9nv .section}
 
@@ -127,7 +127,7 @@ LoRaWAN设备与物联网平台的通信数据格式为透传/自定义，因此
 
 查看设备属性、事件和服务调用数据的路径如下图：
 
-![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156592626447847_zh-CN.png)
+![lora设备数据解析](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/248945/156870431147847_zh-CN.png)
 
 ## 附录：示例脚本 {#section_k9w_9id_mrb .section}
 
@@ -267,8 +267,8 @@ function buffer_float32(value)
 }
 ```
 
-## 相关文档 {#section_3l5_3k5_bhf .section}
+## 相关文档 { .section}
 
 -   了解数据解析流程和脚本格式等基本信息，请参见[什么是数据解析](cn.zh-CN/用户指南/产品与设备/数据解析/什么是数据解析.md#)。
--   关于脚本解析问题排查，请参见[问题排查](cn.zh-CN/用户指南/产品与设备/数据解析/问题排查.md#)。
+-   关于数据解析问题排查，请参见[问题排查](cn.zh-CN/用户指南/产品与设备/数据解析/问题排查.md#)。
 

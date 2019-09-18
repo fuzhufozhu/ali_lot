@@ -24,7 +24,7 @@ The user specifies a city name, city code, or the latitude and longitude of a ci
     Business logic:
 
     -   Performs weather queries based on city information.
-    -   Currently, [Alibaba Cloud Weather Service](https://market.aliyun.com/products/57126001/cmapi014302.html?spm=5176.730005.0.0.4tqyho#sku=yuncode830200000) is used. This service is available in Alibaba Cloud API Marketplace.
+    -   An API is used to query weather information.
     -   The query results are sent to the specified topic of the device using the service API provided by IoT Platform.
     -   Create a new project and import the following JAR files:
 
@@ -135,42 +135,42 @@ commons-lang
         }
         ```
 
-        The custom model is as shown in [Figure 3](#fig_cnx_jkc_zdb).
+        The custom model is as shown in the following picture.
 
-        ![](images/4521_en-US.png "Custom model")
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859554521_en-US.png)
 
     The function implements the PojoRequestHandler interface that is provided by Function Compute. Function Compute also provides the StreamRequestHandler interface. Select an interface based on your needs.
 
-    For more information, see [Java basics](https://help.aliyun.com/document_detail/58887.html?spm=5176.doc53277.6.592.SLYN1B).
+    For more information, see [Java basics](https://www.alibabacloud.com/help/doc-detail/58887.htm).
 
 3.  Configure the function 
     1.  Log on to the Function Compute console.
-    2.  Click **Create Function**, select **No Trigger**, and configure the basic information, as shown in [Figure 4](#fig_byz_tfd_zdb). 
+    2.  Click **Create Function**, select **No Trigger**, and configure the basic information, as shown in the following picture. 
 
-        ![](images/4602_en-US.png "Basic configurations")
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859554602_en-US.png)
 
     3.  Click **Next**, **Create**.
     4.  After the configuration is complete, test the function to see whether the function runs properly. 
 
         The function runs properly if the code logic is correct.
 
-4.  Log on to the IoT Platform console, and select Rules Engine to configure and enable an action rule, as shown in [Figure 5](#fig_gxz_3hd_zdb). 
+4.  Log on to the IoT Platform console, and select Rules Engine to configure and enable an action rule, as shown in the following picture. 
 
-    ![](images/4615_en-US.png "Action rule")
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859554615_en-US.png)
 
 5.  Test the functionality of weather query. 
     -   Log on to your emulated device and subscribe to the specified topic.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15680302084619_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859554619_en-US.png)
 
     -   Send a message from the console.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15680302094622_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859564622_en-US.png)
 
         You can also use cityid, cityCode, location, or IP information to query weather information.
 
     -   The device receives the message.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15680302094628_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/7644/15687859564628_en-US.png)
 
 

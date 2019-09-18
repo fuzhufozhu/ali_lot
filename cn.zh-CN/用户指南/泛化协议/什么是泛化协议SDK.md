@@ -6,9 +6,9 @@
 
 泛化协议SDK是协议自适应的框架，用以构建与阿里云物联网平台进行高效双向通信的桥接服务。
 
-服务架构如下图所示：
+服务架构如下图所示。
 
- ![网桥](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16467/15663594488136_zh-CN.png)
+![网桥](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16467/15687705858136_zh-CN.png)
 
 ## 适用场景 {#section_ogk_ehn_tyh .section}
 
@@ -66,8 +66,8 @@
 
     已开发完成的桥接服务，可以使用阿里云[ECS](../../../../intl.zh-CN/产品简介/什么是云服务器ECS.md#)和[SLB](../../../../intl.zh-CN/产品简介/什么是负载均衡.md#)等服务，以高度可扩展的方式部署至阿里云上；也可以直接部署到本地环境中，以保证可信通信环境。
 
-    以基于阿里云云服务器ECS为例，上线流程如下：
+    以基于阿里云云服务器ECS为例，上线流程如下。
 
-     ![网桥](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16467/15663594488073_zh-CN.png)
+    ![网桥](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16467/15687705858073_zh-CN.png)
 
 

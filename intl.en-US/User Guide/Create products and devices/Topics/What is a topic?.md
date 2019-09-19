@@ -15,6 +15,7 @@ Descriptions for topic categories:
 -   A topic category uses a forward slash \(/\) to separate elements in different hierarchical levels. A topic category contains the following fixed elements: `${YourProductKey}` indicates the product identifier; `${YourDeviceName}` indicates the device name.
 -   Each element name can contain only letters, numbers, and underscores \(\_\). An element in each level cannot be left empty.
 -   A device can have Pub and Sub permissions to a topic. **Pub** indicates that the device can publish messages to the topic. **Sub** indicates that the device can subscribe to the topic.
+-   After you modify a topic category on the console, you must modify the related topic on devices.
 
 ## Topic {#section_ozb_bw5_vdb .section}
 

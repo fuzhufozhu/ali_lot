@@ -4,7 +4,7 @@
 
 ## 限制说明 {#section_zbx_wrm_2gb .section}
 
-同步调用服务，最大超时时间为5秒。若5秒内服务器未收到回复，则返回超时错误。
+如果同步调用服务，最大超时时间为5秒。若5秒内服务器未收到回复，则返回超时错误；如果异步调用服务，则无最大超时时间限制。
 
 ## 请求参数 {#section_rpk_l1t_xdb .section}
 
@@ -26,7 +26,7 @@
  **说明：** 如果传入该参数，需同时传入ProductKey。
 
  |
-|Identifier|String|是|服务的标识符。设备的服务Identifier，可在控制台中设备所属的产品的功能定义中查看。|
+|Identifier|String|是|服务的标识符。设备的服务Identifier，可在控制台中设备所属的产品的功能定义中查看。有关功能定义说明，请参见[单个添加物模型](../../../../intl.zh-CN/用户指南/产品与设备/物模型/单个添加物模型.md#)。|
 |Args|String|是| 要启用服务的入参信息，数据格式为JSON String，如， Args=\{"param1":1\}。
 
  若此参数为空时，需传入 Args=\{\} 。
@@ -34,6 +34,7 @@
  Args详情参见下表Args。
 
  |
+|IotInstanceId|String|否|公共实例不传此参数；仅独享实例需传入实例ID。|
 |公共请求参数|-|是|请参见[公共参数](intl.zh-CN/云端开发指南/云端API参考/公共参数.md#)。|
 
 |名称|类型|描述|
@@ -52,7 +53,7 @@
 |RequestId|String|阿里云为该请求生成的唯一标识符。|
 |Success|Boolean|表示是否调用成功。true表示调用成功，false表示调用失败。|
 |ErrorMessage|String|调用失败时，返回的出错信息。|
-|Code|String|调用失败时，返回的错误码。错误码详情,请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
+|Code|String|调用失败时，返回的错误码。错误码详情，请参见[错误码](intl.zh-CN/云端开发指南/云端API参考/错误码.md#)。|
 |Data|Data|调用成功时，返回的数据。详情请见下表Data。|
 
 |名称|类型|描述|
@@ -66,9 +67,9 @@
 
 ## 示例 {#section_fz1_jbt_xdb .section}
 
-**请求示例**
+请求示例
 
-```
+``` {#codeblock_3fj_ppi_gyp}
 https://iot.cn-shanghai.aliyuncs.com/?Action=InvokeThingService
 &ProductKey=al*********
 &DeviceName=device1
@@ -77,32 +78,32 @@ https://iot.cn-shanghai.aliyuncs.com/?Action=InvokeThingService
 &公共请求参数
 ```
 
-**返回示例**
+返回示例
 
 -   JSON格式
 
-    ```
+    ``` {#codeblock_aa8_8u4_oua .language-json}
     {
       "RequestId":"57b144cf-09fc-4916-a272-a62902d5b207",
       "Success": true,
       "Data"：{"
-    	 "Result": "...."
-    	 "MessageId": "abcabc123"
+         "Result": "...."
+         "MessageId": "abcabc123"
       }
     }
     ```
 
 -   XML格式
 
-    ```
+    ``` {#codeblock_5oi_7j6_yh8 .lanuage-xml}
     <?xml version='1.0' encoding='utf-8'?>
     <InvokeThingServiceResponse>
         <RequestId>57b144cf-09fc-4916-a272-a62902d5b207</RequestId>
         <Success>true</Success>
-    	<Data>
-    	     <Result>...</Result>
+        <Data>
+             <Result>...</Result>
                  <MessageId>abcabc123</MessageId>
-    	</Data>
+        </Data>
     </InvokeThingServiceResponse>
     ```
 
